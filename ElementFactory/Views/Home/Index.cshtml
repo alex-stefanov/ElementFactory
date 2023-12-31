@@ -1,30 +1,30 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@model List<ElementFactory.Data.Models.ChemicalElement>
 
-<h3>Element:</h3>
-<hr />
+@model List<ElementFactory.Data.Models.ChemicalElement>
 <form>
-    
-    <table class="table">
+    <table>
         <tbody>
             @for (int period = 1; period <= 7; period++)
             {
                 <tr>
                     @for (int group = 1; group <= 18; group++)
                     {
-                        if (Model.FirstOrDefault(x => x.Period == period && x.Group == group) == null)
+                        var chemicalElement = @Model.FirstOrDefault(x => x.Period == period && x.Group == group);
+                        if (chemicalElement == null)
                         {
                             <td></td>
                         }
                         else
-                        {
-                            <td>
-                                <p>@Model.First(x => x.Period == period && x.Group == group).Symbol</p>
-                                <p>@Model.First(x => x.Period == period && x.Group == group).Name</p>
+                        {   
+                            <td class="@chemicalElement.ChemicalType.Name">
+                                <a>
+                                <p>@chemicalElement.Symbol</p>
+                                <p>@chemicalElement.Name</p>
+                                </a>
                             </td>
-
+                            
                         }
                     }
 
@@ -41,9 +41,11 @@
                     {
                         @foreach (var item in Model.Where(x => x.Group == 0 && x.Period == 6))
                         {
-                            <td>
+                            <td class="@item.ChemicalType.Name">
+                                <a>
                                 <p>@item.Symbol</p>
                                 <p>@item.Name</p>
+                                </a>
                             </td>
                         }
                     }
@@ -51,9 +53,11 @@
                     {
                         foreach (var item in Model.Where(x => x.Group == 0 && x.Period == 7))
                         {
-                            <td>
+                            <td class="@item.ChemicalType.Name">
+                                <a>
                                 <p>@item.Symbol</p>
                                 <p>@item.Name</p>
+                                </a>
                             </td>
                         }
                     }

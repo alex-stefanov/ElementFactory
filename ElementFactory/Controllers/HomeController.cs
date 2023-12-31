@@ -1,6 +1,7 @@
 ﻿using ElementFactory.Data;
 using ElementFactory.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using System.Linq;
 namespace ElementFactory.Controllers
@@ -18,7 +19,13 @@ namespace ElementFactory.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var elements = this._context.ChemicalElements.OrderBy(x=>x.AtomicNumber).ToList();
+            var elements = this
+                ._context
+                .ChemicalElements
+                .Include(x => x.ChemicalType)
+                .OrderBy(x => x.AtomicNumber)
+                .ToList();
+
             return View(elements);
         }
 

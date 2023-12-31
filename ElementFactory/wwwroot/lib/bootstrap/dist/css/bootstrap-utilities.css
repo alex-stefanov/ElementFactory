@@ -121,7 +121,7 @@
   top: 0;
   z-index: 1020;
 }
-
+/*
 @media (min-width: 576px) {
   .sticky-sm-top {
     position: -webkit-sticky;
@@ -162,6 +162,7 @@
     z-index: 1020;
   }
 }
+*/
 .hstack {
   display: flex;
   flex-direction: row;
@@ -1548,7 +1549,7 @@
 .invisible {
   visibility: hidden !important;
 }
-
+/*
 @media (min-width: 576px) {
   .float-sm-start {
     float: left !important;
@@ -4821,6 +4822,7 @@
     font-size: 1.5rem !important;
   }
 }
+*/
 @media print {
   .d-print-inline {
     display: inline !important;

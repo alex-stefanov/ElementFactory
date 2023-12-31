@@ -14,5 +14,113 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    width: 100%;
+    background-color: #090947;
+    background-image: linear-gradient(315deg, #090947 0%, #5a585a 74%);
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    margin-left: calc(50% - 1640px);
+}
+
+tbody {
+    display: grid;
+    grid-template-rows: repeat(9, 1fr);
+}
+
+tr{
+    padding: 4px;
+    display: grid;
+    grid-template-columns: repeat(18, 7.5%);
+}
+
+td {
+    padding: 8px;
+    margin: 4px;
+    margin: 4px;
+}
+
+td p {
+    word-wrap: break-word;
+}
+
+td p:nth-child(2n+1) {
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    padding-top:25%;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+td p:nth-child(2n){
+    padding-top: 0;
+    text-align: center;
+    font-size: 24px;
+}
+@media (max-width: 1200px) {
+    .container{
+        max-width: 100%;
+        min-width: 100%;
+        width: 100%;
+    }
+}
+
+.Alkali.Metal,
+.Alkaline.Earth.Metal,
+.Transition.Metal{
+    font-size: 24px;
+}
+
+.Alkali.Metal {
+    background-color: #f48584;
+    border: 6px solid red;
+}
+
+.Alkaline.Earth.Metal {
+    background-color: #f7b476;
+    border: 6px solid orange;
+}
+
+.Transition.Metal {
+    background-color: #faf59c;
+    border: 6px solid yellow;
+}
+
+.Metaloid {
+    background-color: #a0d6be;
+    border: 6px solid green;
+}
+
+.PostTransition.Metal {
+    background-color: #cee07b;
+    border: 6px solid #90c843;
+}
+
+.Non-Metal {
+    background-color: #96d9eb;
+    border: 6px solid #62ccd9;
+}
+
+.Halogen {
+    background-color: #7ec2ec;
+    border: 6px solid #6698ba;
+}
+
+.Noble.gas {
+    background-color: #ccbfde;
+    border: 6px solid #7a3193;
+}
+
+.Lanthanide {
+    background-color: #f9c7dd;
+    border: 6px solid #f495bf;
+}
+
+.Actinide {
+    background-color: #db80b5;
+    border: 6px solid #ef59a1;
 }
