@@ -11,7 +11,9 @@
                 <tr>
                     @for (int group = 1; group <= 18; group++)
                     {
-                        var chemicalElement = @Model.FirstOrDefault(x => x.Period == period && x.Group == group);
+                        ElementFactory.Data.Models.ChemicalElement?
+                        chemicalElement = @Model
+                        .FirstOrDefault(x => x.Period == period && x.Group == group);
                         if (chemicalElement == null)
                         {
                             <td></td>
@@ -20,6 +22,7 @@
                         {   
                             <td class="@chemicalElement.ChemicalType.Name">
                                 <a>
+                                <span>@chemicalElement.AtomicNumber</span>
                                 <p>@chemicalElement.Symbol</p>
                                 <p>@chemicalElement.Name</p>
                                 </a>
@@ -39,24 +42,28 @@
                     <td></td>
                     @if (i == 1)
                     {
-                        @foreach (var item in Model.Where(x => x.Group == 0 && x.Period == 6))
+                        @foreach (ElementFactory.Data.Models.ChemicalElement
+                        chemicalElement in Model.Where(x => x.Group == 0 && x.Period == 6))
                         {
-                            <td class="@item.ChemicalType.Name">
+                            <td class="@chemicalElement.ChemicalType.Name">
                                 <a>
-                                <p>@item.Symbol</p>
-                                <p>@item.Name</p>
+                                <span>@chemicalElement.AtomicNumber</span>
+                                    <p>@chemicalElement.Symbol</p>
+                                    <p>@chemicalElement.Name</p>
                                 </a>
                             </td>
                         }
                     }
                     else
                     {
-                        foreach (var item in Model.Where(x => x.Group == 0 && x.Period == 7))
+                        foreach (ElementFactory.Data.Models.ChemicalElement
+                        chemicalElement in Model.Where(x => x.Group == 0 && x.Period == 7))
                         {
-                            <td class="@item.ChemicalType.Name">
+                            <td class="@chemicalElement.ChemicalType.Name">
                                 <a>
-                                <p>@item.Symbol</p>
-                                <p>@item.Name</p>
+                                    <span>@chemicalElement.AtomicNumber</span>
+                                    <p>@chemicalElement.Symbol</p>
+                                    <p>@chemicalElement.Name</p>
                                 </a>
                             </td>
                         }

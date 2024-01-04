@@ -10,12 +10,12 @@ html {
 
 html {
   position: relative;
-  min-height: 100%;
 }
 
 body {
     margin-bottom: 60px;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: #090947;
     background-image: linear-gradient(315deg, #090947 0%, #5a585a 74%);
 }
@@ -23,7 +23,7 @@ body {
 .container {
     margin: 0;
     padding: 0;
-    margin-left: calc(50% - 1640px);
+    min-width: 100%;    
 }
 
 tbody {
@@ -47,19 +47,22 @@ td p {
     word-wrap: break-word;
 }
 
+td span{
+    font-size: 0.5rem;
+    padding-left: 0.2em;
+}
+
 td p:nth-child(2n+1) {
     font-weight: 700;
-    font-size: 32px;
+    font-size: 0.75rem;
     text-align: center;
-    padding-top:25%;
-    padding-bottom: 0;
     margin-bottom: 0;
 }
 
 td p:nth-child(2n){
     padding-top: 0;
     text-align: center;
-    font-size: 24px;
+    font-size: 1.25rem;
 }
 @media (max-width: 1200px) {
     .container{
