@@ -35,16 +35,18 @@ td
     margin-top: 0;
 }
 
-body tr:nth-child(1) td:nth-child(13) {
+#listItems {
     grid-column: span 5;
-    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 td p 
 {
-    word-wrap: break-word;
-    margin: 0;
-    padding: 0;
+        word-wrap: break-word;
+        margin: 0;
+        padding: 0;
 }
 .atomicNumber
 {
