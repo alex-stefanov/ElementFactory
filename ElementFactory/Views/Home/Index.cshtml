@@ -3,6 +3,7 @@
 }
 
 @model List<ElementFactory.Data.Models.ChemicalElement>
+
 <form>
     <table>
         <tbody>
@@ -11,23 +12,41 @@
                 <tr>
                     @for (int group = 1; group <= 18; group++)
                     {
-                        ElementFactory.Data.Models.ChemicalElement?
-                        chemicalElement = @Model
-                        .FirstOrDefault(x => x.Period == period && x.Group == group);
-                        if (chemicalElement == null)
+                        @if (period == 1 && group == 13)
                         {
-                            <td></td>
-                        }
-                        else
-                        {   
-                            <td class="@chemicalElement.ChemicalType.Name">
-                                <a>
-                                <span>@chemicalElement.AtomicNumber</span>
-                                <p>@chemicalElement.Symbol</p>
-                                <p>@chemicalElement.Name</p>
-                                </a>
+                            <td>
+                                <div class="listItems">
+                                    <select>
+                                        <option class="seeAtomicNumber">Изглед по атомна маса</option>
+                                        <option class="seePhysicalAppearance">Изглед по физично състояние</option>
+                                        <option class="seeAtomicRadius">Изглед по атомен радиус</option>
+                                        <option class="seeMeltingPoint">Изглед по температура на топене</option>
+                                        <option class="seeBoilingPoint">Изглед по температура на кипене</option>
+                                        <option class="seeByYear">Изглед по години (въведи година)</option>
+                                     </select>
+                                </div>
                             </td>
-                            
+                        }
+                        else if(!(period == 1 && 
+                        (group == 13 || group == 14 || group == 15 || group == 16 || group == 17)))
+                        {
+                            ElementFactory.Data.Models.ChemicalElement?
+                            chemicalElement = @Model
+                            .FirstOrDefault(x => x.Period == period && x.Group == group);
+                            if (chemicalElement == null)
+                            {
+                                <td></td>
+                            }
+                            else
+                            {
+                                <td class="@chemicalElement.ChemicalType.Name">
+                                    <a>
+                                        <p class="atomicNumber">@chemicalElement.AtomicNumber</p>
+                                        <p class="symbol">@chemicalElement.Symbol</p>
+                                        <p class="name">@chemicalElement.Name</p>
+                                    </a>
+                                </td>
+                            }
                         }
                     }
 
@@ -47,9 +66,9 @@
                         {
                             <td class="@chemicalElement.ChemicalType.Name">
                                 <a>
-                                <span>@chemicalElement.AtomicNumber</span>
-                                    <p>@chemicalElement.Symbol</p>
-                                    <p>@chemicalElement.Name</p>
+                                    <p class="atomicNumber">@chemicalElement.AtomicNumber</p>
+                                    <p class="symbol">@chemicalElement.Symbol</p>
+                                    <p class="name">@chemicalElement.Name</p>
                                 </a>
                             </td>
                         }
@@ -61,9 +80,9 @@
                         {
                             <td class="@chemicalElement.ChemicalType.Name">
                                 <a>
-                                    <span>@chemicalElement.AtomicNumber</span>
-                                    <p>@chemicalElement.Symbol</p>
-                                    <p>@chemicalElement.Name</p>
+                                    <p class="atomicNumber">@chemicalElement.AtomicNumber</p>
+                                    <p class="symbol">@chemicalElement.Symbol</p>
+                                    <p class="name">@chemicalElement.Name</p>
                                 </a>
                             </td>
                         }
@@ -73,4 +92,3 @@
         </tbody>     
     </table>
 </form>
-

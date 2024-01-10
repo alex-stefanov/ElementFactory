@@ -1,18 +1,5 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-html {
-  position: relative;
-}
-
-body {
+body 
+{
     margin-bottom: 60px;
     width: 100vw;
     height: 100vh;
@@ -20,62 +7,67 @@ body {
     background-image: linear-gradient(315deg, #090947 0%, #5a585a 74%);
 }
 
-.container {
+form,
+table,
+tbody 
+{
     margin: 0;
     padding: 0;
-    min-width: 100%;    
+    width: 100%;    
+    height: 100%;
+    margin-left: 20px;
 }
 
 tbody {
     display: grid;
-    grid-template-rows: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 4.0em);
 }
 
-tr{
-    padding: 4px;
+tr 
+{
     display: grid;
-    grid-template-columns: repeat(18, 7.5%);
+    grid-template-columns: repeat(18, 4%);
 }
 
-td {
-    padding: 8px;
-    margin: 4px;
-    margin: 4px;
+td
+{
+    margin: 2px;
+    margin-top: 0;
 }
 
-td p {
+body tr:nth-child(1) td:nth-child(13) {
+    grid-column: span 5;
+    background-color: red;
+}
+
+td p 
+{
     word-wrap: break-word;
+    margin: 0;
+    padding: 0;
 }
-
-td span{
-    font-size: 0.5rem;
-    padding-left: 0.2em;
-}
-
-td p:nth-child(2n+1) {
-    font-weight: 700;
-    font-size: 0.75rem;
-    text-align: center;
-    margin-bottom: 0;
-}
-
-td p:nth-child(2n){
-    padding-top: 0;
-    text-align: center;
-    font-size: 1.25rem;
-}
-@media (max-width: 1200px) {
-    .container{
-        max-width: 100%;
-        min-width: 100%;
+.atomicNumber
+{
+        font-weight: 700;
+        font-size: 0.50em;
+        text-align: left;
+        margin-bottom: 0;
         width: 100%;
-    }
 }
 
-.Alkali.Metal,
-.Alkaline.Earth.Metal,
-.Transition.Metal{
-    font-size: 24px;
+.symbol
+{
+        font-size: 0.70em;
+        text-align: center;
+}
+
+.name
+{
+       padding-top: 0;
+       text-align: center;
+       font-size: 0.40em;
+       width: 100%;
+
 }
 
 .Alkali.Metal {
