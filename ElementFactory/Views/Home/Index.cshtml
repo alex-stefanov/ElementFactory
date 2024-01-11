@@ -1,7 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
 @model List<ElementFactory.Data.Models.ChemicalElement>
 
 <form>
@@ -16,18 +15,19 @@
                         {
                             <td id="listItems">
                                 <div class="listItems">
-                                    <select class="seeItemsList">
-                                        <option class="seeAtomicNumber">Изглед по атомна маса</option>
-                                        <option class="seePhysicalAppearance">Изглед по физично състояние</option>
-                                        <option class="seeAtomicRadius">Изглед по атомен радиус</option>
-                                        <option class="seeMeltingPoint">Изглед по температура на топене</option>
-                                        <option class="seeBoilingPoint">Изглед по температура на кипене</option>
-                                        <option class="seeByYear">Изглед по години (въведи година)</option>
-                                     </select>
+                                    <select id="seeItemsList">
+                                        <option id="seeAtomicNumber">Изглед по атомен номер</option>
+                                        <option id="seeAtomicMass">Изглед по атомна маса</option>
+                                        <option id="seePhysicalAppearance">Изглед по физично състояние</option>
+                                        <option id="seeAtomicRadius">Изглед по атомен радиус</option>
+                                        <option id="seeMeltingPoint">Изглед по температура на топене</option>
+                                        <option id="seeBoilingPoint">Изглед по температура на кипене</option>
+                                        <option id="seeByYear">Изглед по години (въведи година)</option>
+                                    </select>
                                 </div>
                             </td>
                         }
-                        else if(!(period == 1 && 
+                        else if (!(period == 1 &&
                         (group == 13 || group == 14 || group == 15 || group == 16 || group == 17)))
                         {
                             ElementFactory.Data.Models.ChemicalElement?
@@ -62,7 +62,7 @@
                     @if (i == 1)
                     {
                         @foreach (ElementFactory.Data.Models.ChemicalElement
-                        chemicalElement in Model.Where(x => x.Group == 0 && x.Period == 6))
+                       chemicalElement in Model.Where(x => x.Group == 0 && x.Period == 6))
                         {
                             <td class="@chemicalElement.ChemicalType.Name">
                                 <a>
@@ -76,7 +76,8 @@
                     else
                     {
                         foreach (ElementFactory.Data.Models.ChemicalElement
-                        chemicalElement in Model.Where(x => x.Group == 0 && x.Period == 7))
+                        chemicalElement in Model
+                            .Where(x => x.Group == 0 && x.Period == 7))
                         {
                             <td class="@chemicalElement.ChemicalType.Name">
                                 <a>
@@ -89,6 +90,11 @@
                     }
                 </tr>
             }
-        </tbody>     
+        </tbody>
     </table>
 </form>
+
+<script src="/js/listItems.js" asp-append-version="true" onload="PageSettings(new List<decimal>
+(@Model.Select(x => new{
+    x.AtomicMass
+}))"></script>

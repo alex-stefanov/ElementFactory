@@ -44,32 +44,31 @@ td
 
 td p 
 {
-        word-wrap: break-word;
-        margin: 0;
-        padding: 0;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
 }
 .atomicNumber
 {
-        font-weight: 700;
-        font-size: 0.50em;
-        text-align: left;
-        margin-bottom: 0;
-        width: 100%;
+    font-weight: 700;
+    font-size: 0.50em;
+    text-align: left;
+    margin-bottom: 0;
+    width: 100%;
 }
 
 .symbol
 {
-        font-size: 0.70em;
-        text-align: center;
+    font-size: 0.70em;
+    text-align: center;
 }
 
 .name
 {
-       padding-top: 0;
-       text-align: center;
-       font-size: 0.40em;
-       width: 100%;
-
+    padding-top: 0;
+    text-align: center;
+    font-size: 0.40em;
+    width: 100%;
 }
 
 .Alkali.Metal {
@@ -121,3 +120,4 @@ td p
     background-color: #db80b5;
     border: 6px solid #ef59a1;
 }
+

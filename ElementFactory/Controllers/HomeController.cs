@@ -3,7 +3,7 @@ using ElementFactory.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
-using System.Linq;
+
 namespace ElementFactory.Controllers
 {
     public class HomeController : Controller
@@ -19,12 +19,18 @@ namespace ElementFactory.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var elements = this
-                ._context
+            var elements = this._context
                 .ChemicalElements
                 .Include(x => x.ChemicalType)
                 .OrderBy(x => x.AtomicNumber)
                 .ToList();
+
+            var atomicMasses = new List<decimal>();
+
+            elements.ForEach(element =>
+            {
+                atomicMasses.Add(element.AtomicMass);
+            });
 
             return View(elements);
         }
