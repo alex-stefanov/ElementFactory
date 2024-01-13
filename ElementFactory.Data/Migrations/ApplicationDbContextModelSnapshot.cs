@@ -34,8 +34,17 @@ namespace ElementFactory.Data.Migrations
                     b.Property<int>("AtomicNumber")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("AtomicRadius")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("BoilingPoint")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("ChemicalTypeId")
                         .HasColumnType("int");
+
+                    b.Property<decimal>("Electronegativity")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("ElectronicLayers")
                         .HasColumnType("int");
@@ -49,12 +58,22 @@ namespace ElementFactory.Data.Migrations
                     b.Property<bool>("IsSynthetic")
                         .HasColumnType("bit");
 
+                    b.Property<decimal>("MeltingPoint")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(13)
                         .HasColumnType("nvarchar(13)");
 
                     b.Property<int>("Period")
+                        .HasColumnType("int");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("YearFound")
                         .HasColumnType("int");
 
                     b.HasKey("Symbol");

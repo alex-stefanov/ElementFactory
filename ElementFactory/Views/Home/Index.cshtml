@@ -94,4 +94,20 @@
     </table>
 </form>
 
-<script src="/js/listItems.js" asp-append-version="true" onload="PageSettings(@Html.Raw(Json.Serialize(Model.Select(x => x.AtomicMass))))"></script>
+@{
+    var chemicalTypesJson = Json.Serialize(Model.Select(x => x.ChemicalType.Name.ToCharArray().Select(x => (int)x)));
+    var atomicMassesJson = Json.Serialize(Model.Select(x => x.AtomicMass));
+    var physicalStatesJson = Json.Serialize(Model.Select(x => x.State?.ToCharArray().Select(x => (int)x)));
+    var atomicRadiuses = Json.Serialize(Model.Select(x => x.AtomicRadius));
+    var meltingPoints = Json.Serialize(Model.Select(x => x.MeltingPoint));
+    var boilingPoints = Json.Serialize(Model.Select(x => x.BoilingPoint));
+    var years = Json.Serialize(Model.Select(x => x.YearFound));
+} 
+<script src="/js/listItems.js" asp-append-version="true"
+    onload="PageSettings
+(@chemicalTypesJson, 
+@atomicMassesJson, 
+@physicalStatesJson,
+@atomicRadiuses,
+@meltingPoints,
+@boilingPoints)"></script>

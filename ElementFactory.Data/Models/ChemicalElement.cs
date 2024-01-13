@@ -76,7 +76,43 @@
         [ForeignKey(nameof(ChemicalType))]
         [Required]
         public int ChemicalTypeId { get; set; }
-        
+
+        /// <summary>
+        /// Boiling point for the Element
+        /// </summary>
+        [Required]
+        public decimal BoilingPoint { get; set; }
+
+        /// <summary>
+        /// Melting point for the Element
+        /// </summary>
+        [Required]
+        public decimal MeltingPoint { get; set; }
+
+        /// <summary>
+        /// Year when the Element was found
+        /// </summary>
+        [Required]
+        public int YearFound { get; set; }
+
+        /// <summary>
+        /// Physical state for the Element
+        /// </summary>
+        [Required]
+        public string? State { get; set; }
+
+        /// <summary>
+        /// Electronegativity for the Element
+        /// </summary>
+        [Required]
+        public decimal Electronegativity { get; set; }
+
+        /// <summary>
+        /// Atomic Radius for the Element
+        /// </summary>
+        [Required]
+        public decimal AtomicRadius { get; set; }
+
         /// <summary>
         /// Property for the Chemical Type
         /// </summary>

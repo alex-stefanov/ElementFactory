@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FN4fH4TI40F3fGFFE5yg1K20Lg1V0njDgKv2dD9dxfBLG6Tjt8QHiTS/BUYEknY7c0dUBMYoKo2dIzZ0ewioSw==",
+  "dgSpecHash": "YG6L8qE55whd0kbzLMhZMH6pyBYxcwx3mZEmB0vOcGYiIqW7zJHEr7gT3j7fZU0Dq5vZDn6JOIWTBHbma4Tk1g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jerry\\Documents\\Stilyan\\Olympiad\\ElementFactory.Data\\ElementFactory.Data.csproj",
+  "projectFilePath": "C:\\Users\\Jerry\\Documents\\Stilyan\\Programming\\Olympiad\\ElementFactory.Data\\ElementFactory.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jerry\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Jerry\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.22\\microsoft.aspnetcore.cryptography.internal.6.0.22.nupkg.sha512",

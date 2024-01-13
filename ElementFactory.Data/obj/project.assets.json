@@ -2459,11 +2459,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jerry\\Documents\\Stilyan\\Olympiad\\ElementFactory.Data\\ElementFactory.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Jerry\\Documents\\Stilyan\\Programming\\Olympiad\\ElementFactory.Data\\ElementFactory.Data.csproj",
       "projectName": "ElementFactory.Data",
-      "projectPath": "C:\\Users\\Jerry\\Documents\\Stilyan\\Olympiad\\ElementFactory.Data\\ElementFactory.Data.csproj",
+      "projectPath": "C:\\Users\\Jerry\\Documents\\Stilyan\\Programming\\Olympiad\\ElementFactory.Data\\ElementFactory.Data.csproj",
       "packagesPath": "C:\\Users\\Jerry\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jerry\\Documents\\Stilyan\\Olympiad\\ElementFactory.Data\\obj\\",
+      "outputPath": "C:\\Users\\Jerry\\Documents\\Stilyan\\Programming\\Olympiad\\ElementFactory.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jerry\\AppData\\Roaming\\NuGet\\NuGet.Config",
