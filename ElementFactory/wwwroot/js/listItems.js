@@ -12,26 +12,6 @@ function PageSettings(atomicMasses) {
        
     }
 
-    function LinearInterp(start, end, percentage) {
-        start + Math.round(percentage * (end - start));
-    }
-
-    function ColorInterp(r, g, b) {
-        return "rgb(" + LinearInterp(r) + "," + LinearInterp(g) + "," + LinearInterp(b) + ")";
-    }
-
-    function GradientPick(start, end, percentage) {
-        if (percentage < 0.5) {
-            return ColorInterp(start, "red", percentage / 0.5);
-        }
-        else if (percentage == 0.5) {
-            return "blue";
-        }
-        else {
-            return ColorInterp("blue", "green", (percentage - 0.5) / 0.5);
-        }
-    }
-
     select
     .addEventListener('change', function (event) {
 
@@ -56,10 +36,7 @@ function PageSettings(atomicMasses) {
                     var mass = atomicMasses[i];                    
 
                     StyleCell(currentCell);
-
-                console.log(GradientPick(0, 255, mass)); 
-                console.log(currentCell);
-                    currentCell.style.backgroundColor = GradientPick(0, 255, mass);
+                    
             } else if (selectedOption == 'seePhysicalAppearance') {
 
             } else if (selectedOption == 'seeAtomicRadius') {
