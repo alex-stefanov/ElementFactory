@@ -114,6 +114,12 @@
         public decimal AtomicRadius { get; set; }
 
         /// <summary>
+        /// Density of the Element
+        /// </summary>
+        [Required]
+        public decimal Density { get; set; }
+
+        /// <summary>
         /// Property for the Chemical Type
         /// </summary>
         public virtual ChemicalType ChemicalType { get; set; } 

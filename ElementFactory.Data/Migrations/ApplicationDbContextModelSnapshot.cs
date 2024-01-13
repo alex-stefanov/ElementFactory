@@ -43,6 +43,9 @@ namespace ElementFactory.Data.Migrations
                     b.Property<int>("ChemicalTypeId")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("Density")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<decimal>("Electronegativity")
                         .HasColumnType("decimal(18,2)");
 
