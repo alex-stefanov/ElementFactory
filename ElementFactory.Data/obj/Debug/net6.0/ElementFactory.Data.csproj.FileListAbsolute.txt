@@ -40,3 +40,17 @@ C:\Users\Jerry\Documents\Stilyan\Olympiad\ElementFactory.Data\obj\Debug\net6.0\r
 C:\Users\Jerry\Documents\Stilyan\Olympiad\ElementFactory.Data\obj\Debug\net6.0\ElementFactory.Data.pdb
 C:\Users\Jerry\Documents\Stilyan\Olympiad\ElementFactory.Data\obj\Debug\net6.0\ElementFactory.Data.genruntimeconfig.cache
 C:\Users\Jerry\Documents\Stilyan\Olympiad\ElementFactory.Data\obj\Debug\net6.0\ref\ElementFactory.Data.dll
+C:\Users\Jerry\Documents\Stilyan\Programming\Olympiad\ElementFactory.Data\bin\Debug\net6.0\ElementFactory.Data.deps.json
+C:\Users\Jerry\Documents\Stilyan\Programming\Olympiad\ElementFactory.Data\bin\Debug\net6.0\ElementFactory.Data.runtimeconfig.json
+C:\Users\Jerry\Documents\Stilyan\Programming\Olympiad\ElementFactory.Data\bin\Debug\net6.0\ElementFactory.Data.dll
+C:\Users\Jerry\Documents\Stilyan\Programming\Olympiad\ElementFactory.Data\bin\Debug\net6.0\ElementFactory.Data.pdb
+C:\Users\Jerry\Documents\Stilyan\Programming\Olympiad\ElementFactory.Data\obj\Debug\net6.0\ElementFactory.Data.csproj.AssemblyReference.cache
+C:\Users\Jerry\Documents\Stilyan\Programming\Olympiad\ElementFactory.Data\obj\Debug\net6.0\ElementFactory.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jerry\Documents\Stilyan\Programming\Olympiad\ElementFactory.Data\obj\Debug\net6.0\ElementFactory.Data.AssemblyInfoInputs.cache
+C:\Users\Jerry\Documents\Stilyan\Programming\Olympiad\ElementFactory.Data\obj\Debug\net6.0\ElementFactory.Data.AssemblyInfo.cs
+C:\Users\Jerry\Documents\Stilyan\Programming\Olympiad\ElementFactory.Data\obj\Debug\net6.0\ElementFactory.Data.csproj.CoreCompileInputs.cache
+C:\Users\Jerry\Documents\Stilyan\Programming\Olympiad\ElementFactory.Data\obj\Debug\net6.0\ElementFactory.Data.dll
+C:\Users\Jerry\Documents\Stilyan\Programming\Olympiad\ElementFactory.Data\obj\Debug\net6.0\refint\ElementFactory.Data.dll
+C:\Users\Jerry\Documents\Stilyan\Programming\Olympiad\ElementFactory.Data\obj\Debug\net6.0\ElementFactory.Data.pdb
+C:\Users\Jerry\Documents\Stilyan\Programming\Olympiad\ElementFactory.Data\obj\Debug\net6.0\ElementFactory.Data.genruntimeconfig.cache
+C:\Users\Jerry\Documents\Stilyan\Programming\Olympiad\ElementFactory.Data\obj\Debug\net6.0\ref\ElementFactory.Data.dll

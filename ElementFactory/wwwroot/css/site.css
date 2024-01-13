@@ -1,3 +1,8 @@
+:root{
+    --borderPixels: 4px;
+    --borderType: solid;
+}
+
 body 
 {
     margin-bottom: 60px;
@@ -48,6 +53,7 @@ td p
     margin: 0;
     padding: 0;
 }
+
 .atomicNumber
 {
     font-weight: 700;
@@ -73,51 +79,66 @@ td p
 
 .Alkali.Metal {
     background-color: #f48584;
-    border: 6px solid red;
+    border: var(--borderPixels) solid red;
 }
 
 .Alkaline.Earth.Metal {
     background-color: #f7b476;
-    border: 6px solid orange;
+    border: var(--borderPixels) solid orange;
 }
 
 .Transition.Metal {
     background-color: #faf59c;
-    border: 6px solid yellow;
+    border: var(--borderPixels) solid yellow;
 }
 
 .Metaloid {
     background-color: #a0d6be;
-    border: 6px solid green;
+    border: var(--borderPixels) solid green;
 }
 
 .PostTransition.Metal {
     background-color: #cee07b;
-    border: 6px solid #90c843;
+    border: var(--borderPixels) var(--borderType) #90c843;
 }
 
 .Non-Metal {
     background-color: #96d9eb;
-    border: 6px solid #62ccd9;
+    border: var(--borderPixels) var(--borderType) #62ccd9;
 }
 
 .Halogen {
     background-color: #7ec2ec;
-    border: 6px solid #6698ba;
+    border: var(--borderPixels) var(--borderType) #6698ba;
 }
 
 .Noble.gas {
     background-color: #ccbfde;
-    border: 6px solid #7a3193;
+    border: var(--borderPixels) var(--borderType) #7a3193;
 }
 
 .Lanthanide {
     background-color: #f9c7dd;
-    border: 6px solid #f495bf;
+    border: var(--borderPixels) var(--borderType) #f495bf;
 }
 
 .Actinide {
     background-color: #db80b5;
-    border: 6px solid #ef59a1;
+    border: var(--borderPixels) var(--borderType) #ef59a1;
 }
 
+.Liquid{
+
+}
+
+.Solid{
+
+}
+
+.Gas{
+
+}
+
+.NA {
+
+}
