@@ -94,7 +94,4 @@
     </table>
 </form>
 
-<script src="/js/listItems.js" asp-append-version="true" onload="PageSettings(new List<decimal>
-(@Model.Select(x => new{
-    x.AtomicMass
-}))"></script>
+<script src="/js/listItems.js" asp-append-version="true" onload="PageSettings(@Html.Raw(Json.Serialize(Model.Select(x => x.AtomicMass))))"></script>
