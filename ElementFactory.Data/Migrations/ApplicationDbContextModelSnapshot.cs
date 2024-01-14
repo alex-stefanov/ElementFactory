@@ -52,6 +52,10 @@ namespace ElementFactory.Data.Migrations
                     b.Property<int>("ElectronicLayers")
                         .HasColumnType("int");
 
+                    b.Property<string>("EnglishName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Group")
                         .HasColumnType("int");
 
