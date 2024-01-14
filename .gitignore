@@ -397,6 +397,93 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-ElementFactory/bin/
+# ASP.NET
+*.user
+*.suo
+*.cache
+*.log
+*.vscode/
+*/bin/
+*/obj/
 
-ElementFactory/obj/
+# Visual Studio files
+.vscode/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.suo
+*.user
+*.suo
+*.userosscache
+
+# Compiled and temporary files
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.log
+*.config
+*.bak
+*.cache
+*.csv
+*.resx
+*.sql
+*.csproj.user
+*.mdf
+*.ldf
+
+# Package files
+*.nupkg
+*.pupkg
+*.ipch/
+*.resharper
+*.resharper.user
+
+# Rider
+.idea/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.suo
+*.user
+*.suo
+*.userosscache
+*.suo
+*.user
+*.userosscache
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
