@@ -25,6 +25,12 @@
         public string Name { get; set; } = null!;
 
         /// <summary>
+        /// Element English Name
+        /// </summary>
+        [Required]
+        public string? EnglishName { get; set; } = null!;
+
+        /// <summary>
         /// Element Atomic Number
         /// </summary>
         [Required]
