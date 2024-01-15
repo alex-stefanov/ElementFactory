@@ -1,4 +1,5 @@
-﻿@{
+﻿@using System.Text.Json;
+@{
     ViewData["Title"] = "Home Page";
 }
 @model List<ElementFactory.Data.Models.ChemicalElement>
@@ -34,22 +35,22 @@
                                         <option id="seeByYear">Изглед по години (въведи година)</option>
                                         <option id="seeByName">Намери елемент по име (въведи име)</option>
                                     </select>
-                                    <input type="number" class="yearInput"/>
-                                    <input type="text" class="elementInput"/>
+                                    <input type="number" class="yearInput" />
+                                    <input type="text" class="elementInput" />
                                 </div>
                             </td>
                         }
                         else if (
-                            !(period == 1 &&
-                            (group == 13 ||
-                            group == 14 || 
-                            group == 15 || 
-                            group == 16 || 
-                            group == 17)))
+                        !(period == 1 &&
+                        (group == 13 ||
+                        group == 14 ||
+                        group == 15 ||
+                        group == 16 ||
+                        group == 17)))
                         {
-                            ElementFactory.Data.Models.ChemicalElement? chemicalElement = 
-                                @Model.FirstOrDefault(x => x.Period == period && x.Group == group);
-                                
+                            ElementFactory.Data.Models.ChemicalElement? chemicalElement =
+                            @Model.FirstOrDefault(x => x.Period == period && x.Group == group);
+
                             if (chemicalElement == null)
                             {
                                 <td></td>
@@ -80,8 +81,8 @@
                     <td></td>
                     @if (i == 1)
                     {
-                       @foreach (ElementFactory.Data.Models.ChemicalElement
-                            chemicalElement in Model.Where(x => x.Group == 0 && x.Period == 6))
+                        @foreach (ElementFactory.Data.Models.ChemicalElement
+                       chemicalElement in Model.Where(x => x.Group == 0 && x.Period == 6))
                         {
                             <td class="@chemicalElement.ChemicalType.Name">
                                 <a>
@@ -96,7 +97,7 @@
                     {
                         foreach (ElementFactory.Data.Models.ChemicalElement
                         chemicalElement in Model
-                            .Where(x => x.Group == 0 && x.Period == 7))
+                        .Where(x => x.Group == 0 && x.Period == 7))
                         {
                             <td class="@chemicalElement.ChemicalType.Name">
                                 <a>
@@ -114,26 +115,10 @@
 </form>
 
 @{
-    var atomicNumbersJson = Json.Serialize(Model.Select(x => x.AtomicNumber));
-    var symbolsJson = Json.Serialize(Model.Select(x => x.Symbol.ToCharArray().Select(x => (int)x)));
-    var namesJson = Json.Serialize(Model.Select(x => x.Name.ToCharArray().Select(x => (int)x)));
-    var chemicalTypesJson = Json.Serialize(Model.Select(x => x.ChemicalType.Name.ToCharArray().Select(x => (int)x)));
-    var atomicMassesJson = Json.Serialize(Model.Select(x => x.AtomicMass));
-    var physicalStatesJson = Json.Serialize(Model.Select(x => x.State?.ToCharArray().Select(x => (int)x)));
-    var atomicRadiuses = Json.Serialize(Model.Select(x => x.AtomicRadius));
-    var meltingPoints = Json.Serialize(Model.Select(x => x.MeltingPoint));
-    var boilingPoints = Json.Serialize(Model.Select(x => x.BoilingPoint));
-    var years = Json.Serialize(Model.Select(x => x.YearFound));
-} 
-<script src="/js/listItems.js" asp-append-version="true"
-    onload="PageSettings(
-@atomicNumbersJson,
-@symbolsJson,
-@namesJson,
-@chemicalTypesJson, 
-@atomicMassesJson, 
-@physicalStatesJson,
-@atomicRadiuses,
-@meltingPoints,
-@boilingPoints,
-@years)"></script>
+    var modelJson = JsonSerializer.Serialize(Model, new JsonSerializerOptions()
+    {
+         ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles
+    });
+
+}
+<script src="/js/listItems.js" asp-append-version="true" onload="PageSettings(@modelJson)"></script>
