@@ -3,9 +3,14 @@
 }
 @model List<ElementFactory.Data.Models.ChemicalElement>
 
+<div class="errorDiv">
+    Invalid year! Value must be from 0 to 2024!
+</div>
+
 <form>
     <table>
         <tbody>
+            <!--Upper part of the table-->
             @for (int period = 1; period <= 7; period++)
             {
                 <tr>
@@ -16,7 +21,7 @@
                             <td id="listItems">
                                 <div class="listItems">
                                     <select id="seeItemsList">
-                                        <option id="seeAtomicNumber">Изглед по атомен номер</option>
+                                        <option id="seeAtomicNumber">Изглед по характер на елементите</option>
                                         <option id="seeAtomicMass">Изглед по атомна маса</option>
                                         <option id="seePhysicalAppearance">Изглед по физично състояние</option>
                                         <option id="seeAtomicRadius">Изглед по атомен радиус</option>
@@ -24,15 +29,21 @@
                                         <option id="seeBoilingPoint">Изглед по температура на кипене</option>
                                         <option id="seeByYear">Изглед по години (въведи година)</option>
                                     </select>
+                                    <input type="number" class="yearInput"/>
                                 </div>
                             </td>
                         }
-                        else if (!(period == 1 &&
-                        (group == 13 || group == 14 || group == 15 || group == 16 || group == 17)))
+                        else if (
+                            !(period == 1 &&
+                            (group == 13 ||
+                            group == 14 || 
+                            group == 15 || 
+                            group == 16 || 
+                            group == 17)))
                         {
-                            ElementFactory.Data.Models.ChemicalElement?
-                            chemicalElement = @Model
-                            .FirstOrDefault(x => x.Period == period && x.Group == group);
+                            ElementFactory.Data.Models.ChemicalElement? chemicalElement = 
+                                @Model.FirstOrDefault(x => x.Period == period && x.Group == group);
+                                
                             if (chemicalElement == null)
                             {
                                 <td></td>
@@ -53,6 +64,8 @@
                 </tr>
 
             }
+
+            <!--Lanthanides and Actinides-->
             @for (int i = 1; i <= 2; i++)
             {
                 <tr>
@@ -61,8 +74,8 @@
                     <td></td>
                     @if (i == 1)
                     {
-                        @foreach (ElementFactory.Data.Models.ChemicalElement
-                       chemicalElement in Model.Where(x => x.Group == 0 && x.Period == 6))
+                       @foreach (ElementFactory.Data.Models.ChemicalElement
+                            chemicalElement in Model.Where(x => x.Group == 0 && x.Period == 6))
                         {
                             <td class="@chemicalElement.ChemicalType.Name">
                                 <a>
@@ -105,7 +118,6 @@
     var meltingPoints = Json.Serialize(Model.Select(x => x.MeltingPoint));
     var boilingPoints = Json.Serialize(Model.Select(x => x.BoilingPoint));
     var years = Json.Serialize(Model.Select(x => x.YearFound));
-    
 } 
 <script src="/js/listItems.js" asp-append-version="true"
     onload="PageSettings
@@ -117,4 +129,5 @@
 @physicalStatesJson,
 @atomicRadiuses,
 @meltingPoints,
-@boilingPoints)"></script>
+@boilingPoints,
+@years)"></script>

@@ -35,6 +35,11 @@ namespace ElementFactory.Controllers
             return View(elements);
         }
 
+        public async Task<IActionResult> Welcome()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
