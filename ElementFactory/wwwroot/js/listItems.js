@@ -25,6 +25,15 @@ function PageSettings(
         element.style = null;
     }
 
+    function ShowElementError(number) {
+        var errorDiv = document.getElementsByClassName(`errorDiv${number}`)[0];
+        errorDiv.style.display = 'block';
+
+        setTimeout(function () {
+            errorDiv.style.display = 'none';
+        }, 3000);
+    }
+
     var cellsCollection = document.getElementsByTagName('td');
 
     var cellsCollectionArray = Array.from(cellsCollection)
@@ -32,7 +41,9 @@ function PageSettings(
             a.getElementsByClassName('atomicNumber')[0].textContent -
             b.getElementsByClassName('atomicNumber')[0].textContent);
 
-    var inputField = document.getElementsByClassName('yearInput')[0];
+    var yearInputField = document.getElementsByClassName('yearInput')[0];
+    var elementInputField = document.getElementsByClassName('elementInput')[0];
+    var darkModeBtn = document.getElementsByClassName('darkModeBtn')[0];
 
     //TODO: -> structure
     for (var i = 0; i < cellsCollectionArray.length; i++) {
@@ -75,15 +86,15 @@ function PageSettings(
 
     var select = document.getElementById('seeItemsList');
 
-    select
-    .addEventListener('change', function (event) {
+    select.addEventListener('change', function (event) {
           event.preventDefault();
 
-          var selectedIndex = select.selectedIndex;
-          var selectedOption = select.options[selectedIndex].id;
-          inputField.style.display = 'none';
+        var selectedIndex = select.selectedIndex;
+        var selectedOption = select.options[selectedIndex].id;
+        yearInputField.style.display = 'none';
+        elementInputField.style.display = 'none';
 
-          for (var i = 0; i < cellsCollectionArray.length; i++) {
+        for (var i = 0; i < cellsCollectionArray.length; i++) {
 
                 var currentCell = cellsCollectionArray[i];
 
@@ -160,13 +171,18 @@ function PageSettings(
             }
 
                 else if (selectedOption == 'seeByYear') {
-                    inputField.style.display = 'inline-block';
+                    yearInputField.style.display = 'inline-block';
                     break;
                 } 
-            }
+
+                else if (selectedOption == 'seeByName') {
+                    elementInputField.style.display = 'inline-block';
+                    break;
+                }
+        }
     });
 
-    inputField.addEventListener('focus', function (event) {
+    yearInputField.addEventListener('focus', function (event) {
         for (var i = 0; i < cellsCollectionArray.length; i++) {
             var chemicalType = chemicalTypeNames[i]
                 .map(x => String.fromCharCode(x)).join('');
@@ -181,27 +197,83 @@ function PageSettings(
         }
     });
 
-    inputField.addEventListener('blur', function (event) {
+    yearInputField.addEventListener('blur', function (event) {
         event.preventDefault();
 
-        var yearValue = inputField.value;
+        var yearValue = yearInputField.value;
 
-        if (!yearValue || yearValue < 0 || yearValue > 2024) {
-            var errorDiv = document.getElementsByClassName('errorDiv')[0];
-            errorDiv.style.display = 'block';
-
-            setTimeout(function () {
-                errorDiv.style.display = 'none';
-            }, 3000);
+        if (!yearValue || yearValue == '' || yearValue == ' ' || yearValue < 0 || yearValue > 2024) {
+            ShowElementError(1);
         }
         else {
             for (var i = 0; i < cellsCollectionArray.length; i++) {
                 var currYear = years[i];
+
                 if (currYear > yearValue) {
                     var cell = cellsCollectionArray[i];
-                    UpdateElement(cell, 'hasYear');
+                    UpdateElement(cell, 'hasNotYear');
                 }
             }
+        }
+    });
+
+    elementInputField.addEventListener('focus', function (event) {
+        for (var i = 0; i < cellsCollectionArray.length; i++) {
+            var chemicalType = chemicalTypeNames[i]
+                .map(x => String.fromCharCode(x)).join('');
+
+            var currentCell = cellsCollectionArray[i];
+
+            UpdateElement(currentCell, null);
+
+            for (var j = 0; j < chemicalType.split(' ').length; j++) {
+                currentCell.classList.add(chemicalType.split(' ')[j]);
+            }
+        }
+    });
+
+    elementInputField.addEventListener('blur', function (event) {
+        event.preventDefault();
+
+        var elementIsFound = false;
+        var elementValue = elementInputField.value;
+
+        if (!elementInputField || elementInputField == '' || elementInputField == ' ') {
+            ShowElementError(2);
+        }
+        else {
+            for (var i = 0; i < cellsCollectionArray.length; i++) {
+
+                var currName = elementNames[i].map(x => String.fromCharCode(x)).join('');;
+                
+                if (currName != elementValue) {
+                    var cell = cellsCollectionArray[i];
+                    UpdateElement(cell, 'hasNotName');
+                }
+                else {
+                    elementIsFound = true;
+                }
+            }
+        }
+
+        if (elementIsFound == false) {
+            ShowElementError(2);
+        }
+    });
+
+    darkModeBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        var textContent = darkModeBtn.textContent;
+        var header = document.querySelector('body > header');
+        if (textContent == 'Dark Mode') {
+            darkModeBtn.textContent = 'Light Mode'; 
+            UpdateElement(darkModeBtn, 'lightModeBtn');
+            UpdateElement(header, 'darkModeHeader');
+        }
+        else {
+            darkModeBtn.textContent = 'Dark Mode';
+            UpdateElement(darkModeBtn, 'darkModeBtn');
+            UpdateElement(header, 'lightModeHeader');
         }
     });
 }

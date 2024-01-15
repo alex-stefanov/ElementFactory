@@ -159,12 +159,14 @@ td p
     border: 3px solid rgb(32, 32, 32);
 }
 
-.yearInput {
+.yearInput,
+.elementInput {
     display: none;
     margin-top: 4px;
 }
 
 .yearInput,
+.elementInput,
 #seeItemsList {
     border: 1px solid #ccc;
     font-size: 16px;
@@ -186,7 +188,8 @@ td p
     color: #D4FFEC;
 }
 
-.errorDiv {
+.errorDiv1,
+.errorDiv2{
     background-color: #ff3333;
     color: white;
     padding: 20px;
@@ -194,4 +197,35 @@ td p
     font-size: 20px;
     display: none;
     margin: 12px 0;
+}
+
+.darkModeBtn, 
+.lightModeBtn {
+    text-decoration: none;
+    padding: 6px 16px;
+    cursor: pointer;
+    border-radius: 16px;
+    font-weight: 400;
+}
+
+.darkModeBtn {
+    color: #D8D9DA;
+    background-color: #272829;
+}
+
+.darkModeBtn:hover {
+    color: #61677A;
+}
+
+.lightModeBtn {
+    color: #D8D9DA;
+    background-color: #272829;
+}
+
+.lightModeBtn:hover {
+    color: #61677A;
+}
+
+.darkModeHeader{
+    color: aliceblue;
 }
