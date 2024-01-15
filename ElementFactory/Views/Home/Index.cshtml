@@ -3,8 +3,12 @@
 }
 @model List<ElementFactory.Data.Models.ChemicalElement>
 
-<div class="errorDiv">
-    Invalid year! Value must be from 0 to 2024!
+<div class="errorDiv1">
+    Невалидна година! Стойността на клетката трябва да е от 0 до 2024!
+</div>
+
+<div class="errorDiv2">
+    Невалидно име! Няма такъв химичен елемент!
 </div>
 
 <form>
@@ -28,8 +32,10 @@
                                         <option id="seeMeltingPoint">Изглед по температура на топене</option>
                                         <option id="seeBoilingPoint">Изглед по температура на кипене</option>
                                         <option id="seeByYear">Изглед по години (въведи година)</option>
+                                        <option id="seeByName">Намери елемент по име (въведи име)</option>
                                     </select>
                                     <input type="number" class="yearInput"/>
+                                    <input type="text" class="elementInput"/>
                                 </div>
                             </td>
                         }
@@ -120,8 +126,8 @@
     var years = Json.Serialize(Model.Select(x => x.YearFound));
 } 
 <script src="/js/listItems.js" asp-append-version="true"
-    onload="PageSettings
-(@atomicNumbersJson,
+    onload="PageSettings(
+@atomicNumbersJson,
 @symbolsJson,
 @namesJson,
 @chemicalTypesJson, 
