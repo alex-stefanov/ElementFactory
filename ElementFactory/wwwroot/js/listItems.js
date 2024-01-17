@@ -1,9 +1,10 @@
-function PageSettings(
-    model) {
+п»їfunction PageSettings(model) {
+    var isPopUpContainerShown = false;
+
     function CreateDOMElement(tagName, parent, id) {
         var element = document.createElement(tagName);
         element.id = id;
-        parent.innerHTML += element;
+        parent.appendChild(element);
         return element;
     }
 
@@ -42,88 +43,105 @@ function PageSettings(
     function PopulateTable(table, currentElement, counter) {
 
         //First Row
-        CreateTableRows(counter, table, 'Агрегатно състояние:', currentElement.State);
+        CreateTableRows(counter, table, 'РђРіСЂРµРіР°С‚РЅРѕ СЃСЉСЃС‚РѕСЏРЅРёРµ:', currentElement.State);
         counter += 2;
 
         //Second Row
-        CreateTableRows(counter, table, 'Период:', currentElement.Period);
+        CreateTableRows(counter, table, 'РџРµСЂРёРѕРґ:', currentElement.Period);
         counter += 2;
 
         //Third Row
-        CreateTableRows(counter, table, 'Група:', currentElement.Group);
+        CreateTableRows(counter, table, 'Р“СЂСѓРїР°:', currentElement.Group);
         counter += 2;
 
         //Fourth Row
-        CreateTableRows(counter, table, 'Електроотрицателност:', currentElement.Electronegativity);
+        CreateTableRows(counter, table, 'Р•Р»РµРєС‚СЂРѕРѕС‚СЂРёС†Р°С‚РµР»РЅРѕСЃС‚:', currentElement.Electronegativity);
         counter += 2;
 
         //Fifth Row
-        CreateTableRows(counter, table, 'Атомна Маса:', currentElement.AtomicMass);
+        CreateTableRows(counter, table, 'РђС‚РѕРјРЅР° РњР°СЃР°:', currentElement.AtomicMass);
         counter += 2;
 
         //Sixth Row
-        CreateTableRows(counter, table, 'Атомен Радиус:', currentElement.AtomicRadius);
+        CreateTableRows(counter, table, 'РђС‚РѕРјРµРЅ Р Р°РґРёСѓСЃ:', currentElement.AtomicRadius);
         counter += 2;
 
         //Seventh Row
-        CreateTableRows(counter, table, 'Плътност:', currentElement.Density);
+        CreateTableRows(counter, table, 'РџР»СЉС‚РЅРѕСЃС‚:', currentElement.Density);
         counter += 2;
 
         //Eighth Row
-        CreateTableRows(counter, table, 'Температура на топене:', currentElement.MeltingPoint);
+        CreateTableRows(counter, table, 'РўРµРјРїРµСЂР°С‚СѓСЂР° РЅР° С‚РѕРїРµРЅРµ:', currentElement.MeltingPoint);
         counter += 2;
 
         //Ninth Row
-        CreateTableRows(counter, table, 'Температура на кипене:', currentElement.BoilingPoint);
+        CreateTableRows(counter, table, 'РўРµРјРїРµСЂР°С‚СѓСЂР° РЅР° РєРёРїРµРЅРµ:', currentElement.BoilingPoint);
         counter += 2;
 
         //Tenth Row
-        CreateTableRows(counter, table, 'Електронни Слоеве:', currentElement.ElectronicLayers);
+        CreateTableRows(counter, table, 'Р•Р»РµРєС‚СЂРѕРЅРЅРё РЎР»РѕРµРІРµ:', currentElement.ElectronicLayers);
         counter += 2;
 
         //Eleventh Row
         if (currentElement.IsRadioactive) {
-            CreateTableRows(counter, table, 'Радиоктивен:', 'Да');
+            CreateTableRows(counter, table, 'Р Р°РґРёРѕРєС‚РёРІРµРЅ:', 'Р”Р°');
         }
         else {
-            CreateTableRows(counter, table, 'Радиоктивен:', 'Не');
+            CreateTableRows(counter, table, 'Р Р°РґРёРѕРєС‚РёРІРµРЅ:', 'РќРµ');
         }
         counter += 2;
 
         //Twelfth Row
         if (currentElement.IsSynthetic) {
-            CreateTableRows(counter, table, 'Синтетичен:', 'Да');
+            CreateTableRows(counter, table, 'РЎРёРЅС‚РµС‚РёС‡РµРЅ:', 'Р”Р°');
         }
         else {
-            CreateTableRows(counter, table, 'Синтетичен:', 'Не');
+            CreateTableRows(counter, table, 'РЎРёРЅС‚РµС‚РёС‡РµРЅ:', 'РќРµ');
         }
     }
 
-    function CreatePopUpMenu(cellsCollectionArray, values) {
+    function AddListenerToCell(currentCell, currentElement) {
 
-        for (var i = 0; i < cellsCollectionArray.length; i++) {
+        currentCell.addEventListener('click', function (event) {
+            event.preventDefault();
+            if (!isPopUpContainerShown) {
 
-            var currentCell = cellsCollectionArray[i];
+                var body = document.getElementsByTagName('body')[0]; var popUpContainerOverlay = CreateDOMElement('div', body, 'popUpContainerOverlay');
 
-            var currentElement = values[i];
-
-            currentCell.addEventListener('mouseover', function (event) {
-                console.log(1);
-                event.preventDefault();
-               
-                var popUpContainer = CreateDOMElement('div', document.getElementsByTagName('body')[0], 'popUpContainer');
-                popUpContainer.style.display = 'none';
+                var popUpContainer = CreateDOMElement('div', popUpContainerOverlay, 'popUpContainer');
 
                 var main = CreateDOMElement('main', popUpContainer, 'popUpMain');
+
+                var xMark = CreateDOMElement('a', main, 'xMark');
+                xMark.textContent = 'X';
+
+                xMark.addEventListener('click', function (event2) {
+                    event2.preventDefault();
+                    body.removeChild(popUpContainerOverlay);
+                    isPopUpContainerShown = false;
+                });
+
+                isPopUpContainerShown = true;
 
                 var header = CreateDOMElement('header', main, 'popUpHeader');
 
                 var article1 = CreateDOMElement('article', header, 'popUpArticle1');
-                article1.textContent = 'Свойства на елемента';
+
+                article1.textContent = 'РЎРІРѕР№СЃС‚РІР° РЅР° РµР»РµРјРµРЅС‚Р°';
 
                 var article2 = CreateDOMElement('article', main, 'popUpArticle2');
 
                 var section1 = CreateDOMElement('section', article2, 'popUpSection1');
+
+                var elementClasses = Array.from(currentCell.classList);
+
+                for (var i = 0; i < elementClasses.length; i++) {
+                    var currentClass = elementClasses[i];
+                    section1.classList.add(currentClass);
+                }
+
+                section1.style.backgroundColor = currentCell.style.backgroundColor;
+                section1.style.border = currentCell.style.border;
 
                 var h2_1 = CreateDOMElement('h2', section1, 'popUpH2_1');
                 h2_1.textContent = currentElement.AtomicNumber;
@@ -142,7 +160,19 @@ function PageSettings(
                 var table = CreateDOMElement('table', section2, 'popUpTable');
 
                 PopulateTable(table, currentElement, 3);
+            }
         })
+    }
+
+    function CreatePopUpMenu(cellsCollectionArray, values) {
+
+        for (var i = 0; i < cellsCollectionArray.length; i++) {
+
+            var currentCell = cellsCollectionArray[i];
+
+            var currentElement = values[i];
+
+            AddListenerToCell(currentCell, currentElement, isPopUpContainerShown);
         }
     }
 
@@ -161,6 +191,7 @@ function PageSettings(
 
                 var currentCell = cellsCollectionArray[i];
                 var currentValue = values[i];
+
                 if (selectedOption == 'seeAtomicNumber') {
 
                     var chemicalType = currentValue.ChemicalType.Name;
@@ -176,7 +207,6 @@ function PageSettings(
                     var mass = currentValue.AtomicMass * 0.60;
 
                     UpdateElement(currentCell, 'hasAtomicMass');
-
 
                     currentCell.style.backgroundColor = `rgba(115, ${235 - mass}, 255)`;
 
@@ -302,21 +332,23 @@ function PageSettings(
             }
             else {
                 for (var i = 0; i < cellsCollectionArray.length; i++) {
-
                     var currName = values[i].Name;
 
-                    if (currName != elementValue) {
-                        var cell = cellsCollectionArray[i];
-                        UpdateElement(cell, 'hasNotName');
-                    }
-                    else {
+                    if (currName == elementValue) {
                         elementIsFound = true;
+                        break;
                     }
                 }
             }
 
             if (elementIsFound == false) {
                 ShowElementError(2);
+            }
+            else {
+                for (var i = 0; i < cellsCollectionArray.length; i++) {
+                    var cell = cellsCollectionArray[i];
+                    UpdateElement(cell, 'hasNotName');
+                }
             }
         });
 
@@ -344,8 +376,8 @@ function PageSettings(
 
     var cellsCollectionArray = Array.from(cellsCollection)
         .filter(x => x.classList.length != 0).sort((a, b) =>
-            a.getElementsByClassName('atomicNumber')[0].textContent -
-            b.getElementsByClassName('atomicNumber')[0].textContent);
+        a.getElementsByClassName('atomicNumber')[0].textContent -
+        b.getElementsByClassName('atomicNumber')[0].textContent);
 
     var yearInputField = document.getElementsByClassName('yearInput')[0];
     var elementInputField = document.getElementsByClassName('elementInput')[0];
