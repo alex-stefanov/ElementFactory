@@ -1,3 +1,2 @@
 # ElementFactory
-Our simple olympic project
-Yes
+Our hardcore olympic project
