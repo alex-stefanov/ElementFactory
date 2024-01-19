@@ -1,4 +1,5 @@
 ﻿@using System.Text.Json;
+@using System.Text.Json.Serialization;
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -114,11 +115,18 @@
     </table>
 </form>
 
+
+<div id="popUpContainerOverlay">
+    <div id="popUpContainer">
+
+    </div>
+</div>
+
 @{
     var modelJson = JsonSerializer.Serialize(Model, new JsonSerializerOptions()
     {
-         ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles
+         ReferenceHandler = ReferenceHandler.IgnoreCycles
     });
-
 }
 <script src="/js/listItems.js" asp-append-version="true" onload="PageSettings(@modelJson)"></script>
+<script src="/js/createDOM.js"></script>

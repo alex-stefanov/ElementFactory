@@ -25,13 +25,6 @@ namespace ElementFactory.Controllers
                 .OrderBy(x => x.AtomicNumber)
                 .ToList();
 
-            var atomicMasses = new List<decimal>();
-
-            elements.ForEach(element =>
-            {
-                atomicMasses.Add(element.AtomicMass);
-            });
-
             return View(elements);
         }
 
@@ -45,7 +38,8 @@ namespace ElementFactory.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, 
+            NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel
