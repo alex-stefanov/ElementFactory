@@ -134,13 +134,13 @@
         /// <summary>
         /// Collection from ChemicalElementQuestions
         /// </summary>
-        public ICollection<ChemicalElementQuestion>
+        public ICollection<ChemicalElementQuestionMap>
             ChemicalElementsQuestions { get; set; } = null!;
 
         /// <summary>
         /// Collection from FoundersChemicalElements
         /// </summary>
-        public ICollection<FounderChemicalElement>
+        public ICollection<FounderChemicalElementMap>
            FoundersChemicalElements { get; set; } = null!;
     }
 }

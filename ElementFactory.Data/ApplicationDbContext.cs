@@ -28,7 +28,7 @@ namespace ElementFactory.Data
         /// <summary>
         /// Database Application Context ChemicalElementQuestion DbSet
         /// </summary>
-        public DbSet<ChemicalElementQuestion> ChemicalElementsQuestions { get; set; } = null!;
+        public DbSet<ChemicalElementQuestionMap> ChemicalElementsQuestions { get; set; } = null!;
 
         /// <summary>
         /// Database Application Context ChemicalType DbSet
@@ -43,7 +43,7 @@ namespace ElementFactory.Data
         /// <summary>
         /// Database Application Context FounderChemicalElement DbSet
         /// </summary>
-        public DbSet<FounderChemicalElement> FoundersChemicalElements { get; set; } = null!;
+        public DbSet<FounderChemicalElementMap> FoundersChemicalElements { get; set; } = null!;
 
         /// <summary>
         /// Database Application Context Question DbSet
@@ -61,7 +61,7 @@ namespace ElementFactory.Data
             // Setting Composite Primary Key For
             // ChemicalElementQuestion
             builder
-                .Entity<ChemicalElementQuestion>()
+                .Entity<ChemicalElementQuestionMap>()
                 .HasKey(ceq => new
                 {
                     ceq.ChemicalElementSymbol,
@@ -71,7 +71,7 @@ namespace ElementFactory.Data
             // Setting Composite Primary Key For
             // FounderChemicalElement
             builder
-                .Entity<FounderChemicalElement>()
+                .Entity<FounderChemicalElementMap>()
                 .HasKey(fce => new
                 {
                     fce.FounderId,
