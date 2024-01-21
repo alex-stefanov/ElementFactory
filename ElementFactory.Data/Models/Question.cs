@@ -25,7 +25,9 @@
         /// <summary>
         /// Collection from ChemicalElementsQuestions
         /// </summary>
-        public ICollection<ChemicalElementQuestion>
+        public ICollection<ChemicalElementQuestionMap>
             ChemicalElementsQuestions { get; set; } = null!;
+
+
     }
 }

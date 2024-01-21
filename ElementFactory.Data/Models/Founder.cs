@@ -32,7 +32,7 @@
         /// <summary>
         /// Collection from FoundersChemicalElements
         /// </summary>
-        public ICollection<FounderChemicalElement>
+        public ICollection<FounderChemicalElementMap>
            FoundersChemicalElements
         { get; set; } = null!;
     }
