@@ -23,6 +23,13 @@
         public string Name { get; set; } = null!;
 
         /// <summary>
+        /// Chemical Type Name in Bulgarian
+        /// </summary>
+        [Required]
+        [MinLength(5), MaxLength(25)]
+        public string BulgarianName { get; set; } = null!;
+
+        /// <summary>
         /// Collection from Chemical Elements
         /// </summary>
         public ICollection<ChemicalElement> ChemicalElements 

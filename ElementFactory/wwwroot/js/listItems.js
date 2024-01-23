@@ -159,11 +159,14 @@
             else {
                 for (var i = 0; i < cellsCollectionArray.length; i++) {
                     var currYear = values[i].YearFound;
-
+                    var currentCell = cellsCollectionArray[i];
+                        
                     if (currYear > yearValue) {
                         var cell = cellsCollectionArray[i];
                         UpdateElement(cell, 'hasNotYear');
                     }
+
+                    currentCell.style.cursor = 'pointer';
                 }
             }
         });
@@ -194,7 +197,8 @@
             else {
                 for (var i = 0; i < cellsCollectionArray.length; i++) {
                     var currName = values[i].Name;
-
+                    var currentCell = cellsCollectionArray[i];
+                    currentCell.style.cursor = 'pointer';
                     if (currName == elementValue) {
                         elementIsFound = true;
                         break;
@@ -246,83 +250,10 @@
 
             currentCell.style.cursor = 'pointer';
 
-            AddListenerToCell(currentCell, currentElement);
+            window.AddListenerToCell(currentCell, currentElement,
+                popUpContainerOverlay, popUpContainer);
         }
     }
-
-    function AddListenerToCell(currentCell, currentElement) {
-
-        currentCell.addEventListener('click', function (event) {
-
-            event.preventDefault();
-
-            popUpContainerOverlay.style.display = 'block';
-            popUpContainer.style.display = 'block';
-
-            popUpContainer.addEventListener('click', function (event2) {
-                event2.stopPropagation();
-            });
-
-            popUpContainerOverlay.addEventListener('click', function (event2) {
-                event2.preventDefault();
-
-                popUpContainer.style.display = 'none';
-                popUpContainerOverlay.style.display = 'none';
-                popUpContainer.innerHTML = '';
-            });
-
-            var main = CreateDOMElement('main', popUpContainer, 'popUpMain');
-
-            var xMark = CreateDOMElement('a', main, 'xMark');
-            xMark.textContent = 'X';
-
-            xMark.addEventListener('click', function (event2) {
-                event2.preventDefault();
-                popUpContainer.style.display = 'none';
-                popUpContainerOverlay.style.display = 'none';
-                popUpContainer.innerHTML = '';
-            });
-
-            var header = CreateDOMElement('header', main, 'popUpHeader');
-
-            var article1 = CreateDOMElement('article', header, 'popUpArticle1');
-
-            article1.textContent = 'Свойства на елемента';
-
-            var article2 = CreateDOMElement('article', main, 'popUpArticle2');
-
-            var section1 = CreateDOMElement('section', article2, 'popUpSection1');
-
-            var elementClasses = Array.from(currentCell.classList);
-
-            for (var i = 0; i < elementClasses.length; i++) {
-                var currentClass = elementClasses[i];
-                section1.classList.add(currentClass);
-            }
-
-            section1.style.backgroundColor = currentCell.style.backgroundColor;
-            section1.style.border = currentCell.style.border;
-
-            var h2_1 = CreateDOMElement('h2', section1, 'popUpH2_1');
-            h2_1.textContent = currentElement.AtomicNumber;
-
-            var h1_1 = CreateDOMElement('h1', section1, 'popUpH1_1');
-            h1_1.textContent = currentElement.Symbol;
-
-            var p1 = CreateDOMElement('p', section1, 'popUpP1');
-            p1.textContent = currentElement.Name;
-
-            var p2 = CreateDOMElement('p', section1, 'popUpP2');
-            p2.textContent = currentElement.ChemicalType.Name;
-
-            var section2 = CreateDOMElement('section', article2, 'popUpSection2');
-
-            var table = CreateDOMElement('table', section2, 'popUpTable');
-
-            PopulateTable(table, currentElement, 3);
-        }
-        )
-    };
 
     var values = Array.from(model);
     var select = document.getElementById('seeItemsList');
@@ -338,7 +269,7 @@
     var elementInputField = document.getElementsByClassName('elementInput')[0];
     var darkModeBtn = document.getElementsByClassName('darkModeBtn')[0];
 
-    CreatePopUpMenu(cellsCollectionArray,values);
+    CreatePopUpMenu(cellsCollectionArray, values);
    
     CreateEventListeners(cellsCollectionArray, values,
         select, yearInputField, elementInputField, darkModeBtn);

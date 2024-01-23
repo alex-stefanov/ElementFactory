@@ -28,7 +28,7 @@
         /// Element English Name
         /// </summary>
         [Required]
-        public string? EnglishName { get; set; } = null!;
+        public string EnglishName { get; set; } = null!;
 
         /// <summary>
         /// Element Atomic Number
@@ -105,7 +105,15 @@
         /// Physical state for the Element
         /// </summary>
         [Required]
-        public string? State { get; set; }
+        [MinLength(1), MaxLength(20)]
+        public string State { get; set; } = null!;
+
+        /// <summary>
+        /// Physical state for the Element in Bulgarian
+        /// </summary>
+        [Required]
+        [MinLength(1), MaxLength(20)]
+        public string BulgarianState { get; set; } = null!;
 
         /// <summary>
         /// Electronegativity for the Element

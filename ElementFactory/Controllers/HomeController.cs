@@ -17,7 +17,12 @@ namespace ElementFactory.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
+        {
+            return RedirectToAction("Welcome");
+        }
+
+        public async Task<IActionResult> LoadTable()
         {
             var elements = this._context
                 .ChemicalElements
@@ -25,10 +30,10 @@ namespace ElementFactory.Controllers
                 .OrderBy(x => x.AtomicNumber)
                 .ToList();
 
-            return View(elements);
+            return View("Index", elements);
         }
 
-        public async Task<IActionResult> Welcome()
+        public IActionResult Welcome()
         {
             return View();
         }
