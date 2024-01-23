@@ -5,6 +5,9 @@
     --borderType: solid;
 }
 
+/* ------------------------------ */
+/* Main page / table css */
+
 body 
 {
     height: 100vh;
@@ -85,6 +88,11 @@ form td p
     width: 100%;
 }
 
+/* ------------------------------ */
+
+/* ------------------------------ */
+/* Different table cells css */
+
 .Alkali.Metal {
     background-color: #f48584;
     border: var(--borderPixels) solid red;
@@ -135,6 +143,11 @@ form td p
     border: var(--borderPixels) var(--borderType) #ef59a1;
 }
 
+/* ------------------------------ */
+
+/* ------------------------------ */
+/* Physical appearances css */
+
 .Liquid {
     background-color: rgb(56, 0, 0);
     color: white;
@@ -158,6 +171,11 @@ form td p
     color: white;
     border: 3px solid rgb(32, 32, 32);
 }
+
+/* ------------------------------ */
+
+/* ------------------------------ */
+/* Main page inputs css */
 
 .yearInput,
 .elementInput {
@@ -189,6 +207,11 @@ form td p
     grid-column: 2 span;
 }
 
+/* ------------------------------ */
+
+/* ------------------------------ */
+/* Physics numericals css */
+
 .hasBoilingPoint {
     color: white;
 }
@@ -201,6 +224,11 @@ form td p
     color: #D4FFEC;
 }
 
+/* ------------------------------ */
+
+/* ------------------------------ */
+/* Errors css */
+
 .errorDiv1,
 .errorDiv2{
     background-color: #ff3333;
@@ -211,6 +239,11 @@ form td p
     display: none;
     margin: 12px 0;
 }
+
+/* ------------------------------ */
+
+/* ------------------------------ */
+/* Dark / Light mode css */
 
 .darkModeBtn, 
 .lightModeBtn {
@@ -243,14 +276,10 @@ form td p
     background-color: aliceblue;
 }
 
-#xMark{
-    font-size: 36px;
-    cursor: pointer;
-    color: red;
-    font-weight: 400;
-    border: 3px solid red;
-    padding: 6px;
-}
+/* ------------------------------ */
+
+/* ------------------------------ */
+/* Pop-up container css */
 
 #popUpContainerOverlay {
     position: fixed;
@@ -273,12 +302,17 @@ form td p
     font-size: 24px;
     transform: scale(0.65);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: #e5dfda;
 }
 
 #popUpHeader {
     font-size: 30px;
     text-align: center;
     padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
 }
 
 #popUpArticle2 {
@@ -300,6 +334,8 @@ form td p
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 16px;
+    position: relative;
 }
 
 #popUpMain {
@@ -316,7 +352,53 @@ form td p
     display: inline-block;
 }
 
-.bg-black{
+#popUpH1_1{
+    font-size: 120px;
+    margin-bottom: 0;
+    position: relative;
+    font-weight: 400;
+}
+
+#popUpArticle1{
+    display: inline;
+    font-size: 46px;
+    border-bottom: 3px solid black;
+    font-weight: 500;
+}
+
+#popUpSection2 th p,
+#popUpSection2 td p{
+    font-weight: 600;
+}
+
+#popUpP1 {
+    font-size: 40px;
+    margin-left: 8px;
+}
+
+#popUpP {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 12px;
+    font-size: 62px;
+    font-weight: 500;
+}
+
+#popUpP2 {
+    font-size: 36px;
+}
+
+#xMark {
+    font-size: 56px;
+    cursor: pointer;
+    color: red;
+    font-weight: 400;
+    padding: 6px;
+    display: inline;
+}
+
+.bg-black {
     color: white;
 }
 

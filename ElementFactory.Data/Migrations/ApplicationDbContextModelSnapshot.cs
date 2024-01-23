@@ -40,6 +40,11 @@ namespace ElementFactory.Data.Migrations
                     b.Property<decimal>("BoilingPoint")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("BulgarianState")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
                     b.Property<int>("ChemicalTypeId")
                         .HasColumnType("int");
 
@@ -78,7 +83,8 @@ namespace ElementFactory.Data.Migrations
 
                     b.Property<string>("State")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<int>("YearFound")
                         .HasColumnType("int");
@@ -92,7 +98,7 @@ namespace ElementFactory.Data.Migrations
                     b.HasComment("Chemical Element Class");
                 });
 
-            modelBuilder.Entity("ElementFactory.Data.Models.ChemicalElementQuestion", b =>
+            modelBuilder.Entity("ElementFactory.Data.Models.ChemicalElementQuestionMap", b =>
                 {
                     b.Property<string>("ChemicalElementSymbol")
                         .HasColumnType("nvarchar(2)");
@@ -116,6 +122,11 @@ namespace ElementFactory.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("BulgarianName")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -154,7 +165,7 @@ namespace ElementFactory.Data.Migrations
                     b.HasComment("Founder Class");
                 });
 
-            modelBuilder.Entity("ElementFactory.Data.Models.FounderChemicalElement", b =>
+            modelBuilder.Entity("ElementFactory.Data.Models.FounderChemicalElementMap", b =>
                 {
                     b.Property<int>("FounderId")
                         .HasColumnType("int");
@@ -404,7 +415,7 @@ namespace ElementFactory.Data.Migrations
                     b.Navigation("ChemicalType");
                 });
 
-            modelBuilder.Entity("ElementFactory.Data.Models.ChemicalElementQuestion", b =>
+            modelBuilder.Entity("ElementFactory.Data.Models.ChemicalElementQuestionMap", b =>
                 {
                     b.HasOne("ElementFactory.Data.Models.ChemicalElement", "ChemicalElement")
                         .WithMany("ChemicalElementsQuestions")
@@ -423,7 +434,7 @@ namespace ElementFactory.Data.Migrations
                     b.Navigation("Question");
                 });
 
-            modelBuilder.Entity("ElementFactory.Data.Models.FounderChemicalElement", b =>
+            modelBuilder.Entity("ElementFactory.Data.Models.FounderChemicalElementMap", b =>
                 {
                     b.HasOne("ElementFactory.Data.Models.ChemicalElement", "ChemicalElement")
                         .WithMany("FoundersChemicalElements")
