@@ -33,17 +33,23 @@ namespace ElementFactory
 
             builder.Services
                 .AddDatabaseDeveloperPageExceptionFilter();
-
+           
             builder.Services
                 .AddDefaultIdentity<IdentityUser>
                 (options =>
                 {
                     options
                     .SignIn
-                    .RequireConfirmedAccount = true;
+                    .RequireConfirmedAccount = false;
+                    options.Password.RequiredLength = 5;
                 })
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            
+
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/User/Login";
+            });
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
