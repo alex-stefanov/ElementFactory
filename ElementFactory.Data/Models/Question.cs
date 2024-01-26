@@ -23,11 +23,19 @@
         public string Description { get; set; } = null!;
 
         /// <summary>
-        /// Collection from ChemicalElementsQuestions
+        /// Collection from question answers
         /// </summary>
-        public ICollection<ChemicalElementQuestionMap>
-            ChemicalElementsQuestions { get; set; } = null!;
+        public ICollection<Answer> Answers { get; set; } = null!;
 
+        /// <summary>
+        /// Question right answer
+        /// </summary>
+        public string RightAnswer { get; set; } = null!;
 
+        /// <summary>
+        /// Collection from QuestionsTests
+        /// </summary>
+        public ICollection<QuestionTestMap> QuestionsTests { get; set; }
+         = null!;
     }
 }

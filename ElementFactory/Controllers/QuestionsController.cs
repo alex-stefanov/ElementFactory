@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ElementFactory.Models.Question;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ElementFactory.Controllers
 {
@@ -11,6 +12,12 @@ namespace ElementFactory.Controllers
 
         public IActionResult Classes()
         {
+            return View();
+        }
+
+        public IActionResult Question(QuestionModel model)
+        {
+            // .LoadQuestionById(model.id)
             return View();
         }
     }

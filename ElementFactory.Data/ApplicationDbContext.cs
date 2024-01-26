@@ -1,10 +1,10 @@
-﻿using ElementFactory.Data.Models;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
-
-namespace ElementFactory.Data
+﻿namespace ElementFactory.Data
 {
+    using ElementFactory.Data.Configuration;
+    using ElementFactory.Data.Models;
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore;
+
     /// <summary>
     /// Database Application Context
     /// </summary>
@@ -26,11 +26,6 @@ namespace ElementFactory.Data
         public DbSet<ChemicalElement> ChemicalElements { get; set; } = null!;
 
         /// <summary>
-        /// Database Application Context ChemicalElementQuestion DbSet
-        /// </summary>
-        public DbSet<ChemicalElementQuestionMap> ChemicalElementsQuestions { get; set; } = null!;
-
-        /// <summary>
         /// Database Application Context ChemicalType DbSet
         /// </summary>
         public DbSet<ChemicalType> ChemicalTypes { get; set; } = null!;
@@ -46,9 +41,24 @@ namespace ElementFactory.Data
         public DbSet<FounderChemicalElementMap> FoundersChemicalElements { get; set; } = null!;
 
         /// <summary>
+        /// Database Application Context Test DbSet
+        /// </summary>
+        public DbSet<Test> Tests { get; set; } = null!;
+
+        /// <summary>
         /// Database Application Context Question DbSet
         /// </summary>
         public DbSet<Question> Questions { get; set; } = null!;
+
+        /// <summary>
+        /// Database Application Context QuestionsTest DbSet
+        /// </summary>
+        public DbSet<QuestionTestMap> QuestionsTests { get; set; } = null!;
+
+        /// <summary>
+        /// Database Application Context Answer DbSet
+        /// </summary>
+        public DbSet<Answer> Answers { get; set; } = null!;
 
         /// <summary>
         /// Database Application Context OnModelCreating method
@@ -58,15 +68,6 @@ namespace ElementFactory.Data
             builder)
         {
             base.OnModelCreating(builder);
-            // Setting Composite Primary Key For
-            // ChemicalElementQuestion
-            builder
-                .Entity<ChemicalElementQuestionMap>()
-                .HasKey(ceq => new
-                {
-                    ceq.ChemicalElementSymbol,
-                    ceq.QuestionId
-                });
 
             // Setting Composite Primary Key For
             // FounderChemicalElement
@@ -77,6 +78,25 @@ namespace ElementFactory.Data
                     fce.FounderId,
                     fce.ChemicalElementSymbol
                 });
+
+            // Setting Composite Primary Key For
+            // QuestionTestMap
+            builder
+                .Entity<QuestionTestMap>()
+                .HasKey(qt => new
+                {
+                    qt.QuestionId,
+                    qt.TestId
+                });
+
+            builder.ApplyConfiguration<Test>(new TestConfiguration());
+
+            builder.ApplyConfiguration<Question>(new QuestionConfiguration());  
+
+            builder.ApplyConfiguration<QuestionTestMap>(new
+                    QuestionTestConfiguration());
+
+            builder.ApplyConfiguration<Answer>(new AnswerConfiguration());
         }
     }
 }
