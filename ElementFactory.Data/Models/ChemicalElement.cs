@@ -140,12 +140,6 @@
             = null!;
 
         /// <summary>
-        /// Collection from ChemicalElementQuestions
-        /// </summary>
-        public ICollection<ChemicalElementQuestionMap>
-            ChemicalElementsQuestions { get; set; } = null!;
-
-        /// <summary>
         /// Collection from FoundersChemicalElements
         /// </summary>
         public ICollection<FounderChemicalElementMap>

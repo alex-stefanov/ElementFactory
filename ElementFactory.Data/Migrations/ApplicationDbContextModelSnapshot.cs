@@ -17,10 +17,60 @@ namespace ElementFactory.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.22")
+                .HasAnnotation("ProductVersion", "6.0.26")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("ElementFactory.Data.Models.Answer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("QuestionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("QuestionId");
+
+                    b.ToTable("Answers");
+
+                    b.HasComment("Answer Class");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            QuestionId = 1,
+                            Value = "Втора А"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            QuestionId = 1,
+                            Value = "Седма А"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            QuestionId = 1,
+                            Value = "Първа А"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            QuestionId = 1,
+                            Value = "Първа Б"
+                        });
+                });
 
             modelBuilder.Entity("ElementFactory.Data.Models.ChemicalElement", b =>
                 {
@@ -96,23 +146,6 @@ namespace ElementFactory.Data.Migrations
                     b.ToTable("ChemicalElements");
 
                     b.HasComment("Chemical Element Class");
-                });
-
-            modelBuilder.Entity("ElementFactory.Data.Models.ChemicalElementQuestionMap", b =>
-                {
-                    b.Property<string>("ChemicalElementSymbol")
-                        .HasColumnType("nvarchar(2)");
-
-                    b.Property<int>("QuestionId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ChemicalElementSymbol", "QuestionId");
-
-                    b.HasIndex("QuestionId");
-
-                    b.ToTable("ChemicalElementsQuestions");
-
-                    b.HasComment("Chemical Element Question Class");
                 });
 
             modelBuilder.Entity("ElementFactory.Data.Models.ChemicalType", b =>
@@ -195,11 +228,78 @@ namespace ElementFactory.Data.Migrations
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
+                    b.Property<string>("RightAnswer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Questions");
 
                     b.HasComment("Question Class");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "В коя група е химичният елемен Na",
+                            RightAnswer = "Първа А"
+                        });
+                });
+
+            modelBuilder.Entity("ElementFactory.Data.Models.QuestionTestMap", b =>
+                {
+                    b.Property<int>("QuestionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TestId")
+                        .HasColumnType("int");
+
+                    b.HasKey("QuestionId", "TestId");
+
+                    b.HasIndex("TestId");
+
+                    b.ToTable("QuestionsTests");
+
+                    b.HasData(
+                        new
+                        {
+                            QuestionId = 1,
+                            TestId = 1
+                        });
+                });
+
+            modelBuilder.Entity("ElementFactory.Data.Models.Test", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tests");
+
+                    b.HasComment("Test Class");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Category = "7 клас",
+                            Title = "Метали. Натрий и неговите съединения"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -404,6 +504,17 @@ namespace ElementFactory.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("ElementFactory.Data.Models.Answer", b =>
+                {
+                    b.HasOne("ElementFactory.Data.Models.Question", "Question")
+                        .WithMany("Answers")
+                        .HasForeignKey("QuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Question");
+                });
+
             modelBuilder.Entity("ElementFactory.Data.Models.ChemicalElement", b =>
                 {
                     b.HasOne("ElementFactory.Data.Models.ChemicalType", "ChemicalType")
@@ -413,25 +524,6 @@ namespace ElementFactory.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("ChemicalType");
-                });
-
-            modelBuilder.Entity("ElementFactory.Data.Models.ChemicalElementQuestionMap", b =>
-                {
-                    b.HasOne("ElementFactory.Data.Models.ChemicalElement", "ChemicalElement")
-                        .WithMany("ChemicalElementsQuestions")
-                        .HasForeignKey("ChemicalElementSymbol")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ElementFactory.Data.Models.Question", "Question")
-                        .WithMany("ChemicalElementsQuestions")
-                        .HasForeignKey("QuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ChemicalElement");
-
-                    b.Navigation("Question");
                 });
 
             modelBuilder.Entity("ElementFactory.Data.Models.FounderChemicalElementMap", b =>
@@ -451,6 +543,25 @@ namespace ElementFactory.Data.Migrations
                     b.Navigation("ChemicalElement");
 
                     b.Navigation("Founder");
+                });
+
+            modelBuilder.Entity("ElementFactory.Data.Models.QuestionTestMap", b =>
+                {
+                    b.HasOne("ElementFactory.Data.Models.Question", "Question")
+                        .WithMany("QuestionsTests")
+                        .HasForeignKey("QuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ElementFactory.Data.Models.Test", "Test")
+                        .WithMany("QuestionsTests")
+                        .HasForeignKey("TestId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Question");
+
+                    b.Navigation("Test");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -506,8 +617,6 @@ namespace ElementFactory.Data.Migrations
 
             modelBuilder.Entity("ElementFactory.Data.Models.ChemicalElement", b =>
                 {
-                    b.Navigation("ChemicalElementsQuestions");
-
                     b.Navigation("FoundersChemicalElements");
                 });
 
@@ -523,7 +632,14 @@ namespace ElementFactory.Data.Migrations
 
             modelBuilder.Entity("ElementFactory.Data.Models.Question", b =>
                 {
-                    b.Navigation("ChemicalElementsQuestions");
+                    b.Navigation("Answers");
+
+                    b.Navigation("QuestionsTests");
+                });
+
+            modelBuilder.Entity("ElementFactory.Data.Models.Test", b =>
+                {
+                    b.Navigation("QuestionsTests");
                 });
 #pragma warning restore 612, 618
         }

@@ -22,9 +22,15 @@ namespace ElementFactory
            
             builder
                 .Services
-                .AddDbContext<ApplicationDbContext>(options =>
-                options
-                .UseSqlServer(connectionString));
+                .AddDbContext<ApplicationDbContext>(
+                options =>
+                {
+                    options
+                    .UseSqlServer(connectionString);
+
+                    options
+                    .EnableSensitiveDataLogging();
+                });
 
             builder
                 .Services
