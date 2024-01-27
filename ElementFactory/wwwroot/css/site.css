@@ -412,7 +412,7 @@ form td p
     margin-top: 20px;
 }
 
-.classesViewContainer .classesContainer button {
+.classesViewContainer .classesContainer a {
     padding: 17px 40px;
     border-radius: 50px;
     cursor: pointer;
@@ -424,9 +424,11 @@ form td p
     font-size: 25px;
     transition: all 0.5s ease;
     margin: 12px;
+    text-decoration: none;
+    color: black;
 }
 
-.classesViewContainer .classesContainer button:hover {
+.classesViewContainer .classesContainer a:hover {
     letter-spacing: 3px;
     background-color: hsl(261deg 80% 48%);
     color: hsl(0, 0%, 100%);
@@ -455,13 +457,13 @@ form td p
 }
 
 .welcomePageContainer h1 {
-        font-size: 62px;
-        margin-bottom: 24px;
-        font-weight: 900;
-        padding: 0 12px
-    }
+    font-size: 62px;
+    margin-bottom: 24px;
+    font-weight: 900;
+    padding: 0 12px
+}   
 
-.welcomePageContainer main{
+.welcomePageContainer main {
     display: flex;
     flex-direction: column;
     padding: 0 12px;
@@ -470,23 +472,23 @@ form td p
 }
 
 .welcomePageContainer a {
-        font-size: 25px;
-        text-decoration: none;
-        color: #E5E4E2;
-        padding-left: 20px;
-        background-color: #4E5180;
-        font-weight: 700;
-        padding: 12px;
-        border-radius: 18px;
-    }
+    font-size: 25px;
+    text-decoration: none;
+    color: #E5E4E2;
+    padding-left: 20px;
+    background-color: #4E5180;
+    font-weight: 700;
+    padding: 12px;
+    border-radius: 18px;
+}
 
 .welcomePageContainer a:hover {
-            background-color: hsl(261deg 80% 48%);
-            color: hsl(0, 0%, 100%);
-            box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
-            transform: translateY(-4px);
-            transition: 300ms;
-        }
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+    transform: translateY(-4px);
+    transition: 300ms;
+}
 
 .welcomePageContainer .hyperlink{
     display: flex;
@@ -497,6 +499,89 @@ form td p
 .welcomePageContainer footer{
     font-size: 28px;
     margin-top: 30px;
+}
+
+/* ------------------------------ */
+
+/* ------------------------------ */
+/* View tests by grade page css */
+
+.testsByGradeTitle{
+    text-align : center;
+    color: white;
+}
+
+.testsByGradeContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.testsByGradeAdd {
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.testsByGradeContainer .testsByGradeCard {
+    background-color: white;
+    padding: 20px;
+    margin: 12px;
+    width: 45%;
+}
+
+.testsByGradeContainer .testsByGradeCard .testTitle {
+    display: inline-block;
+}
+
+.testsByGradeAdd .addTestToDbBtn {
+    font-size: 25px;
+    text-decoration: none;
+    color: #E5E4E2;
+    background-color: #4E5180;
+    font-weight: 700;
+    padding: 24px;
+    border-radius: 18px; 
+}
+
+.testsByGradeAdd .addTestToDbBtn:hover {
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+    transform: translateY(-4px);
+    transition: 300ms;
+}
+
+/* ------------------------------ */
+
+/* ------------------------------ */
+/* ASP.NET Core validation css */
+
+.aspValidationTitle{
+    color: white;
+    background-color: red;
+    display: block;
+    padding: 1px;
+}
+
+/* ------------------------------ */
+
+/* ------------------------------ */
+/* Other options css */
+
+.scrollClass {
+    overflow-y: scroll;
+    background-attachment: fixed;
+}
+
+.appFooter {
+    position: relative;
+    bottom: 0;
+    padding: 12px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 /* ------------------------------ */

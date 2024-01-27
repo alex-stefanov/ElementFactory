@@ -69,6 +69,678 @@ namespace ElementFactory.Data.Migrations
                             Id = 4,
                             QuestionId = 1,
                             Value = "Първа Б"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            QuestionId = 2,
+                            Value = "Неметал"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            QuestionId = 2,
+                            Value = "Метал"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            QuestionId = 2,
+                            Value = "Нито едно от изброените"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            QuestionId = 2,
+                            Value = "Алкалоземен метал"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            QuestionId = 3,
+                            Value = "Неметали, киселини, вода"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            QuestionId = 3,
+                            Value = "Основни оксиди, киселини, вода"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            QuestionId = 3,
+                            Value = "Основи, киселини, метали"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            QuestionId = 3,
+                            Value = "Киселинни оксиди, основи, соли"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            QuestionId = 4,
+                            Value = "Na2O"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            QuestionId = 4,
+                            Value = "Na2O + H2"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            QuestionId = 4,
+                            Value = "NaOH + H2"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            QuestionId = 4,
+                            Value = "NaOH + H2O"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            QuestionId = 5,
+                            Value = "За да не взаимодейства с азота от въздуха"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            QuestionId = 5,
+                            Value = "За да не взаимодейства с кислорода от въздуха"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            QuestionId = 5,
+                            Value = "За да не отрови въздуха наоколо"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            QuestionId = 5,
+                            Value = "За да не се изпари"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            QuestionId = 6,
+                            Value = "NaCl"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            QuestionId = 6,
+                            Value = "Na2CO3"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            QuestionId = 6,
+                            Value = "Na2O2"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            QuestionId = 6,
+                            Value = "NaOH"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            QuestionId = 7,
+                            Value = "Син"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            QuestionId = 7,
+                            Value = "Зелен"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            QuestionId = 7,
+                            Value = "Жълт"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            QuestionId = 7,
+                            Value = "Виолетов"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            QuestionId = 8,
+                            Value = "NaOH"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            QuestionId = 8,
+                            Value = "Na2O"
+                        },
+                        new
+                        {
+                            Id = 31,
+                            QuestionId = 8,
+                            Value = "NaCl"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            QuestionId = 8,
+                            Value = "NaNO3"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            QuestionId = 9,
+                            Value = "Na+ и OH-"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            QuestionId = 9,
+                            Value = "2Na+ и OH-"
+                        },
+                        new
+                        {
+                            Id = 35,
+                            QuestionId = 9,
+                            Value = "Na+ и 2O-"
+                        },
+                        new
+                        {
+                            Id = 36,
+                            QuestionId = 9,
+                            Value = "Na+ и OH+"
+                        },
+                        new
+                        {
+                            Id = 37,
+                            QuestionId = 10,
+                            Value = "1"
+                        },
+                        new
+                        {
+                            Id = 38,
+                            QuestionId = 10,
+                            Value = "2"
+                        },
+                        new
+                        {
+                            Id = 39,
+                            QuestionId = 10,
+                            Value = "3"
+                        },
+                        new
+                        {
+                            Id = 40,
+                            QuestionId = 10,
+                            Value = "4"
+                        },
+                        new
+                        {
+                            Id = 41,
+                            QuestionId = 11,
+                            Value = "В червено"
+                        },
+                        new
+                        {
+                            Id = 42,
+                            QuestionId = 11,
+                            Value = "В малиновочервено"
+                        },
+                        new
+                        {
+                            Id = 43,
+                            QuestionId = 11,
+                            Value = "В синьо"
+                        },
+                        new
+                        {
+                            Id = 44,
+                            QuestionId = 11,
+                            Value = "В жълто"
+                        },
+                        new
+                        {
+                            Id = 45,
+                            QuestionId = 12,
+                            Value = "K"
+                        },
+                        new
+                        {
+                            Id = 46,
+                            QuestionId = 12,
+                            Value = "Li"
+                        },
+                        new
+                        {
+                            Id = 47,
+                            QuestionId = 12,
+                            Value = "Rb"
+                        },
+                        new
+                        {
+                            Id = 48,
+                            QuestionId = 12,
+                            Value = "Cs"
+                        },
+                        new
+                        {
+                            Id = 49,
+                            QuestionId = 13,
+                            Value = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 50,
+                            QuestionId = 13,
+                            Value = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 51,
+                            QuestionId = 14,
+                            Value = "Натриев хидрид"
+                        },
+                        new
+                        {
+                            Id = 52,
+                            QuestionId = 14,
+                            Value = "Натриев хидроксид"
+                        },
+                        new
+                        {
+                            Id = 53,
+                            QuestionId = 14,
+                            Value = "Натриев хидрат"
+                        },
+                        new
+                        {
+                            Id = 54,
+                            QuestionId = 14,
+                            Value = "Натриев хемоглобин"
+                        },
+                        new
+                        {
+                            Id = 55,
+                            QuestionId = 15,
+                            Value = "Приготвяне на физиологичен разтвор"
+                        },
+                        new
+                        {
+                            Id = 56,
+                            QuestionId = 15,
+                            Value = "Производство на сапуни"
+                        },
+                        new
+                        {
+                            Id = 57,
+                            QuestionId = 15,
+                            Value = "Промивка след изгаряне"
+                        },
+                        new
+                        {
+                            Id = 58,
+                            QuestionId = 15,
+                            Value = "Хранително-вкусова промишленост"
+                        },
+                        new
+                        {
+                            Id = 59,
+                            QuestionId = 16,
+                            Value = "Червено-кафяв"
+                        },
+                        new
+                        {
+                            Id = 60,
+                            QuestionId = 16,
+                            Value = "Виолетов"
+                        },
+                        new
+                        {
+                            Id = 61,
+                            QuestionId = 16,
+                            Value = "Бледосин"
+                        },
+                        new
+                        {
+                            Id = 62,
+                            QuestionId = 16,
+                            Value = "Жълто-зелен"
+                        },
+                        new
+                        {
+                            Id = 63,
+                            QuestionId = 17,
+                            Value = "H2Cl"
+                        },
+                        new
+                        {
+                            Id = 64,
+                            QuestionId = 17,
+                            Value = "HCl2"
+                        },
+                        new
+                        {
+                            Id = 65,
+                            QuestionId = 17,
+                            Value = "H2Cl2"
+                        },
+                        new
+                        {
+                            Id = 66,
+                            QuestionId = 17,
+                            Value = "HCl"
+                        },
+                        new
+                        {
+                            Id = 67,
+                            QuestionId = 18,
+                            Value = "HCl и HCl3"
+                        },
+                        new
+                        {
+                            Id = 68,
+                            QuestionId = 18,
+                            Value = "HCl и HClO"
+                        },
+                        new
+                        {
+                            Id = 69,
+                            QuestionId = 18,
+                            Value = "HCl3 и H3Cl2"
+                        },
+                        new
+                        {
+                            Id = 70,
+                            QuestionId = 18,
+                            Value = "HCl2 и HClO"
+                        },
+                        new
+                        {
+                            Id = 71,
+                            QuestionId = 19,
+                            Value = "NaCl"
+                        },
+                        new
+                        {
+                            Id = 72,
+                            QuestionId = 19,
+                            Value = "NaOH"
+                        },
+                        new
+                        {
+                            Id = 73,
+                            QuestionId = 19,
+                            Value = "H2O"
+                        },
+                        new
+                        {
+                            Id = 74,
+                            QuestionId = 19,
+                            Value = "H2"
+                        },
+                        new
+                        {
+                            Id = 75,
+                            QuestionId = 20,
+                            Value = "Натриев хлорид"
+                        },
+                        new
+                        {
+                            Id = 76,
+                            QuestionId = 20,
+                            Value = "Натриев хлорат"
+                        },
+                        new
+                        {
+                            Id = 77,
+                            QuestionId = 20,
+                            Value = "Натриев хипохлорид"
+                        },
+                        new
+                        {
+                            Id = 78,
+                            QuestionId = 20,
+                            Value = "Натриев хипохлорит"
+                        },
+                        new
+                        {
+                            Id = 79,
+                            QuestionId = 21,
+                            Value = "Осма А"
+                        },
+                        new
+                        {
+                            Id = 80,
+                            QuestionId = 21,
+                            Value = "Шеста А"
+                        },
+                        new
+                        {
+                            Id = 81,
+                            QuestionId = 21,
+                            Value = "Седма А"
+                        },
+                        new
+                        {
+                            Id = 82,
+                            QuestionId = 21,
+                            Value = "Пета А"
+                        },
+                        new
+                        {
+                            Id = 83,
+                            QuestionId = 22,
+                            Value = "Не се променя"
+                        },
+                        new
+                        {
+                            Id = 84,
+                            QuestionId = 22,
+                            Value = "Малиновочервен"
+                        },
+                        new
+                        {
+                            Id = 85,
+                            QuestionId = 22,
+                            Value = "Виолетов"
+                        },
+                        new
+                        {
+                            Id = 86,
+                            QuestionId = 22,
+                            Value = "Син"
+                        },
+                        new
+                        {
+                            Id = 87,
+                            QuestionId = 23,
+                            Value = "Сода каустик"
+                        },
+                        new
+                        {
+                            Id = 88,
+                            QuestionId = 23,
+                            Value = "Бертолетова сол"
+                        },
+                        new
+                        {
+                            Id = 89,
+                            QuestionId = 23,
+                            Value = "Готварска сол"
+                        },
+                        new
+                        {
+                            Id = 90,
+                            QuestionId = 23,
+                            Value = "Белина"
+                        },
+                        new
+                        {
+                            Id = 91,
+                            QuestionId = 24,
+                            Value = "1"
+                        },
+                        new
+                        {
+                            Id = 92,
+                            QuestionId = 24,
+                            Value = "2"
+                        },
+                        new
+                        {
+                            Id = 93,
+                            QuestionId = 24,
+                            Value = "3"
+                        },
+                        new
+                        {
+                            Id = 94,
+                            QuestionId = 24,
+                            Value = "4"
+                        },
+                        new
+                        {
+                            Id = 95,
+                            QuestionId = 25,
+                            Value = "Отрицателен със заряд 1-"
+                        },
+                        new
+                        {
+                            Id = 96,
+                            QuestionId = 25,
+                            Value = "Отрицателен със заряд 2-"
+                        },
+                        new
+                        {
+                            Id = 97,
+                            QuestionId = 25,
+                            Value = "Положителен със заряд 1+"
+                        },
+                        new
+                        {
+                            Id = 98,
+                            QuestionId = 25,
+                            Value = "Положителен със заряд 2+"
+                        },
+                        new
+                        {
+                            Id = 99,
+                            QuestionId = 26,
+                            Value = "Перхлорати"
+                        },
+                        new
+                        {
+                            Id = 100,
+                            QuestionId = 26,
+                            Value = "Хлорати"
+                        },
+                        new
+                        {
+                            Id = 101,
+                            QuestionId = 26,
+                            Value = "Хлорити"
+                        },
+                        new
+                        {
+                            Id = 102,
+                            QuestionId = 26,
+                            Value = "Хлориди"
+                        },
+                        new
+                        {
+                            Id = 103,
+                            QuestionId = 27,
+                            Value = "1"
+                        },
+                        new
+                        {
+                            Id = 104,
+                            QuestionId = 27,
+                            Value = "2"
+                        },
+                        new
+                        {
+                            Id = 105,
+                            QuestionId = 27,
+                            Value = "3"
+                        },
+                        new
+                        {
+                            Id = 106,
+                            QuestionId = 27,
+                            Value = "4"
+                        },
+                        new
+                        {
+                            Id = 107,
+                            QuestionId = 28,
+                            Value = "H + Cl"
+                        },
+                        new
+                        {
+                            Id = 108,
+                            QuestionId = 28,
+                            Value = "H2O + Cl2"
+                        },
+                        new
+                        {
+                            Id = 109,
+                            QuestionId = 28,
+                            Value = "Cl + OH"
+                        },
+                        new
+                        {
+                            Id = 110,
+                            QuestionId = 28,
+                            Value = "HCl + O"
+                        },
+                        new
+                        {
+                            Id = 111,
+                            QuestionId = 29,
+                            Value = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 112,
+                            QuestionId = 29,
+                            Value = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 113,
+                            QuestionId = 30,
+                            Value = "Производство на фойерверки"
+                        },
+                        new
+                        {
+                            Id = 114,
+                            QuestionId = 30,
+                            Value = "Дезинфекция на водите"
+                        },
+                        new
+                        {
+                            Id = 115,
+                            QuestionId = 30,
+                            Value = "Хранително-вкусовата промишленост"
+                        },
+                        new
+                        {
+                            Id = 116,
+                            QuestionId = 30,
+                            Value = "Производство на мебели"
                         });
                 });
 
@@ -242,8 +914,182 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "В коя група е химичният елемен Na",
+                            Description = "В коя група е химичният елемент Na?",
                             RightAnswer = "Първа А"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Какво по характер е простото вещество на Na?",
+                            RightAnswer = "Метал"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Натрият взаимодейства със: ",
+                            RightAnswer = "Неметали, киселини и вода"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "При взаимодействие на Na с вода се получава:",
+                            RightAnswer = "NaOH + H2"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "Защо простото вещество Na се държи под петрол",
+                            RightAnswer = "За да не взаимодейства с кислорода от въздуха"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Description = "Кое от химичните съединения на натрия е по-познато в практиката като сода каустик?",
+                            RightAnswer = "NaOH"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Description = "С какъв пламък изгаря Na?",
+                            RightAnswer = "Жълт"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Description = "Кое от химичните съединения на Na се получава от реакция с реактива AgNO3?",
+                            RightAnswer = "NaNO3"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Description = "При електролитна дисоциация на NaOH се получават: ",
+                            RightAnswer = "Na+ и OH-"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Description = "От коя валентност е Na?",
+                            RightAnswer = "1"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Description = "Ако в разтвор от NaOH внесем лакмус, то той се оцветява: ",
+                            RightAnswer = "В синьо"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Description = "Кое от следните прости вещества има по-ниска реактивоспособност от натрия?",
+                            RightAnswer = "Li"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Description = "Водният разтвор на NaOH провежда електричен ток.",
+                            RightAnswer = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Description = "Според UPAC химичното съединение \"NaH\" се нарича:",
+                            RightAnswer = "Натриев хидрид"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Description = "Кое е ГРЕШНОТО твърдение? Натрият / неговите съединения се използват за:",
+                            RightAnswer = "Промивка след изгаряне"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Description = "Какъв цвят е простото вещество на Cl?",
+                            RightAnswer = "Жълто-зелен"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Description = "Какво се получава при взаимодействието на хлор с водород?",
+                            RightAnswer = "HCl"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Description = "Кои киселини се получават при директно взаимодействие на хлор с вода",
+                            RightAnswer = "HCl и HClO"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Description = "С кое от веществата хлорът НЕ взаимодейства?",
+                            RightAnswer = "NaCl"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Description = "Съединението NaClO се нарича:",
+                            RightAnswer = "Натриев хипохлорит"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Description = "От коя група е елементът хлор?",
+                            RightAnswer = "Седма А"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Description = "В какъв цвят се оцветява фенолфталеина при контакт с водния разтвор на HCl?",
+                            RightAnswer = "Не се променя"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Description = "С какво име в практиката е известен NaClO?",
+                            RightAnswer = "Белина"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Description = "От колко атома се състои молекулата на хлора?",
+                            RightAnswer = "2"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Description = "В какъв йон се превръща атома на хлора при реакция?",
+                            RightAnswer = "Отрицателен със заряд 1-"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Description = "Как се наричат солите на хлора?",
+                            RightAnswer = "Хлориди"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Description = "От коя валентност е хлора в съединението си с водорода?",
+                            RightAnswer = "1"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Description = "Хипохлористата киселина се разлага до:",
+                            RightAnswer = "HCl + O"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Description = "Газът хлор има силен, приятен мирис",
+                            RightAnswer = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Description = "За какво се използва хлорът в практиката?",
+                            RightAnswer = "Дезинфекция на водите"
                         });
                 });
 
@@ -266,6 +1112,151 @@ namespace ElementFactory.Data.Migrations
                         {
                             QuestionId = 1,
                             TestId = 1
+                        },
+                        new
+                        {
+                            QuestionId = 2,
+                            TestId = 1
+                        },
+                        new
+                        {
+                            QuestionId = 3,
+                            TestId = 1
+                        },
+                        new
+                        {
+                            QuestionId = 4,
+                            TestId = 1
+                        },
+                        new
+                        {
+                            QuestionId = 5,
+                            TestId = 1
+                        },
+                        new
+                        {
+                            QuestionId = 6,
+                            TestId = 1
+                        },
+                        new
+                        {
+                            QuestionId = 7,
+                            TestId = 1
+                        },
+                        new
+                        {
+                            QuestionId = 8,
+                            TestId = 1
+                        },
+                        new
+                        {
+                            QuestionId = 9,
+                            TestId = 1
+                        },
+                        new
+                        {
+                            QuestionId = 10,
+                            TestId = 1
+                        },
+                        new
+                        {
+                            QuestionId = 11,
+                            TestId = 1
+                        },
+                        new
+                        {
+                            QuestionId = 12,
+                            TestId = 1
+                        },
+                        new
+                        {
+                            QuestionId = 13,
+                            TestId = 1
+                        },
+                        new
+                        {
+                            QuestionId = 14,
+                            TestId = 1
+                        },
+                        new
+                        {
+                            QuestionId = 15,
+                            TestId = 1
+                        },
+                        new
+                        {
+                            QuestionId = 16,
+                            TestId = 2
+                        },
+                        new
+                        {
+                            QuestionId = 17,
+                            TestId = 2
+                        },
+                        new
+                        {
+                            QuestionId = 18,
+                            TestId = 2
+                        },
+                        new
+                        {
+                            QuestionId = 19,
+                            TestId = 2
+                        },
+                        new
+                        {
+                            QuestionId = 20,
+                            TestId = 2
+                        },
+                        new
+                        {
+                            QuestionId = 21,
+                            TestId = 2
+                        },
+                        new
+                        {
+                            QuestionId = 22,
+                            TestId = 2
+                        },
+                        new
+                        {
+                            QuestionId = 23,
+                            TestId = 2
+                        },
+                        new
+                        {
+                            QuestionId = 24,
+                            TestId = 2
+                        },
+                        new
+                        {
+                            QuestionId = 25,
+                            TestId = 2
+                        },
+                        new
+                        {
+                            QuestionId = 26,
+                            TestId = 2
+                        },
+                        new
+                        {
+                            QuestionId = 27,
+                            TestId = 2
+                        },
+                        new
+                        {
+                            QuestionId = 28,
+                            TestId = 2
+                        },
+                        new
+                        {
+                            QuestionId = 29,
+                            TestId = 2
+                        },
+                        new
+                        {
+                            QuestionId = 30,
+                            TestId = 2
                         });
                 });
 
@@ -299,6 +1290,12 @@ namespace ElementFactory.Data.Migrations
                             Id = 1,
                             Category = "7 клас",
                             Title = "Метали. Натрий и неговите съединения"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Category = "7 клас",
+                            Title = "Неметали. Хлор и неговите съединения"
                         });
                 });
 

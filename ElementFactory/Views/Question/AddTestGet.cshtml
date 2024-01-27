@@ -1,0 +1,34 @@
+﻿@using ElementFactory.Models.Test;
+
+@model TestViewModel;
+
+@{
+    ViewBag.Title = "Добави тест";
+}
+
+<form asp-controller="Question" asp-action="AddTestPost" method="post">
+    <label asp-for="Title">Заглавие</label>
+    <input asp-for="Title" placeholder="Запиши заглавие на тест тук..."/>
+    <span asp-validation-for="Title" class="aspValidationTitle"></span>
+
+    <select asp-for="Category">
+        <option>7 клас</option>
+        <option>8-9 клас</option>
+        <option>10 клас</option>
+        <option>11-12 клас</option>
+    </select>
+
+    <input type="submit" value="Създай"/>
+</form>
+
+<script>
+    var element = document.getElementsByClassName('aspValidationTitle')[0];
+
+    element.style.display = 'block';
+
+    setTimeout(function () {
+        element.style.display = 'none';
+    }, 2000);
+</script>
+
+<link href="~/css/site.css"/>

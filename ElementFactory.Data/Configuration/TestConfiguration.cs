@@ -28,9 +28,18 @@
                 QuestionsTests = new List<QuestionTestMap>()
             };
 
+            var test2 = new Test()
+            {
+                Id = 2,
+                Title = "Неметали. Хлор и неговите съединения",
+                Category = "7 клас",
+                QuestionsTests = new List<QuestionTestMap>()
+            };
+
             return new List<Test>()
             {
-                test1
+                test1,
+                test2
             };
         }
     }
