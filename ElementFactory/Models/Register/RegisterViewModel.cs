@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ElementFactory.Models.Register
+﻿namespace ElementFactory.Models.Register
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class RegisterViewModel
     {
         [Required]

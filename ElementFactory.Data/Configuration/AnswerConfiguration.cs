@@ -13,9 +13,10 @@
                 .WithMany(q => q.Answers)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            var answers1 = this.Answers1();
+            var answers = this.Answers1();
+            answers.AddRange(this.Answers2());
 
-            builder.HasData(answers1);
+            builder.HasData(answers);
         }
 
         private List<Answer> Answers1()
@@ -564,6 +565,549 @@
             };
         }
 
+        private List<Answer> Answers2()
+        {
+            // ============================================= //
+            // Question 2.1 //
 
+            var answer1_1 = new Answer()
+            {
+                Id = 59,
+                QuestionId = 16,
+                Value = "Червено-кафяв"
+            };
+
+            var answer1_2 = new Answer()
+            {
+                Id = 60,
+                QuestionId = 16,
+                Value = "Виолетов"
+            };
+
+            var answer1_3 = new Answer()
+            {
+                Id = 61,
+                QuestionId = 16,
+                Value = "Бледосин"
+            };
+
+            var answer1_4 = new Answer()
+            {
+                Id = 62,
+                QuestionId = 16,
+                Value = "Жълто-зелен"
+            };
+
+            // ============================================= //
+            // Question 2.2 //
+
+            var answer2_1 = new Answer()
+            {
+                Id = 63,
+                QuestionId = 17,
+                Value = "H2Cl"
+            };
+
+            var answer2_2 = new Answer()
+            {
+                Id = 64,
+                QuestionId = 17,
+                Value = "HCl2"
+            };
+
+            var answer2_3 = new Answer()
+            {
+                Id = 65,
+                QuestionId = 17,
+                Value = "H2Cl2"
+            };
+
+            var answer2_4 = new Answer()
+            {
+                Id = 66,
+                QuestionId = 17,
+                Value = "HCl"
+            };
+
+            // ============================================= //
+            // Question 2.3 //
+
+            var answer3_1 = new Answer()
+            {
+                Id = 67,
+                QuestionId = 18,
+                Value = "HCl и HCl3"
+            };
+
+            var answer3_2 = new Answer()
+            {
+                Id = 68,
+                QuestionId = 18,
+                Value = "HCl и HClO"
+            };
+
+            var answer3_3 = new Answer()
+            {
+                Id = 69,
+                QuestionId = 18,
+                Value = "HCl3 и H3Cl2"
+            };
+
+            var answer3_4 = new Answer()
+            {
+                Id = 70,
+                QuestionId = 18,
+                Value = "HCl2 и HClO"
+            };
+
+            // ============================================= //
+            // Question 2.4 //
+
+            var answer4_1 = new Answer()
+            {
+                Id = 71,
+                QuestionId = 19,
+                Value = "NaCl"
+            };
+
+            var answer4_2 = new Answer()
+            {
+                Id = 72,
+                QuestionId = 19,
+                Value = "NaOH"
+            };
+
+            var answer4_3 = new Answer()
+            {
+                Id = 73,
+                QuestionId = 19,
+                Value = "H2O"
+            };
+
+            var answer4_4 = new Answer()
+            {
+                Id = 74,
+                QuestionId = 19,
+                Value = "H2"
+            };
+
+            // ============================================= //
+            // Question 2.5 //
+
+            var answer5_1 = new Answer()
+            {
+                Id = 75,
+                QuestionId = 20,
+                Value = "Натриев хлорид"
+            };
+
+            var answer5_2 = new Answer()
+            {
+                Id = 76,
+                QuestionId = 20,
+                Value = "Натриев хлорат"
+            };
+
+            var answer5_3 = new Answer()
+            {
+                Id = 77,
+                QuestionId = 20,
+                Value = "Натриев хипохлорид"
+            };
+
+            var answer5_4 = new Answer()
+            {
+                Id = 78,
+                QuestionId = 20,
+                Value = "Натриев хипохлорит"
+            };
+
+            // ============================================= //
+            // Question 2.6 //
+
+            var answer6_1 = new Answer()
+            {
+                Id = 79,
+                QuestionId = 21,
+                Value = "Осма А"
+            };
+
+            var answer6_2 = new Answer()
+            {
+                Id = 80,
+                QuestionId = 21,
+                Value = "Шеста А"
+            };
+
+            var answer6_3 = new Answer()
+            {
+                Id = 81,
+                QuestionId = 21,
+                Value = "Седма А"
+            };
+
+            var answer6_4 = new Answer()
+            {
+                Id = 82,
+                QuestionId = 21,
+                Value = "Пета А"
+            };
+
+            // ============================================= //
+            // Question 2.7 //
+
+            var answer7_1 = new Answer()
+            {
+                Id = 83,
+                QuestionId = 22,
+                Value = "Не се променя"
+            };
+
+            var answer7_2 = new Answer()
+            {
+                Id = 84,
+                QuestionId = 22,
+                Value = "Малиновочервен"
+            };
+
+            var answer7_3 = new Answer()
+            {
+                Id = 85,
+                QuestionId = 22,
+                Value = "Виолетов"
+            };
+
+            var answer7_4 = new Answer()
+            {
+                Id = 86,
+                QuestionId = 22,
+                Value = "Син"
+            };
+
+            // ============================================= //
+            // Question 2.8 //
+
+            var answer8_1 = new Answer()
+            {
+                Id = 87,
+                QuestionId = 23,
+                Value = "Сода каустик"
+            };
+
+            var answer8_2 = new Answer()
+            {
+                Id = 88,
+                QuestionId = 23,
+                Value = "Бертолетова сол"
+            };
+
+            var answer8_3 = new Answer()
+            {
+                Id = 89,
+                QuestionId = 23,
+                Value = "Готварска сол"
+            };
+
+            var answer8_4 = new Answer()
+            {
+                Id = 90,
+                QuestionId = 23,
+                Value = "Белина"
+            };
+
+            // ============================================= //
+            // Question 2.9 //
+
+            var answer9_1 = new Answer()
+            {
+                Id = 91,
+                QuestionId = 24,
+                Value = "1"
+            };
+
+            var answer9_2 = new Answer()
+            {
+                Id = 92,
+                QuestionId = 24,
+                Value = "2"
+            };
+
+            var answer9_3 = new Answer()
+            {
+                Id = 93,
+                QuestionId = 24,
+                Value = "3"
+            };
+
+            var answer9_4 = new Answer()
+            {
+                Id = 94,
+                QuestionId = 24,
+                Value = "4"
+            };
+
+            // ============================================= //
+            // Question 2.10 //
+
+            var answer10_1 = new Answer()
+            {
+                Id = 95,
+                QuestionId = 25,
+                Value = "Отрицателен със заряд 1-"
+            };
+
+            var answer10_2 = new Answer()
+            {
+                Id = 96,
+                QuestionId = 25,
+                Value = "Отрицателен със заряд 2-"
+            };
+
+            var answer10_3 = new Answer()
+            {
+                Id = 97,
+                QuestionId = 25,
+                Value = "Положителен със заряд 1+"
+            };
+
+            var answer10_4 = new Answer()
+            {
+                Id = 98,
+                QuestionId = 25,
+                Value = "Положителен със заряд 2+"
+            };
+
+            // ============================================= //
+            // Question 2.11 //
+
+            var answer11_1 = new Answer()
+            {
+                Id = 99,
+                QuestionId = 26,
+                Value = "Перхлорати"
+            };
+
+            var answer11_2 = new Answer()
+            {
+                Id = 100,
+                QuestionId = 26,
+                Value = "Хлорати"
+            };
+
+            var answer11_3 = new Answer()
+            {
+                Id = 101,
+                QuestionId = 26,
+                Value = "Хлорити"
+            };
+
+            var answer11_4 = new Answer()
+            {
+                Id = 102,
+                QuestionId = 26,
+                Value = "Хлориди"
+            };
+
+            // ============================================= //
+            // Question 2.12 //
+
+            var answer12_1 = new Answer()
+            {
+                Id = 103,
+                QuestionId = 27,
+                Value = "1"
+            };
+
+            var answer12_2 = new Answer()
+            {
+                Id = 104,
+                QuestionId = 27,
+                Value = "2"
+            };
+
+            var answer12_3 = new Answer()
+            {
+                Id = 105,
+                QuestionId = 27,
+                Value = "3"
+            };
+
+            var answer12_4 = new Answer()
+            {
+                Id = 106,
+                QuestionId = 27,
+                Value = "4"
+            };
+
+            // ============================================= //
+            // Question 2.13 //
+
+            var answer13_1 = new Answer()
+            {
+                Id = 107,
+                QuestionId = 28,
+                Value = "H + Cl"
+            };
+
+            var answer13_2 = new Answer()
+            {
+                Id = 108,
+                QuestionId = 28,
+                Value = "H2O + Cl2"
+            };
+
+            var answer13_3 = new Answer()
+            {
+                Id = 109,
+                QuestionId = 28,
+                Value = "Cl + OH"
+            };
+
+            var answer13_4 = new Answer()
+            {
+                Id = 110,
+                QuestionId = 28,
+                Value = "HCl + O"
+            };
+
+            // ============================================= //
+            // Question 2.14 //
+
+            var answer14_1 = new Answer()
+            {
+                Id = 111,
+                QuestionId = 29,
+                Value = "Вярно"
+            };
+
+            var answer14_2 = new Answer()
+            {
+                Id = 112,
+                QuestionId = 29,
+                Value = "Грешно"
+            };
+
+            // ============================================= //
+            // Question 2.15 //
+
+            var answer15_1 = new Answer()
+            {
+                Id = 113,
+                QuestionId = 30,
+                Value = "Производство на фойерверки"
+            };
+
+            var answer15_2 = new Answer()
+            {
+                Id = 114,
+                QuestionId = 30,
+                Value = "Дезинфекция на водите"
+            };
+
+            var answer15_3 = new Answer()
+            {
+                Id = 115,
+                QuestionId = 30,
+                Value = "Хранително-вкусовата промишленост"
+            };
+
+            var answer15_4 = new Answer()
+            {
+                Id = 116,
+                QuestionId = 30,
+                Value = "Производство на мебели"
+            };
+
+            return new List<Answer>()
+            {
+                // Question 1.1
+                answer1_1,
+                answer1_2,
+                answer1_3,
+                answer1_4,
+
+                // Question 1.2
+                answer2_1,
+                answer2_2,
+                answer2_3,
+                answer2_4,
+
+                // Question 1.3
+                answer3_1,
+                answer3_2,
+                answer3_3,
+                answer3_4,
+
+                // Question 1.4
+                answer4_1,
+                answer4_2,
+                answer4_3,
+                answer4_4,
+
+                // Question 1.5
+                answer5_1,
+                answer5_2,
+                answer5_3,
+                answer5_4,
+
+                // Question 1.6
+                answer6_1,
+                answer6_2,
+                answer6_3,
+                answer6_4,
+
+                // Question 1.7
+                answer7_1,
+                answer7_2,
+                answer7_3,
+                answer7_4,
+
+                // Question 1.8
+                answer8_1,
+                answer8_2,
+                answer8_3,
+                answer8_4,
+
+                // Question 1.9
+                answer9_1,
+                answer9_2,
+                answer9_3,
+                answer9_4,
+
+                // Question 1.10
+                answer10_1,
+                answer10_2,
+                answer10_3,
+                answer10_4,
+
+                // Question 1.11
+                answer11_1,
+                answer11_2,
+                answer11_3,
+                answer11_4,
+
+                // Question 1.12
+                answer12_1,
+                answer12_2,
+                answer12_3,
+                answer12_4,
+
+                // Question 1.13
+                answer13_1,
+                answer13_2,
+                answer13_3,
+                answer13_4,
+
+                // Question 1.14
+                answer14_1,
+                answer14_2,
+                
+                // Question 1.15
+                answer15_1,
+                answer15_2,
+                answer15_3,
+                answer15_4,
+            };
+        }
     }
 }
