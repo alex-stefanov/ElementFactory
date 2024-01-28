@@ -16,13 +16,11 @@
 
             builder.HasOne(qtm => qtm.Question)
                    .WithMany(q => q.QuestionsTests)
-                   .HasForeignKey(qtm => qtm.QuestionId)
-                   .OnDelete(DeleteBehavior.Cascade);
+                   .HasForeignKey(qtm => qtm.QuestionId);
 
             builder.HasOne(qtm => qtm.Test)
                 .WithMany(t => t.QuestionsTests)
-                .HasForeignKey(qtm => qtm.TestId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasForeignKey(qtm => qtm.TestId);
 
             builder.HasData(questionsTestsMap);
         }

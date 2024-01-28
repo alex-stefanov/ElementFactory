@@ -2,6 +2,7 @@
 {
     using Microsoft.EntityFrameworkCore;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     /// <summary>
     /// Test class
@@ -13,6 +14,7 @@
         /// Test Id => Primary Key
         /// 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         /// <summary>

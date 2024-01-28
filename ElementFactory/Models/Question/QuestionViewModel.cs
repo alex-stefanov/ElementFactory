@@ -2,8 +2,10 @@
 {
     using ElementFactory.Models.Answer;
 
-    public class QuestionsTestsMap
+    public class QuestionViewModel
     {
+        public int Id { get; set; }
+
         public string Description { get; set; } = null!;
 
         public List<AnswerViewModel> Answers { get; set; } = 

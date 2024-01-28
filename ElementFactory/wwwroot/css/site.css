@@ -552,12 +552,99 @@ form td p
     transition: 300ms;
 }
 
-/* ------------------------------ */
+.testsByGradeCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+}
 
+.testsByGradeCard .testTitle {
+    text-align: center;
+}
+
+.testsByGradeCard .testButtons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.testsByGradeCard .testButtons a,
+.testsByGradeCard .testButtons input {
+    text-decoration: none;
+    background-color: #7377a4;
+    border: 2px solid #4E5180;
+    border-radius: 12px;
+    padding: 8px;
+    font-size: 16px;
+    color: whitesmoke;
+}
+
+.testsByGradeNoTests {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 500;
+    padding: 20px;
+    color: white;
+}
+
+/* ------------------------------ */
+/* ------------------------------ */
+/* Doing a test page css */
+.questionContainer {
+    background-color: white;
+    margin: 12px;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.loadTestTitle {
+    color: ghostwhite;
+    text-align: center;
+    margin-bottom: 12px; 
+}
+
+.questionAnswersContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+}
+
+.questionAnswersContainer div{
+    font-size: 22px;
+    margin: 2px;
+}
+
+#handInTest {
+    font-size: 24px;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    width: 15%;
+}
+
+.handInTestContainer {
+    display: flex;
+    justify-content: right;
+    margin-top: 20px;
+    margin-right: 12px;
+}
+
+.loadTestErrorDiv{
+    background-color: red;
+    display: none;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 36px;
+}
+
+/* ------------------------------ */
 /* ------------------------------ */
 /* ASP.NET Core validation css */
-
-.aspValidationTitle{
+.aspValidationTitle {
     color: white;
     background-color: red;
     display: block;

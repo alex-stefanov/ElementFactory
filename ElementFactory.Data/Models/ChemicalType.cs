@@ -2,6 +2,7 @@
 {
     using Microsoft.EntityFrameworkCore;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     /// <summary>
     /// Chemical Type class
@@ -13,6 +14,7 @@
         /// Chemical Type Id => Primary Key
         /// </summary>
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         /// <summary>

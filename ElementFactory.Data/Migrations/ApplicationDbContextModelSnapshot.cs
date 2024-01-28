@@ -98,25 +98,25 @@ namespace ElementFactory.Data.Migrations
                         {
                             Id = 9,
                             QuestionId = 3,
-                            Value = "Неметали, киселини, вода"
+                            Value = "Неметали, киселини и вода"
                         },
                         new
                         {
                             Id = 10,
                             QuestionId = 3,
-                            Value = "Основни оксиди, киселини, вода"
+                            Value = "Основни оксиди, киселини и вода"
                         },
                         new
                         {
                             Id = 11,
                             QuestionId = 3,
-                            Value = "Основи, киселини, метали"
+                            Value = "Основи, киселини и метали"
                         },
                         new
                         {
                             Id = 12,
                             QuestionId = 3,
-                            Value = "Киселинни оксиди, основи, соли"
+                            Value = "Киселинни оксиди, основи и соли"
                         },
                         new
                         {
@@ -920,7 +920,7 @@ namespace ElementFactory.Data.Migrations
                         {
                             Id = 146,
                             QuestionId = 38,
-                            Value = "Калция не взаимодейства с киселини"
+                            Value = "Калцият не взаимодейства с киселини"
                         },
                         new
                         {
@@ -992,7 +992,7 @@ namespace ElementFactory.Data.Migrations
                         {
                             Id = 158,
                             QuestionId = 41,
-                            Value = "Ca + 2H2O => Ca(OH)2+H2"
+                            Value = "Ca + 2H2O => Ca(OH)2 + H2"
                         },
                         new
                         {
@@ -1262,19 +1262,19 @@ namespace ElementFactory.Data.Migrations
                         {
                             Id = 203,
                             QuestionId = 55,
-                            Value = "Температура"
+                            Value = "Висока температура"
                         },
                         new
                         {
                             Id = 204,
                             QuestionId = 55,
-                            Value = "Налягане"
+                            Value = "Високо налягане"
                         },
                         new
                         {
                             Id = 205,
                             QuestionId = 55,
-                            Value = "Катализатор(Ni)"
+                            Value = "Катализатор (Ni)"
                         },
                         new
                         {
@@ -1598,7 +1598,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 5,
-                            Description = "Защо простото вещество Na се държи под петрол",
+                            Description = "Защо простото вещество Na се държи под петрол?",
                             RightAnswer = "За да не взаимодейства с кислорода от въздуха"
                         },
                         new
@@ -1676,7 +1676,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 18,
-                            Description = "Кои киселини се получават при директно взаимодействие на хлор с вода",
+                            Description = "Кои киселини се получават при директно взаимодействие на хлор с вода?",
                             RightAnswer = "HCl и HClO"
                         },
                         new
@@ -1742,7 +1742,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 29,
-                            Description = "Газът хлор има силен, приятен мирис",
+                            Description = "Газът хлор има силен, приятен мирис.",
                             RightAnswer = "Грешно"
                         },
                         new
@@ -1790,7 +1790,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 37,
-                            Description = "Реакцията \"Гасене на вар\" е ракция на CaO с вода, при коята се получава/т:",
+                            Description = "Реакцията \"Гасене на вар\" е реакция на CaO с вода, при коятo се получава/т:",
                             RightAnswer = "Ca(OH)2"
                         },
                         new
@@ -1815,18 +1815,18 @@ namespace ElementFactory.Data.Migrations
                         {
                             Id = 41,
                             Description = "Кое от следните уравнения за Ca и неговите съединения е изравнено вярно?",
-                            RightAnswer = "Ca + 2H2O => Ca(OH)2+H2"
+                            RightAnswer = "Ca + 2H2O => Ca(OH)2 + H2"
                         },
                         new
                         {
                             Id = 42,
-                            Description = "Ca се съхранява по петрол или инертен газ",
+                            Description = "Ca се съхранява под петрол или инертен газ.",
                             RightAnswer = "Вярно"
                         },
                         new
                         {
                             Id = 43,
-                            Description = "Какъв е цвета на пламъка при гореното на Ca?",
+                            Description = "Какъв е цветът на пламъка при горенето на Ca?",
                             RightAnswer = "Керемиденочервен"
                         },
                         new
@@ -1838,7 +1838,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 45,
-                            Description = "Разтоворът на Ca(OH)2 е с pH:",
+                            Description = "Разтворът на Ca(OH)2 е с pH:",
                             RightAnswer = "11"
                         },
                         new
@@ -1874,31 +1874,31 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 51,
-                            Description = "Всяко ОС при взаимодействие с кислород(горене) се разлага до въглероден диоксид и вода",
+                            Description = "Всяко ОС при взаимодействие с кислород (горене) се разлага до въглероден диоксид и вода",
                             RightAnswer = "Вярно"
                         },
                         new
                         {
                             Id = 52,
-                            Description = "Кое от от следните съединения е нонан",
+                            Description = "Кое от от следните съединения е нонан?",
                             RightAnswer = "C9H20"
                         },
                         new
                         {
                             Id = 53,
-                            Description = "Каква е общата молекулна формула на алкените",
+                            Description = "Каква е общата молекулна формула на алкените?",
                             RightAnswer = "CnH2n"
                         },
                         new
                         {
                             Id = 54,
-                            Description = "Характерни за алкените са заместителните реакции, поради наличието на сложната двойна връзка",
+                            Description = "Характерни за алкените са заместителните реакции, поради наличието на сложната двойна връзка.",
                             RightAnswer = "Грешно"
                         },
                         new
                         {
                             Id = 55,
-                            Description = "\"Хидрирането\" на алкени протична при наличието на:",
+                            Description = "\"Хидрирането\" на алкени протича при наличието на:",
                             RightAnswer = "И трите изброени"
                         },
                         new
@@ -1910,7 +1910,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 57,
-                            Description = "При присъединяването на полярни H-съдържащи молекули към молекули на несиметрияни алкени се спазва правилото на:",
+                            Description = "При присъединяването на полярни H-съдържащи молекули към молекули на несиметрични алкени се спазва правилото на:",
                             RightAnswer = "Марковников"
                         },
                         new
@@ -1922,7 +1922,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 59,
-                            Description = "2,4,6-тринитро толуен(TNT) се получава при взаимодействието на:",
+                            Description = "2,4,6-тринитро толуен (TNT) се получава при взаимодействието на:",
                             RightAnswer = "Толуен и HNO3 в излишък"
                         },
                         new

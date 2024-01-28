@@ -10,8 +10,7 @@
         {
             builder.HasMany(q => q.QuestionsTests)
                    .WithOne(qtm => qtm.Question)
-                   .HasForeignKey(qtm => qtm.QuestionId)
-                    .OnDelete(DeleteBehavior.Cascade);
+                   .HasForeignKey(qtm => qtm.QuestionId);
 
             var questions = this.Questions1();
             questions.AddRange(this.Questions2());
@@ -60,7 +59,7 @@
             var question1_5 = new Question()
             {
                 Id = 5,
-                Description = "Защо простото вещество Na се държи под петрол",
+                Description = "Защо простото вещество Na се държи под петрол?",
                 RightAnswer = "За да не взаимодейства с кислорода от въздуха",
                 Answers = new List<Answer>()
             };
@@ -193,7 +192,7 @@
             {
                 Id = 18,
                 Description = "Кои киселини се получават при директно " +
-                "взаимодействие на хлор с вода",
+                "взаимодействие на хлор с вода?",
                 RightAnswer = "HCl и HClO",
                 Answers = new List<Answer>()
             };
@@ -282,7 +281,7 @@
             var question2_14 = new Question()
             {
                 Id = 29,
-                Description = "Газът хлор има силен, приятен мирис",
+                Description = "Газът хлор има силен, приятен мирис.",
                 RightAnswer = "Грешно",
                 Answers = new List<Answer>()
             };
@@ -370,7 +369,7 @@
             var question3_7 = new Question()
             {
                 Id = 37,
-                Description = "Реакцията \"Гасене на вар\" е ракция на CaO с вода, при коята се получава/т:",
+                Description = "Реакцията \"Гасене на вар\" е реакция на CaO с вода, при коятo се получава/т:",
                 RightAnswer = "Ca(OH)2",
                 Answers = new List<Answer>()
             };
@@ -403,14 +402,14 @@
             {
                 Id = 41,
                 Description = "Кое от следните уравнения за Ca и неговите съединения е изравнено вярно?",
-                RightAnswer = "Ca + 2H2O => Ca(OH)2+H2",
+                RightAnswer = "Ca + 2H2O => Ca(OH)2 + H2",
                 Answers = new List<Answer>()
             };
 
             var question3_12 = new Question()
             {
                 Id = 42,
-                Description = "Ca се съхранява по петрол или инертен газ",
+                Description = "Ca се съхранява под петрол или инертен газ.",
                 RightAnswer = "Вярно",
                 Answers = new List<Answer>()
             };
@@ -418,7 +417,7 @@
             var question3_13 = new Question()
             {
                 Id = 43,
-                Description = "Какъв е цвета на пламъка при гореното на Ca?",
+                Description = "Какъв е цветът на пламъка при горенето на Ca?",
                 RightAnswer = "Керемиденочервен",
                 Answers = new List<Answer>()
             };
@@ -434,7 +433,7 @@
             var question3_15 = new Question()
             {
                 Id = 45,
-                Description = "Разтоворът на Ca(OH)2 е с pH:",
+                Description = "Разтворът на Ca(OH)2 е с pH:",
                 RightAnswer = "11",
                 Answers = new List<Answer>()
             };
@@ -506,7 +505,7 @@
             var question4_6 = new Question()
             {
                 Id = 51,
-                Description = "Всяко ОС при взаимодействие с кислород(горене) се разлага до въглероден диоксид и вода",
+                Description = "Всяко ОС при взаимодействие с кислород (горене) се разлага до въглероден диоксид и вода",
                 RightAnswer = "Вярно",
                 Answers = new List<Answer>()
             };
@@ -514,7 +513,7 @@
             var question4_7 = new Question()
             {
                 Id = 52,
-                Description = "Кое от от следните съединения е нонан",
+                Description = "Кое от от следните съединения е нонан?",
                 RightAnswer = "C9H20",
                 Answers = new List<Answer>()
             };
@@ -522,7 +521,7 @@
             var question4_8 = new Question()
             {
                 Id = 53,
-                Description = "Каква е общата молекулна формула на алкените",
+                Description = "Каква е общата молекулна формула на алкените?",
                 RightAnswer = "CnH2n",
                 Answers = new List<Answer>()
             };
@@ -530,7 +529,7 @@
             var question4_9 = new Question()
             {
                 Id = 54,
-                Description = "Характерни за алкените са заместителните реакции, поради наличието на сложната двойна връзка",
+                Description = "Характерни за алкените са заместителните реакции, поради наличието на сложната двойна връзка.",
                 RightAnswer = "Грешно",
                 Answers = new List<Answer>()
             };
@@ -538,7 +537,7 @@
             var question4_10 = new Question()
             {
                 Id = 55,
-                Description = "\"Хидрирането\" на алкени протична при наличието на:",
+                Description = "\"Хидрирането\" на алкени протича при наличието на:",
                 RightAnswer = "И трите изброени",
                 Answers = new List<Answer>()
             };
@@ -554,7 +553,7 @@
             var question4_12 = new Question()
             {
                 Id = 57,
-                Description = "При присъединяването на полярни H-съдържащи молекули към молекули на несиметрияни алкени се спазва правилото на:",
+                Description = "При присъединяването на полярни H-съдържащи молекули към молекули на несиметрични алкени се спазва правилото на:",
                 RightAnswer = "Марковников",
                 Answers = new List<Answer>()
             };
@@ -570,7 +569,7 @@
             var question4_14 = new Question()
             {
                 Id = 59,
-                Description = "2,4,6-тринитро толуен(TNT) се получава при взаимодействието на:",
+                Description = "2,4,6-тринитро толуен (TNT) се получава при взаимодействието на:",
                 RightAnswer = "Толуен и HNO3 в излишък",
                 Answers = new List<Answer>()
             };

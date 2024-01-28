@@ -10,6 +10,19 @@
         {
             <div class="testsByGradeCard">
                 <h3 class="testTitle">@test.Title</h3>
+                <div class="testButtons">
+                    <a asp-controller="Question"
+                       asp-action="LoadTest"
+                       asp-route-id="@test.Id">
+                        Започни тест!
+                    </a>
+                    <form method="post"
+                          asp-controller="Question"
+                          asp-action="DeleteTest"
+                          asp-route-id="@test.Id">
+                        <input type="submit" value="Изтрий тест!" />
+                    </form>
+                </div>
             </div>
         }
     </div>
