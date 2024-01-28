@@ -7,7 +7,7 @@
     public class AnswerConfiguration : IEntityTypeConfiguration<Answer>
     {
         public void Configure(EntityTypeBuilder<Answer> builder)
-        { 
+        {
             builder
                 .HasOne(a => a.Question)
                 .WithMany(q => q.Answers)
@@ -15,6 +15,8 @@
 
             var answers = this.Answers1();
             answers.AddRange(this.Answers2());
+            answers.AddRange(this.Answers3());
+            answers.AddRange(this.Answers4());
 
             builder.HasData(answers);
         }
@@ -1101,6 +1103,1048 @@
                 // Question 1.14
                 answer14_1,
                 answer14_2,
+                
+                // Question 1.15
+                answer15_1,
+                answer15_2,
+                answer15_3,
+                answer15_4,
+            };
+        }
+
+        private List<Answer> Answers3()
+        {
+            // ============================================= //
+            // Question 3.1 //
+
+            var answer1_1 = new Answer()
+            {
+                Id = 117,
+                QuestionId = 31,
+                Value = "Алкален метал"
+            };
+
+            var answer1_2 = new Answer()
+            {
+                Id = 118,
+                QuestionId = 31,
+                Value = "Алкалоземен метал"
+            };
+
+            var answer1_3 = new Answer()
+            {
+                Id = 119,
+                QuestionId = 31,
+                Value = "Халоген"
+            };
+
+            var answer1_4 = new Answer()
+            {
+                Id = 120,
+                QuestionId = 31,
+                Value = "Преходен метал"
+            };
+
+            // ============================================= //
+            // Question 3.2 //
+
+            var answer2_1 = new Answer()
+            {
+                Id = 121,
+                QuestionId = 32,
+                Value = "Молекулен"
+            };
+
+            var answer2_2 = new Answer()
+            {
+                Id = 122,
+                QuestionId = 32,
+                Value = "Йонен"
+            };
+
+            var answer2_3 = new Answer()
+            {
+                Id = 123,
+                QuestionId = 32,
+                Value = "Кристален"
+            };
+
+            var answer2_4 = new Answer()
+            {
+                Id = 124,
+                QuestionId = 32,
+                Value = "Атомен"
+            };
+
+            // ============================================= //
+            // Question 3.3 //
+
+            var answer3_1 = new Answer()
+            {
+                Id = 125,
+                QuestionId = 33,
+                Value = "1"
+            };
+
+            var answer3_2 = new Answer()
+            {
+                Id = 126,
+                QuestionId = 33,
+                Value = "2"
+            };
+
+            var answer3_3 = new Answer()
+            {
+                Id = 127,
+                QuestionId = 33,
+                Value = "3"
+            };
+
+            var answer3_4 = new Answer()
+            {
+                Id = 128,
+                QuestionId = 33,
+                Value = "4"
+            };
+
+            // ============================================= //
+            // Question 3.4 //
+
+            var answer4_1 = new Answer()
+            {
+                Id = 129,
+                QuestionId = 34,
+                Value = "Гасена вар"
+            };
+
+            var answer4_2 = new Answer()
+            {
+                Id = 130,
+                QuestionId = 34,
+                Value = "Негасена вар"
+            };
+
+            var answer4_3 = new Answer()
+            {
+                Id = 131,
+                QuestionId = 34,
+                Value = "Бистра варна вода(БВВ)"
+            };
+
+            var answer4_4 = new Answer()
+            {
+                Id = 132,
+                QuestionId = 34,
+                Value = "Син камък"
+            };
+
+            // ============================================= //
+            // Question 3.5 //
+
+            var answer5_1 = new Answer()
+            {
+                Id = 133,
+                QuestionId = 35,
+                Value = "Втора А"
+            };
+
+            var answer5_2 = new Answer()
+            {
+                Id = 134,
+                QuestionId = 35,
+                Value = "Първа Б"
+            };
+
+            var answer5_3 = new Answer()
+            {
+                Id = 135,
+                QuestionId = 35,
+                Value = "Седма А"
+            };
+
+            var answer5_4 = new Answer()
+            {
+                Id = 136,
+                QuestionId = 35,
+                Value = "Втора Б"
+            };
+
+            // ============================================= //
+            // Question 3.6 //
+
+            var answer6_1 = new Answer()
+            {
+                Id = 137,
+                QuestionId = 36,
+                Value = "CaH2"
+            };
+
+            var answer6_2 = new Answer()
+            {
+                Id = 138,
+                QuestionId = 36,
+                Value = "CaO2"
+            };
+
+            var answer6_3 = new Answer()
+            {
+                Id = 139,
+                QuestionId = 36,
+                Value = "Ca(OH)2"
+            };
+
+            var answer6_4 = new Answer()
+            {
+                Id = 140,
+                QuestionId = 36,
+                Value = "CaO"
+            };
+
+            // ============================================= //
+            // Question 3.7 //
+
+            var answer7_1 = new Answer()
+            {
+                Id = 141,
+                QuestionId = 37,
+                Value = "Ca(OH)2"
+            };
+
+            var answer7_2 = new Answer()
+            {
+                Id = 142,
+                QuestionId = 37,
+                Value = "Ca(OH)2 и H2"
+            };
+
+            var answer7_3 = new Answer()
+            {
+                Id = 143,
+                QuestionId = 37,
+                Value = "CaOH и H2"
+            };
+
+            var answer7_4 = new Answer()
+            {
+                Id = 144,
+                QuestionId = 37,
+                Value = "CaOH"
+            };
+
+            // ============================================= //
+            // Question 3.8 //
+
+            var answer8_1 = new Answer()
+            {
+                Id = 145,
+                QuestionId = 38,
+                Value = "Основа"
+            };
+
+            var answer8_2 = new Answer()
+            {
+                Id = 146,
+                QuestionId = 38,
+                Value = "Калция не взаимодейства с киселини"
+            };
+
+            var answer8_3 = new Answer()
+            {
+                Id = 147,
+                QuestionId = 38,
+                Value = "Киселина"
+            };
+
+            var answer8_4 = new Answer()
+            {
+                Id = 148,
+                QuestionId = 38,
+                Value = "Сол"
+            };
+
+            // ============================================= //
+            // Question 3.9 //
+
+            var answer9_1 = new Answer()
+            {
+                Id = 149,
+                QuestionId = 39,
+                Value = "Вярно"
+            };
+
+            var answer9_2 = new Answer()
+            {
+                Id = 150,
+                QuestionId = 39,
+                Value = "Грешно"
+            };
+
+            // ============================================= //
+            // Question 3.10 //
+
+            var answer10_1 = new Answer()
+            {
+                Id = 151,
+                QuestionId = 40,
+                Value = "Киселинен"
+            };
+
+            var answer10_2 = new Answer()
+            {
+                Id = 152,
+                QuestionId = 40,
+                Value = "Основен"
+            };
+
+            var answer10_3 = new Answer()
+            {
+                Id = 153,
+                QuestionId = 40,
+                Value = "Неутрален"
+            };
+
+            var answer10_4 = new Answer()
+            {
+                Id = 154,
+                QuestionId = 40,
+                Value = "Смесен"
+            };
+
+            // ============================================= //
+            // Question 3.11 //
+
+            var answer11_1 = new Answer()
+            {
+                Id = 155,
+                QuestionId = 41,
+                Value = "CaO + H2O => CaOH + H2"
+            };
+
+            var answer11_2 = new Answer()
+            {
+                Id = 156,
+                QuestionId = 41,
+                Value = "Ca + 2HCl => CaCl + 2H"
+            };
+
+            var answer11_3 = new Answer()
+            {
+                Id = 157,
+                QuestionId = 41,
+                Value = "Ca + H2 => 2CaH"
+            };
+
+            var answer11_4 = new Answer()
+            {
+                Id = 158,
+                QuestionId = 41,
+                Value = "Ca + 2H2O => Ca(OH)2+H2"
+            };
+
+            // ============================================= //
+            // Question 3.12 //
+
+            var answer12_1 = new Answer()
+            {
+                Id = 159,
+                QuestionId = 42,
+                Value = "Вярно"
+            };
+
+            var answer12_2 = new Answer()
+            {
+                Id = 160,
+                QuestionId = 42,
+                Value = "Грешно"
+            };
+
+            // ============================================= //
+            // Question 3.13 //
+
+            var answer13_1 = new Answer()
+            {
+                Id = 161,
+                QuestionId = 43,
+                Value = "Бял"
+            };
+
+            var answer13_2 = new Answer()
+            {
+                Id = 162,
+                QuestionId = 43,
+                Value = "Керемиденочервен"
+            };
+
+            var answer13_3 = new Answer()
+            {
+                Id = 163,
+                QuestionId = 43,
+                Value = "Син"
+            };
+
+            var answer13_4 = new Answer()
+            {
+                Id = 164,
+                QuestionId = 43,
+                Value = "Зелен"
+            };
+
+            // ============================================= //
+            // Question 3.14 //
+
+            var answer14_1 = new Answer()
+            {
+                Id = 165,
+                QuestionId = 44,
+                Value = "Ca(OH)2 с вода"
+            };
+
+            var answer14_2 = new Answer()
+            {
+                Id = 166,
+                QuestionId = 44,
+                Value = "Ca с киселина"
+            };
+
+            var answer14_3 = new Answer()
+            {
+                Id = 167,
+                QuestionId = 44,
+                Value = "CaCO3 с киселина"
+            };
+
+            var answer14_4 = new Answer()
+            {
+                Id = 168,
+                QuestionId = 44,
+                Value = "Ca с киселинен оксид"
+            };
+
+            // ============================================= //
+            // Question 3.15 //
+
+            var answer15_1 = new Answer()
+            {
+                Id = 169,
+                QuestionId = 45,
+                Value = "4"
+            };
+
+            var answer15_2 = new Answer()
+            {
+                Id = 170,
+                QuestionId = 45,
+                Value = "7"
+            };
+
+            var answer15_3 = new Answer()
+            {
+                Id = 171,
+                QuestionId = 45,
+                Value = "2"
+            };
+
+            var answer15_4 = new Answer()
+            {
+                Id = 172,
+                QuestionId = 45,
+                Value = "11"
+            };
+
+            return new List<Answer>()
+            {
+                // Question 1.1
+                answer1_1,
+                answer1_2,
+                answer1_3,
+                answer1_4,
+
+                // Question 1.2
+                answer2_1,
+                answer2_2,
+                answer2_3,
+                answer2_4,
+
+                // Question 1.3
+                answer3_1,
+                answer3_2,
+                answer3_3,
+                answer3_4,
+
+                // Question 1.4
+                answer4_1,
+                answer4_2,
+                answer4_3,
+                answer4_4,
+
+                // Question 1.5
+                answer5_1,
+                answer5_2,
+                answer5_3,
+                answer5_4,
+
+                // Question 1.6
+                answer6_1,
+                answer6_2,
+                answer6_3,
+                answer6_4,
+
+                // Question 1.7
+                answer7_1,
+                answer7_2,
+                answer7_3,
+                answer7_4,
+
+                // Question 1.8
+                answer8_1,
+                answer8_2,
+                answer8_3,
+                answer8_4,
+
+                // Question 1.9
+                answer9_1,
+                answer9_2,
+
+                // Question 1.10
+                answer10_1,
+                answer10_2,
+                answer10_3,
+                answer10_4,
+
+                // Question 1.11
+                answer11_1,
+                answer11_2,
+                answer11_3,
+                answer11_4,
+
+                // Question 1.12
+                answer12_1,
+                answer12_2,
+
+                // Question 1.13
+                answer13_1,
+                answer13_2,
+                answer13_3,
+                answer13_4,
+
+                // Question 1.14
+                answer14_1,
+                answer14_2,
+                answer14_3,
+                answer14_4,
+                
+                // Question 1.15
+                answer15_1,
+                answer15_2,
+                answer15_3,
+                answer15_4,
+            };
+        }
+
+        private List<Answer> Answers4()
+        {
+            // ============================================= //
+            // Question 4.1 //
+
+            var answer1_1 = new Answer()
+            {
+                Id = 173,
+                QuestionId = 46,
+                Value = "C6H6, C6H5OH, CO3"
+            };
+
+            var answer1_2 = new Answer()
+            {
+                Id = 174,
+                QuestionId = 46,
+                Value = "CO2, C6H12O6, C3H5(OH)3"
+            };
+
+            var answer1_3 = new Answer()
+            {
+                Id = 175,
+                QuestionId = 46,
+                Value = "CO, CO2, H2CO3, Na2CO3"
+            };
+
+            var answer1_4 = new Answer()
+            {
+                Id = 176,
+                QuestionId = 46,
+                Value = "CO, H2CO3, C2H4(ONa)2"
+            };
+
+            // ============================================= //
+            // Question 4.2 //
+
+            var answer2_1 = new Answer()
+            {
+                Id = 177,
+                QuestionId = 47,
+                Value = "1"
+            };
+
+            var answer2_2 = new Answer()
+            {
+                Id = 178,
+                QuestionId = 47,
+                Value = "2"
+            };
+
+            var answer2_3 = new Answer()
+            {
+                Id = 179,
+                QuestionId = 47,
+                Value = "3"
+            };
+
+            var answer2_4 = new Answer()
+            {
+                Id = 180,
+                QuestionId = 47,
+                Value = "4"
+            };
+
+            // ============================================= //
+            // Question 4.3 //
+
+            var answer3_1 = new Answer()
+            {
+                Id = 181,
+                QuestionId = 48,
+                Value = "ВВ, които съдържат само прости връзки"
+            };
+
+            var answer3_2 = new Answer()
+            {
+                Id = 182,
+                QuestionId = 48,
+                Value = "ВВ, които съдържат поне една сложна връзка"
+            };
+
+            var answer3_3 = new Answer()
+            {
+                Id = 183,
+                QuestionId = 48,
+                Value = "ВВ с по-сложен строеж, които са циклични"
+            };
+
+            var answer3_4 = new Answer()
+            {
+                Id = 184,
+                QuestionId = 48,
+                Value = "ВВ, които съдържат само сложни връзки"
+            };
+
+            // ============================================= //
+            // Question 4.4 //
+
+            var answer4_1 = new Answer()
+            {
+                Id = 185,
+                QuestionId = 49,
+                Value = "CH4"
+            };
+
+            var answer4_2 = new Answer()
+            {
+                Id = 186,
+                QuestionId = 49,
+                Value = "CO2"
+            };
+
+            var answer4_3 = new Answer()
+            {
+                Id = 187,
+                QuestionId = 49,
+                Value = "CO"
+            };
+
+            var answer4_4 = new Answer()
+            {
+                Id = 188,
+                QuestionId = 49,
+                Value = "C2H2"
+            };
+
+            // ============================================= //
+            // Question 4.5 //
+
+            var answer5_1 = new Answer()
+            {
+                Id = 189,
+                QuestionId = 50,
+                Value = "Вярно"
+            };
+
+            var answer5_2 = new Answer()
+            {
+                Id = 190,
+                QuestionId = 50,
+                Value = "Грешно"
+            };
+
+            // ============================================= //
+            // Question 4.6 //
+
+            var answer6_1 = new Answer()
+            {
+                Id = 191,
+                QuestionId = 51,
+                Value = "Вярно"
+            };
+
+            var answer6_2 = new Answer()
+            {
+                Id = 192,
+                QuestionId = 51,
+                Value = "Грешно"
+            };
+
+            // ============================================= //
+            // Question 4.7 //
+
+            var answer7_1 = new Answer()
+            {
+                Id = 193,
+                QuestionId = 52,
+                Value = "C10H22"
+            };
+
+            var answer7_2 = new Answer()
+            {
+                Id = 194,
+                QuestionId = 52,
+                Value = "C9H18"
+            };
+
+            var answer7_3 = new Answer()
+            {
+                Id = 195,
+                QuestionId = 52,
+                Value = "C9H16"
+            };
+
+            var answer7_4 = new Answer()
+            {
+                Id = 196,
+                QuestionId = 52,
+                Value = "C9H20"
+            };
+
+            // ============================================= //
+            // Question 4.8 //
+
+            var answer8_1 = new Answer()
+            {
+                Id = 197,
+                QuestionId = 53,
+                Value = "CnH2n"
+            };
+
+            var answer8_2 = new Answer()
+            {
+                Id = 198,
+                QuestionId = 53,
+                Value = "CnH2n+2"
+            };
+
+            var answer8_3 = new Answer()
+            {
+                Id = 199,
+                QuestionId = 53,
+                Value = "CnH2n-2"
+            };
+
+            var answer8_4 = new Answer()
+            {
+                Id = 200,
+                QuestionId = 53,
+                Value = "CnHn"
+            };
+
+            // ============================================= //
+            // Question 4.9 //
+
+            var answer9_1 = new Answer()
+            {
+                Id = 201,
+                QuestionId = 54,
+                Value = "Вярно"
+            };
+
+            var answer9_2 = new Answer()
+            {
+                Id = 202,
+                QuestionId = 54,
+                Value = "Грешно"
+            };
+
+            // ============================================= //
+            // Question 4.10 //
+
+            var answer10_1 = new Answer()
+            {
+                Id = 203,
+                QuestionId = 55,
+                Value = "Температура"
+            };
+
+            var answer10_2 = new Answer()
+            {
+                Id = 204,
+                QuestionId = 55,
+                Value = "Налягане"
+            };
+
+            var answer10_3 = new Answer()
+            {
+                Id = 205,
+                QuestionId = 55,
+                Value = "Катализатор(Ni)"
+            };
+
+            var answer10_4 = new Answer()
+            {
+                Id = 206,
+                QuestionId = 55,
+                Value = "И трите изброени"
+            };
+
+            // ============================================= //
+            // Question 4.11 //
+
+            var answer11_1 = new Answer()
+            {
+                Id = 207,
+                QuestionId = 56,
+                Value = "Прости връзки"
+            };
+
+            var answer11_2 = new Answer()
+            {
+                Id = 208,
+                QuestionId = 56,
+                Value = "Въглеродни атоми"
+            };
+
+            var answer11_3 = new Answer()
+            {
+                Id = 209,
+                QuestionId = 56,
+                Value = "Водородни атоми"
+            };
+
+            var answer11_4 = new Answer()
+            {
+                Id = 210,
+                QuestionId = 56,
+                Value = "Сложни връзки"
+            };
+
+            // ============================================= //
+            // Question 4.12 //
+
+            var answer12_1 = new Answer()
+            {
+                Id = 211,
+                QuestionId = 57,
+                Value = "Бойл Мариот"
+            };
+
+            var answer12_2 = new Answer()
+            {
+                Id = 212,
+                QuestionId = 57,
+                Value = "Марковников"
+            };
+
+            var answer12_3 = new Answer()
+            {
+                Id = 213,
+                QuestionId = 57,
+                Value = "Аристотел"
+            };
+
+            var answer12_4 = new Answer()
+            {
+                Id = 214,
+                QuestionId = 57,
+                Value = "Менделеев"
+            };
+
+            // ============================================= //
+            // Question 4.13 //
+
+            var answer13_1 = new Answer()
+            {
+                Id = 215,
+                QuestionId = 58,
+                Value = "Ni"
+            };
+
+            var answer13_2 = new Answer()
+            {
+                Id = 216,
+                QuestionId = 58,
+                Value = "Hg2+"
+            };
+
+            var answer13_3 = new Answer()
+            {
+                Id = 217,
+                QuestionId = 58,
+                Value = "CCl4"
+            };
+
+            var answer13_4 = new Answer()
+            {
+                Id = 218,
+                QuestionId = 58,
+                Value = "Pb(CH3COO)2"
+            };
+
+            // ============================================= //
+            // Question 4.14 //
+
+            var answer14_1 = new Answer()
+            {
+                Id = 219,
+                QuestionId = 59,
+                Value = "Толуен и HNO3 в излишък"
+            };
+
+            var answer14_2 = new Answer()
+            {
+                Id = 220,
+                QuestionId = 59,
+                Value = "Фенол и HNO3"
+            };
+
+            var answer14_3 = new Answer()
+            {
+                Id = 221,
+                QuestionId = 59,
+                Value = "Бензен и HNO3"
+            };
+
+            var answer14_4 = new Answer()
+            {
+                Id = 222,
+                QuestionId = 59,
+                Value = "Бензен и нитратни соли"
+            };
+
+            // ============================================= //
+            // Question 4.15 //
+
+            var answer15_1 = new Answer()
+            {
+                Id = 223,
+                QuestionId = 60,
+                Value = "Ацеталдехид"
+            };
+
+            var answer15_2 = new Answer()
+            {
+                Id = 224,
+                QuestionId = 60,
+                Value = "Бензен и 2Na"
+            };
+
+            var answer15_3 = new Answer()
+            {
+                Id = 225,
+                QuestionId = 60,
+                Value = "Феноксиден анион и водороден катион"
+            };
+
+            var answer15_4 = new Answer()
+            {
+                Id = 226,
+                QuestionId = 60,
+                Value = "Натриев феноксид и 1/2 H2"
+            };
+
+            return new List<Answer>()
+            {
+                // Question 1.1
+                answer1_1,
+                answer1_2,
+                answer1_3,
+                answer1_4,
+
+                // Question 1.2
+                answer2_1,
+                answer2_2,
+                answer2_3,
+                answer2_4,
+
+                // Question 1.3
+                answer3_1,
+                answer3_2,
+                answer3_3,
+                answer3_4,
+
+                // Question 1.4
+                answer4_1,
+                answer4_2,
+                answer4_3,
+                answer4_4,
+
+                // Question 1.5
+                answer5_1,
+                answer5_2,
+
+                // Question 1.6
+                answer6_1,
+                answer6_2,
+
+                // Question 1.7
+                answer7_1,
+                answer7_2,
+                answer7_3,
+                answer7_4,
+
+                // Question 1.8
+                answer8_1,
+                answer8_2,
+                answer8_3,
+                answer8_4,
+
+                // Question 1.9
+                answer9_1,
+                answer9_2,
+
+                // Question 1.10
+                answer10_1,
+                answer10_2,
+                answer10_3,
+                answer10_4,
+
+                // Question 1.11
+                answer11_1,
+                answer11_2,
+                answer11_3,
+                answer11_4,
+
+                // Question 1.12
+                answer12_1,
+                answer12_2,
+                answer12_3,
+                answer12_4,
+
+                // Question 1.13
+                answer13_1,
+                answer13_2,
+                answer13_3,
+                answer13_4,
+
+                // Question 1.14
+                answer14_1,
+                answer14_2,
+                answer14_3,
+                answer14_4,
                 
                 // Question 1.15
                 answer15_1,

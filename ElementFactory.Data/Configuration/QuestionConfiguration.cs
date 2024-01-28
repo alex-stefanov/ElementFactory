@@ -15,6 +15,8 @@
 
             var questions = this.Questions1();
             questions.AddRange(this.Questions2());
+            questions.AddRange(this.Questions3());
+            questions.AddRange(this.Questions4());
 
             builder.HasData(questions);
         }
@@ -310,6 +312,294 @@
                 question2_13,
                 question2_14,
                 question2_15
+            };
+        }
+
+        private List<Question> Questions3()
+        {
+            // ============================================= //
+            // Test 3 //
+            var question3_1 = new Question()
+            {
+                Id = 31,
+                Description = "Простото вещество Ca е:",
+                RightAnswer = "Алкалоземен метал",
+                Answers = new List<Answer>()
+            };
+
+            var question3_2 = new Question()
+            {
+                Id = 32,
+                Description = "С какъв строеж е простото вещество Ca?",
+                RightAnswer = "Кристален",
+                Answers = new List<Answer>()
+            };
+
+            var question3_3 = new Question()
+            {
+                Id = 33,
+                Description = "С каква валентност участва в съединенията си Ca?",
+                RightAnswer = "2",
+                Answers = new List<Answer>()
+            };
+
+            var question3_4 = new Question()
+            {
+                Id = 34,
+                Description = "Под какво име е известно съединението CaO?",
+                RightAnswer = "Негасена вар",
+                Answers = new List<Answer>()
+            };
+
+            var question3_5 = new Question()
+            {
+                Id = 35,
+                Description = "В коя група е Ca?",
+                RightAnswer = "Втора А",
+                Answers = new List<Answer>()
+            };
+
+            var question3_6 = new Question()
+            {
+                Id = 36,
+                Description = "При взаимодействието на Ca с кислород се получава:",
+                RightAnswer = "CaO",
+                Answers = new List<Answer>()
+            };
+
+            var question3_7 = new Question()
+            {
+                Id = 37,
+                Description = "Реакцията \"Гасене на вар\" е ракция на CaO с вода, при коята се получава/т:",
+                RightAnswer = "Ca(OH)2",
+                Answers = new List<Answer>()
+            };
+
+            var question3_8 = new Question()
+            {
+                Id = 38,
+                Description = "При взаимодействие на Ca с халогеноводородна киселина се получава:",
+                RightAnswer = "Сол",
+                Answers = new List<Answer>()
+            };
+
+            var question3_9 = new Question()
+            {
+                Id = 39,
+                Description = "Простото вещество Ca е газ с метален блясък и висока електропроводимост.",
+                RightAnswer = "Грешно",
+                Answers = new List<Answer>()
+            };
+
+            var question3_10 = new Question()
+            {
+                Id = 40,
+                Description = "Какъв характер проявява водният разтвор на калциевия дихидроксид?",
+                RightAnswer = "Основен",
+                Answers = new List<Answer>()
+            };
+
+            var question3_11 = new Question()
+            {
+                Id = 41,
+                Description = "Кое от следните уравнения за Ca и неговите съединения е изравнено вярно?",
+                RightAnswer = "Ca + 2H2O => Ca(OH)2+H2",
+                Answers = new List<Answer>()
+            };
+
+            var question3_12 = new Question()
+            {
+                Id = 42,
+                Description = "Ca се съхранява по петрол или инертен газ",
+                RightAnswer = "Вярно",
+                Answers = new List<Answer>()
+            };
+
+            var question3_13 = new Question()
+            {
+                Id = 43,
+                Description = "Какъв е цвета на пламъка при гореното на Ca?",
+                RightAnswer = "Керемиденочервен",
+                Answers = new List<Answer>()
+            };
+
+            var question3_14 = new Question()
+            {
+                Id = 44,
+                Description = "Реакцията \"Шумяща проба\" се наблюдава при взаимодействието на:",
+                RightAnswer = "CaCO3 с киселина",
+                Answers = new List<Answer>()
+            };
+
+            var question3_15 = new Question()
+            {
+                Id = 45,
+                Description = "Разтоворът на Ca(OH)2 е с pH:",
+                RightAnswer = "11",
+                Answers = new List<Answer>()
+            };
+
+            return new List<Question>()
+            {
+                question3_1,
+                question3_2,
+                question3_3,
+                question3_4,
+                question3_5,
+                question3_6,
+                question3_7,
+                question3_8,
+                question3_9,
+                question3_10,
+                question3_11,
+                question3_12,
+                question3_13,
+                question3_14,
+                question3_15
+            };
+        }
+
+        private List<Question> Questions4()
+        {
+            // ============================================= //
+            // Test 4 //
+            var question4_1 = new Question()
+            {
+                Id = 46,
+                Description = "В кой от редовете са посочени само неорганични съединения:",
+                RightAnswer = "CO, CO2, H2CO3, Na2CO3",
+                Answers = new List<Answer>()
+            };
+
+            var question4_2 = new Question()
+            {
+                Id = 47,
+                Description = "Каква валентност проявява C в неговите ОС?",
+                RightAnswer = "4",
+                Answers = new List<Answer>()
+            };
+
+            var question4_3 = new Question()
+            {
+                Id = 48,
+                Description = "Кое е най-точното определение за ароматните ВВ?",
+                RightAnswer = "ВВ с по-сложен строеж, които са циклични",
+                Answers = new List<Answer>()
+            };
+
+            var question4_4 = new Question()
+            {
+                Id = 49,
+                Description = "Кое от посочените съединения е известно под името \"Газ гризу\":",
+                RightAnswer = "CH4",
+                Answers = new List<Answer>()
+            };
+
+            var question4_5 = new Question()
+            {
+                Id = 50,
+                Description = "\"Халогенирането\" на метан е заместителна реакция.",
+                RightAnswer = "Вярно",
+                Answers = new List<Answer>()
+            };
+
+            var question4_6 = new Question()
+            {
+                Id = 51,
+                Description = "Всяко ОС при взаимодействие с кислород(горене) се разлага до въглероден диоксид и вода",
+                RightAnswer = "Вярно",
+                Answers = new List<Answer>()
+            };
+            
+            var question4_7 = new Question()
+            {
+                Id = 52,
+                Description = "Кое от от следните съединения е нонан",
+                RightAnswer = "C9H20",
+                Answers = new List<Answer>()
+            };
+
+            var question4_8 = new Question()
+            {
+                Id = 53,
+                Description = "Каква е общата молекулна формула на алкените",
+                RightAnswer = "CnH2n",
+                Answers = new List<Answer>()
+            };
+
+            var question4_9 = new Question()
+            {
+                Id = 54,
+                Description = "Характерни за алкените са заместителните реакции, поради наличието на сложната двойна връзка",
+                RightAnswer = "Грешно",
+                Answers = new List<Answer>()
+            };
+
+            var question4_10 = new Question()
+            {
+                Id = 55,
+                Description = "\"Хидрирането\" на алкени протична при наличието на:",
+                RightAnswer = "И трите изброени",
+                Answers = new List<Answer>()
+            };
+
+            var question4_11 = new Question()
+            {
+                Id = 56,
+                Description = "Наличието на какво се доказва с разтвор на KMnO4?",
+                RightAnswer = "Сложни връзки",
+                Answers = new List<Answer>()
+            };
+
+            var question4_12 = new Question()
+            {
+                Id = 57,
+                Description = "При присъединяването на полярни H-съдържащи молекули към молекули на несиметрияни алкени се спазва правилото на:",
+                RightAnswer = "Марковников",
+                Answers = new List<Answer>()
+            };
+
+            var question4_13 = new Question()
+            {
+                Id = 58,
+                Description = "За да се спре реакцията на \"Хидриране\" на алкините, така че от алкин да се получи алкен, се използва катализатор:",
+                RightAnswer = "Pb(CH3COO)2",
+                Answers = new List<Answer>()
+            };
+
+            var question4_14 = new Question()
+            {
+                Id = 59,
+                Description = "2,4,6-тринитро толуен(TNT) се получава при взаимодействието на:",
+                RightAnswer = "Толуен и HNO3 в излишък",
+                Answers = new List<Answer>()
+            };
+
+            var question4_15 = new Question()
+            {
+                Id = 60,
+                Description = "При взаимодействието на фенол и натрий се получава:",
+                RightAnswer = "Натриев феноксид и 1/2 H2",
+                Answers = new List<Answer>()
+            };
+
+            return new List<Question>()
+            {
+                question4_1,
+                question4_2,
+                question4_3,
+                question4_4,
+                question4_5,
+                question4_6,
+                question4_7,
+                question4_8,
+                question4_9,
+                question4_10,
+                question4_11,
+                question4_12,
+                question4_13,
+                question4_14,
+                question4_15
             };
         }
     }

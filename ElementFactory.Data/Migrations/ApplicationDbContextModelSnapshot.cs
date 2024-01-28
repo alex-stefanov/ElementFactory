@@ -741,6 +741,666 @@ namespace ElementFactory.Data.Migrations
                             Id = 116,
                             QuestionId = 30,
                             Value = "Производство на мебели"
+                        },
+                        new
+                        {
+                            Id = 117,
+                            QuestionId = 31,
+                            Value = "Алкален метал"
+                        },
+                        new
+                        {
+                            Id = 118,
+                            QuestionId = 31,
+                            Value = "Алкалоземен метал"
+                        },
+                        new
+                        {
+                            Id = 119,
+                            QuestionId = 31,
+                            Value = "Халоген"
+                        },
+                        new
+                        {
+                            Id = 120,
+                            QuestionId = 31,
+                            Value = "Преходен метал"
+                        },
+                        new
+                        {
+                            Id = 121,
+                            QuestionId = 32,
+                            Value = "Молекулен"
+                        },
+                        new
+                        {
+                            Id = 122,
+                            QuestionId = 32,
+                            Value = "Йонен"
+                        },
+                        new
+                        {
+                            Id = 123,
+                            QuestionId = 32,
+                            Value = "Кристален"
+                        },
+                        new
+                        {
+                            Id = 124,
+                            QuestionId = 32,
+                            Value = "Атомен"
+                        },
+                        new
+                        {
+                            Id = 125,
+                            QuestionId = 33,
+                            Value = "1"
+                        },
+                        new
+                        {
+                            Id = 126,
+                            QuestionId = 33,
+                            Value = "2"
+                        },
+                        new
+                        {
+                            Id = 127,
+                            QuestionId = 33,
+                            Value = "3"
+                        },
+                        new
+                        {
+                            Id = 128,
+                            QuestionId = 33,
+                            Value = "4"
+                        },
+                        new
+                        {
+                            Id = 129,
+                            QuestionId = 34,
+                            Value = "Гасена вар"
+                        },
+                        new
+                        {
+                            Id = 130,
+                            QuestionId = 34,
+                            Value = "Негасена вар"
+                        },
+                        new
+                        {
+                            Id = 131,
+                            QuestionId = 34,
+                            Value = "Бистра варна вода(БВВ)"
+                        },
+                        new
+                        {
+                            Id = 132,
+                            QuestionId = 34,
+                            Value = "Син камък"
+                        },
+                        new
+                        {
+                            Id = 133,
+                            QuestionId = 35,
+                            Value = "Втора А"
+                        },
+                        new
+                        {
+                            Id = 134,
+                            QuestionId = 35,
+                            Value = "Първа Б"
+                        },
+                        new
+                        {
+                            Id = 135,
+                            QuestionId = 35,
+                            Value = "Седма А"
+                        },
+                        new
+                        {
+                            Id = 136,
+                            QuestionId = 35,
+                            Value = "Втора Б"
+                        },
+                        new
+                        {
+                            Id = 137,
+                            QuestionId = 36,
+                            Value = "CaH2"
+                        },
+                        new
+                        {
+                            Id = 138,
+                            QuestionId = 36,
+                            Value = "CaO2"
+                        },
+                        new
+                        {
+                            Id = 139,
+                            QuestionId = 36,
+                            Value = "Ca(OH)2"
+                        },
+                        new
+                        {
+                            Id = 140,
+                            QuestionId = 36,
+                            Value = "CaO"
+                        },
+                        new
+                        {
+                            Id = 141,
+                            QuestionId = 37,
+                            Value = "Ca(OH)2"
+                        },
+                        new
+                        {
+                            Id = 142,
+                            QuestionId = 37,
+                            Value = "Ca(OH)2 и H2"
+                        },
+                        new
+                        {
+                            Id = 143,
+                            QuestionId = 37,
+                            Value = "CaOH и H2"
+                        },
+                        new
+                        {
+                            Id = 144,
+                            QuestionId = 37,
+                            Value = "CaOH"
+                        },
+                        new
+                        {
+                            Id = 145,
+                            QuestionId = 38,
+                            Value = "Основа"
+                        },
+                        new
+                        {
+                            Id = 146,
+                            QuestionId = 38,
+                            Value = "Калция не взаимодейства с киселини"
+                        },
+                        new
+                        {
+                            Id = 147,
+                            QuestionId = 38,
+                            Value = "Киселина"
+                        },
+                        new
+                        {
+                            Id = 148,
+                            QuestionId = 38,
+                            Value = "Сол"
+                        },
+                        new
+                        {
+                            Id = 149,
+                            QuestionId = 39,
+                            Value = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 150,
+                            QuestionId = 39,
+                            Value = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 151,
+                            QuestionId = 40,
+                            Value = "Киселинен"
+                        },
+                        new
+                        {
+                            Id = 152,
+                            QuestionId = 40,
+                            Value = "Основен"
+                        },
+                        new
+                        {
+                            Id = 153,
+                            QuestionId = 40,
+                            Value = "Неутрален"
+                        },
+                        new
+                        {
+                            Id = 154,
+                            QuestionId = 40,
+                            Value = "Смесен"
+                        },
+                        new
+                        {
+                            Id = 155,
+                            QuestionId = 41,
+                            Value = "CaO + H2O => CaOH + H2"
+                        },
+                        new
+                        {
+                            Id = 156,
+                            QuestionId = 41,
+                            Value = "Ca + 2HCl => CaCl + 2H"
+                        },
+                        new
+                        {
+                            Id = 157,
+                            QuestionId = 41,
+                            Value = "Ca + H2 => 2CaH"
+                        },
+                        new
+                        {
+                            Id = 158,
+                            QuestionId = 41,
+                            Value = "Ca + 2H2O => Ca(OH)2+H2"
+                        },
+                        new
+                        {
+                            Id = 159,
+                            QuestionId = 42,
+                            Value = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 160,
+                            QuestionId = 42,
+                            Value = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 161,
+                            QuestionId = 43,
+                            Value = "Бял"
+                        },
+                        new
+                        {
+                            Id = 162,
+                            QuestionId = 43,
+                            Value = "Керемиденочервен"
+                        },
+                        new
+                        {
+                            Id = 163,
+                            QuestionId = 43,
+                            Value = "Син"
+                        },
+                        new
+                        {
+                            Id = 164,
+                            QuestionId = 43,
+                            Value = "Зелен"
+                        },
+                        new
+                        {
+                            Id = 165,
+                            QuestionId = 44,
+                            Value = "Ca(OH)2 с вода"
+                        },
+                        new
+                        {
+                            Id = 166,
+                            QuestionId = 44,
+                            Value = "Ca с киселина"
+                        },
+                        new
+                        {
+                            Id = 167,
+                            QuestionId = 44,
+                            Value = "CaCO3 с киселина"
+                        },
+                        new
+                        {
+                            Id = 168,
+                            QuestionId = 44,
+                            Value = "Ca с киселинен оксид"
+                        },
+                        new
+                        {
+                            Id = 169,
+                            QuestionId = 45,
+                            Value = "4"
+                        },
+                        new
+                        {
+                            Id = 170,
+                            QuestionId = 45,
+                            Value = "7"
+                        },
+                        new
+                        {
+                            Id = 171,
+                            QuestionId = 45,
+                            Value = "2"
+                        },
+                        new
+                        {
+                            Id = 172,
+                            QuestionId = 45,
+                            Value = "11"
+                        },
+                        new
+                        {
+                            Id = 173,
+                            QuestionId = 46,
+                            Value = "C6H6, C6H5OH, CO3"
+                        },
+                        new
+                        {
+                            Id = 174,
+                            QuestionId = 46,
+                            Value = "CO2, C6H12O6, C3H5(OH)3"
+                        },
+                        new
+                        {
+                            Id = 175,
+                            QuestionId = 46,
+                            Value = "CO, CO2, H2CO3, Na2CO3"
+                        },
+                        new
+                        {
+                            Id = 176,
+                            QuestionId = 46,
+                            Value = "CO, H2CO3, C2H4(ONa)2"
+                        },
+                        new
+                        {
+                            Id = 177,
+                            QuestionId = 47,
+                            Value = "1"
+                        },
+                        new
+                        {
+                            Id = 178,
+                            QuestionId = 47,
+                            Value = "2"
+                        },
+                        new
+                        {
+                            Id = 179,
+                            QuestionId = 47,
+                            Value = "3"
+                        },
+                        new
+                        {
+                            Id = 180,
+                            QuestionId = 47,
+                            Value = "4"
+                        },
+                        new
+                        {
+                            Id = 181,
+                            QuestionId = 48,
+                            Value = "ВВ, които съдържат само прости връзки"
+                        },
+                        new
+                        {
+                            Id = 182,
+                            QuestionId = 48,
+                            Value = "ВВ, които съдържат поне една сложна връзка"
+                        },
+                        new
+                        {
+                            Id = 183,
+                            QuestionId = 48,
+                            Value = "ВВ с по-сложен строеж, които са циклични"
+                        },
+                        new
+                        {
+                            Id = 184,
+                            QuestionId = 48,
+                            Value = "ВВ, които съдържат само сложни връзки"
+                        },
+                        new
+                        {
+                            Id = 185,
+                            QuestionId = 49,
+                            Value = "CH4"
+                        },
+                        new
+                        {
+                            Id = 186,
+                            QuestionId = 49,
+                            Value = "CO2"
+                        },
+                        new
+                        {
+                            Id = 187,
+                            QuestionId = 49,
+                            Value = "CO"
+                        },
+                        new
+                        {
+                            Id = 188,
+                            QuestionId = 49,
+                            Value = "C2H2"
+                        },
+                        new
+                        {
+                            Id = 189,
+                            QuestionId = 50,
+                            Value = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 190,
+                            QuestionId = 50,
+                            Value = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 191,
+                            QuestionId = 51,
+                            Value = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 192,
+                            QuestionId = 51,
+                            Value = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 193,
+                            QuestionId = 52,
+                            Value = "C10H22"
+                        },
+                        new
+                        {
+                            Id = 194,
+                            QuestionId = 52,
+                            Value = "C9H18"
+                        },
+                        new
+                        {
+                            Id = 195,
+                            QuestionId = 52,
+                            Value = "C9H16"
+                        },
+                        new
+                        {
+                            Id = 196,
+                            QuestionId = 52,
+                            Value = "C9H20"
+                        },
+                        new
+                        {
+                            Id = 197,
+                            QuestionId = 53,
+                            Value = "CnH2n"
+                        },
+                        new
+                        {
+                            Id = 198,
+                            QuestionId = 53,
+                            Value = "CnH2n+2"
+                        },
+                        new
+                        {
+                            Id = 199,
+                            QuestionId = 53,
+                            Value = "CnH2n-2"
+                        },
+                        new
+                        {
+                            Id = 200,
+                            QuestionId = 53,
+                            Value = "CnHn"
+                        },
+                        new
+                        {
+                            Id = 201,
+                            QuestionId = 54,
+                            Value = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 202,
+                            QuestionId = 54,
+                            Value = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 203,
+                            QuestionId = 55,
+                            Value = "Температура"
+                        },
+                        new
+                        {
+                            Id = 204,
+                            QuestionId = 55,
+                            Value = "Налягане"
+                        },
+                        new
+                        {
+                            Id = 205,
+                            QuestionId = 55,
+                            Value = "Катализатор(Ni)"
+                        },
+                        new
+                        {
+                            Id = 206,
+                            QuestionId = 55,
+                            Value = "И трите изброени"
+                        },
+                        new
+                        {
+                            Id = 207,
+                            QuestionId = 56,
+                            Value = "Прости връзки"
+                        },
+                        new
+                        {
+                            Id = 208,
+                            QuestionId = 56,
+                            Value = "Въглеродни атоми"
+                        },
+                        new
+                        {
+                            Id = 209,
+                            QuestionId = 56,
+                            Value = "Водородни атоми"
+                        },
+                        new
+                        {
+                            Id = 210,
+                            QuestionId = 56,
+                            Value = "Сложни връзки"
+                        },
+                        new
+                        {
+                            Id = 211,
+                            QuestionId = 57,
+                            Value = "Бойл Мариот"
+                        },
+                        new
+                        {
+                            Id = 212,
+                            QuestionId = 57,
+                            Value = "Марковников"
+                        },
+                        new
+                        {
+                            Id = 213,
+                            QuestionId = 57,
+                            Value = "Аристотел"
+                        },
+                        new
+                        {
+                            Id = 214,
+                            QuestionId = 57,
+                            Value = "Менделеев"
+                        },
+                        new
+                        {
+                            Id = 215,
+                            QuestionId = 58,
+                            Value = "Ni"
+                        },
+                        new
+                        {
+                            Id = 216,
+                            QuestionId = 58,
+                            Value = "Hg2+"
+                        },
+                        new
+                        {
+                            Id = 217,
+                            QuestionId = 58,
+                            Value = "CCl4"
+                        },
+                        new
+                        {
+                            Id = 218,
+                            QuestionId = 58,
+                            Value = "Pb(CH3COO)2"
+                        },
+                        new
+                        {
+                            Id = 219,
+                            QuestionId = 59,
+                            Value = "Толуен и HNO3 в излишък"
+                        },
+                        new
+                        {
+                            Id = 220,
+                            QuestionId = 59,
+                            Value = "Фенол и HNO3"
+                        },
+                        new
+                        {
+                            Id = 221,
+                            QuestionId = 59,
+                            Value = "Бензен и HNO3"
+                        },
+                        new
+                        {
+                            Id = 222,
+                            QuestionId = 59,
+                            Value = "Бензен и нитратни соли"
+                        },
+                        new
+                        {
+                            Id = 223,
+                            QuestionId = 60,
+                            Value = "Ацеталдехид"
+                        },
+                        new
+                        {
+                            Id = 224,
+                            QuestionId = 60,
+                            Value = "Бензен и 2Na"
+                        },
+                        new
+                        {
+                            Id = 225,
+                            QuestionId = 60,
+                            Value = "Феноксиден анион и водороден катион"
+                        },
+                        new
+                        {
+                            Id = 226,
+                            QuestionId = 60,
+                            Value = "Натриев феноксид и 1/2 H2"
                         });
                 });
 
@@ -1058,7 +1718,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 25,
-                            Description = "В какъв йон се превръща атома на хлора при реакция?",
+                            Description = "В какъв йон се превръща атомът на хлора при реакция?",
                             RightAnswer = "Отрицателен със заряд 1-"
                         },
                         new
@@ -1070,7 +1730,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 27,
-                            Description = "От коя валентност е хлора в съединението си с водорода?",
+                            Description = "От коя валентност е хлорът в съединението си с водорода?",
                             RightAnswer = "1"
                         },
                         new
@@ -1090,6 +1750,186 @@ namespace ElementFactory.Data.Migrations
                             Id = 30,
                             Description = "За какво се използва хлорът в практиката?",
                             RightAnswer = "Дезинфекция на водите"
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Description = "Простото вещество Ca е:",
+                            RightAnswer = "Алкалоземен метал"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Description = "С какъв строеж е простото вещество Ca?",
+                            RightAnswer = "Кристален"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Description = "С каква валентност участва в съединенията си Ca?",
+                            RightAnswer = "2"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Description = "Под какво име е известно съединението CaO?",
+                            RightAnswer = "Негасена вар"
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Description = "В коя група е Ca?",
+                            RightAnswer = "Втора А"
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Description = "При взаимодействието на Ca с кислород се получава:",
+                            RightAnswer = "CaO"
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Description = "Реакцията \"Гасене на вар\" е ракция на CaO с вода, при коята се получава/т:",
+                            RightAnswer = "Ca(OH)2"
+                        },
+                        new
+                        {
+                            Id = 38,
+                            Description = "При взаимодействие на Ca с халогеноводородна киселина се получава:",
+                            RightAnswer = "Сол"
+                        },
+                        new
+                        {
+                            Id = 39,
+                            Description = "Простото вещество Ca е газ с метален блясък и висока електропроводимост.",
+                            RightAnswer = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 40,
+                            Description = "Какъв характер проявява водният разтвор на калциевия дихидроксид?",
+                            RightAnswer = "Основен"
+                        },
+                        new
+                        {
+                            Id = 41,
+                            Description = "Кое от следните уравнения за Ca и неговите съединения е изравнено вярно?",
+                            RightAnswer = "Ca + 2H2O => Ca(OH)2+H2"
+                        },
+                        new
+                        {
+                            Id = 42,
+                            Description = "Ca се съхранява по петрол или инертен газ",
+                            RightAnswer = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 43,
+                            Description = "Какъв е цвета на пламъка при гореното на Ca?",
+                            RightAnswer = "Керемиденочервен"
+                        },
+                        new
+                        {
+                            Id = 44,
+                            Description = "Реакцията \"Шумяща проба\" се наблюдава при взаимодействието на:",
+                            RightAnswer = "CaCO3 с киселина"
+                        },
+                        new
+                        {
+                            Id = 45,
+                            Description = "Разтоворът на Ca(OH)2 е с pH:",
+                            RightAnswer = "11"
+                        },
+                        new
+                        {
+                            Id = 46,
+                            Description = "В кой от редовете са посочени само неорганични съединения:",
+                            RightAnswer = "CO, CO2, H2CO3, Na2CO3"
+                        },
+                        new
+                        {
+                            Id = 47,
+                            Description = "Каква валентност проявява C в неговите ОС?",
+                            RightAnswer = "4"
+                        },
+                        new
+                        {
+                            Id = 48,
+                            Description = "Кое е най-точното определение за ароматните ВВ?",
+                            RightAnswer = "ВВ с по-сложен строеж, които са циклични"
+                        },
+                        new
+                        {
+                            Id = 49,
+                            Description = "Кое от посочените съединения е известно под името \"Газ гризу\":",
+                            RightAnswer = "CH4"
+                        },
+                        new
+                        {
+                            Id = 50,
+                            Description = "\"Халогенирането\" на метан е заместителна реакция.",
+                            RightAnswer = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 51,
+                            Description = "Всяко ОС при взаимодействие с кислород(горене) се разлага до въглероден диоксид и вода",
+                            RightAnswer = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 52,
+                            Description = "Кое от от следните съединения е нонан",
+                            RightAnswer = "C9H20"
+                        },
+                        new
+                        {
+                            Id = 53,
+                            Description = "Каква е общата молекулна формула на алкените",
+                            RightAnswer = "CnH2n"
+                        },
+                        new
+                        {
+                            Id = 54,
+                            Description = "Характерни за алкените са заместителните реакции, поради наличието на сложната двойна връзка",
+                            RightAnswer = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 55,
+                            Description = "\"Хидрирането\" на алкени протична при наличието на:",
+                            RightAnswer = "И трите изброени"
+                        },
+                        new
+                        {
+                            Id = 56,
+                            Description = "Наличието на какво се доказва с разтвор на KMnO4?",
+                            RightAnswer = "Сложни връзки"
+                        },
+                        new
+                        {
+                            Id = 57,
+                            Description = "При присъединяването на полярни H-съдържащи молекули към молекули на несиметрияни алкени се спазва правилото на:",
+                            RightAnswer = "Марковников"
+                        },
+                        new
+                        {
+                            Id = 58,
+                            Description = "За да се спре реакцията на \"Хидриране\" на алкините, така че от алкин да се получи алкен, се използва катализатор:",
+                            RightAnswer = "Pb(CH3COO)2"
+                        },
+                        new
+                        {
+                            Id = 59,
+                            Description = "2,4,6-тринитро толуен(TNT) се получава при взаимодействието на:",
+                            RightAnswer = "Толуен и HNO3 в излишък"
+                        },
+                        new
+                        {
+                            Id = 60,
+                            Description = "При взаимодействието на фенол и натрий се получава:",
+                            RightAnswer = "Натриев феноксид и 1/2 H2"
                         });
                 });
 
@@ -1257,6 +2097,156 @@ namespace ElementFactory.Data.Migrations
                         {
                             QuestionId = 30,
                             TestId = 2
+                        },
+                        new
+                        {
+                            QuestionId = 31,
+                            TestId = 3
+                        },
+                        new
+                        {
+                            QuestionId = 32,
+                            TestId = 3
+                        },
+                        new
+                        {
+                            QuestionId = 33,
+                            TestId = 3
+                        },
+                        new
+                        {
+                            QuestionId = 34,
+                            TestId = 3
+                        },
+                        new
+                        {
+                            QuestionId = 35,
+                            TestId = 3
+                        },
+                        new
+                        {
+                            QuestionId = 36,
+                            TestId = 3
+                        },
+                        new
+                        {
+                            QuestionId = 37,
+                            TestId = 3
+                        },
+                        new
+                        {
+                            QuestionId = 38,
+                            TestId = 3
+                        },
+                        new
+                        {
+                            QuestionId = 39,
+                            TestId = 3
+                        },
+                        new
+                        {
+                            QuestionId = 40,
+                            TestId = 3
+                        },
+                        new
+                        {
+                            QuestionId = 41,
+                            TestId = 3
+                        },
+                        new
+                        {
+                            QuestionId = 42,
+                            TestId = 3
+                        },
+                        new
+                        {
+                            QuestionId = 43,
+                            TestId = 3
+                        },
+                        new
+                        {
+                            QuestionId = 44,
+                            TestId = 3
+                        },
+                        new
+                        {
+                            QuestionId = 45,
+                            TestId = 3
+                        },
+                        new
+                        {
+                            QuestionId = 46,
+                            TestId = 4
+                        },
+                        new
+                        {
+                            QuestionId = 47,
+                            TestId = 4
+                        },
+                        new
+                        {
+                            QuestionId = 48,
+                            TestId = 4
+                        },
+                        new
+                        {
+                            QuestionId = 49,
+                            TestId = 4
+                        },
+                        new
+                        {
+                            QuestionId = 50,
+                            TestId = 4
+                        },
+                        new
+                        {
+                            QuestionId = 51,
+                            TestId = 4
+                        },
+                        new
+                        {
+                            QuestionId = 52,
+                            TestId = 4
+                        },
+                        new
+                        {
+                            QuestionId = 53,
+                            TestId = 4
+                        },
+                        new
+                        {
+                            QuestionId = 54,
+                            TestId = 4
+                        },
+                        new
+                        {
+                            QuestionId = 55,
+                            TestId = 4
+                        },
+                        new
+                        {
+                            QuestionId = 56,
+                            TestId = 4
+                        },
+                        new
+                        {
+                            QuestionId = 57,
+                            TestId = 4
+                        },
+                        new
+                        {
+                            QuestionId = 58,
+                            TestId = 4
+                        },
+                        new
+                        {
+                            QuestionId = 59,
+                            TestId = 4
+                        },
+                        new
+                        {
+                            QuestionId = 60,
+                            TestId = 4
                         });
                 });
 
@@ -1275,8 +2265,8 @@ namespace ElementFactory.Data.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.HasKey("Id");
 
@@ -1296,6 +2286,18 @@ namespace ElementFactory.Data.Migrations
                             Id = 2,
                             Category = "7 клас",
                             Title = "Неметали. Хлор и неговите съединения"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Category = "8-9 клас",
+                            Title = "Алкалоземни метали. Калций и неговите съединения"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Category = "8-9 клас",
+                            Title = "Органична химия. Въглерод и неговите органични съединения"
                         });
                 });
 
