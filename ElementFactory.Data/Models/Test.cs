@@ -18,7 +18,7 @@
         /// <summary>
         /// Test Title
         /// </summary>
-        [MinLength(3), MaxLength(50)]
+        [MinLength(3), MaxLength(150)]
         public string Title { get; set; } = null!;
 
         /// <summary>

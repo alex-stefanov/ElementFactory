@@ -8,14 +8,15 @@
     {
         public void Configure(EntityTypeBuilder<Test> builder)
         {
-            var tests1 = this.Tests7Grade();
+            var tests = this.Tests7Grade();
+            tests.AddRange(this.Tests8_9Grade());
 
             builder.HasMany(t => t.QuestionsTests)
               .WithOne(qtm => qtm.Test)
               .HasForeignKey(qtm => qtm.TestId)
               .OnDelete(DeleteBehavior.Cascade);
 
-            builder.HasData(tests1);
+            builder.HasData(tests);
         }
 
         private List<Test> Tests7Grade()
@@ -42,5 +43,31 @@
                 test2
             };
         }
+
+        private List<Test> Tests8_9Grade()
+        {
+            var test1 = new Test()
+            {
+                Id = 3,
+                Title = "Алкалоземни метали. Калций и неговите съединения",
+                Category = "8-9 клас",
+                QuestionsTests = new List<QuestionTestMap>()
+            };
+
+            var test2 = new Test()
+            {
+                Id = 4,
+                Title = "Органична химия. Въглерод и неговите органични съединения",
+                Category = "8-9 клас",
+                QuestionsTests = new List<QuestionTestMap>()
+            };
+
+            return new List<Test>()
+            {
+                test1,
+                test2
+            };
+        }
+
     }
 }
