@@ -10,8 +10,7 @@
         {
             builder
                 .HasOne(a => a.Question)
-                .WithMany(q => q.Answers)
-                .OnDelete(DeleteBehavior.Cascade);
+                .WithMany(q => q.Answers);
 
             var answers = this.Answers1();
             answers.AddRange(this.Answers2());
@@ -92,28 +91,28 @@
             {
                 Id = 9,
                 QuestionId = 3,
-                Value = "Неметали, киселини, вода"
+                Value = "Неметали, киселини и вода"
             };
 
             var answer3_2 = new Answer()
             {
                 Id = 10,
                 QuestionId = 3,
-                Value = "Основни оксиди, киселини, вода"
+                Value = "Основни оксиди, киселини и вода"
             };
 
             var answer3_3 = new Answer()
             {
                 Id = 11,
                 QuestionId = 3,
-                Value = "Основи, киселини, метали"
+                Value = "Основи, киселини и метали"
             };
 
             var answer3_4 = new Answer()
             {
                 Id = 12,
                 QuestionId = 3,
-                Value = "Киселинни оксиди, основи, соли"
+                Value = "Киселинни оксиди, основи и соли"
             };
 
             // ============================================= //
@@ -1345,7 +1344,7 @@
             {
                 Id = 146,
                 QuestionId = 38,
-                Value = "Калция не взаимодейства с киселини"
+                Value = "Калцият не взаимодейства с киселини"
             };
 
             var answer8_3 = new Answer()
@@ -1438,7 +1437,7 @@
             {
                 Id = 158,
                 QuestionId = 41,
-                Value = "Ca + 2H2O => Ca(OH)2+H2"
+                Value = "Ca + 2H2O => Ca(OH)2 + H2"
             };
 
             // ============================================= //
@@ -1887,21 +1886,21 @@
             {
                 Id = 203,
                 QuestionId = 55,
-                Value = "Температура"
+                Value = "Висока температура"
             };
 
             var answer10_2 = new Answer()
             {
                 Id = 204,
                 QuestionId = 55,
-                Value = "Налягане"
+                Value = "Високо налягане"
             };
 
             var answer10_3 = new Answer()
             {
                 Id = 205,
                 QuestionId = 55,
-                Value = "Катализатор(Ni)"
+                Value = "Катализатор (Ni)"
             };
 
             var answer10_4 = new Answer()

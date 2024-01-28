@@ -5,6 +5,8 @@
 
     public class TestViewModel
     {
+        public int Id { get; set; }
+
         [Required(ErrorMessage = "Полето за заглавие е задължително!")]
         [StringLength(150, MinimumLength = 3, ErrorMessage = "Дължината за полето на заглавието" +
             " трябва да е между" +
@@ -13,7 +15,7 @@
 
         public string Category { get; set; } = null!;
 
-        public List<QuestionsTestsMap> Questions { get; set; } = 
-            new List<QuestionsTestsMap>();
+        public List<QuestionViewModel> Questions { get; set; } = 
+            new List<QuestionViewModel>();
     }
 }

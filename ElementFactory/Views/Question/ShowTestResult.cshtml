@@ -1,0 +1,9 @@
+﻿@using ElementFactory.Models.Others;
+@model ShowTestResultViewModel
+
+<div class="testResultContainer">
+    <h2>@Model.CorrectAnswers</h2>
+    <h3>@Model.ClassCategory</h3>
+    <a asp-controller="Home" asp-action="LoadTable">Върни се в началото</a>
+    <a asp-controller="Home" asp-action="LoadTable">Още тестове</a>
+</div>

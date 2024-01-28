@@ -13,8 +13,7 @@
 
             builder.HasMany(t => t.QuestionsTests)
               .WithOne(qtm => qtm.Test)
-              .HasForeignKey(qtm => qtm.TestId)
-              .OnDelete(DeleteBehavior.Cascade);
+              .HasForeignKey(qtm => qtm.TestId);
 
             builder.HasData(tests);
         }
