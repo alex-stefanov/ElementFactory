@@ -76,11 +76,11 @@
                 }
             }
 
-            var category = '@Model.Category[0]';
+            var category = '@Model.Category.Split(" ")[0]';
 
-            window.location.href='../ShowTestResult?answers='
-            +correctAnswers.toString()
-            +'&classCategory='+category;
+            window.location.href = '../ShowTestResult?answers='
+            + correctAnswers.toString()
+            + '&classCategory='+category;
         }
     });
 </script>

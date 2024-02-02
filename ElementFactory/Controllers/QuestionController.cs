@@ -6,22 +6,25 @@
     using ElementFactory.Models.Test;
     using ElementFactory.Models.Answer;
     using ElementFactory.Data.Models;
-    using Microsoft.EntityFrameworkCore;
     using ElementFactory.Models;
     using System.Diagnostics;
     using System.Text.Json;
     using ElementFactory.Models.Others;
+    using ElementFactory.Core.Contracts.Service;
 
     public class QuestionController : Controller
     {
-        private ApplicationDbContext _context;
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> logger;
+        private readonly IQuestionService questionService;
+        private readonly ITestService testService;
 
         public QuestionController(ILogger<HomeController> logger,
-            ApplicationDbContext context)
+            IQuestionService questionService,
+            ITestService testService)
         {
-            _logger = logger;
-            _context = context;
+            this.logger = logger;
+            this.questionService = questionService;
+            this.testService = testService;
         }
 
         public IActionResult Index()
@@ -35,40 +38,40 @@
         }
 
         [HttpGet]
-        public IActionResult TestsByGrade(string grade)
+        public async Task<IActionResult> TestsByGrade(string grade)
         {
-            var tests = this._context.Tests
-                .Where(t => t.Category == $"{grade} клас")
+            var testsEntities = 
+                await this.testService.GetByGradeAsync(grade);
+
+            var models = testsEntities
                 .Select(t => new TestViewModel()
+            {
+                Id = t.Id,
+                Category = t.Category,
+                Title = t.Title,
+                Questions = t.QuestionsTests
+                .Select(qt => new QuestionViewModel()
                 {
-                    Id = t.Id,
-
-                    Category = t.Category,
-
-                    Title = t.Title,
-
-                    Questions = t.QuestionsTests
-                    .Select(qt =>
-                        new QuestionViewModel()
-                        {
-                            CorrectAnswer = new AnswerViewModel()
-                            {
-                                Value = qt.Question.RightAnswer
-                            },
-
-                            Answers = qt.Question.Answers
-                            .Select(a => new AnswerViewModel()
-                            {
-                                Value = a.Value
-                            }).ToList()
-                        }).ToList()
-                      
+                    Id = qt.Question.Id,
+                    Description = qt.Question.Description,
+                    CorrectAnswer = new AnswerViewModel() 
+                    {
+                        Value = qt.Question.RightAnswer 
+                    },
+                    Answers = qt.Question
+                    .Answers.Select(a => new AnswerViewModel()
+                    {
+                        Value = a.Value
+                    }).ToList()
                 })
+                .ToList(),
+
+            })
                 .ToList();
 
             ViewBag.Title = $"Тестове за {grade} клас";
 
-            return View(tests);
+            return View(models);
         }
 
         [HttpGet]
@@ -89,8 +92,7 @@
                     QuestionsTests = new List<QuestionTestMap>()
                 };
 
-                await this._context.Tests.AddAsync(testEntity);
-                await this._context.SaveChangesAsync();
+                await this.testService.AddAsync(testEntity);
 
                 return RedirectToAction("TestsByGrade", "Question", new
                 {
@@ -104,18 +106,11 @@
         [HttpPost]
         public async Task<IActionResult> DeleteTest(int id)
         {
-            var test = await this._context.Tests
-                .FirstOrDefaultAsync(x => x.Id == id);
-
-            if (test == null)
-            {
-                return RedirectToAction("Error");
-            }
+            var test = await this.testService.GetByIdAsync(id);
 
             var category = test.Category;
 
-            this._context.Tests.Remove(test);
-            await this._context.SaveChangesAsync();
+            await this.testService.DeleteAsync(id);
 
             return RedirectToAction("TestsByGrade", new
             {
@@ -124,13 +119,9 @@
         }
 
         [HttpGet]
-        public IActionResult LoadTest(int id)
+        public async Task<IActionResult> LoadTest(int id)
         {
-           var model = this._context.Tests
-                .Include(x => x.QuestionsTests)
-                .ThenInclude(x => x.Question)
-                .ThenInclude(x => x.Answers)
-                .FirstOrDefault(x => x.Id == id);
+            var model = await this.testService.LoadTestAsync(id);
 
             if (model != null)
             {
@@ -168,7 +159,6 @@
                 return View(viewModel);
             }
 
-
             return RedirectToAction("Error");
         }
 
@@ -184,21 +174,16 @@
             return View("ShowTestResult", model);
         }
 
-        //?
-        public IActionResult Question(QuestionModel model)
-        {
-            // .LoadQuestionById(model.id)
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None,
+        [ResponseCache(
+            Duration = 0, 
+            Location = ResponseCacheLocation.None,
             NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel
             {
                 RequestId = Activity.Current?.Id ??
-            HttpContext.TraceIdentifier
+                HttpContext.TraceIdentifier
             });
         }
     }

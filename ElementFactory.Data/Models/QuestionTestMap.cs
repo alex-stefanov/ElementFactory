@@ -1,5 +1,6 @@
 ﻿namespace ElementFactory.Data.Models
 {
+    using Microsoft.EntityFrameworkCore;
     using System.ComponentModel.DataAnnotations.Schema;
 
     public class QuestionTestMap
@@ -8,6 +9,7 @@
         /// Question Id corresponding to the Question => Foreign Key
         /// </summary>
         [ForeignKey(nameof(Question))]
+        [Comment("Question identificator")]
         public int QuestionId { get; set; }
 
         /// <summary>
@@ -19,6 +21,7 @@
         /// Test ID corresponding to the Test => Foreign Key
         /// </summary>
         [ForeignKey(nameof(Test))]
+        [Comment("Test identificator")]
         public int TestId { get; set; }
 
         /// <summary>

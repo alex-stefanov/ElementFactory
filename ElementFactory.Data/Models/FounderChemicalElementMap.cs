@@ -14,6 +14,7 @@
         /// Foreign Key
         /// </summary>
         [ForeignKey(nameof(Founder))]
+        [Comment("Founder identificator")]
         public int FounderId { get; set; }
 
         /// <summary>
@@ -26,6 +27,7 @@
         /// Chemical Element => Foreign Key
         /// </summary>
         [ForeignKey(nameof(ChemicalElement))]
+        [Comment("Chemical element symbol => PK")]
         public string ChemicalElementSymbol { get; set; } = null!;
 
         /// <summary>
