@@ -9,6 +9,8 @@
     {
         public void Configure(EntityTypeBuilder<QuestionTestMap> builder)
         {
+            // Seeding the DB
+
             var questionsTestsMap = this.QuestionsTests1();
             questionsTestsMap.AddRange(this.QuestionsTests2());
             questionsTestsMap.AddRange(this.QuestionsTests3());
@@ -18,15 +20,23 @@
             questionsTestsMap.AddRange(this.QuestionsTests7());
             questionsTestsMap.AddRange(this.QuestionsTests8());
 
+            // Setting delete behavior, relationships
+
             builder.HasOne(qtm => qtm.Question)
                    .WithMany(q => q.QuestionsTests)
-                   .HasForeignKey(qtm => qtm.QuestionId)
-                   .OnDelete(DeleteBehavior.Cascade);
+                   .HasForeignKey(qtm => qtm.QuestionId);
 
             builder.HasOne(qtm => qtm.Test)
                 .WithMany(t => t.QuestionsTests)
-                .HasForeignKey(qtm => qtm.TestId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasForeignKey(qtm => qtm.TestId);
+
+            // Setting Composite Primary Key For
+            // QuestionTestMap
+            builder.HasKey(qt => new
+                {
+                    qt.QuestionId,
+                    qt.TestId
+                });
 
             builder.HasData(questionsTestsMap);
         }

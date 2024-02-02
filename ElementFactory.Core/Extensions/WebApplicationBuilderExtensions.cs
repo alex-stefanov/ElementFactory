@@ -25,10 +25,16 @@
                 .AddScoped<ITestRepository, TestRepository>();
 
             services
+                .AddScoped<IChemicalElementRepository, ChemicalElementRepository>();
+
+            services
                 .AddScoped<IQuestionService, QuestionService>();
 
             services
                 .AddScoped<ITestService, TestService>();
+
+            services
+                .AddScoped<IChemicalElementService, ChemicalElementService>();
         }
     }
 }

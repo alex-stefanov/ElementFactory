@@ -1,4 +1,5 @@
-﻿using ElementFactory.Data;
+﻿using ElementFactory.Core.Contracts.Service;
+using ElementFactory.Data;
 using ElementFactory.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -8,13 +9,14 @@ namespace ElementFactory.Controllers
 {
     public class HomeController : Controller
     {
-        private ApplicationDbContext _context;
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> logger;
+        private readonly IChemicalElementService service;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
+        public HomeController(ILogger<HomeController> logger, 
+            IChemicalElementService service) 
         {
-            _logger = logger;
-            _context = context;
+            this.logger = logger;
+            this.service = service;
         }
 
         public IActionResult Index()
@@ -24,13 +26,9 @@ namespace ElementFactory.Controllers
 
         public async Task<IActionResult> LoadTable()
         {
-            var elements = this._context
-                .ChemicalElements
-                .Include(x => x.ChemicalType)
-                .OrderBy(x => x.AtomicNumber)
-                .ToList();
+            var elements = await this.service.GetAllAsync();
 
-            return View("Index", elements);
+            return View("Index", elements.ToList());
         }
 
         public IActionResult Welcome()
