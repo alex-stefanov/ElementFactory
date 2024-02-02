@@ -15,6 +15,7 @@
         /// </summary>
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Comment("Question identificator")]
         public int Id { get; set; }
 
         /// <summary>
@@ -22,6 +23,7 @@
         /// </summary>
         [Required]
         [MinLength(10), MaxLength(300)]
+        [Comment("Question description")]
         public string Description { get; set; } = null!;
 
         /// <summary>
@@ -32,6 +34,7 @@
         /// <summary>
         /// Question right answer
         /// </summary>
+        [Comment("Question right answer")]
         public string RightAnswer { get; set; } = null!;
 
         /// <summary>

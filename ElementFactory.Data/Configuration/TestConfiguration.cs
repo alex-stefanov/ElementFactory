@@ -10,10 +10,13 @@
         {
             var tests = this.Tests7Grade();
             tests.AddRange(this.Tests8_9Grade());
+            tests.AddRange(this.Tests10Grade());
+            tests.AddRange(this.Tests11_12Grade());
 
             builder.HasMany(t => t.QuestionsTests)
               .WithOne(qtm => qtm.Test)
-              .HasForeignKey(qtm => qtm.TestId);
+              .HasForeignKey(qtm => qtm.TestId)
+              .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasData(tests);
         }
@@ -58,6 +61,56 @@
                 Id = 4,
                 Title = "Органична химия. Въглерод и неговите органични съединения",
                 Category = "8-9 клас",
+                QuestionsTests = new List<QuestionTestMap>()
+            };
+
+            return new List<Test>()
+            {
+                test1,
+                test2
+            };
+        }
+
+        private List<Test> Tests10Grade()
+        {
+            var test1 = new Test()
+            {
+                Id = 5,
+                Title = "Характеристики на химичните процеси",
+                Category = "10 клас",
+                QuestionsTests = new List<QuestionTestMap>()
+            };
+
+            var test2 = new Test()
+            {
+                Id = 6,
+                Title = "Разтвори и химични процеси във водни разтвори",
+                Category = "10 клас",
+                QuestionsTests = new List<QuestionTestMap>()
+            };
+
+            return new List<Test>()
+            {
+                test1,
+                test2
+            };
+        }
+
+        private List<Test> Tests11_12Grade()
+        {
+            var test1 = new Test()
+            {
+                Id = 7,
+                Title = "Строеж и свойства на веществата",
+                Category = "11-12 клас",
+                QuestionsTests = new List<QuestionTestMap>()
+            };
+
+            var test2 = new Test()
+            {
+                Id = 8,
+                Title = "11-12 клас. Обобщителен тест",
+                Category = "11-12 клас",
                 QuestionsTests = new List<QuestionTestMap>()
             };
 

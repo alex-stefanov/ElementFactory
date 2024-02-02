@@ -16,31 +16,37 @@
         [Key]
         [Required]
         [MinLength(1), MaxLength(2)]
+        [Comment("Chemical element symbol => PK")]
         public string Symbol { get; set; } = null!;
 
         /// <summary>
         /// Element Name
         /// </summary>
-        [MinLength(3), MaxLength(13)]
+        [MinLength(3), MaxLength(30)]
+        [Comment("Chemical element name *bulgarian*")]
         public string Name { get; set; } = null!;
 
         /// <summary>
         /// Element English Name
         /// </summary>
         [Required]
+        [MinLength(3), MaxLength(30)]
+        [Comment("Chemical element name *english*")]
         public string EnglishName { get; set; } = null!;
 
         /// <summary>
         /// Element Atomic Number
         /// </summary>
         [Required]
-        [Range(1, 118)]
+        [Range(1, 300)]
+        [Comment("Chemical element atomic number")]
         public int AtomicNumber { get; set; }
 
         /// <summary>
         /// Element Atomic Mass
         /// </summary>
         [Required]
+        [Comment("Chemical element atomic mass")]
         public decimal AtomicMass { get; set; }
 
         /// <summary>
@@ -48,6 +54,7 @@
         /// </summary>
         [Required]
         [Range(1,18)]
+        [Comment("Chemical element group")]
         public int Group { get; set; }
 
         /// <summary>
@@ -55,6 +62,7 @@
         /// </summary>
         [Required]
         [Range(1,7)]
+        [Comment("Chemical element period")]
         public int Period { get; set; }
 
         /// <summary>
@@ -62,18 +70,21 @@
         /// </summary>
         [Required]
         [Range(1,7)]
+        [Comment("Chemical element electronic layers")]
         public int ElectronicLayers { get; set; }
 
         /// <summary>
         /// Flag for radioactivity for an Element
         /// </summary>
         [Required]
+        [Comment("Is chemical element radioactive - flag")]
         public bool IsRadioactive { get; set; }
 
         /// <summary>
         /// Flag for syntheticity for an Element
         /// </summary>
         [Required]
+        [Comment("Is chemical element synthetic - flag")]
         public bool IsSynthetic { get; set; }
 
         /// <summary>
@@ -81,24 +92,28 @@
         /// </summary>
         [ForeignKey(nameof(ChemicalType))]
         [Required]
+        [Comment("Chemical element id for type")]
         public int ChemicalTypeId { get; set; }
 
         /// <summary>
         /// Boiling point for the Element
         /// </summary>
         [Required]
+        [Comment("Chemical element boiling point")]
         public decimal BoilingPoint { get; set; }
 
         /// <summary>
         /// Melting point for the Element
         /// </summary>
         [Required]
+        [Comment("Chemical element melting point")]
         public decimal MeltingPoint { get; set; }
 
         /// <summary>
         /// Year when the Element was found
         /// </summary>
         [Required]
+        [Comment("Chemical element year when found")]
         public int YearFound { get; set; }
 
         /// <summary>
@@ -106,6 +121,7 @@
         /// </summary>
         [Required]
         [MinLength(1), MaxLength(20)]
+        [Comment("Chemical element state *english*")]
         public string State { get; set; } = null!;
 
         /// <summary>
@@ -113,24 +129,28 @@
         /// </summary>
         [Required]
         [MinLength(1), MaxLength(20)]
+        [Comment("Chemical element state *bulgarian*")]
         public string BulgarianState { get; set; } = null!;
 
         /// <summary>
         /// Electronegativity for the Element
         /// </summary>
         [Required]
+        [Comment("Chemical element electronegativity")]
         public decimal Electronegativity { get; set; }
 
         /// <summary>
         /// Atomic Radius for the Element
         /// </summary>
         [Required]
+        [Comment("Chemical element atomic radius")]
         public decimal AtomicRadius { get; set; }
 
         /// <summary>
         /// Density of the Element
         /// </summary>
         [Required]
+        [Comment("Chemical element density")]
         public decimal Density { get; set; }
 
         /// <summary>

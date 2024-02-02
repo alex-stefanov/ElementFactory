@@ -15,6 +15,7 @@
         /// </summary>
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Comment("Founder identificator")]
         public int Id { get; set; }
 
         /// <summary>
@@ -22,6 +23,7 @@
         /// </summary>
         [Required]
         [MinLength(1), MaxLength(50)]
+        [Comment("Founder first name")]
         public string FirstName { get; set; } = null!;
 
         /// <summary>
@@ -29,6 +31,7 @@
         /// </summary>
         [Required]
         [MinLength(1), MaxLength(50)]
+        [Comment("Founder last name")]
         public string LastName { get; set; } = null!;
 
         /// <summary>

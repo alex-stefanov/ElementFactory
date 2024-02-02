@@ -26,16 +26,20 @@ namespace ElementFactory.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasComment("Answer identificator");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("QuestionId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasComment("Answer question Id");
 
                     b.Property<string>("Value")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)")
+                        .HasComment("Answer value");
 
                     b.HasKey("Id");
 
@@ -98,25 +102,25 @@ namespace ElementFactory.Data.Migrations
                         {
                             Id = 9,
                             QuestionId = 3,
-                            Value = "Неметали, киселини и вода"
+                            Value = "Неметали, киселини, вода"
                         },
                         new
                         {
                             Id = 10,
                             QuestionId = 3,
-                            Value = "Основни оксиди, киселини и вода"
+                            Value = "Основни оксиди, киселини, вода"
                         },
                         new
                         {
                             Id = 11,
                             QuestionId = 3,
-                            Value = "Основи, киселини и метали"
+                            Value = "Основи, киселини, метали"
                         },
                         new
                         {
                             Id = 12,
                             QuestionId = 3,
-                            Value = "Киселинни оксиди, основи и соли"
+                            Value = "Киселинни оксиди, основи, соли"
                         },
                         new
                         {
@@ -920,7 +924,7 @@ namespace ElementFactory.Data.Migrations
                         {
                             Id = 146,
                             QuestionId = 38,
-                            Value = "Калцият не взаимодейства с киселини"
+                            Value = "Калция не взаимодейства с киселини"
                         },
                         new
                         {
@@ -992,7 +996,7 @@ namespace ElementFactory.Data.Migrations
                         {
                             Id = 158,
                             QuestionId = 41,
-                            Value = "Ca + 2H2O => Ca(OH)2 + H2"
+                            Value = "Ca + 2H2O => Ca(OH)2+H2"
                         },
                         new
                         {
@@ -1262,19 +1266,19 @@ namespace ElementFactory.Data.Migrations
                         {
                             Id = 203,
                             QuestionId = 55,
-                            Value = "Висока температура"
+                            Value = "Температура"
                         },
                         new
                         {
                             Id = 204,
                             QuestionId = 55,
-                            Value = "Високо налягане"
+                            Value = "Налягане"
                         },
                         new
                         {
                             Id = 205,
                             QuestionId = 55,
-                            Value = "Катализатор (Ni)"
+                            Value = "Катализатор(Ni)"
                         },
                         new
                         {
@@ -1401,6 +1405,942 @@ namespace ElementFactory.Data.Migrations
                             Id = 226,
                             QuestionId = 60,
                             Value = "Натриев феноксид и 1/2 H2"
+                        },
+                        new
+                        {
+                            Id = 227,
+                            QuestionId = 71,
+                            Value = "Вода и разтварящо се вещество"
+                        },
+                        new
+                        {
+                            Id = 228,
+                            QuestionId = 71,
+                            Value = "Течен разтворител и захар"
+                        },
+                        new
+                        {
+                            Id = 229,
+                            QuestionId = 71,
+                            Value = "Разтворител и разтварящо се вещество"
+                        },
+                        new
+                        {
+                            Id = 230,
+                            QuestionId = 71,
+                            Value = "Нито едно от изброените"
+                        },
+                        new
+                        {
+                            Id = 231,
+                            QuestionId = 72,
+                            Value = "\"Йони се разтварят в йони\""
+                        },
+                        new
+                        {
+                            Id = 232,
+                            QuestionId = 72,
+                            Value = "\"В разтвор с ниска концентрация се разтваря вещество с висока концентрация\""
+                        },
+                        new
+                        {
+                            Id = 233,
+                            QuestionId = 72,
+                            Value = "\"Подобни се разтварят в подобни\""
+                        },
+                        new
+                        {
+                            Id = 234,
+                            QuestionId = 72,
+                            Value = "\"Всеки разтвор е смес от вода и друго вещество с по-висока концентрация\""
+                        },
+                        new
+                        {
+                            Id = 235,
+                            QuestionId = 73,
+                            Value = "Молекулни и йонни"
+                        },
+                        new
+                        {
+                            Id = 236,
+                            QuestionId = 73,
+                            Value = "Течни и твърди"
+                        },
+                        new
+                        {
+                            Id = 237,
+                            QuestionId = 73,
+                            Value = "Соли, основи и киселини"
+                        },
+                        new
+                        {
+                            Id = 238,
+                            QuestionId = 73,
+                            Value = "Според частиците на разтвореното вещество не се разглеждат различни по видове разтвори"
+                        },
+                        new
+                        {
+                            Id = 239,
+                            QuestionId = 74,
+                            Value = "Солватация, дифузия, разграждане на кристалната решетка (ако има такава)"
+                        },
+                        new
+                        {
+                            Id = 240,
+                            QuestionId = 74,
+                            Value = "Разграждане на кристалната решетка (ако има такава), солватация, дифузия"
+                        },
+                        new
+                        {
+                            Id = 241,
+                            QuestionId = 74,
+                            Value = "Дифузия, разграждане на кристалната решетка (ако има такава), солватация"
+                        },
+                        new
+                        {
+                            Id = 242,
+                            QuestionId = 74,
+                            Value = "Разграждане на кристалната решетка (ако има такава), дифузия, солватация"
+                        },
+                        new
+                        {
+                            Id = 243,
+                            QuestionId = 75,
+                            Value = "Йонизация"
+                        },
+                        new
+                        {
+                            Id = 244,
+                            QuestionId = 75,
+                            Value = "Солватация"
+                        },
+                        new
+                        {
+                            Id = 245,
+                            QuestionId = 75,
+                            Value = "Дифузия"
+                        },
+                        new
+                        {
+                            Id = 246,
+                            QuestionId = 75,
+                            Value = "Кристализация"
+                        },
+                        new
+                        {
+                            Id = 247,
+                            QuestionId = 76,
+                            Value = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 248,
+                            QuestionId = 76,
+                            Value = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 249,
+                            QuestionId = 77,
+                            Value = "m(р-р) = M(А) * n(р-р)"
+                        },
+                        new
+                        {
+                            Id = 250,
+                            QuestionId = 77,
+                            Value = "S(А) = m(А) / 100g(р-р)"
+                        },
+                        new
+                        {
+                            Id = 251,
+                            QuestionId = 77,
+                            Value = "W(А) = m(А) / m(р-р)"
+                        },
+                        new
+                        {
+                            Id = 252,
+                            QuestionId = 77,
+                            Value = "C(А) = n(А) / V"
+                        },
+                        new
+                        {
+                            Id = 253,
+                            QuestionId = 78,
+                            Value = "1 милиметър"
+                        },
+                        new
+                        {
+                            Id = 254,
+                            QuestionId = 78,
+                            Value = "1 нанометър"
+                        },
+                        new
+                        {
+                            Id = 255,
+                            QuestionId = 78,
+                            Value = "1 микрон"
+                        },
+                        new
+                        {
+                            Id = 256,
+                            QuestionId = 78,
+                            Value = "1 метър"
+                        },
+                        new
+                        {
+                            Id = 257,
+                            QuestionId = 79,
+                            Value = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 258,
+                            QuestionId = 79,
+                            Value = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 259,
+                            QuestionId = 80,
+                            Value = "Дифузия, понижаване на парното налягане, осмоза"
+                        },
+                        new
+                        {
+                            Id = 260,
+                            QuestionId = 80,
+                            Value = "Повишаването на температурата на замръзване, понижаването на температурата на кипене, дифузия, понижаване на парното налягане, осмоза"
+                        },
+                        new
+                        {
+                            Id = 261,
+                            QuestionId = 80,
+                            Value = "Понижаването на температурата на замръзване, повишаването на температурата на кипене, дифузия, понижаване на парното налягане, осмоза"
+                        },
+                        new
+                        {
+                            Id = 262,
+                            QuestionId = 80,
+                            Value = "Дифузия, повишаване на парното налягане, осмоза"
+                        },
+                        new
+                        {
+                            Id = 263,
+                            QuestionId = 81,
+                            Value = "π = 3*i*c*R"
+                        },
+                        new
+                        {
+                            Id = 264,
+                            QuestionId = 81,
+                            Value = "π = i*c*R*T"
+                        },
+                        new
+                        {
+                            Id = 265,
+                            QuestionId = 81,
+                            Value = "2*π = i*c*R*T"
+                        },
+                        new
+                        {
+                            Id = 266,
+                            QuestionId = 81,
+                            Value = "π^2 = i*c*R*T"
+                        },
+                        new
+                        {
+                            Id = 267,
+                            QuestionId = 82,
+                            Value = "Хипертоничен"
+                        },
+                        new
+                        {
+                            Id = 268,
+                            QuestionId = 82,
+                            Value = "Хипотоничен"
+                        },
+                        new
+                        {
+                            Id = 269,
+                            QuestionId = 82,
+                            Value = "Изотоничен"
+                        },
+                        new
+                        {
+                            Id = 270,
+                            QuestionId = 82,
+                            Value = "Разтвор на електролит"
+                        },
+                        new
+                        {
+                            Id = 271,
+                            QuestionId = 83,
+                            Value = "C6H12O6, Cl2, Al(OH)3, Na2CO3"
+                        },
+                        new
+                        {
+                            Id = 272,
+                            QuestionId = 83,
+                            Value = "AlCl3, захар, Sr(OH)2, NaCl"
+                        },
+                        new
+                        {
+                            Id = 273,
+                            QuestionId = 83,
+                            Value = "C6H6, S, KOH, CaCO3"
+                        },
+                        new
+                        {
+                            Id = 274,
+                            QuestionId = 83,
+                            Value = "CuSO4, NaOH, H2O, Ca(OH)2"
+                        },
+                        new
+                        {
+                            Id = 275,
+                            QuestionId = 84,
+                            Value = "Наситени, преситени, ненаситени"
+                        },
+                        new
+                        {
+                            Id = 276,
+                            QuestionId = 84,
+                            Value = "Силни и слаби"
+                        },
+                        new
+                        {
+                            Id = 277,
+                            QuestionId = 84,
+                            Value = "Средни, слаби, силни"
+                        },
+                        new
+                        {
+                            Id = 278,
+                            QuestionId = 84,
+                            Value = "Електролитни и неелектролитни"
+                        },
+                        new
+                        {
+                            Id = 279,
+                            QuestionId = 85,
+                            Value = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 280,
+                            QuestionId = 85,
+                            Value = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 281,
+                            QuestionId = 86,
+                            Value = "Na+"
+                        },
+                        new
+                        {
+                            Id = 282,
+                            QuestionId = 86,
+                            Value = "Ne"
+                        },
+                        new
+                        {
+                            Id = 283,
+                            QuestionId = 86,
+                            Value = "Al3+"
+                        },
+                        new
+                        {
+                            Id = 284,
+                            QuestionId = 86,
+                            Value = "F-"
+                        },
+                        new
+                        {
+                            Id = 285,
+                            QuestionId = 87,
+                            Value = "Състояние, което се определя от стойностите на квантовите числа n, l и m"
+                        },
+                        new
+                        {
+                            Id = 286,
+                            QuestionId = 87,
+                            Value = "Функция, която описва електроните в една атомна система"
+                        },
+                        new
+                        {
+                            Id = 287,
+                            QuestionId = 87,
+                            Value = "Вероятността за намиране на електрона в пространството около ядрото"
+                        },
+                        new
+                        {
+                            Id = 288,
+                            QuestionId = 87,
+                            Value = "Част от пространството, което е около самото ядро, в която шансът за намиране на електрона е приблизително 90%"
+                        },
+                        new
+                        {
+                            Id = 289,
+                            QuestionId = 88,
+                            Value = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 290,
+                            QuestionId = 88,
+                            Value = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 291,
+                            QuestionId = 89,
+                            Value = "CO2, BeH2, N2"
+                        },
+                        new
+                        {
+                            Id = 292,
+                            QuestionId = 89,
+                            Value = "HBr, CO2, N2"
+                        },
+                        new
+                        {
+                            Id = 293,
+                            QuestionId = 89,
+                            Value = "NH3, H2О, N2"
+                        },
+                        new
+                        {
+                            Id = 294,
+                            QuestionId = 89,
+                            Value = "H2О, CH4, O2"
+                        },
+                        new
+                        {
+                            Id = 295,
+                            QuestionId = 90,
+                            Value = "То е сумата от броя на елементарните частици"
+                        },
+                        new
+                        {
+                            Id = 296,
+                            QuestionId = 90,
+                            Value = "То е равно на сумата от броя на електроните и неутроните"
+                        },
+                        new
+                        {
+                            Id = 297,
+                            QuestionId = 90,
+                            Value = "То е равно на сумата от броя на протоните и неутроните"
+                        },
+                        new
+                        {
+                            Id = 298,
+                            QuestionId = 90,
+                            Value = "Според него химичният елемент е смес от изотопи"
+                        },
+                        new
+                        {
+                            Id = 299,
+                            QuestionId = 91,
+                            Value = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 300,
+                            QuestionId = 91,
+                            Value = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 301,
+                            QuestionId = 92,
+                            Value = "CO2, N2, H2O"
+                        },
+                        new
+                        {
+                            Id = 302,
+                            QuestionId = 92,
+                            Value = "H2O, CO2, N2"
+                        },
+                        new
+                        {
+                            Id = 303,
+                            QuestionId = 92,
+                            Value = "PCl3, H2O, C2H6"
+                        },
+                        new
+                        {
+                            Id = 304,
+                            QuestionId = 92,
+                            Value = "C2H2, N2, CO2"
+                        },
+                        new
+                        {
+                            Id = 305,
+                            QuestionId = 93,
+                            Value = "CaH2, PCl5, H2S"
+                        },
+                        new
+                        {
+                            Id = 306,
+                            QuestionId = 93,
+                            Value = "NH3, AgCl, CH4"
+                        },
+                        new
+                        {
+                            Id = 307,
+                            QuestionId = 93,
+                            Value = "NaH, K2O, BaCl2"
+                        },
+                        new
+                        {
+                            Id = 308,
+                            QuestionId = 93,
+                            Value = "H2O, H2SO4, HCl"
+                        },
+                        new
+                        {
+                            Id = 309,
+                            QuestionId = 94,
+                            Value = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 310,
+                            QuestionId = 94,
+                            Value = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 311,
+                            QuestionId = 95,
+                            Value = "sp"
+                        },
+                        new
+                        {
+                            Id = 312,
+                            QuestionId = 95,
+                            Value = "sp^3d"
+                        },
+                        new
+                        {
+                            Id = 313,
+                            QuestionId = 95,
+                            Value = "sp3"
+                        },
+                        new
+                        {
+                            Id = 314,
+                            QuestionId = 95,
+                            Value = "sp^3d^2"
+                        },
+                        new
+                        {
+                            Id = 315,
+                            QuestionId = 96,
+                            Value = "F и Li"
+                        },
+                        new
+                        {
+                            Id = 316,
+                            QuestionId = 96,
+                            Value = "Na и F"
+                        },
+                        new
+                        {
+                            Id = 317,
+                            QuestionId = 96,
+                            Value = "H и Ca"
+                        },
+                        new
+                        {
+                            Id = 318,
+                            QuestionId = 96,
+                            Value = "F и O"
+                        },
+                        new
+                        {
+                            Id = 319,
+                            QuestionId = 97,
+                            Value = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 320,
+                            QuestionId = 97,
+                            Value = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 321,
+                            QuestionId = 98,
+                            Value = "Метална"
+                        },
+                        new
+                        {
+                            Id = 322,
+                            QuestionId = 98,
+                            Value = "Атомна"
+                        },
+                        new
+                        {
+                            Id = 323,
+                            QuestionId = 98,
+                            Value = "Молекулна"
+                        },
+                        new
+                        {
+                            Id = 324,
+                            QuestionId = 98,
+                            Value = "Йонна"
+                        },
+                        new
+                        {
+                            Id = 325,
+                            QuestionId = 99,
+                            Value = "PCl5"
+                        },
+                        new
+                        {
+                            Id = 326,
+                            QuestionId = 99,
+                            Value = "CO2"
+                        },
+                        new
+                        {
+                            Id = 327,
+                            QuestionId = 99,
+                            Value = "SF6"
+                        },
+                        new
+                        {
+                            Id = 328,
+                            QuestionId = 99,
+                            Value = "H2O"
+                        },
+                        new
+                        {
+                            Id = 329,
+                            QuestionId = 100,
+                            Value = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 330,
+                            QuestionId = 100,
+                            Value = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 331,
+                            QuestionId = 101,
+                            Value = "0.8 mol"
+                        },
+                        new
+                        {
+                            Id = 332,
+                            QuestionId = 101,
+                            Value = "0.2 mol"
+                        },
+                        new
+                        {
+                            Id = 333,
+                            QuestionId = 101,
+                            Value = "6.0 mol"
+                        },
+                        new
+                        {
+                            Id = 334,
+                            QuestionId = 101,
+                            Value = "2.0 mol"
+                        },
+                        new
+                        {
+                            Id = 335,
+                            QuestionId = 102,
+                            Value = "се поглъща топлина, ΔH < 0 и продуктите са по-стабилни"
+                        },
+                        new
+                        {
+                            Id = 336,
+                            QuestionId = 102,
+                            Value = "се отделя топлина, ΔH < 0 и продуктите са по-стабилни"
+                        },
+                        new
+                        {
+                            Id = 337,
+                            QuestionId = 102,
+                            Value = "се отделя топлина, ΔH > 0 и реагентите са по-стабилни"
+                        },
+                        new
+                        {
+                            Id = 338,
+                            QuestionId = 102,
+                            Value = "се поглъща топлина, ΔH > 0 и реагентите са по-стабилни"
+                        },
+                        new
+                        {
+                            Id = 339,
+                            QuestionId = 103,
+                            Value = "-1374 kJ/mol"
+                        },
+                        new
+                        {
+                            Id = 340,
+                            QuestionId = 103,
+                            Value = "837 kJ/mol"
+                        },
+                        new
+                        {
+                            Id = 341,
+                            QuestionId = 103,
+                            Value = "-837 kJ/mol"
+                        },
+                        new
+                        {
+                            Id = 342,
+                            QuestionId = 103,
+                            Value = "1374 kJ/mol"
+                        },
+                        new
+                        {
+                            Id = 343,
+                            QuestionId = 104,
+                            Value = "F = U - T*S"
+                        },
+                        new
+                        {
+                            Id = 344,
+                            QuestionId = 104,
+                            Value = "H = U + p*V"
+                        },
+                        new
+                        {
+                            Id = 345,
+                            QuestionId = 104,
+                            Value = "S = R * lnW"
+                        },
+                        new
+                        {
+                            Id = 346,
+                            QuestionId = 104,
+                            Value = "G = H - T*S"
+                        },
+                        new
+                        {
+                            Id = 347,
+                            QuestionId = 105,
+                            Value = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 348,
+                            QuestionId = 105,
+                            Value = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 349,
+                            QuestionId = 106,
+                            Value = "v = k * c(S) * c(O2)"
+                        },
+                        new
+                        {
+                            Id = 350,
+                            QuestionId = 106,
+                            Value = "v = k * c^2(O2)"
+                        },
+                        new
+                        {
+                            Id = 351,
+                            QuestionId = 106,
+                            Value = "v = k * c(O2)"
+                        },
+                        new
+                        {
+                            Id = 352,
+                            QuestionId = 106,
+                            Value = "v = k * c(S)"
+                        },
+                        new
+                        {
+                            Id = 353,
+                            QuestionId = 107,
+                            Value = "Ще се понижи два пъти"
+                        },
+                        new
+                        {
+                            Id = 354,
+                            QuestionId = 107,
+                            Value = "Ще се понижи шест пъти"
+                        },
+                        new
+                        {
+                            Id = 355,
+                            QuestionId = 107,
+                            Value = "Ще се понижи четири пъти"
+                        },
+                        new
+                        {
+                            Id = 356,
+                            QuestionId = 107,
+                            Value = "Ще се понижи осем пъти"
+                        },
+                        new
+                        {
+                            Id = 357,
+                            QuestionId = 108,
+                            Value = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 358,
+                            QuestionId = 108,
+                            Value = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 359,
+                            QuestionId = 109,
+                            Value = "Ензимите се отличават от химичните катализатори по своята чувствителност и специфичност"
+                        },
+                        new
+                        {
+                            Id = 360,
+                            QuestionId = 109,
+                            Value = "Скоростта на ензимно-каталитичните процеси не зависи от концентрацията на ензима"
+                        },
+                        new
+                        {
+                            Id = 361,
+                            QuestionId = 109,
+                            Value = "Ензимите притежават общите свойства на катализаторите"
+                        },
+                        new
+                        {
+                            Id = 362,
+                            QuestionId = 109,
+                            Value = "Върху ензимната активност оказва влияние температурата"
+                        },
+                        new
+                        {
+                            Id = 363,
+                            QuestionId = 110,
+                            Value = "За отделянето на един еквивалент от дадено вещество е необходимо през разтвора да преминат 96 500C електричен заряд. Електрохимичният еквивалент се пресмята по формулата: k = M/z*F"
+                        },
+                        new
+                        {
+                            Id = 364,
+                            QuestionId = 110,
+                            Value = "Масата на веществото m, което се отделя на електродите, е правопропорционална на големината на тока, протекъл през електролита, и времето, за което протича: m = k*I*t"
+                        },
+                        new
+                        {
+                            Id = 365,
+                            QuestionId = 110,
+                            Value = "За отделянето на един еквивалент от дадено вещество е необходимо през разтвора да преминат 96 500C електричен заряд. Електрохимичният еквивалент се пресмята по формулата: k = M/F"
+                        },
+                        new
+                        {
+                            Id = 366,
+                            QuestionId = 110,
+                            Value = "Нито едно от изброените"
+                        },
+                        new
+                        {
+                            Id = 367,
+                            QuestionId = 111,
+                            Value = "Готварска сол"
+                        },
+                        new
+                        {
+                            Id = 368,
+                            QuestionId = 111,
+                            Value = "Етанол"
+                        },
+                        new
+                        {
+                            Id = 369,
+                            QuestionId = 111,
+                            Value = "Калиева основа"
+                        },
+                        new
+                        {
+                            Id = 370,
+                            QuestionId = 111,
+                            Value = "Сярна киселина"
+                        },
+                        new
+                        {
+                            Id = 371,
+                            QuestionId = 112,
+                            Value = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 372,
+                            QuestionId = 112,
+                            Value = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 373,
+                            QuestionId = 113,
+                            Value = "Ca2+"
+                        },
+                        new
+                        {
+                            Id = 374,
+                            QuestionId = 113,
+                            Value = "S2-"
+                        },
+                        new
+                        {
+                            Id = 375,
+                            QuestionId = 113,
+                            Value = "Na+"
+                        },
+                        new
+                        {
+                            Id = 376,
+                            QuestionId = 113,
+                            Value = "Al3+"
+                        },
+                        new
+                        {
+                            Id = 377,
+                            QuestionId = 114,
+                            Value = "CH3COOK, Na2S, C2H5OH"
+                        },
+                        new
+                        {
+                            Id = 378,
+                            QuestionId = 114,
+                            Value = "AlCl3, C6H5OH, H2SO4"
+                        },
+                        new
+                        {
+                            Id = 379,
+                            QuestionId = 114,
+                            Value = "KOH, K2CO3, K2SO4"
+                        },
+                        new
+                        {
+                            Id = 380,
+                            QuestionId = 114,
+                            Value = "Ca(OH)2, NH4OH, NaHCO3"
+                        },
+                        new
+                        {
+                            Id = 381,
+                            QuestionId = 115,
+                            Value = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 382,
+                            QuestionId = 115,
+                            Value = "Грешно"
                         });
                 });
 
@@ -1408,68 +2348,88 @@ namespace ElementFactory.Data.Migrations
                 {
                     b.Property<string>("Symbol")
                         .HasMaxLength(2)
-                        .HasColumnType("nvarchar(2)");
+                        .HasColumnType("nvarchar(2)")
+                        .HasComment("Chemical element symbol => PK");
 
                     b.Property<decimal>("AtomicMass")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,2)")
+                        .HasComment("Chemical element atomic mass");
 
                     b.Property<int>("AtomicNumber")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasComment("Chemical element atomic number");
 
                     b.Property<decimal>("AtomicRadius")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,2)")
+                        .HasComment("Chemical element atomic radius");
 
                     b.Property<decimal>("BoilingPoint")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,2)")
+                        .HasComment("Chemical element boiling point");
 
                     b.Property<string>("BulgarianState")
                         .IsRequired()
                         .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)")
+                        .HasComment("Chemical element state *bulgarian*");
 
                     b.Property<int>("ChemicalTypeId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasComment("Chemical element id for type");
 
                     b.Property<decimal>("Density")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,2)")
+                        .HasComment("Chemical element density");
 
                     b.Property<decimal>("Electronegativity")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,2)")
+                        .HasComment("Chemical element electronegativity");
 
                     b.Property<int>("ElectronicLayers")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasComment("Chemical element electronic layers");
 
                     b.Property<string>("EnglishName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)")
+                        .HasComment("Chemical element name *english*");
 
                     b.Property<int>("Group")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasComment("Chemical element group");
 
                     b.Property<bool>("IsRadioactive")
-                        .HasColumnType("bit");
+                        .HasColumnType("bit")
+                        .HasComment("Is chemical element radioactive - flag");
 
                     b.Property<bool>("IsSynthetic")
-                        .HasColumnType("bit");
+                        .HasColumnType("bit")
+                        .HasComment("Is chemical element synthetic - flag");
 
                     b.Property<decimal>("MeltingPoint")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,2)")
+                        .HasComment("Chemical element melting point");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(13)
-                        .HasColumnType("nvarchar(13)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)")
+                        .HasComment("Chemical element name *bulgarian*");
 
                     b.Property<int>("Period")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasComment("Chemical element period");
 
                     b.Property<string>("State")
                         .IsRequired()
                         .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)")
+                        .HasComment("Chemical element state *english*");
 
                     b.Property<int>("YearFound")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasComment("Chemical element year when found");
 
                     b.HasKey("Symbol");
 
@@ -1484,19 +2444,22 @@ namespace ElementFactory.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasComment("Chemical Type identificator");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("BulgarianName")
                         .IsRequired()
                         .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
+                        .HasColumnType("nvarchar(25)")
+                        .HasComment("Chemical type name *bulgarian*");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
+                        .HasColumnType("nvarchar(25)")
+                        .HasComment("Chemical type name *english*");
 
                     b.HasKey("Id");
 
@@ -1509,19 +2472,22 @@ namespace ElementFactory.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasComment("Founder identificator");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(50)")
+                        .HasComment("Founder first name");
 
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(50)")
+                        .HasComment("Founder last name");
 
                     b.HasKey("Id");
 
@@ -1533,10 +2499,12 @@ namespace ElementFactory.Data.Migrations
             modelBuilder.Entity("ElementFactory.Data.Models.FounderChemicalElementMap", b =>
                 {
                     b.Property<int>("FounderId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasComment("Founder identificator");
 
                     b.Property<string>("ChemicalElementSymbol")
-                        .HasColumnType("nvarchar(2)");
+                        .HasColumnType("nvarchar(2)")
+                        .HasComment("Chemical element symbol => PK");
 
                     b.HasKey("FounderId", "ChemicalElementSymbol");
 
@@ -1551,18 +2519,21 @@ namespace ElementFactory.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasComment("Question identificator");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
+                        .HasColumnType("nvarchar(300)")
+                        .HasComment("Question description");
 
                     b.Property<string>("RightAnswer")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasComment("Question right answer");
 
                     b.HasKey("Id");
 
@@ -1598,7 +2569,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 5,
-                            Description = "Защо простото вещество Na се държи под петрол?",
+                            Description = "Защо простото вещество Na се държи под петрол",
                             RightAnswer = "За да не взаимодейства с кислорода от въздуха"
                         },
                         new
@@ -1676,7 +2647,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 18,
-                            Description = "Кои киселини се получават при директно взаимодействие на хлор с вода?",
+                            Description = "Кои киселини се получават при директно взаимодействие на хлор с вода",
                             RightAnswer = "HCl и HClO"
                         },
                         new
@@ -1742,7 +2713,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 29,
-                            Description = "Газът хлор има силен, приятен мирис.",
+                            Description = "Газът хлор има силен, приятен мирис",
                             RightAnswer = "Грешно"
                         },
                         new
@@ -1790,7 +2761,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 37,
-                            Description = "Реакцията \"Гасене на вар\" е реакция на CaO с вода, при коятo се получава/т:",
+                            Description = "Реакцията \"Гасене на вар\" е ракция на CaO с вода, при коята се получава/т:",
                             RightAnswer = "Ca(OH)2"
                         },
                         new
@@ -1815,18 +2786,18 @@ namespace ElementFactory.Data.Migrations
                         {
                             Id = 41,
                             Description = "Кое от следните уравнения за Ca и неговите съединения е изравнено вярно?",
-                            RightAnswer = "Ca + 2H2O => Ca(OH)2 + H2"
+                            RightAnswer = "Ca + 2H2O => Ca(OH)2+H2"
                         },
                         new
                         {
                             Id = 42,
-                            Description = "Ca се съхранява под петрол или инертен газ.",
+                            Description = "Ca се съхранява по петрол или инертен газ",
                             RightAnswer = "Вярно"
                         },
                         new
                         {
                             Id = 43,
-                            Description = "Какъв е цветът на пламъка при горенето на Ca?",
+                            Description = "Какъв е цвета на пламъка при гореното на Ca?",
                             RightAnswer = "Керемиденочервен"
                         },
                         new
@@ -1838,7 +2809,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 45,
-                            Description = "Разтворът на Ca(OH)2 е с pH:",
+                            Description = "Разтоворът на Ca(OH)2 е с pH:",
                             RightAnswer = "11"
                         },
                         new
@@ -1874,31 +2845,31 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 51,
-                            Description = "Всяко ОС при взаимодействие с кислород (горене) се разлага до въглероден диоксид и вода",
+                            Description = "Всяко ОС при взаимодействие с кислород(горене) се разлага до въглероден диоксид и вода",
                             RightAnswer = "Вярно"
                         },
                         new
                         {
                             Id = 52,
-                            Description = "Кое от от следните съединения е нонан?",
+                            Description = "Кое от от следните съединения е нонан",
                             RightAnswer = "C9H20"
                         },
                         new
                         {
                             Id = 53,
-                            Description = "Каква е общата молекулна формула на алкените?",
+                            Description = "Каква е общата молекулна формула на алкените",
                             RightAnswer = "CnH2n"
                         },
                         new
                         {
                             Id = 54,
-                            Description = "Характерни за алкените са заместителните реакции, поради наличието на сложната двойна връзка.",
+                            Description = "Характерни за алкените са заместителните реакции, поради наличието на сложната двойна връзка",
                             RightAnswer = "Грешно"
                         },
                         new
                         {
                             Id = 55,
-                            Description = "\"Хидрирането\" на алкени протича при наличието на:",
+                            Description = "\"Хидрирането\" на алкени протична при наличието на:",
                             RightAnswer = "И трите изброени"
                         },
                         new
@@ -1910,7 +2881,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 57,
-                            Description = "При присъединяването на полярни H-съдържащи молекули към молекули на несиметрични алкени се спазва правилото на:",
+                            Description = "При присъединяването на полярни H-съдържащи молекули към молекули на несиметрияни алкени се спазва правилото на:",
                             RightAnswer = "Марковников"
                         },
                         new
@@ -1922,7 +2893,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 59,
-                            Description = "2,4,6-тринитро толуен (TNT) се получава при взаимодействието на:",
+                            Description = "2,4,6-тринитро толуен(TNT) се получава при взаимодействието на:",
                             RightAnswer = "Толуен и HNO3 в излишък"
                         },
                         new
@@ -1930,16 +2901,348 @@ namespace ElementFactory.Data.Migrations
                             Id = 60,
                             Description = "При взаимодействието на фенол и натрий се получава:",
                             RightAnswer = "Натриев феноксид и 1/2 H2"
+                        },
+                        new
+                        {
+                            Id = 61,
+                            Description = "Топлината на образуване на 1 мол хлороводор е 92.5kJ.Какъв е топлинният ефект на реакцията: H + Cl => HCl (Уравнението не е изравнено!) в kJ?",
+                            RightAnswer = "185"
+                        },
+                        new
+                        {
+                            Id = 62,
+                            Description = "Колко е температурата на образуване на ромбичната сяра в kJ?",
+                            RightAnswer = "0"
+                        },
+                        new
+                        {
+                            Id = 63,
+                            Description = "Изчислете топлината на образуване на NH3 според уравнението в kJ закръглено до първия знак след запетаята.N2 + 3H2 => 2NH3 + 92,4 kJ",
+                            RightAnswer = "46.2"
+                        },
+                        new
+                        {
+                            Id = 64,
+                            Description = "Ако температурата на образуване на водните пари е 242.5kJ, то тогава колко е температурата им на изгаряне сметната в kJ и закръглена до първия знак след запетаята?",
+                            RightAnswer = "-242.5"
+                        },
+                        new
+                        {
+                            Id = 65,
+                            Description = "Ако температурата на образуване на графита е 394.8kJ/mol, а на диаманта е 396.6kJ/mol, то тогава колко ще бъде топлинният ефект при реакция от вида \"графит=>диамант\" измерена в kJ и закръглена до първия знак след запетаята?.",
+                            RightAnswer = "-1.8"
+                        },
+                        new
+                        {
+                            Id = 66,
+                            Description = "Дадено:\r\nC6H6 + 15/2 O2 => 6CO2 + 3H20 + Q\r\nQ=3271kJ\r\nQобразуване(CO2)=394kJ/mol\r\nQобразуване(H20)=285.8kJ/mol\r\nТърсим:\r\nQобразуване(C6H6)=?kJ закръглено до първия знак след запетаята",
+                            RightAnswer = "-49.6"
+                        },
+                        new
+                        {
+                            Id = 67,
+                            Description = "Ако в хомогенният едностадиен процес 2CO + O2 => 2CO2, концентрацията на CO се увеличи 3 пъти при t=const то с колко пъти новата скорост ще е по-голяма от старата",
+                            RightAnswer = "9"
+                        },
+                        new
+                        {
+                            Id = 68,
+                            Description = "2SO2(г) + O2(г) => 2SO3(г) + Q. Ако увеличим налягането на системата три пъти, то с колко новата средна скорост на уравнението ще бъде по-голямата от тази на началното уравнение",
+                            RightAnswer = "27"
+                        },
+                        new
+                        {
+                            Id = 69,
+                            Description = "S(тв) + H2(г) => H2S(г) + 4.8kJ. Изчислете количеството обменена топлина в kJ, закръглено до първия знак след запетаята, ако 8грама сяра реагират по даденото химияно уравнение(счита се,че M(S)=32.0)",
+                            RightAnswer = "1.2"
+                        },
+                        new
+                        {
+                            Id = 70,
+                            Description = "Колко е температурата на изгаряне на SO3 в kJ/mol?",
+                            RightAnswer = "0"
+                        },
+                        new
+                        {
+                            Id = 71,
+                            Description = "Кои са задължителните компоненти на истинските разтвори?",
+                            RightAnswer = "Разтворител и разтварящо се вещество"
+                        },
+                        new
+                        {
+                            Id = 72,
+                            Description = "По кое правило/закон се образуват разтворите?",
+                            RightAnswer = "\"Подобни се разтварят в подобни\""
+                        },
+                        new
+                        {
+                            Id = 73,
+                            Description = "Според частиците на разтвореното вещество, разтворите биват:",
+                            RightAnswer = "Молекулни и йонни"
+                        },
+                        new
+                        {
+                            Id = 74,
+                            Description = "Коя е правилната последователност на процесите, през които минава механизмът на разтварянето?",
+                            RightAnswer = "Разграждане на кристалната решетка (ако има такава), солватация, дифузия"
+                        },
+                        new
+                        {
+                            Id = 75,
+                            Description = "Как се нарича обратната реакция на разтварянето, ако е погледнато като обратим проес?",
+                            RightAnswer = "Кристализация"
+                        },
+                        new
+                        {
+                            Id = 76,
+                            Description = "Видовете разтвори според състоянието им от състоянието на равновесие са само наситен и ненаситен.",
+                            RightAnswer = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 77,
+                            Description = "По коя от формулите НЕ можем да определим концентрацията на даден разтвор?",
+                            RightAnswer = "m(р-р) = M(А) * n(р-р)"
+                        },
+                        new
+                        {
+                            Id = 78,
+                            Description = "Разтворите са устойчиви системи, чиито размери на частиците НЕ надвишават:",
+                            RightAnswer = "1 нанометър"
+                        },
+                        new
+                        {
+                            Id = 79,
+                            Description = "Процесът на кристализация е съпроводен с положителен топлинен ефект (+Q1).",
+                            RightAnswer = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 80,
+                            Description = "На кой ред са изброени всички общи свойства на разтворите?",
+                            RightAnswer = "Понижаването на температурата на замръзване, повишаването на температурата на кипене, дифузия, понижаване на парното налягане, осмоза"
+                        },
+                        new
+                        {
+                            Id = 81,
+                            Description = "Коя е най-точната формула за определяне на осмотичното налягане?",
+                            RightAnswer = "π = i*c*R*T"
+                        },
+                        new
+                        {
+                            Id = 82,
+                            Description = "Ако имаме една кръвна клетка, на която цитозолът е с концентрация 0.9%, а кръвта около нея е с концентрация, по-висока от 1.2%, то спрямо клетката разтворът в околната среда (кръвта) ще бъде:",
+                            RightAnswer = "Хипертоничен"
+                        },
+                        new
+                        {
+                            Id = 83,
+                            Description = "На кой ред всички изброени вещества са електролити?",
+                            RightAnswer = "CuSO4, NaOH, H2O, Ca(OH)2"
+                        },
+                        new
+                        {
+                            Id = 84,
+                            Description = "Какви видове разтвори има според степента на електролитна дисоциация?",
+                            RightAnswer = "Средни, слаби, силни"
+                        },
+                        new
+                        {
+                            Id = 85,
+                            Description = "Водата е електролит.",
+                            RightAnswer = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 86,
+                            Description = "Коя от частиците е с най-малък атомен радиус?",
+                            RightAnswer = "Al3+"
+                        },
+                        new
+                        {
+                            Id = 87,
+                            Description = "Кое е най-точното определение на \"Електронен облак\"?",
+                            RightAnswer = "Част от пространството, което е около самото ядро, в която шанса за намиране на електрона е приблизително 90%"
+                        },
+                        new
+                        {
+                            Id = 88,
+                            Description = "Атомните орбитали с едно и също главно и орбитално квантово число образуват електронен слой.",
+                            RightAnswer = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 89,
+                            Description = "В коя група всички означени вещества са с неполярни молекули?",
+                            RightAnswer = "CO2, BeH2, N2"
+                        },
+                        new
+                        {
+                            Id = 90,
+                            Description = "Кое от следните твърдения е вярно за масовото число?",
+                            RightAnswer = "То е равно на сумата от броя на протоните и неутроните"
+                        },
+                        new
+                        {
+                            Id = 91,
+                            Description = "Здравината на ковалентната връзка нараства с увеличаване на нейната кратност.",
+                            RightAnswer = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 92,
+                            Description = "В кой от редовете са изброени само вещества, в които има кратна ковалентна връзка?",
+                            RightAnswer = "C2H2, N2, CO2"
+                        },
+                        new
+                        {
+                            Id = 93,
+                            Description = "В кой от редовете са изброени само вещества с йонна химична връзка?",
+                            RightAnswer = "NaH, K2O, BaCl2"
+                        },
+                        new
+                        {
+                            Id = 94,
+                            Description = "π-връзка може да се образува между еднакви по вид атоми.",
+                            RightAnswer = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 95,
+                            Description = "В молекулата на CS2 каква е хибридизацията на централния атом?",
+                            RightAnswer = "sp"
+                        },
+                        new
+                        {
+                            Id = 96,
+                            Description = "Коя от двойките елементи не се свързва с йонна връзка?",
+                            RightAnswer = "F и O"
+                        },
+                        new
+                        {
+                            Id = 97,
+                            Description = "Еквивалентните атомни орбитали се заемат първоначално от двойни електрони с паралелни спинове.",
+                            RightAnswer = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 98,
+                            Description = "За веществото X е известно, че има висока температура на топене, ковко е и не се разтваря във вода. Какъв е видът на кристалната решетка на това вещество?",
+                            RightAnswer = "Метална"
+                        },
+                        new
+                        {
+                            Id = 99,
+                            Description = "На кое от изброените вещества хибридизацията на централния атом е sp^3d^2?",
+                            RightAnswer = "SF6"
+                        },
+                        new
+                        {
+                            Id = 100,
+                            Description = "Йонизационната енергия характеризира редукционната активност на атомите.",
+                            RightAnswer = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 101,
+                            Description = "Количеството вещество, което съответства на 5.6г азот, е:",
+                            RightAnswer = "0.2 mol"
+                        },
+                        new
+                        {
+                            Id = 102,
+                            Description = "Кое от твърденията за ендотермични реакции е вярно? При ендотермични реакции:",
+                            RightAnswer = "се поглъща топлина, ΔH > 0 и реагентите са по-стабилни"
+                        },
+                        new
+                        {
+                            Id = 103,
+                            Description = "При изгарянето на 9 грама алуминий, като знаете че M(Al) = 27g/mol, в кислородна среда се отделят 229kJ топлина. Това означава, че стандартната енталпия на образуване на диалуминиевия триоксид е равна на:",
+                            RightAnswer = "-1374 kJ/mol"
+                        },
+                        new
+                        {
+                            Id = 104,
+                            Description = "Термохимичната функция \"Енергия на Гибс\" се дефинира чрез:",
+                            RightAnswer = "G = H - T*S"
+                        },
+                        new
+                        {
+                            Id = 105,
+                            Description = "Ентропията расте, когато се преминава от едно по-неподредено към по-подредено състояние.",
+                            RightAnswer = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 106,
+                            Description = "Ако приемем, че реакцията протича по уравнението: S(тв.) + O2(г.) => SO2(г.), то кинетичното уравнение за процеса е:",
+                            RightAnswer = "v = k * c(O2)"
+                        },
+                        new
+                        {
+                            Id = 107,
+                            Description = "Кинетичното уравнение на химичен процес е v = k * c(A) * c^2(B). Как ще се промени скоростта на процеса при понижаване на налягането два пъти?",
+                            RightAnswer = "Ще се понижи осем пъти"
+                        },
+                        new
+                        {
+                            Id = 108,
+                            Description = "Ендотермичните процеси не могат да протичат спонтанно.",
+                            RightAnswer = "Грешно"
+                        },
+                        new
+                        {
+                            Id = 109,
+                            Description = "Кое от твърденията НЕ е вярно?",
+                            RightAnswer = "Ензимите притежават общите свойства на катализаторите"
+                        },
+                        new
+                        {
+                            Id = 110,
+                            Description = "Кое от следните определения описва \"Вторият закон на Фарадей\"",
+                            RightAnswer = "За отделянето на един еквивалент от дадено вещество е необходимо през разтвора да преминат 96 500C електричен заряд. Електрохимичният еквивалент се пресмята по формулата: k = M/z*F"
+                        },
+                        new
+                        {
+                            Id = 111,
+                            Description = "При еднаква молна концентрация и температура = const, най-високото осмотично налягане от посочените по-долу има разтворът на:",
+                            RightAnswer = "Сярна киселина"
+                        },
+                        new
+                        {
+                            Id = 112,
+                            Description = "При ΔG < 0 реакцията протича спонтанно, а при ΔG = 0 системата се намира в динамично равновесие",
+                            RightAnswer = "Вярно"
+                        },
+                        new
+                        {
+                            Id = 113,
+                            Description = "При взаимодействие на 1cm^3 1M разтвор на калиев хлорид и 1cm^3 0.1M разтвор на сребърен нитрат е получен зол. Най-бързата коагулация на колоидния разтвор могат да предизвикат:",
+                            RightAnswer = "Al3+"
+                        },
+                        new
+                        {
+                            Id = 114,
+                            Description = "В коя от групите всички означени вещества оцветяват лакмуса в синьо?",
+                            RightAnswer = "Ca(OH)2, NH4OH, NaHCO3"
+                        },
+                        new
+                        {
+                            Id = 115,
+                            Description = "Адсорбтив е вещество, което задържа на повърхността си други вещества.",
+                            RightAnswer = "Грешно"
                         });
                 });
 
             modelBuilder.Entity("ElementFactory.Data.Models.QuestionTestMap", b =>
                 {
                     b.Property<int>("QuestionId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasComment("Question identificator");
 
                     b.Property<int>("TestId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasComment("Test identificator");
 
                     b.HasKey("QuestionId", "TestId");
 
@@ -2247,6 +3550,281 @@ namespace ElementFactory.Data.Migrations
                         {
                             QuestionId = 60,
                             TestId = 4
+                        },
+                        new
+                        {
+                            QuestionId = 61,
+                            TestId = 5
+                        },
+                        new
+                        {
+                            QuestionId = 62,
+                            TestId = 5
+                        },
+                        new
+                        {
+                            QuestionId = 63,
+                            TestId = 5
+                        },
+                        new
+                        {
+                            QuestionId = 64,
+                            TestId = 5
+                        },
+                        new
+                        {
+                            QuestionId = 65,
+                            TestId = 5
+                        },
+                        new
+                        {
+                            QuestionId = 66,
+                            TestId = 5
+                        },
+                        new
+                        {
+                            QuestionId = 67,
+                            TestId = 5
+                        },
+                        new
+                        {
+                            QuestionId = 68,
+                            TestId = 5
+                        },
+                        new
+                        {
+                            QuestionId = 69,
+                            TestId = 5
+                        },
+                        new
+                        {
+                            QuestionId = 70,
+                            TestId = 5
+                        },
+                        new
+                        {
+                            QuestionId = 71,
+                            TestId = 6
+                        },
+                        new
+                        {
+                            QuestionId = 72,
+                            TestId = 6
+                        },
+                        new
+                        {
+                            QuestionId = 73,
+                            TestId = 6
+                        },
+                        new
+                        {
+                            QuestionId = 74,
+                            TestId = 6
+                        },
+                        new
+                        {
+                            QuestionId = 75,
+                            TestId = 6
+                        },
+                        new
+                        {
+                            QuestionId = 76,
+                            TestId = 6
+                        },
+                        new
+                        {
+                            QuestionId = 77,
+                            TestId = 6
+                        },
+                        new
+                        {
+                            QuestionId = 78,
+                            TestId = 6
+                        },
+                        new
+                        {
+                            QuestionId = 79,
+                            TestId = 6
+                        },
+                        new
+                        {
+                            QuestionId = 80,
+                            TestId = 6
+                        },
+                        new
+                        {
+                            QuestionId = 81,
+                            TestId = 6
+                        },
+                        new
+                        {
+                            QuestionId = 82,
+                            TestId = 6
+                        },
+                        new
+                        {
+                            QuestionId = 83,
+                            TestId = 6
+                        },
+                        new
+                        {
+                            QuestionId = 84,
+                            TestId = 6
+                        },
+                        new
+                        {
+                            QuestionId = 85,
+                            TestId = 6
+                        },
+                        new
+                        {
+                            QuestionId = 86,
+                            TestId = 7
+                        },
+                        new
+                        {
+                            QuestionId = 87,
+                            TestId = 7
+                        },
+                        new
+                        {
+                            QuestionId = 88,
+                            TestId = 7
+                        },
+                        new
+                        {
+                            QuestionId = 89,
+                            TestId = 7
+                        },
+                        new
+                        {
+                            QuestionId = 90,
+                            TestId = 7
+                        },
+                        new
+                        {
+                            QuestionId = 91,
+                            TestId = 7
+                        },
+                        new
+                        {
+                            QuestionId = 92,
+                            TestId = 7
+                        },
+                        new
+                        {
+                            QuestionId = 93,
+                            TestId = 7
+                        },
+                        new
+                        {
+                            QuestionId = 94,
+                            TestId = 7
+                        },
+                        new
+                        {
+                            QuestionId = 95,
+                            TestId = 7
+                        },
+                        new
+                        {
+                            QuestionId = 96,
+                            TestId = 7
+                        },
+                        new
+                        {
+                            QuestionId = 97,
+                            TestId = 7
+                        },
+                        new
+                        {
+                            QuestionId = 98,
+                            TestId = 7
+                        },
+                        new
+                        {
+                            QuestionId = 99,
+                            TestId = 7
+                        },
+                        new
+                        {
+                            QuestionId = 100,
+                            TestId = 7
+                        },
+                        new
+                        {
+                            QuestionId = 101,
+                            TestId = 8
+                        },
+                        new
+                        {
+                            QuestionId = 102,
+                            TestId = 8
+                        },
+                        new
+                        {
+                            QuestionId = 103,
+                            TestId = 8
+                        },
+                        new
+                        {
+                            QuestionId = 104,
+                            TestId = 8
+                        },
+                        new
+                        {
+                            QuestionId = 105,
+                            TestId = 8
+                        },
+                        new
+                        {
+                            QuestionId = 106,
+                            TestId = 8
+                        },
+                        new
+                        {
+                            QuestionId = 107,
+                            TestId = 8
+                        },
+                        new
+                        {
+                            QuestionId = 108,
+                            TestId = 8
+                        },
+                        new
+                        {
+                            QuestionId = 109,
+                            TestId = 8
+                        },
+                        new
+                        {
+                            QuestionId = 110,
+                            TestId = 8
+                        },
+                        new
+                        {
+                            QuestionId = 111,
+                            TestId = 8
+                        },
+                        new
+                        {
+                            QuestionId = 112,
+                            TestId = 8
+                        },
+                        new
+                        {
+                            QuestionId = 113,
+                            TestId = 8
+                        },
+                        new
+                        {
+                            QuestionId = 114,
+                            TestId = 8
+                        },
+                        new
+                        {
+                            QuestionId = 115,
+                            TestId = 8
                         });
                 });
 
@@ -2254,19 +3832,22 @@ namespace ElementFactory.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasComment("Test identificator");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Category")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasComment("Test category");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
+                        .HasColumnType("nvarchar(150)")
+                        .HasComment("Test title");
 
                     b.HasKey("Id");
 
@@ -2298,6 +3879,30 @@ namespace ElementFactory.Data.Migrations
                             Id = 4,
                             Category = "8-9 клас",
                             Title = "Органична химия. Въглерод и неговите органични съединения"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Category = "10 клас",
+                            Title = "Характеристики на химичните процеси"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Category = "10 клас",
+                            Title = "Разтвори и химични процеси във водни разтвори"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Category = "11-12 клас",
+                            Title = "Строеж и свойства на веществата"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Category = "11-12 клас",
+                            Title = "11-12 клас. Обобщителен тест"
                         });
                 });
 

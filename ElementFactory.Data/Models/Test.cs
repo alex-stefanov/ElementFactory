@@ -15,18 +15,21 @@
         /// 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Comment("Test identificator")]
         public int Id { get; set; }
 
         /// <summary>
         /// Test Title
         /// </summary>
         [MinLength(3), MaxLength(150)]
+        [Comment("Test title")]
         public string Title { get; set; } = null!;
 
         /// <summary>
         /// Test Category
         /// </summary>
         [MinLength(3), MaxLength(100)]
+        [Comment("Test category")]
         public string Category { get; set; } = null!;
 
         /// <summary>

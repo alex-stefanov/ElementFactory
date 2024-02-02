@@ -10,12 +10,17 @@
         {
             builder.HasMany(q => q.QuestionsTests)
                    .WithOne(qtm => qtm.Question)
-                   .HasForeignKey(qtm => qtm.QuestionId);
+                   .HasForeignKey(qtm => qtm.QuestionId)
+                    .OnDelete(DeleteBehavior.Cascade);
 
             var questions = this.Questions1();
             questions.AddRange(this.Questions2());
             questions.AddRange(this.Questions3());
             questions.AddRange(this.Questions4());
+            questions.AddRange(this.Questions5());
+            questions.AddRange(this.Questions6());
+            questions.AddRange(this.Questions7());
+            questions.AddRange(this.Questions8());
 
             builder.HasData(questions);
         }
@@ -59,7 +64,7 @@
             var question1_5 = new Question()
             {
                 Id = 5,
-                Description = "Защо простото вещество Na се държи под петрол?",
+                Description = "Защо простото вещество Na се държи под петрол",
                 RightAnswer = "За да не взаимодейства с кислорода от въздуха",
                 Answers = new List<Answer>()
             };
@@ -192,7 +197,7 @@
             {
                 Id = 18,
                 Description = "Кои киселини се получават при директно " +
-                "взаимодействие на хлор с вода?",
+                "взаимодействие на хлор с вода",
                 RightAnswer = "HCl и HClO",
                 Answers = new List<Answer>()
             };
@@ -281,7 +286,7 @@
             var question2_14 = new Question()
             {
                 Id = 29,
-                Description = "Газът хлор има силен, приятен мирис.",
+                Description = "Газът хлор има силен, приятен мирис",
                 RightAnswer = "Грешно",
                 Answers = new List<Answer>()
             };
@@ -369,7 +374,7 @@
             var question3_7 = new Question()
             {
                 Id = 37,
-                Description = "Реакцията \"Гасене на вар\" е реакция на CaO с вода, при коятo се получава/т:",
+                Description = "Реакцията \"Гасене на вар\" е ракция на CaO с вода, при коята се получава/т:",
                 RightAnswer = "Ca(OH)2",
                 Answers = new List<Answer>()
             };
@@ -402,14 +407,14 @@
             {
                 Id = 41,
                 Description = "Кое от следните уравнения за Ca и неговите съединения е изравнено вярно?",
-                RightAnswer = "Ca + 2H2O => Ca(OH)2 + H2",
+                RightAnswer = "Ca + 2H2O => Ca(OH)2+H2",
                 Answers = new List<Answer>()
             };
 
             var question3_12 = new Question()
             {
                 Id = 42,
-                Description = "Ca се съхранява под петрол или инертен газ.",
+                Description = "Ca се съхранява по петрол или инертен газ",
                 RightAnswer = "Вярно",
                 Answers = new List<Answer>()
             };
@@ -417,7 +422,7 @@
             var question3_13 = new Question()
             {
                 Id = 43,
-                Description = "Какъв е цветът на пламъка при горенето на Ca?",
+                Description = "Какъв е цвета на пламъка при гореното на Ca?",
                 RightAnswer = "Керемиденочервен",
                 Answers = new List<Answer>()
             };
@@ -433,7 +438,7 @@
             var question3_15 = new Question()
             {
                 Id = 45,
-                Description = "Разтворът на Ca(OH)2 е с pH:",
+                Description = "Разтоворът на Ca(OH)2 е с pH:",
                 RightAnswer = "11",
                 Answers = new List<Answer>()
             };
@@ -505,15 +510,15 @@
             var question4_6 = new Question()
             {
                 Id = 51,
-                Description = "Всяко ОС при взаимодействие с кислород (горене) се разлага до въглероден диоксид и вода",
+                Description = "Всяко ОС при взаимодействие с кислород(горене) се разлага до въглероден диоксид и вода",
                 RightAnswer = "Вярно",
                 Answers = new List<Answer>()
             };
-            
+
             var question4_7 = new Question()
             {
                 Id = 52,
-                Description = "Кое от от следните съединения е нонан?",
+                Description = "Кое от от следните съединения е нонан",
                 RightAnswer = "C9H20",
                 Answers = new List<Answer>()
             };
@@ -521,7 +526,7 @@
             var question4_8 = new Question()
             {
                 Id = 53,
-                Description = "Каква е общата молекулна формула на алкените?",
+                Description = "Каква е общата молекулна формула на алкените",
                 RightAnswer = "CnH2n",
                 Answers = new List<Answer>()
             };
@@ -529,7 +534,7 @@
             var question4_9 = new Question()
             {
                 Id = 54,
-                Description = "Характерни за алкените са заместителните реакции, поради наличието на сложната двойна връзка.",
+                Description = "Характерни за алкените са заместителните реакции, поради наличието на сложната двойна връзка",
                 RightAnswer = "Грешно",
                 Answers = new List<Answer>()
             };
@@ -537,7 +542,7 @@
             var question4_10 = new Question()
             {
                 Id = 55,
-                Description = "\"Хидрирането\" на алкени протича при наличието на:",
+                Description = "\"Хидрирането\" на алкени протична при наличието на:",
                 RightAnswer = "И трите изброени",
                 Answers = new List<Answer>()
             };
@@ -553,7 +558,7 @@
             var question4_12 = new Question()
             {
                 Id = 57,
-                Description = "При присъединяването на полярни H-съдържащи молекули към молекули на несиметрични алкени се спазва правилото на:",
+                Description = "При присъединяването на полярни H-съдържащи молекули към молекули на несиметрияни алкени се спазва правилото на:",
                 RightAnswer = "Марковников",
                 Answers = new List<Answer>()
             };
@@ -569,7 +574,7 @@
             var question4_14 = new Question()
             {
                 Id = 59,
-                Description = "2,4,6-тринитро толуен (TNT) се получава при взаимодействието на:",
+                Description = "2,4,6-тринитро толуен(TNT) се получава при взаимодействието на:",
                 RightAnswer = "Толуен и HNO3 в излишък",
                 Answers = new List<Answer>()
             };
@@ -599,6 +604,544 @@
                 question4_13,
                 question4_14,
                 question4_15
+            };
+        }
+
+        private List<Question> Questions5()
+        {
+            // ============================================= //
+            // Test 5 //
+            var question5_1 = new Question()
+            {
+                Id = 61,
+                Description = "Топлината на образуване на 1 мол хлороводор е 92.5kJ.Какъв е топлинният ефект на реакцията: H + Cl => HCl (Уравнението не е изравнено!) в kJ?",
+                RightAnswer = "185",
+                Answers = new List<Answer>()
+            };
+
+            var question5_2 = new Question()
+            {
+                Id = 62,
+                Description = "Колко е температурата на образуване на ромбичната сяра в kJ?",
+                RightAnswer = "0",
+                Answers = new List<Answer>()
+            };
+
+            var question5_3 = new Question()
+            {
+                Id = 63,
+                Description = "Изчислете топлината на образуване на NH3 според уравнението в kJ закръглено до първия знак след запетаята.N2 + 3H2 => 2NH3 + 92,4 kJ",
+                RightAnswer = "46.2",
+                Answers = new List<Answer>()
+            };
+
+            var question5_4 = new Question()
+            {
+                Id = 64,
+                Description = "Ако температурата на образуване на водните пари е 242.5kJ, то тогава колко е температурата им на изгаряне сметната в kJ и закръглена до първия знак след запетаята?",
+                RightAnswer = "-242.5",
+                Answers = new List<Answer>()
+            };
+
+            var question5_5 = new Question()
+            {
+                Id = 65,
+                Description = "Ако температурата на образуване на графита е 394.8kJ/mol, а на диаманта е 396.6kJ/mol, то тогава колко ще бъде топлинният ефект при реакция от вида \"графит=>диамант\" измерена в kJ и закръглена до първия знак след запетаята?.",
+                RightAnswer = "-1.8",
+                Answers = new List<Answer>()
+            };
+
+            var question5_6 = new Question()
+            {
+                Id = 66,
+                Description = @"Дадено:
+C6H6 + 15/2 O2 => 6CO2 + 3H20 + Q
+Q=3271kJ
+Qобразуване(CO2)=394kJ/mol
+Qобразуване(H20)=285.8kJ/mol
+Търсим:
+Qобразуване(C6H6)=?kJ закръглено до първия знак след запетаята",
+                RightAnswer = "-49.6",
+                Answers = new List<Answer>()
+            };
+
+            var question5_7 = new Question()
+            {
+                Id = 67,
+                Description = "Ако в хомогенният едностадиен процес 2CO + O2 => 2CO2, концентрацията на CO се увеличи 3 пъти при t=const то с колко пъти новата скорост ще е по-голяма от старата",
+                RightAnswer = "9",
+                Answers = new List<Answer>()
+            };
+
+            var question5_8 = new Question()
+            {
+                Id = 68,
+                Description = "2SO2(г) + O2(г) => 2SO3(г) + Q. Ако увеличим налягането на системата три пъти, то с колко новата средна скорост на уравнението ще бъде по-голямата от тази на началното уравнение",
+                RightAnswer = "27",
+                Answers = new List<Answer>()
+            };
+
+            var question5_9 = new Question()
+            {
+                Id = 69,
+                Description = "S(тв) + H2(г) => H2S(г) + 4.8kJ. Изчислете количеството обменена топлина в kJ, закръглено до първия знак след запетаята, ако 8грама сяра реагират по даденото химияно уравнение(счита се,че M(S)=32.0)",
+                RightAnswer = "1.2",
+                Answers = new List<Answer>()
+            };
+
+            var question5_10 = new Question()
+            {
+                Id = 70,
+                Description = "Колко е температурата на изгаряне на SO3 в kJ/mol?",
+                RightAnswer = "0",
+                Answers = new List<Answer>()
+            };
+
+            return new List<Question>()
+            {
+                question5_1,
+                question5_2,
+                question5_3,
+                question5_4,
+                question5_5,
+                question5_6,
+                question5_7,
+                question5_8,
+                question5_9,
+                question5_10
+            };
+        }
+
+        private List<Question> Questions6()
+        {
+            // ============================================= //
+            // Test 6 //
+            var question6_1 = new Question()
+            {
+                Id = 71,
+                Description = "Кои са задължителните компоненти на истинските разтвори?",
+                RightAnswer = "Разтворител и разтварящо се вещество",
+                Answers = new List<Answer>()
+            };
+
+            var question6_2 = new Question()
+            {
+                Id = 72,
+                Description = "По кое правило/закон се образуват разтворите?",
+                RightAnswer = "\"Подобни се разтварят в подобни\"",
+                Answers = new List<Answer>()
+            };
+
+            var question6_3 = new Question()
+            {
+                Id = 73,
+                Description = "Според частиците на разтвореното вещество, разтворите биват:",
+                RightAnswer = "Молекулни и йонни",
+                Answers = new List<Answer>()
+            };
+
+            var question6_4 = new Question()
+            {
+                Id = 74,
+                Description = "Коя е правилната последователност на процесите, през които минава механизмът на разтварянето?",
+                RightAnswer = "Разграждане на кристалната решетка (ако има такава), солватация, дифузия",
+                Answers = new List<Answer>()
+            };
+
+            var question6_5 = new Question()
+            {
+                Id = 75,
+                Description = "Как се нарича обратната реакция на разтварянето, ако е погледнато като обратим проес?",
+                RightAnswer = "Кристализация",
+                Answers = new List<Answer>()
+            };
+
+            var question6_6 = new Question()
+            {
+                Id = 76,
+                Description = "Видовете разтвори според състоянието им от състоянието на равновесие са само наситен и ненаситен.",
+                RightAnswer = "Грешно",
+                Answers = new List<Answer>()
+            };
+
+            var question6_7 = new Question()
+            {
+                Id = 77,
+                Description = "По коя от формулите НЕ можем да определим концентрацията на даден разтвор?",
+                RightAnswer = "m(р-р) = M(А) * n(р-р)",
+                Answers = new List<Answer>()
+            };
+
+            var question6_8 = new Question()
+            {
+                Id = 78,
+                Description = "Разтворите са устойчиви системи, чиито размери на частиците НЕ надвишават:",
+                RightAnswer = "1 нанометър",
+                Answers = new List<Answer>()
+            };
+
+            var question6_9 = new Question()
+            {
+                Id = 79,
+                Description = "Процесът на кристализация е съпроводен с положителен топлинен ефект (+Q1).",
+                RightAnswer = "Грешно",
+                Answers = new List<Answer>()
+            };
+
+            var question6_10 = new Question()
+            {
+                Id = 80,
+                Description = "На кой ред са изброени всички общи свойства на разтворите?",
+                RightAnswer = "Понижаването на температурата на замръзване, повишаването на температурата на кипене, дифузия, понижаване на парното налягане, осмоза",
+                Answers = new List<Answer>()
+            };
+
+            var question6_11 = new Question()
+            {
+                Id = 81,
+                Description = "Коя е най-точната формула за определяне на осмотичното налягане?",
+                RightAnswer = "π = i*c*R*T",
+                Answers = new List<Answer>()
+            };
+
+            var question6_12 = new Question()
+            {
+                Id = 82,
+                Description = "Ако имаме една кръвна клетка, на която цитозолът е с концентрация 0.9%, а кръвта около нея е с концентрация," +
+                " по-висока от 1.2%, то спрямо клетката разтворът в околната среда (кръвта) ще бъде:",
+                RightAnswer = "Хипертоничен",
+                Answers = new List<Answer>()
+            };
+
+            var question6_13 = new Question()
+            {
+                Id = 83,
+                Description = "На кой ред всички изброени вещества са електролити?",
+                RightAnswer = "CuSO4, NaOH, H2O, Ca(OH)2",
+                Answers = new List<Answer>()
+            };
+
+            var question6_14 = new Question()
+            {
+                Id = 84,
+                Description = "Какви видове разтвори има според степента на електролитна дисоциация?",
+                RightAnswer = "Средни, слаби, силни",
+                Answers = new List<Answer>()
+            };
+
+            var question6_15 = new Question()
+            {
+                Id = 85,
+                Description = "Водата е електролит.",
+                RightAnswer = "Вярно",
+                Answers = new List<Answer>()
+            };
+
+            return new List<Question>()
+            {
+                question6_1,
+                question6_2,
+                question6_3,
+                question6_4,
+                question6_5,
+                question6_6,
+                question6_7,
+                question6_8,
+                question6_9,
+                question6_10,
+                question6_11,
+                question6_12,
+                question6_13,
+                question6_14,
+                question6_15
+            };
+        }
+
+        private List<Question> Questions7()
+        {
+            // ============================================= //
+            // Test 7 //
+            var question7_1 = new Question()
+            {
+                Id = 86,
+                Description = "Коя от частиците е с най-малък атомен радиус?",
+                RightAnswer = "Al3+",
+                Answers = new List<Answer>()
+            };
+
+            var question7_2 = new Question()
+            {
+                Id = 87,
+                Description = "Кое е най-точното определение на \"Електронен облак\"?",
+                RightAnswer = "Част от пространството, което е около самото ядро, в която шанса за намиране на електрона е приблизително 90%",
+                Answers = new List<Answer>()
+            };
+
+            var question7_3 = new Question()
+            {
+                Id = 88,
+                Description = "Атомните орбитали с едно и също главно и орбитално квантово число образуват електронен слой.",
+                RightAnswer = "Грешно",
+                Answers = new List<Answer>()
+            };
+
+            var question7_4 = new Question()
+            {
+                Id = 89,
+                Description = "В коя група всички означени вещества са с неполярни молекули?",
+                RightAnswer = "CO2, BeH2, N2",
+                Answers = new List<Answer>()
+            };
+
+            var question7_5 = new Question()
+            {
+                Id = 90,
+                Description = "Кое от следните твърдения е вярно за масовото число?",
+                RightAnswer = "То е равно на сумата от броя на протоните и неутроните",
+                Answers = new List<Answer>()
+            };
+
+            var question7_6 = new Question()
+            {
+                Id = 91,
+                Description = "Здравината на ковалентната връзка нараства с увеличаване на нейната кратност.",
+                RightAnswer = "Вярно",
+                Answers = new List<Answer>()
+            };
+
+            var question7_7 = new Question()
+            {
+                Id = 92,
+                Description = "В кой от редовете са изброени само вещества, в които има кратна ковалентна връзка?",
+                RightAnswer = "C2H2, N2, CO2",
+                Answers = new List<Answer>()
+            };
+
+            var question7_8 = new Question()
+            {
+                Id = 93,
+                Description = "В кой от редовете са изброени само вещества с йонна химична връзка?",
+                RightAnswer = "NaH, K2O, BaCl2",
+                Answers = new List<Answer>()
+            };
+
+            var question7_9 = new Question()
+            {
+                Id = 94,
+                Description = "π-връзка може да се образува между еднакви по вид атоми.",
+                RightAnswer = "Вярно",
+                Answers = new List<Answer>()
+            };
+
+            var question7_10 = new Question()
+            {
+                Id = 95,
+                Description = "В молекулата на CS2 каква е хибридизацията на централния атом?",
+                RightAnswer = "sp",
+                Answers = new List<Answer>()
+            };
+
+            var question7_11 = new Question()
+            {
+                Id = 96,
+                Description = "Коя от двойките елементи не се свързва с йонна връзка?",
+                RightAnswer = "F и O",
+                Answers = new List<Answer>()
+            };
+
+            var question7_12 = new Question()
+            {
+                Id = 97,
+                Description = "Еквивалентните атомни орбитали се заемат първоначално от двойни електрони с паралелни спинове.",
+                RightAnswer = "Грешно",
+                Answers = new List<Answer>()
+            };
+
+            var question7_13 = new Question()
+            {
+                Id = 98,
+                Description = "За веществото X е известно, че има висока температура на топене, ковко е и не се разтваря във вода. Какъв е видът на кристалната решетка на това вещество?",
+                RightAnswer = "Метална",
+                Answers = new List<Answer>()
+            };
+
+            var question7_14 = new Question()
+            {
+                Id = 99,
+                Description = "На кое от изброените вещества хибридизацията на централния атом е sp^3d^2?",
+                RightAnswer = "SF6",
+                Answers = new List<Answer>()
+            };
+
+            var question7_15 = new Question()
+            {
+                Id = 100,
+                Description = "Йонизационната енергия характеризира редукционната активност на атомите.",
+                RightAnswer = "Вярно",
+                Answers = new List<Answer>()
+            };
+
+            return new List<Question>()
+            {
+                question7_1,
+                question7_2,
+                question7_3,
+                question7_4,
+                question7_5,
+                question7_6,
+                question7_7,
+                question7_8,
+                question7_9,
+                question7_10,
+                question7_11,
+                question7_12,
+                question7_13,
+                question7_14,
+                question7_15
+            };
+        }
+
+        private List<Question> Questions8()
+        {
+            // ============================================= //
+            // Test 8 //
+            var question8_1 = new Question()
+            {
+                Id = 101,
+                Description = "Количеството вещество, което съответства на 5.6г азот, е:",
+                RightAnswer = "0.2 mol",
+                Answers = new List<Answer>()
+            };
+
+            var question8_2 = new Question()
+            {
+                Id = 102,
+                Description = "Кое от твърденията за ендотермични реакции е вярно? При ендотермични реакции:",
+                RightAnswer = "се поглъща топлина, ΔH > 0 и реагентите са по-стабилни",
+                Answers = new List<Answer>()
+            };
+            
+            var question8_3 = new Question()
+            {
+                Id = 103,
+                Description = "При изгарянето на 9 грама алуминий, като знаете че M(Al) = 27g/mol, в кислородна среда се отделят 229kJ топлина. Това означава, че стандартната енталпия на образуване на диалуминиевия триоксид е равна на:",
+                RightAnswer = "-1374 kJ/mol",
+                Answers = new List<Answer>()
+            };
+
+            var question8_4 = new Question()
+            {
+                Id = 104,
+                Description = "Термохимичната функция \"Енергия на Гибс\" се дефинира чрез:",
+                RightAnswer = "G = H - T*S",
+                Answers = new List<Answer>()
+            };
+
+            var question8_5 = new Question()
+            {
+                Id = 105,
+                Description = "Ентропията расте, когато се преминава от едно по-неподредено към по-подредено състояние.",
+                RightAnswer = "Грешно",
+                Answers = new List<Answer>()
+            };
+
+            var question8_6 = new Question()
+            {
+                Id = 106,
+                Description = "Ако приемем, че реакцията протича по уравнението: S(тв.) + O2(г.) => SO2(г.), то кинетичното уравнение за процеса е:",
+                RightAnswer = "v = k * c(O2)",
+                Answers = new List<Answer>()
+            };
+
+            var question8_7 = new Question()
+            {
+                Id = 107,
+                Description = "Кинетичното уравнение на химичен процес е v = k * c(A) * c^2(B). Как ще се промени скоростта на процеса при понижаване на налягането два пъти?",
+                RightAnswer = "Ще се понижи осем пъти",
+                Answers = new List<Answer>()
+            };
+
+            var question8_8 = new Question()
+            {
+                Id = 108,
+                Description = "Ендотермичните процеси не могат да протичат спонтанно.",
+                RightAnswer = "Грешно",
+                Answers = new List<Answer>()
+            };
+
+            var question8_9 = new Question()
+            {
+                Id = 109,
+                Description = "Кое от твърденията НЕ е вярно?",
+                RightAnswer = "Ензимите притежават общите свойства на катализаторите",
+                Answers = new List<Answer>()
+            };
+
+            var question8_10 = new Question()
+            {
+                Id = 110,
+                Description = "Кое от следните определения описва \"Вторият закон на Фарадей\"",
+                RightAnswer = "За отделянето на един еквивалент от дадено вещество е необходимо през разтвора да преминат 96 500C електричен заряд. Електрохимичният еквивалент се пресмята по формулата: k = M/z*F",
+                Answers = new List<Answer>()
+            };
+
+            var question8_11 = new Question()
+            {
+                Id = 111,
+                Description = "При еднаква молна концентрация и температура = const, най-високото осмотично налягане от посочените по-долу има разтворът на:",
+                RightAnswer = "Сярна киселина",
+                Answers = new List<Answer>()
+            };
+
+            var question8_12 = new Question()
+            {
+                Id = 112,
+                Description = "При ΔG < 0 реакцията протича спонтанно, а при ΔG = 0 системата се намира в динамично равновесие",
+                RightAnswer = "Вярно",
+                Answers = new List<Answer>()
+            };
+
+            var question8_13 = new Question()
+            {
+                Id = 113,
+                Description = "При взаимодействие на 1cm^3 1M разтвор на калиев хлорид и 1cm^3 0.1M разтвор на сребърен нитрат е получен зол. Най-бързата коагулация на колоидния разтвор могат да предизвикат:",
+                RightAnswer = "Al3+",
+                Answers = new List<Answer>()
+            };
+
+            var question8_14 = new Question()
+            {
+                Id = 114,
+                Description = "В коя от групите всички означени вещества оцветяват лакмуса в синьо?",
+                RightAnswer = "Ca(OH)2, NH4OH, NaHCO3",
+                Answers = new List<Answer>()
+            };
+
+            var question8_15 = new Question()
+            {
+                Id = 115,
+                Description = "Адсорбтив е вещество, което задържа на повърхността си други вещества.",
+                RightAnswer = "Грешно",
+                Answers = new List<Answer>()
+            };
+
+            return new List<Question>()
+            {
+                question8_1,
+                question8_2,
+                question8_3,
+                question8_4,
+                question8_5,
+                question8_6,
+                question8_7,
+                question8_8,
+                question8_9,
+                question8_10,
+                question8_11,
+                question8_12,
+                question8_13,
+                question8_14,
+                question8_15
             };
         }
     }
