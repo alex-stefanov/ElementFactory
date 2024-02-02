@@ -20,6 +20,12 @@
         public string Symbol { get; set; } = null!;
 
         /// <summary>
+        /// Helpful Identificator
+        /// </summary>
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        /// <summary>
         /// Element Name
         /// </summary>
         [MinLength(3), MaxLength(30)]

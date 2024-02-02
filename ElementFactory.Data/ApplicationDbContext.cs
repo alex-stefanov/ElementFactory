@@ -1,6 +1,7 @@
 ﻿namespace ElementFactory.Data
 {
     using ElementFactory.Data.Configuration;
+    using ElementFactory.Data.Configurations;
     using ElementFactory.Data.Models;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
@@ -79,15 +80,9 @@
                     fce.ChemicalElementSymbol
                 });
 
-            // Setting Composite Primary Key For
-            // QuestionTestMap
-            builder
-                .Entity<QuestionTestMap>()
-                .HasKey(qt => new
-                {
-                    qt.QuestionId,
-                    qt.TestId
-                });
+            builder.ApplyConfiguration<ChemicalType>(new ChemicalTypeConfiguration());
+
+            builder.ApplyConfiguration<ChemicalElement>(new ChemicalElementConfiguration());
 
             builder.ApplyConfiguration<Test>(new TestConfiguration());
 

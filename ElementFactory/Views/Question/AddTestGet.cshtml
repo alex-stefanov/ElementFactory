@@ -6,11 +6,11 @@
     ViewBag.Title = "Добави тест";
 }
 
-<form asp-controller="Question" asp-action="AddTestPost" method="post">
+<form asp-controller="Question" asp-action="AddTestPost" method="post" id="addTestForm">
     <label asp-for="Title">Заглавие</label>
     <input asp-for="Title" placeholder="Запиши заглавие на тест тук..."/>
-    <span asp-validation-for="Title" class="aspValidationTitle"></span>
-
+    <span asp-validation-for="Title" class="aspValidationTitle" style="display:none"></span>
+    <label asp-for="Category">Категория</label>
     <select asp-for="Category">
         <option>7 клас</option>
         <option>8-9 клас</option>
@@ -23,12 +23,17 @@
 
 <script>
     var element = document.getElementsByClassName('aspValidationTitle')[0];
+    element.style.display = 'none';
 
-    element.style.display = 'block';
+    document.getElementsByTagName('form')[0].addEventListener('submit', function (event) 
+    {
+        event.preventDefault();
+        element.style.display = 'block';
 
-    setTimeout(function () {
-        element.style.display = 'none';
-    }, 2000);
+        setTimeout(function () {
+            element.style.display = 'none';
+        }, 2000);
+    })
 </script>
 
 <link href="~/css/site.css"/>

@@ -2,7 +2,6 @@
 {
     using ElementFactory.Core.Contracts.Repositories;
     using ElementFactory.Core.Contracts.Service;
-    using ElementFactory.Core.Implementations.Services;
     using ElementFactory.Data.Models;
     using System.Collections.Generic;
     using System.Threading.Tasks;

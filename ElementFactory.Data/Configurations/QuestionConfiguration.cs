@@ -10,8 +10,7 @@
         {
             builder.HasMany(q => q.QuestionsTests)
                    .WithOne(qtm => qtm.Question)
-                   .HasForeignKey(qtm => qtm.QuestionId)
-                    .OnDelete(DeleteBehavior.Cascade);
+                   .HasForeignKey(qtm => qtm.QuestionId);
 
             var questions = this.Questions1();
             questions.AddRange(this.Questions2());

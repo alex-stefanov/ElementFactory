@@ -23,7 +23,7 @@
         /// </summary>
         [Required]
         [MinLength(5), MaxLength(25)]
-        [Comment("Chemical type name *english*")]
+        [Comment("Chemical type name english")]
         public string Name { get; set; } = null!;
 
         /// <summary>
@@ -31,7 +31,7 @@
         /// </summary>
         [Required]
         [MinLength(5), MaxLength(25)]
-        [Comment("Chemical type name *bulgarian*")]
+        [Comment("Chemical type name bulgarian")]
         public string BulgarianName { get; set; } = null!;
 
         /// <summary>

@@ -12,11 +12,9 @@ window.AddListenerToCell = function AddListenerToCell(currentCell, currentElemen
 
         popUpContainerOverlay.style.display = 'block';
         popUpContainer.style.display = 'block';
-        document.getElementsByClassName('appFooter').style.display = 'none';
 
         popUpContainer.addEventListener('click', function (event2) {
             event2.stopPropagation();
-            document.getElementsByClassName('appFooter').style.display = 'block';
         });
 
         popUpContainerOverlay.addEventListener('click', function (event2) {
@@ -25,7 +23,6 @@ window.AddListenerToCell = function AddListenerToCell(currentCell, currentElemen
             popUpContainer.style.display = 'none';
             popUpContainerOverlay.style.display = 'none';
             popUpContainer.innerHTML = '';
-            document.getElementsByClassName('appFooter').style.display = 'block';
         });
 
         var main = window.CreateDOMElement('main', popUpContainer, 'popUpMain');
