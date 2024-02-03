@@ -1,9 +1,10 @@
 ﻿@using System.Text.Json;
 @using System.Text.Json.Serialization;
+@using ElementFactory.Data.Models;
 @{
     ViewData["Title"] = "Hачало";
 }
-@model List<ElementFactory.Data.Models.ChemicalElement>
+@model List<ChemicalElement>
 
 <div class="errorDiv1">
     Невалидна година! Стойността на клетката трябва да е от 0 до 2024!
@@ -49,7 +50,7 @@
                         group == 16 ||
                         group == 17)))
                         {
-                            ElementFactory.Data.Models.ChemicalElement? chemicalElement =
+                            ChemicalElement? chemicalElement =
                             @Model.FirstOrDefault(x => x.Period == period && x.Group == group);
 
                             if (chemicalElement == null)
@@ -82,8 +83,8 @@
                     <td></td>
                     @if (i == 1)
                     {
-                        @foreach (ElementFactory.Data.Models.ChemicalElement
-                       chemicalElement in Model.Where(x => x.Group == 0 && x.Period == 6))
+                        @foreach (ChemicalElement chemicalElement in 
+                        Model.Where(x => x.Group == 0 && x.Period == 6).OrderBy(x => x.AtomicNumber))
                         {
                             <td class="@chemicalElement.ChemicalType.Name">
                                 <a>
@@ -96,9 +97,8 @@
                     }
                     else
                     {
-                        foreach (ElementFactory.Data.Models.ChemicalElement
-                        chemicalElement in Model
-                        .Where(x => x.Group == 0 && x.Period == 7))
+                        foreach (ChemicalElement chemicalElement in 
+                        Model.Where(x => x.Group == 0 && x.Period == 7).OrderBy(x => x.AtomicNumber))
                         {
                             <td class="@chemicalElement.ChemicalType.Name">
                                 <a>

@@ -291,6 +291,7 @@ form td p
     justify-content: center;
     align-items: center;
     transition: transform 0.9s ease-out;
+    display: none;
 }
 
 #popUpContainer {
@@ -364,6 +365,8 @@ form td p
     font-size: 46px;
     border-bottom: 3px solid black;
     font-weight: 500;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #popUpSection2 th p,
@@ -401,6 +404,8 @@ form td p
 .bg-black {
     color: white;
 }
+
+/* ------------------------------ */
 
 /* ------------------------------ */
 /* Choose a class page css */
@@ -517,10 +522,12 @@ form td p
     justify-content: center;
 }
 
-.testsByGradeAdd {
+.testsByGradeAdd,
+.returnToClass{
     margin-top: 40px;
     text-align: center;
     margin-bottom: 20px;
+    margin: 12px;
 }
 
 .testsByGradeContainer .testsByGradeCard {
@@ -534,17 +541,19 @@ form td p
     display: inline-block;
 }
 
-.testsByGradeAdd .addTestToDbBtn {
+.testsByGradeAdd .addTestToDbBtn,
+.returnToClass .returnToClassesBtn {
     font-size: 25px;
     text-decoration: none;
     color: #E5E4E2;
     background-color: #4E5180;
     font-weight: 700;
-    padding: 24px;
-    border-radius: 18px; 
+    padding: 12px;
+    border-radius: 18px;
 }
 
-.testsByGradeAdd .addTestToDbBtn:hover {
+.testsByGradeAdd .addTestToDbBtn:hover,
+.returnToClass .returnToClassesBtn:hover{
     background-color: hsl(261deg 80% 48%);
     color: hsl(0, 0%, 100%);
     box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
@@ -581,6 +590,11 @@ form td p
     color: whitesmoke;
 }
 
+.testsByGradeBtns {
+    display: flex;
+    justify-content: center;
+}
+
 .testsByGradeNoTests {
     font-size: 30px;
     text-align: center;
@@ -590,8 +604,10 @@ form td p
 }
 
 /* ------------------------------ */
+
 /* ------------------------------ */
 /* Doing a test page css */
+
 .questionContainer {
     background-color: white;
     margin: 12px;
@@ -642,8 +658,10 @@ form td p
 }
 
 /* ------------------------------ */
+
 /* ------------------------------ */
 /* ASP.NET Core validation css */
+
 .aspValidationTitle {
     color: white;
     background-color: red;
@@ -662,7 +680,6 @@ form td p
 }
 
 .appFooter {
-    position: relative;
     bottom: 0;
     padding: 12px;
     font-size: 20px;
@@ -726,4 +743,5 @@ form td p
 #addTestForm select option:focus-within {
     background-color: red;
 }
+
 /* ------------------------------ */

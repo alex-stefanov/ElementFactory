@@ -32,8 +32,13 @@ else
     <div class="testsByGradeNoTests">Няма налични тестове!</div>
 }
 
-<div class="testsByGradeAdd">
-    <a asp-controller="Question" asp-action="AddTestGet" class="addTestToDbBtn">Добави тест</a>
+<div class="testsByGradeBtns">
+    <div class="testsByGradeAdd">
+        <a asp-controller="Question" asp-action="AddTestGet" class="addTestToDbBtn">Добави тест</a>
+    </div>
+    <div class="returnToClass">
+        <a asp-controller="Question" asp-action="Classes" class="returnToClassesBtn">Избери клас отново</a>
+    </div>
 </div>
 
 <br />

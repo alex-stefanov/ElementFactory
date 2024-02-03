@@ -241,11 +241,9 @@
     }
 
     function CreatePopUpMenu(cellsCollectionArray, values) {
-
         for (var i = 0; i < cellsCollectionArray.length; i++) {
 
             var currentCell = cellsCollectionArray[i];
-
             var currentElement = values[i];
 
             currentCell.style.cursor = 'pointer';
@@ -255,7 +253,8 @@
         }
     }
 
-    var values = Array.from(model);
+    var values = Array.from(model).sort((a, b) => a.AtomicNumber - b.AtomicNumber);
+    console.log(values);
     var select = document.getElementById('seeItemsList');
 
     var cellsCollection = document.getElementsByTagName('td');
@@ -263,7 +262,7 @@
     var cellsCollectionArray = Array.from(cellsCollection)
         .filter(x => x.classList.length != 0).sort((a, b) =>
         a.getElementsByClassName('atomicNumber')[0].textContent -
-        b.getElementsByClassName('atomicNumber')[0].textContent);
+            b.getElementsByClassName('atomicNumber')[0].textContent);
 
     var yearInputField = document.getElementsByClassName('yearInput')[0];
     var elementInputField = document.getElementsByClassName('elementInput')[0];
