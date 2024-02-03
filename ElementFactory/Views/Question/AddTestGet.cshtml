@@ -22,18 +22,17 @@
 </form>
 
 <script>
-    var element = document.getElementsByClassName('aspValidationTitle')[0];
-    element.style.display = 'none';
+    // document.getElementsByTagName('form')[0].addEventListener('submit', function (event) 
+    // { 
+    //     var element = document.getElementsByClassName('aspValidationTitle')[0];
+    //     console.log('e');
+    //     event.preventDefault();
+    //     element.style.display = 'block';
 
-    document.getElementsByTagName('form')[0].addEventListener('submit', function (event) 
-    {
-        event.preventDefault();
-        element.style.display = 'block';
-
-        setTimeout(function () {
-            element.style.display = 'none';
-        }, 2000);
-    })
+    //     setTimeout(function () {
+    //         element.style.display = 'none';
+    //     }, 2000);
+    // })
 </script>
 
 <link href="~/css/site.css"/>

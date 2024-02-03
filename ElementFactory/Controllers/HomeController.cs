@@ -1,12 +1,10 @@
-﻿using ElementFactory.Core.Contracts.Service;
-using ElementFactory.Data;
-using ElementFactory.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
-
-namespace ElementFactory.Controllers
+﻿namespace ElementFactory.Controllers
 {
+    using ElementFactory.Core.Contracts.Service;
+    using ElementFactory.Models;
+    using Microsoft.AspNetCore.Mvc;
+    using System.Diagnostics;
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> logger;
@@ -27,8 +25,9 @@ namespace ElementFactory.Controllers
         public async Task<IActionResult> LoadTable()
         {
             var elements = await this.service.GetAllAsync();
+            var collection = elements.OrderBy(ce => ce.AtomicNumber).ToList();
 
-            return View("Index", elements.ToList());
+            return View("Index", collection);
         }
 
         public IActionResult Welcome()

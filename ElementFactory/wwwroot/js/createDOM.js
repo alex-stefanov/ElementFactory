@@ -29,8 +29,6 @@ window.AddListenerToCell = function AddListenerToCell(currentCell, currentElemen
 
         var header = window.CreateDOMElement('header', main, 'popUpHeader');
 
-        var emptyElement = window.CreateDOMElement('div', header, 'popUpEmptyDiv');
-
         var article1 = window.CreateDOMElement('article', header, 'popUpArticle1');
 
         article1.textContent = 'Свойства на елемента';

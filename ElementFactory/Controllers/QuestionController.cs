@@ -77,7 +77,6 @@
         [HttpGet]
         public IActionResult AddTestGet()
         {
-            ModelState.Clear();
             return View();
         }
 
