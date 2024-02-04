@@ -254,7 +254,7 @@
     }
 
     var values = Array.from(model).sort((a, b) => a.AtomicNumber - b.AtomicNumber);
-    console.log(values);
+
     var select = document.getElementById('seeItemsList');
 
     var cellsCollection = document.getElementsByTagName('td');

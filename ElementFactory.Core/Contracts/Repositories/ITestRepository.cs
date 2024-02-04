@@ -2,6 +2,9 @@
 {
     using ElementFactory.Data.Models;
 
+    /// <summary>
+    /// Interface for Test Repository
+    /// </summary>
     public interface ITestRepository : IRepository<Test>
     {
         public Task<IEnumerable<Test>> GetByGradeAsync(string grade);

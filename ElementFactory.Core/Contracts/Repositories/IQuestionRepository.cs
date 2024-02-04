@@ -2,8 +2,10 @@
 {
     using ElementFactory.Data.Models;
 
-    public interface IQuestionRepository : 
-        IRepository<Question>
+    /// <summary>
+    /// Interface for Question Repository
+    /// </summary>
+    public interface IQuestionRepository : IRepository<Question>
     {
         
     }
