@@ -18,13 +18,15 @@ namespace ElementFactory
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            // Getting connection string from configuration
             var connectionString = builder
                 .Configuration
                 .GetConnectionString("DefaultConnection")
                 ?? throw new InvalidOperationException
                 ("Connection string 'DefaultConnection' " +
                 "not found.");
-           
+
+            // Setting default behavior of DB Context
             builder
                 .Services
                 .AddDbContext<ApplicationDbContext>(
@@ -37,6 +39,7 @@ namespace ElementFactory
                     .EnableSensitiveDataLogging();
                 });
 
+            // Setting app services
             builder
                 .Services
                 .AddApplicationServices();
@@ -49,6 +52,7 @@ namespace ElementFactory
             builder.Services
                 .AddDatabaseDeveloperPageExceptionFilter();
            
+            // Setting Microsoft Identity service
             builder.Services
                 .AddDefaultIdentity<IdentityUser>
                 (options =>

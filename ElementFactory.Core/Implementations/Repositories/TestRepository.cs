@@ -5,21 +5,41 @@
     using Microsoft.EntityFrameworkCore;
     using ElementFactory.Core.Contracts.Repositories;
 
+    /// <summary>
+    /// Implementation for Test Repository
+    /// </summary>
     public class TestRepository : ITestRepository
     {
+        /// <summary>
+        /// Field for ApplicationDbContext - our DB Context
+        /// </summary>
         private readonly ApplicationDbContext context;
 
+        /// <summary>
+        /// Default Constructor for injection of a DB Context
+        /// </summary>
+        /// <param name="context">DB Context</param>
         public TestRepository(ApplicationDbContext context)
         {
             this.context = context;
         }
 
+        /// <summary>
+        /// Asynchronous method for adding an entity to context
+        /// </summary>
+        /// <param name="entity">Test entity</param>
+        /// <returns>(void)</returns>
         public async Task AddAsync(Test entity)
         {
             await context.Tests.AddAsync(entity);
             await context.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// Asynchronous method for deleting an entity by id from context
+        /// </summary>
+        /// <param name="id">Entity Id</param>
+        /// <returns>(void)</returns>
         public async Task DeleteAsync(int id)
         {
             var entity = await context
@@ -31,6 +51,10 @@
             await context.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// Asynchronous method for loading all entities
+        /// </summary>
+        /// <returns>Collection with entities</returns>
         public async Task<IEnumerable<Test>> GetAllAsync()
         {
             return await context

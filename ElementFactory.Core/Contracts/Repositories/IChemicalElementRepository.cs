@@ -2,6 +2,9 @@
 {
     using ElementFactory.Data.Models;
 
+    /// <summary>
+    /// Interface for ChemicalElement Repository
+    /// </summary>
     public interface IChemicalElementRepository : IRepository<ChemicalElement>
     {
 
