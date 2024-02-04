@@ -16,6 +16,12 @@
                        asp-route-id="@test.Id">
                         Започни тест!
                     </a>
+                    <form method="get"
+                          asp-controller="Question"
+                          asp-action="EditTestGet"
+                          asp-route-id="@test.Id">
+                          <input type="submit" value="Редактирай тест!" />
+                    </form>
                     <form method="post"
                           asp-controller="Question"
                           asp-action="DeleteTest"

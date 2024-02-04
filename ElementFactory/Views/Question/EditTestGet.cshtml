@@ -1,0 +1,22 @@
+﻿@using ElementFactory.Models.Test;
+@model TestViewModel;
+
+@{
+    ViewBag.Title = "Редактирай тест";
+}
+
+<form asp-controller="Question" asp-action="EditTestPost" method="post" id="editTestForm">
+    <label asp-for="Title">Заглавие</label>
+    <input value="@Model.Title"/>
+    <span asp-validation-for="Title"></span>
+
+    <label asp-for="Category">Категория</label>
+    <select asp-for="Category">
+        <option>7 клас</option>
+        <option>8-9 клас</option>
+        <option>10 клас</option>
+        <option>11-12 клас</option>
+    </select>
+
+    <input type="submit" value="Запази промените!" />
+</form>
