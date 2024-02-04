@@ -691,9 +691,10 @@ form td p
 /* ------------------------------ */
 
 /* ------------------------------ */
-/* Add a test page css */
+/* Add / Edit a test page css */
 
-#addTestForm {
+#addTestForm,
+#editTestForm {
     background-color: white;    
     padding: 20px;
     margin: 40px;
@@ -707,13 +708,15 @@ form td p
     font-size: 24px;
 }
 
-#addTestForm label{
+#addTestForm label
+#editTestForm label{
     margin: 10px 0;
     text-align: center;
     font-size: 28px;
 }
 
-#addTestForm input{
+#addTestForm input,
+#editTestForm input{
     border: 0.5px solid black;
     border-radius: 4px;
     display: block;
@@ -721,11 +724,13 @@ form td p
     margin-bottom: 6px;
 }
 
-#addTestForm input[type="submit"] {
+#addTestForm input[type="submit"],
+#editTestForm input[type="submit"] {
     margin-top: 8px;
 }
 
-#addTestForm input[type="submit"]:hover {
+#addTestForm input[type="submit"]:hover
+#editTestForm input[type="submit"]:hover {
     background-color: hsl(261deg 80% 48%);
     color: hsl(0, 0%, 100%);
     box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
@@ -733,15 +738,12 @@ form td p
     border: none;
 }
 
-#addTestForm .aspValidationTitle {
+#addTestForm .aspValidationTitle,
+#editTestForm .aspValidationTitle {
     padding: 20px;
     background-color: #9b111e;
     border-radius: 6px;
     width: 70%;
-}
-
-#addTestForm select option:focus-within {
-    background-color: red;
 }
 
 /* ------------------------------ */

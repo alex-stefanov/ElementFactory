@@ -103,6 +103,48 @@
             return View("AddTestGet", model);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> EditTestGet(int id)
+        {
+            var entity = await this.testService.GetByIdAsync(id);
+
+            if (entity == null)
+            {
+                return RedirectToAction("Error");
+            }
+
+            TestViewModel model = new TestViewModel()
+            {
+                Category = entity.Category,
+                Title = entity.Title,
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditTestPost(TestViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            var entity = new Test()
+            {
+                Id = model.Id,
+                Category = model.Category,
+                Title = model.Title
+            };
+
+            await this.testService.UpdateAsync(model.Id, entity);
+
+            return RedirectToAction("TestByGrade", new
+            {
+                grade = model.Category
+            });
+        }
+
         [HttpPost]
         public async Task<IActionResult> DeleteTest(int id)
         {
