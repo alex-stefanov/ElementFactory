@@ -45,7 +45,7 @@ namespace ElementFactory.Data.Migrations
 
                     b.HasIndex("QuestionId");
 
-                    b.ToTable("Answers");
+                    b.ToTable("Answers", (string)null);
 
                     b.HasComment("Answer Class");
 
@@ -2441,7 +2441,7 @@ namespace ElementFactory.Data.Migrations
 
                     b.HasIndex("ChemicalTypeId");
 
-                    b.ToTable("ChemicalElements");
+                    b.ToTable("ChemicalElements", (string)null);
 
                     b.HasComment("Chemical Element Class");
 
@@ -5185,7 +5185,7 @@ namespace ElementFactory.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ChemicalTypes");
+                    b.ToTable("ChemicalTypes", (string)null);
 
                     b.HasComment("Chemical Type Class");
 
@@ -5275,7 +5275,7 @@ namespace ElementFactory.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Founders");
+                    b.ToTable("Founders", (string)null);
 
                     b.HasComment("Founder Class");
                 });
@@ -5294,7 +5294,7 @@ namespace ElementFactory.Data.Migrations
 
                     b.HasIndex("ChemicalElementSymbol");
 
-                    b.ToTable("FoundersChemicalElements");
+                    b.ToTable("FoundersChemicalElements", (string)null);
 
                     b.HasComment("Founder Chemical Element Class");
                 });
@@ -5321,7 +5321,7 @@ namespace ElementFactory.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Questions");
+                    b.ToTable("Questions", (string)null);
 
                     b.HasComment("Question Class");
 
@@ -6032,7 +6032,7 @@ namespace ElementFactory.Data.Migrations
 
                     b.HasIndex("TestId");
 
-                    b.ToTable("QuestionsTests");
+                    b.ToTable("QuestionsTests", (string)null);
 
                     b.HasData(
                         new
@@ -6635,7 +6635,7 @@ namespace ElementFactory.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tests");
+                    b.ToTable("Tests", (string)null);
 
                     b.HasComment("Test Class");
 

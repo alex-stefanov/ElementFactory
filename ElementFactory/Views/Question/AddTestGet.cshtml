@@ -8,8 +8,8 @@
 
 <form asp-controller="Question" asp-action="AddTestPost" method="post" id="addTestForm">
     <label asp-for="Title">Заглавие</label>
-    <input asp-for="Title" placeholder="Запиши заглавие на тест тук..."/>
-    <span asp-validation-for="Title" class="aspValidationTitle" style="display:none"></span>
+    <input asp-for="Title" placeholder="Запиши заглавие на тест тук..." />
+    <span asp-validation-for="Title" id="validationTitle" class="aspValidationTitle"></span>
     <label asp-for="Category">Категория</label>
     <select asp-for="Category">
         <option>7 клас</option>
@@ -18,21 +18,24 @@
         <option>11-12 клас</option>
     </select>
 
-    <input type="submit" value="Създай"/>
+    <input type="submit" value="Създай" />
 </form>
 
 <script>
-    // document.getElementsByTagName('form')[0].addEventListener('submit', function (event) 
-    // { 
-    //     var element = document.getElementsByClassName('aspValidationTitle')[0];
-    //     console.log('e');
+    // var form = document.getElementById('addTestForm');
+    // form.addEventListener('submit', function (event) {    
     //     event.preventDefault();
-    //     element.style.display = 'block';
-
+    //     if (typeof Page_ClientValidate == "function") {
+    //         Page_ClientValidate();
+    //         console.log('babushka');
+    //     }
+    //     var element = document.getElementById('validationTitle');
+    //     element.display = 'block';
     //     setTimeout(function () {
     //         element.style.display = 'none';
+    //         console.log(1);
     //     }, 2000);
     // })
 </script>
 
-<link href="~/css/site.css"/>
+<link href="~/css/site.css" />

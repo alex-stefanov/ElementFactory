@@ -137,6 +137,15 @@ window.PopulateTable = function PopulateTable(table, currentElement, counter) {
     }
 }
 
+window.AddValidation = function AddValidation()
+{
+    console.log('test');
+    var element = document.getElementById('validationTitle');
+    setTimeout(function () {
+        element.style.display = 'none';
+    }, 1);
+};
+
 window.CreateTableRows = function CreateTableRows(number, table, textContent, elementProperty) {
 
     var tr = window.CreateDOMElement('tr', table, `popUpTr${number}`);
