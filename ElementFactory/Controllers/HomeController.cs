@@ -19,7 +19,7 @@
 
         public IActionResult Index()
         {
-            return RedirectToAction("Welcome");
+            return RedirectToAction("CreateRoles","Role");
         }
 
         public async Task<IActionResult> LoadTable()

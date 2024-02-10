@@ -9,7 +9,7 @@
     /// <summary>
     /// Database Application Context
     /// </summary>
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<User>
     {
         /// <summary>
         /// Database Application Context Constructor
@@ -20,6 +20,11 @@
         {
 
         }
+
+        /// <summary>
+        /// Database Application Context User DbSet
+        /// </summary>
+        public override DbSet<User> Users { get; set; } = null!;
 
         /// <summary>
         /// Database Application Context ChemicalElement DbSet

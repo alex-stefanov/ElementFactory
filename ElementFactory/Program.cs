@@ -54,7 +54,7 @@ namespace ElementFactory
            
             // Setting Microsoft Identity service
             builder.Services
-                .AddDefaultIdentity<IdentityUser>
+                .AddDefaultIdentity<User>
                 (options =>
                 {
                     options
@@ -62,6 +62,7 @@ namespace ElementFactory
                     .RequireConfirmedAccount = false;
                     options.Password.RequiredLength = 5;
                 })
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             builder.Services.ConfigureApplicationCookie(options =>
