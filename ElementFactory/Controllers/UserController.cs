@@ -8,6 +8,7 @@
     using ElementFactory.Data.Models;
     using ElementFactory.Models.User;
 
+
     [Authorize]
     public class UserController : Controller
     {
@@ -45,6 +46,7 @@
             {
                 return View(model);
             }
+
             var user = new User()
             {
                 Email = model.Email,
@@ -52,6 +54,7 @@
                 IsActive = true,
                 IsRequested=false
             };
+
             var result = await userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
@@ -59,10 +62,12 @@
                 await userManager.AddToRoleAsync(user, "Student");
                 return RedirectToAction("Login", "User");
             }
+
             foreach (var item in result.Errors)
             {
                 ModelState.AddModelError("", item.Description);
             }
+
             return View(model);
         }
 
