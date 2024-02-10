@@ -3,18 +3,20 @@ using ElementFactory.Models.Register;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata;
+using ElementFactory.Data.Models;
 namespace ElementFactory.Controllers
 {
     [Authorize]
     public class UserController : Controller
     {
-        private readonly UserManager<IdentityUser> userManager;
+        private readonly UserManager<User> userManager;
 
-        private readonly SignInManager<IdentityUser> signInManager;
+        private readonly SignInManager<User> signInManager;
 
         public UserController(
-            UserManager<IdentityUser> _userManager,
-            SignInManager<IdentityUser> _signInManager)
+            UserManager<User> _userManager,
+            SignInManager<User> _signInManager)
         {
             userManager = _userManager;
             signInManager = _signInManager;
@@ -42,15 +44,18 @@ namespace ElementFactory.Controllers
             {
                 return View(model);
             }
-            var user = new IdentityUser()
+            var user = new User()
             {
                 Email = model.Email,
-                UserName = model.UserName
+                UserName = model.UserName,
+                IsActive = true,
+                IsRequested=false
             };
             var result = await userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
             {
+                await userManager.AddToRoleAsync(user, "Student");
                 return RedirectToAction("Login", "User");
             }
             foreach (var item in result.Errors)
@@ -102,6 +107,12 @@ namespace ElementFactory.Controllers
             await signInManager.SignOutAsync();
 
             return RedirectToAction("Login", "User");
+        }
+
+        public async Task<IActionResult> LoadProfile(string id)
+        {
+            var user = await userManager.FindByIdAsync(id);
+            return View(user);
         }
 
 
