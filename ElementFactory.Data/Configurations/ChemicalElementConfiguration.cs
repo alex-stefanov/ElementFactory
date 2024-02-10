@@ -5,9 +5,16 @@
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
     using System.Text.Json;
 
+    /// <summary>
+    /// Class for configuration of ChemicalElement Entity
+    /// </summary>
     public class ChemicalElementConfiguration :
         IEntityTypeConfiguration<ChemicalElement>
     {
+        /// <summary>
+        /// Method for configuring the entities
+        /// </summary>
+        /// <param name="builder">The builder used for configuring</param>
         public void Configure(EntityTypeBuilder<ChemicalElement> builder)
         {
             builder.Property(ce => ce.Id)

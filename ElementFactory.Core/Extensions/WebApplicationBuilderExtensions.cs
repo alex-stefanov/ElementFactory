@@ -28,6 +28,12 @@
                 .AddScoped<IChemicalElementRepository, ChemicalElementRepository>();
 
             services
+                .AddScoped<IQuestionTestMapRepository, QuestionTestMapRepository>();
+
+            services
+                .AddScoped<IAnswerRepository, AnswerRepository>();
+
+            services
                 .AddScoped<IQuestionService, QuestionService>();
 
             services
@@ -35,6 +41,12 @@
 
             services
                 .AddScoped<IChemicalElementService, ChemicalElementService>();
+
+            services
+                .AddScoped<IQuestionTestMapService, QuestionTestMapService>();
+
+            services
+                .AddScoped<IAnswerService, AnswerService>();
         }
     }
 }

@@ -52,16 +52,41 @@
             return await repository.GetAllAsync();
         }
 
+        /// <summary>
+        /// Asynchronous method for getting questions by a given grade
+        /// </summary>
+        /// <param name="grade">The grade of the questions</param>
+        /// <returns>Collection with entities</returns>
+        public async Task<IEnumerable<Question>> GetByGradeAsync(string grade)
+        {
+            return await repository.GetByGradeAsync(grade);
+        }
+
+        /// <summary>
+        /// Asynchronous method for getting an entity by id
+        /// </summary>
+        /// <param name="id">Id of the entity</param>
+        /// <returns>The collected entity</returns>
         public async Task<Question> GetByIdAsync(int id)
         {
             return await repository.GetByIdAsync(id);
         }
 
+        /// <summary>
+        /// Asynchronous method for saving changes in repository
+        /// </summary>
+        /// <returns>(void)</returns>
         public async Task SaveChangesAsync()
         {
             await repository.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// Asynchronous method used to update an entity with a given one
+        /// </summary>
+        /// <param name="id">Id of the entity to update</param>
+        /// <param name="entity">Entity which is used for update</param>
+        /// <returns>(void)</returns>
         public async Task UpdateAsync(int id, Question entity)
         {
             await repository.UpdateAsync(id, entity);

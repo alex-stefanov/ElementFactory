@@ -1,6 +1,5 @@
 ﻿namespace ElementFactory.Controllers
 {
-    using ElementFactory.Data;
     using ElementFactory.Models.Question;
     using Microsoft.AspNetCore.Mvc;
     using ElementFactory.Models.Test;
@@ -11,20 +10,27 @@
     using System.Text.Json;
     using ElementFactory.Models.Others;
     using ElementFactory.Core.Contracts.Service;
+    using System.Text.Json.Serialization;
 
     public class QuestionController : Controller
     {
         private readonly ILogger<HomeController> logger;
         private readonly IQuestionService questionService;
         private readonly ITestService testService;
+        private readonly IAnswerService answerService;
+        private readonly IQuestionTestMapService questionTestMapService;
 
         public QuestionController(ILogger<HomeController> logger,
             IQuestionService questionService,
-            ITestService testService)
+            ITestService testService,
+            IAnswerService answerService,
+            IQuestionTestMapService questionTestMapService)
         {
             this.logger = logger;
             this.questionService = questionService;
             this.testService = testService;
+            this.answerService = answerService;
+            this.questionTestMapService = questionTestMapService;
         }
 
         public IActionResult Index()
@@ -81,23 +87,18 @@
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddTestPost(TestViewModel model)
+        public IActionResult AddTestPost(TestViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var testEntity = new Test()
+                var testModel = new AddQuestionsCurrentQuestionModel()
                 {
-                    Category = model.Category,
-                    Title = model.Title,
-                    QuestionsTests = new List<QuestionTestMap>()
+                    TestCategory = model.Category,
+                    TestTitle = model.Title,
+                    NumberOfQ = model.QuestionsCounter
                 };
 
-                await this.testService.AddAsync(testEntity);
-
-                return RedirectToAction("TestsByGrade", "Question", new
-                {
-                    grade = model.Category.Split(" ")[0]
-                });
+                return RedirectToAction("ChooseAddType", testModel);
             }
 
             return View("AddTestGet", model);
@@ -205,15 +206,200 @@
         }
 
         public IActionResult ShowTestResult(string answers, 
-            string classCategory)
+            string classCategory, int questions)
         {
             var model = new ShowTestResultViewModel()
             {
                 CorrectAnswers = answers,
-                ClassCategory = classCategory
+                ClassCategory = classCategory,
+                Questions = questions
             };
 
             return View("ShowTestResult", model);
+        }
+
+        public IActionResult ChooseAddType(
+            AddQuestionsCurrentQuestionModel entity)
+        {
+            return View(entity);
+        }
+
+        [HttpPost]
+        public IActionResult AddQuestionsOnOwn(
+            AddQuestionsCurrentQuestionModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                List<Question> questions = new List<Question>();
+                foreach (string json in model.QuestionsJSON)
+                {
+                    questions.Add(JsonSerializer.Deserialize<Question>(json,
+                    new JsonSerializerOptions()
+                    {
+                        ReferenceHandler = ReferenceHandler.IgnoreCycles
+                    }));
+                }
+
+                var question = new Question()
+                {
+                    RightAnswer = model.RightAnswer.Value,
+                    Description = model.Description
+                };
+
+                var answer1 = new Answer()
+                {
+                    Question = question,
+                    Value = model.Answer1.Value
+                };
+
+                var answer2 = new Answer()
+                {
+                    Question = question,
+                    Value = model.Answer2.Value
+                };
+
+                var answer3 = new Answer()
+                {
+                    Question = question,
+                    Value = model.Answer3.Value
+                };
+
+                var answer4 = new Answer()
+                {
+                    Question = question,
+                    Value = model.Answer4.Value
+                };
+
+                var answers = new List<Answer>()
+                    {
+                          answer1,
+                          answer2,
+                          answer3,
+                          answer4
+                    };
+
+                question.Answers = answers;
+                model.Questions = questions;
+                model.Questions.Add(question);
+
+                    return View("AddQuestionsOnOwn", model);   
+            }
+
+            else
+            {
+                return View(model);
+            }
+
+        }
+
+        public async Task<IActionResult> AddQuestionsOnOwnWithViewModelLast(
+           AddQuestionsCurrentQuestionModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                List<Question> questions = new List<Question>();
+                foreach (string json in model.QuestionsJSON)
+                {
+                    questions.Add(JsonSerializer.Deserialize<Question>(json,
+                    new JsonSerializerOptions()
+                    {
+                        ReferenceHandler = ReferenceHandler.IgnoreCycles
+                    }));
+                }
+
+                var question = new Question()
+                {
+                    RightAnswer = model.RightAnswer.Value,
+                    Description = model.Description
+                };
+
+                var answer1 = new Answer()
+                {
+                    Id = 0,
+                    Question = question,
+                    Value = model.Answer1.Value
+                };
+
+                var answer2 = new Answer()
+                {
+                    Id = 0,
+                    Question = question,
+                    Value = model.Answer2.Value
+                };
+
+                var answer3 = new Answer()
+                {
+                    Id = 0,
+                    Question = question,
+                    Value = model.Answer3.Value
+                };
+
+                var answer4 = new Answer()
+                {
+                    Id = 0,
+                    Question = question,
+                    Value = model.Answer4.Value
+                };
+
+                var answers = new List<Answer>()
+            {
+                answer1,
+                answer2,
+                answer3,
+                answer4
+            };
+
+                question.Answers = answers;
+
+                model.Questions = questions;
+                model.Questions.Add(question);
+
+                var test = new Test()
+                {
+                    Title = model.TestTitle,
+                    Category = model.TestCategory
+                };
+
+                await this.testService.AddAsync(test);
+
+                foreach (Question questionEntity in model.Questions)
+                {
+                    await this.questionService.AddAsync(questionEntity);
+                    await this.questionTestMapService.AddAsync(new QuestionTestMap()
+                    {
+                        QuestionId = questionEntity.Id,
+                        TestId = test.Id
+                    });
+                }
+
+                return RedirectToAction("TestsByGrade", new
+                {
+                    grade = model.TestCategory.Split(" ")[0]
+                });
+            }
+
+            else
+            {
+                return View(model);
+            }
+        }
+
+        public async Task<IActionResult> AddQuestionsChoose(
+            string title,
+            string category,
+            int questions)
+        {
+            var dataModel = new AddQuestionsChooseModel()
+            {
+                TestCategory = category,
+                TestTitle = title,
+                QuestionsCount = questions
+            };
+
+            var questionsEntities = await this.questionService.GetByGradeAsync(category);
+            dataModel.Questions = questionsEntities.ToList();
+
+            return View(dataModel);
         }
 
         [ResponseCache(

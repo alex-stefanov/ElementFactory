@@ -4,8 +4,15 @@
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
+    /// <summary>
+    /// Class for configuration of Question Entity
+    /// </summary>
     public class QuestionConfiguration : IEntityTypeConfiguration<Question>
     {
+        /// <summary>
+        /// Method for configuring the entities
+        /// </summary>
+        /// <param name="builder">The builder used for configuring</param>
         public void Configure(EntityTypeBuilder<Question> builder)
         {
             builder.HasMany(q => q.QuestionsTests)
@@ -24,6 +31,10 @@
             builder.HasData(questions);
         }
 
+        /// <summary>
+        /// Methods for the separate questions
+        /// </summary>
+        /// 
         private List<Question> Questions1()
         {
             // ============================================= //

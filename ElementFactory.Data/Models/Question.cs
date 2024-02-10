@@ -38,6 +38,11 @@
         public string RightAnswer { get; set; } = null!;
 
         /// <summary>
+        /// Flag for activity => used in DB
+        /// </summary>
+        public bool IsActive { get; set; } = true;
+
+        /// <summary>
         /// Collection from QuestionsTests
         /// </summary>
         public ICollection<QuestionTestMap> QuestionsTests { get; set; }

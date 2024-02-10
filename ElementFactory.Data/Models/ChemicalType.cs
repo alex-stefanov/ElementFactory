@@ -3,6 +3,7 @@
     using Microsoft.EntityFrameworkCore;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using static ElementFactory.Data.Constants.ChemicalTypeConstants;
 
     /// <summary>
     /// Chemical Type class
@@ -22,7 +23,8 @@
         /// Chemical Type Name
         /// </summary>
         [Required]
-        [MinLength(5), MaxLength(25)]
+        [MinLength(ChemicalTypeNameMinLength), 
+            MaxLength(ChemicalTypeNameMaxLength)]
         [Comment("Chemical type name english")]
         public string Name { get; set; } = null!;
 
@@ -30,9 +32,15 @@
         /// Chemical Type Name in Bulgarian
         /// </summary>
         [Required]
-        [MinLength(5), MaxLength(25)]
+        [MinLength(ChemicalTypeNameMinLength), 
+            MaxLength(ChemicalTypeNameMaxLength)]
         [Comment("Chemical type name bulgarian")]
         public string BulgarianName { get; set; } = null!;
+
+        /// <summary>
+        /// Flag for activity => used in DB
+        /// </summary>
+        public bool IsActive { get; set; } = true;
 
         /// <summary>
         /// Collection from Chemical Elements

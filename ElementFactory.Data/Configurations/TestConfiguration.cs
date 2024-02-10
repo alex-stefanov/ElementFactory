@@ -4,8 +4,15 @@
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
+    /// <summary>
+    /// Class for configuration of Test Entity
+    /// </summary>
     public class TestConfiguration : IEntityTypeConfiguration<Test>
     {
+        /// <summary>
+        /// Method for configuring the entities
+        /// </summary>
+        /// <param name="builder">The builder used for configuring</param>
         public void Configure(EntityTypeBuilder<Test> builder)
         {
             var tests = this.Tests7Grade();
@@ -19,6 +26,10 @@
 
             builder.HasData(tests);
         }
+
+        /// <summary>
+        /// Methods for the separate tests
+        /// </summary>
 
         private List<Test> Tests7Grade()
         {

@@ -5,10 +5,7 @@
     using ElementFactory.Data.Models;
     using Microsoft.EntityFrameworkCore;
 
-    /// <summary>
-    /// Implementation for Question Repository
-    /// </summary>
-    public class QuestionRepository : IQuestionRepository
+    public class QuestionTestMapRepository : IQuestionTestMapRepository
     {
         /// <summary>
         /// Field for ApplicationDbContext - our DB Context
@@ -18,8 +15,8 @@
         /// <summary>
         /// Default Constructor for injection of a DB Context
         /// </summary>
-        /// <param name="context">Db Context</param>
-        public QuestionRepository(ApplicationDbContext context)
+        /// <param name="context">DB Context</param>
+        public QuestionTestMapRepository(ApplicationDbContext context)
         {
             this.context = context;
         }
@@ -27,11 +24,11 @@
         /// <summary>
         /// Asynchronous method for adding an entity to context
         /// </summary>
-        /// <param name="entity">Question entity</param>
+        /// <param name="entity">ChemicalElement entity</param>
         /// <returns>(void)</returns>
-        public async Task AddAsync(Question entity)
+        public async Task AddAsync(QuestionTestMap entity)
         {
-            await context.Questions.AddAsync(entity);
+            await context.QuestionsTests.AddAsync(entity);
             await context.SaveChangesAsync();
         }
 
@@ -43,9 +40,9 @@
         public async Task DeleteAsync(int id)
         {
             var entity = await context
-                .Questions
-                .FirstOrDefaultAsync(q => q.Id == id)
-                ?? throw new ArgumentException("Invalid id!");
+               .QuestionsTests
+               .FirstOrDefaultAsync(qt => qt.TestId + "" + qt.QuestionId == id.ToString())
+               ?? throw new ArgumentException("Invalid id!");
 
             entity.IsActive = false;
             await context.SaveChangesAsync();
@@ -55,14 +52,14 @@
         /// Asynchronous method for loading all entities
         /// </summary>
         /// <returns>Collection with entities</returns>
-        public async Task<IEnumerable<Question>> GetAllAsync()
+        public async Task<IEnumerable<QuestionTestMap>> GetAllAsync()
         {
-            return await context
-                .Questions
-                .Where(q => q.IsActive)
-                .Include(q => q.Answers)
-                .Include(q => q.QuestionsTests)
-                .ThenInclude(q => q.Test)
+            return await
+                context
+                .QuestionsTests
+                .Include(qt => qt.Question)
+                .Include(qt => qt.Test)
+                .Where(ce => ce.IsActive)
                 .ToListAsync();
         }
 
@@ -71,11 +68,11 @@
         /// </summary>
         /// <param name="id">Id of the entity</param>
         /// <returns>The collected entity</returns>
-        public async Task<Question> GetByIdAsync(int id)
+        public async Task<QuestionTestMap> GetByIdAsync(int id)
         {
-            var entity = await context.Questions
-                .Where(q => q.IsActive)
-                .FirstOrDefaultAsync(q => q.Id == id);
+            var entity = await context.QuestionsTests
+                .Where(qt => qt.IsActive)
+                .FirstOrDefaultAsync(qt => qt.TestId + "" + qt.QuestionId == id.ToString());
 
             return entity ?? throw new ArgumentException("Invalid id!");
         }
@@ -95,40 +92,18 @@
         /// <param name="id">Id of the entity to update</param>
         /// <param name="entity">Entity which is used for update</param>
         /// <returns>(void)</returns>
-        public async Task UpdateAsync(int id, Question entity)
+        public async Task UpdateAsync(int id, QuestionTestMap entity)
         {
             var entityToUpdate = await context
-                .Questions
-                .FirstOrDefaultAsync(q => q.Id == id)
+                .QuestionsTests
+                .Where(ce => ce.IsActive)
+                .FirstOrDefaultAsync(qt => qt.TestId + "" + qt.QuestionId == id.ToString())
                 ?? throw new ArgumentException("Invalid id!");
 
-            entityToUpdate.QuestionsTests = entity.QuestionsTests;
-            entityToUpdate.RightAnswer = entity.RightAnswer;
-            entityToUpdate.Answers = entity.Answers;
-            entityToUpdate.Description = entity.Description;
-            entityToUpdate.Id = entity.Id;
+            entityToUpdate.QuestionId = entity.QuestionId;
+            entityToUpdate.TestId = entity.TestId;
 
             await context.SaveChangesAsync();
-        }
-
-        /// <summary>
-        /// Asynchronous method for getting questions by a given grade
-        /// </summary>
-        /// <param name="grade">The grade of the questions</param>
-        /// <returns>Collection with entities</returns>
-        public async Task<IEnumerable<Question>> GetByGradeAsync
-            (string grade)
-        {
-            return await this.context
-                .Questions
-                .Include(q => q.Answers)
-                .Include(q => q.QuestionsTests)
-                .ThenInclude(q => q.Test)
-                .Where(q => q.QuestionsTests
-                .All(qt => qt.Test.Category.Contains(grade)
-                ))
-                .ToListAsync();
-
         }
     }
 }

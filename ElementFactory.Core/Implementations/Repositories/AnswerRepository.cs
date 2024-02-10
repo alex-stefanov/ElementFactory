@@ -1,14 +1,16 @@
 ﻿namespace ElementFactory.Core.Implementations.Repositories
 {
-    using ElementFactory.Data.Models;
-    using ElementFactory.Data;
-    using Microsoft.EntityFrameworkCore;
     using ElementFactory.Core.Contracts.Repositories;
+    using ElementFactory.Data;
+    using ElementFactory.Data.Models;
+    using Microsoft.EntityFrameworkCore;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     /// <summary>
-    /// Implementation for Test Repository
+    /// Implementation for Answer Repository
     /// </summary>
-    public class TestRepository : ITestRepository
+    public class AnswerRepository : IAnswerRepository
     {
         /// <summary>
         /// Field for ApplicationDbContext - our DB Context
@@ -19,7 +21,7 @@
         /// Default Constructor for injection of a DB Context
         /// </summary>
         /// <param name="context">DB Context</param>
-        public TestRepository(ApplicationDbContext context)
+        public AnswerRepository(ApplicationDbContext context)
         {
             this.context = context;
         }
@@ -27,11 +29,11 @@
         /// <summary>
         /// Asynchronous method for adding an entity to context
         /// </summary>
-        /// <param name="entity">Test entity</param>
+        /// <param name="entity">ChemicalElement entity</param>
         /// <returns>(void)</returns>
-        public async Task AddAsync(Test entity)
+        public async Task AddAsync(Answer entity)
         {
-            await context.Tests.AddAsync(entity);
+            await context.Answers.AddAsync(entity);
             await context.SaveChangesAsync();
         }
 
@@ -43,9 +45,9 @@
         public async Task DeleteAsync(int id)
         {
             var entity = await context
-                .Tests
-                .FirstOrDefaultAsync(q => q.Id == id)
-                ?? throw new ArgumentException("Invalid id!");
+               .Answers
+               .FirstOrDefaultAsync(a => a.Id == id)
+               ?? throw new ArgumentException("Invalid id!");
 
             entity.IsActive = false;
             await context.SaveChangesAsync();
@@ -55,11 +57,13 @@
         /// Asynchronous method for loading all entities
         /// </summary>
         /// <returns>Collection with entities</returns>
-        public async Task<IEnumerable<Test>> GetAllAsync()
+        public async Task<IEnumerable<Answer>> GetAllAsync()
         {
-            return await context
-                .Tests
-                .Where(t => t.IsActive)
+            return await
+                context
+                .Answers
+                .Include(a => a.Question)
+                .Where(ce => ce.IsActive)
                 .ToListAsync();
         }
 
@@ -68,10 +72,10 @@
         /// </summary>
         /// <param name="id">Id of the entity</param>
         /// <returns>The collected entity</returns>
-        public async Task<Test> GetByIdAsync(int id)
+        public async Task<Answer> GetByIdAsync(int id)
         {
-            var entity = await context.Tests
-                .Where(t => t.IsActive)
+            var entity = await context.Answers
+                .Where(ce => ce.IsActive)
                 .FirstOrDefaultAsync(q => q.Id == id);
 
             return entity ?? throw new ArgumentException("Invalid id!");
@@ -92,52 +96,18 @@
         /// <param name="id">Id of the entity to update</param>
         /// <param name="entity">Entity which is used for update</param>
         /// <returns>(void)</returns>
-        public async Task UpdateAsync(int id, Test entity)
+        public async Task UpdateAsync(int id, Answer entity)
         {
             var entityToUpdate = await context
-                .Tests
+                .Answers
+                .Where(ce => ce.IsActive)
                 .FirstOrDefaultAsync(q => q.Id == id)
                 ?? throw new ArgumentException("Invalid id!");
 
-            entityToUpdate.Id = entity.Id;
-            entityToUpdate.QuestionsTests = entity.QuestionsTests;
-            entityToUpdate.Title = entity.Title;
-            entityToUpdate.Category = entity.Category;
+            entityToUpdate.QuestionId = entity.QuestionId;
+            entityToUpdate.Value = entity.Value;
 
             await context.SaveChangesAsync();
-        }
-
-        /// <summary>
-        /// Asynchronous method for loading a test by a given id
-        /// </summary>
-        /// <param name="id">The id of the test</param>
-        /// <returns>Nullable Test entity</returns>
-        public async Task<Test?> LoadTestAsync(int id)
-        {
-            return await context
-                .Tests
-                .Include(x => x.QuestionsTests)
-                .ThenInclude(x => x.Question)
-                .ThenInclude(x => x.Answers)
-                .FirstOrDefaultAsync(x => x.Id == id);
-        }
-
-        /// <summary>
-        /// Asynchronous method for getting tests by a given grade
-        /// </summary>
-        /// <param name="grade">The grade of the tests</param>
-        /// <returns>Collection with entities</returns>
-        public async Task<IEnumerable<Test>> GetByGradeAsync(string grade)
-        {
-            var tests = await context
-                .Tests
-                .Include(t => t.QuestionsTests)
-                .ThenInclude(t => t.Question)
-                .ThenInclude(t => t.Answers)
-                .Where(t => t.Category.Contains(grade) && t.IsActive)
-                .ToListAsync();
-
-            return tests;
         }
     }
 }

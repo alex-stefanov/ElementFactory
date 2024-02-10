@@ -15,6 +15,10 @@
 
         public string Category { get; set; } = null!;
 
+        [Required(ErrorMessage = "Полето за брой на въпросите е задължително!")]
+        [Range(1, 30, ErrorMessage = "Невалиден брой въпроси! Трябва да е между {1} и {2}!")]
+        public int QuestionsCounter { get; set; }
+
         public List<QuestionViewModel> Questions { get; set; } = 
             new List<QuestionViewModel>();
     }

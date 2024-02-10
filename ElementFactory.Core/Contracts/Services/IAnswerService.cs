@@ -1,16 +1,15 @@
-﻿namespace ElementFactory.Core.Contracts.Repositories
+﻿using ElementFactory.Data.Models;
+
+namespace ElementFactory.Core.Contracts.Service
 {
-    /// <summary>
-    /// Interface for abstract repository
-    /// </summary>
-    public interface IRepository<T>
+    public interface IAnswerService
     {
         /// <summary>
         /// Asynchronous method for adding an entity
         /// </summary>
-        /// <param name="entity">Generic Entity</param>
+        /// <param name="entity">Answer entity</param>
         /// <returns>(void)</returns>
-        public Task AddAsync(T entity);
+        public Task AddAsync(Answer entity);
 
         /// <summary>
         /// Asynchronous method for saving changes in repository
@@ -29,14 +28,14 @@
         /// Asynchronous method for loading all entities
         /// </summary>
         /// <returns>Collection with entities</returns>
-        public Task<IEnumerable<T>> GetAllAsync();
+        public Task<IEnumerable<Answer>> GetAllAsync();
 
         /// <summary>
         /// Asynchronous method for getting an entity by id
         /// </summary>
         /// <param name="id">Id of the entity</param>
         /// <returns>The collected entity</returns>
-        public Task<T> GetByIdAsync(int id);
+        public Task<Answer> GetByIdAsync(int id);
 
         /// <summary>
         /// Asynchronous method used to update an entity with a given one
@@ -44,6 +43,6 @@
         /// <param name="id">Id of the entity to update</param>
         /// <param name="entity">Entity which is used for update</param>
         /// <returns>(void)</returns>
-        public Task UpdateAsync(int id, T entity);
+        public Task UpdateAsync(int id, Answer entity);
     }
 }
