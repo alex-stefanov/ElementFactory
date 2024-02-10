@@ -1,12 +1,13 @@
-﻿using ElementFactory.Models.Login;
-using ElementFactory.Models.Register;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata;
-using ElementFactory.Data.Models;
-namespace ElementFactory.Controllers
+﻿namespace ElementFactory.Controllers
 {
+    using ElementFactory.Models.Login;
+    using ElementFactory.Models.Register;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
+    using ElementFactory.Data.Models;
+    using ElementFactory.Models.User;
+
     [Authorize]
     public class UserController : Controller
     {
@@ -107,6 +108,16 @@ namespace ElementFactory.Controllers
             await signInManager.SignOutAsync();
 
             return RedirectToAction("Login", "User");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateProfile(UserViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            return RedirectToAction("LoadProfile", model);
         }
 
         public async Task<IActionResult> LoadProfile(string id)
