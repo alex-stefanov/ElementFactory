@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Question\ChooseAddType.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Question\ChooseAddType.cshtml" />
     <None Include="wwwroot\css\site.css" />
   </ItemGroup>
 
@@ -26,6 +31,14 @@
   <ItemGroup>
     <ProjectReference Include="..\ElementFactory.Core\ElementFactory.Core.csproj" />
     <ProjectReference Include="..\ElementFactory.Data\ElementFactory.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Question\ChooseAddType.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Question\ChooseAddType.cshtml" />
   </ItemGroup>
 
 </Project>

@@ -25,9 +25,13 @@
                 @foreach (AnswerViewModel answer in question.Answers)
                 {
                    <div class="answerContainer">
-                       <label><input type="radio" class="answerContainer"
-                                   name="answers_@answerCounter" value="@answer.Value"> @answer.Value
-                        </label>
+                       <label>
+                           <input
+                               type="radio" 
+                               class="answerContainer"
+                               name="answers_@answerCounter" 
+                               value="@answer.Value" /> @answer.Value
+                       </label>
                    </div>
                 }
             </div>
@@ -35,8 +39,16 @@
 
         answerCounter++;
     }
+
     <div class="handInTestContainer">
-        <button id="handInTest">Предай тест</button>
+        <form method="post" 
+            id="handInTestForm"
+            asp-controller="Question"
+            asp-action="ShowTestResult"
+            asp-route-classCategory="@Model.Category"
+            asp-route-questions="@Model.Questions.Count">
+                <input type="submit" id="handInTest" value="Предай тест" />
+        </form>
     </div>
 </div>
 <div class="loadTestErrorDiv">
@@ -76,11 +88,14 @@
                 }
             }
 
-            var category = '@Model.Category.Split(" ")[0]';
+            var form =
+                document
+                .getElementById('handInTestForm');
 
-            window.location.href = '../ShowTestResult?answers='
-            + correctAnswers.toString()
-            + '&classCategory='+category;
+            form.setAttribute('action',
+            form.getAttribute('action') + '&answers='+correctAnswers);
+
+            form.submit();
         }
     });
 </script>

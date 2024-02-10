@@ -4,13 +4,18 @@
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
+    /// <summary>
+    /// Class for configuration of QuestionTest Entity
+    /// </summary>
     public class QuestionTestConfiguration :
         IEntityTypeConfiguration<QuestionTestMap>
     {
+        /// <summary>
+        /// Method for configuring the entities
+        /// </summary>
+        /// <param name="builder">The builder used for configuring</param>
         public void Configure(EntityTypeBuilder<QuestionTestMap> builder)
         {
-            // Seeding the DB
-
             var questionsTestsMap = this.QuestionsTests1();
             questionsTestsMap.AddRange(this.QuestionsTests2());
             questionsTestsMap.AddRange(this.QuestionsTests3());
@@ -20,8 +25,6 @@
             questionsTestsMap.AddRange(this.QuestionsTests7());
             questionsTestsMap.AddRange(this.QuestionsTests8());
 
-            // Setting delete behavior, relationships
-
             builder.HasOne(qtm => qtm.Question)
                    .WithMany(q => q.QuestionsTests)
                    .HasForeignKey(qtm => qtm.QuestionId);
@@ -30,8 +33,6 @@
                 .WithMany(t => t.QuestionsTests)
                 .HasForeignKey(qtm => qtm.TestId);
 
-            // Setting Composite Primary Key For
-            // QuestionTestMap
             builder.HasKey(qt => new
                 {
                     qt.QuestionId,
@@ -41,6 +42,10 @@
             builder.HasData(questionsTestsMap);
         }
 
+        /// <summary>
+        /// Methods for the separate questionsTestsMap
+        /// </summary>
+   
         private List<QuestionTestMap> QuestionsTests1()
         {
             var questionTestMap1 = new QuestionTestMap()

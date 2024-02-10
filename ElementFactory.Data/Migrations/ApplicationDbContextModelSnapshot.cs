@@ -31,6 +31,9 @@ namespace ElementFactory.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<int>("QuestionId")
                         .HasColumnType("int")
                         .HasComment("Answer question Id");
@@ -53,2292 +56,2674 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 1,
+                            IsActive = true,
                             QuestionId = 1,
                             Value = "Втора А"
                         },
                         new
                         {
                             Id = 2,
+                            IsActive = true,
                             QuestionId = 1,
                             Value = "Седма А"
                         },
                         new
                         {
                             Id = 3,
+                            IsActive = true,
                             QuestionId = 1,
                             Value = "Първа А"
                         },
                         new
                         {
                             Id = 4,
+                            IsActive = true,
                             QuestionId = 1,
                             Value = "Първа Б"
                         },
                         new
                         {
                             Id = 5,
+                            IsActive = true,
                             QuestionId = 2,
                             Value = "Неметал"
                         },
                         new
                         {
                             Id = 6,
+                            IsActive = true,
                             QuestionId = 2,
                             Value = "Метал"
                         },
                         new
                         {
                             Id = 7,
+                            IsActive = true,
                             QuestionId = 2,
                             Value = "Нито едно от изброените"
                         },
                         new
                         {
                             Id = 8,
+                            IsActive = true,
                             QuestionId = 2,
                             Value = "Алкалоземен метал"
                         },
                         new
                         {
                             Id = 9,
+                            IsActive = true,
                             QuestionId = 3,
                             Value = "Неметали, киселини, вода"
                         },
                         new
                         {
                             Id = 10,
+                            IsActive = true,
                             QuestionId = 3,
                             Value = "Основни оксиди, киселини, вода"
                         },
                         new
                         {
                             Id = 11,
+                            IsActive = true,
                             QuestionId = 3,
                             Value = "Основи, киселини, метали"
                         },
                         new
                         {
                             Id = 12,
+                            IsActive = true,
                             QuestionId = 3,
                             Value = "Киселинни оксиди, основи, соли"
                         },
                         new
                         {
                             Id = 13,
+                            IsActive = true,
                             QuestionId = 4,
                             Value = "Na2O"
                         },
                         new
                         {
                             Id = 14,
+                            IsActive = true,
                             QuestionId = 4,
                             Value = "Na2O + H2"
                         },
                         new
                         {
                             Id = 15,
+                            IsActive = true,
                             QuestionId = 4,
                             Value = "NaOH + H2"
                         },
                         new
                         {
                             Id = 16,
+                            IsActive = true,
                             QuestionId = 4,
                             Value = "NaOH + H2O"
                         },
                         new
                         {
                             Id = 17,
+                            IsActive = true,
                             QuestionId = 5,
                             Value = "За да не взаимодейства с азота от въздуха"
                         },
                         new
                         {
                             Id = 18,
+                            IsActive = true,
                             QuestionId = 5,
                             Value = "За да не взаимодейства с кислорода от въздуха"
                         },
                         new
                         {
                             Id = 19,
+                            IsActive = true,
                             QuestionId = 5,
                             Value = "За да не отрови въздуха наоколо"
                         },
                         new
                         {
                             Id = 20,
+                            IsActive = true,
                             QuestionId = 5,
                             Value = "За да не се изпари"
                         },
                         new
                         {
                             Id = 21,
+                            IsActive = true,
                             QuestionId = 6,
                             Value = "NaCl"
                         },
                         new
                         {
                             Id = 22,
+                            IsActive = true,
                             QuestionId = 6,
                             Value = "Na2CO3"
                         },
                         new
                         {
                             Id = 23,
+                            IsActive = true,
                             QuestionId = 6,
                             Value = "Na2O2"
                         },
                         new
                         {
                             Id = 24,
+                            IsActive = true,
                             QuestionId = 6,
                             Value = "NaOH"
                         },
                         new
                         {
                             Id = 25,
+                            IsActive = true,
                             QuestionId = 7,
                             Value = "Син"
                         },
                         new
                         {
                             Id = 26,
+                            IsActive = true,
                             QuestionId = 7,
                             Value = "Зелен"
                         },
                         new
                         {
                             Id = 27,
+                            IsActive = true,
                             QuestionId = 7,
                             Value = "Жълт"
                         },
                         new
                         {
                             Id = 28,
+                            IsActive = true,
                             QuestionId = 7,
                             Value = "Виолетов"
                         },
                         new
                         {
                             Id = 29,
+                            IsActive = true,
                             QuestionId = 8,
                             Value = "NaOH"
                         },
                         new
                         {
                             Id = 30,
+                            IsActive = true,
                             QuestionId = 8,
                             Value = "Na2O"
                         },
                         new
                         {
                             Id = 31,
+                            IsActive = true,
                             QuestionId = 8,
                             Value = "NaCl"
                         },
                         new
                         {
                             Id = 32,
+                            IsActive = true,
                             QuestionId = 8,
                             Value = "NaNO3"
                         },
                         new
                         {
                             Id = 33,
+                            IsActive = true,
                             QuestionId = 9,
                             Value = "Na+ и OH-"
                         },
                         new
                         {
                             Id = 34,
+                            IsActive = true,
                             QuestionId = 9,
                             Value = "2Na+ и OH-"
                         },
                         new
                         {
                             Id = 35,
+                            IsActive = true,
                             QuestionId = 9,
                             Value = "Na+ и 2O-"
                         },
                         new
                         {
                             Id = 36,
+                            IsActive = true,
                             QuestionId = 9,
                             Value = "Na+ и OH+"
                         },
                         new
                         {
                             Id = 37,
+                            IsActive = true,
                             QuestionId = 10,
                             Value = "1"
                         },
                         new
                         {
                             Id = 38,
+                            IsActive = true,
                             QuestionId = 10,
                             Value = "2"
                         },
                         new
                         {
                             Id = 39,
+                            IsActive = true,
                             QuestionId = 10,
                             Value = "3"
                         },
                         new
                         {
                             Id = 40,
+                            IsActive = true,
                             QuestionId = 10,
                             Value = "4"
                         },
                         new
                         {
                             Id = 41,
+                            IsActive = true,
                             QuestionId = 11,
                             Value = "В червено"
                         },
                         new
                         {
                             Id = 42,
+                            IsActive = true,
                             QuestionId = 11,
                             Value = "В малиновочервено"
                         },
                         new
                         {
                             Id = 43,
+                            IsActive = true,
                             QuestionId = 11,
                             Value = "В синьо"
                         },
                         new
                         {
                             Id = 44,
+                            IsActive = true,
                             QuestionId = 11,
                             Value = "В жълто"
                         },
                         new
                         {
                             Id = 45,
+                            IsActive = true,
                             QuestionId = 12,
                             Value = "K"
                         },
                         new
                         {
                             Id = 46,
+                            IsActive = true,
                             QuestionId = 12,
                             Value = "Li"
                         },
                         new
                         {
                             Id = 47,
+                            IsActive = true,
                             QuestionId = 12,
                             Value = "Rb"
                         },
                         new
                         {
                             Id = 48,
+                            IsActive = true,
                             QuestionId = 12,
                             Value = "Cs"
                         },
                         new
                         {
                             Id = 49,
+                            IsActive = true,
                             QuestionId = 13,
                             Value = "Вярно"
                         },
                         new
                         {
                             Id = 50,
+                            IsActive = true,
                             QuestionId = 13,
                             Value = "Грешно"
                         },
                         new
                         {
                             Id = 51,
+                            IsActive = true,
                             QuestionId = 14,
                             Value = "Натриев хидрид"
                         },
                         new
                         {
                             Id = 52,
+                            IsActive = true,
                             QuestionId = 14,
                             Value = "Натриев хидроксид"
                         },
                         new
                         {
                             Id = 53,
+                            IsActive = true,
                             QuestionId = 14,
                             Value = "Натриев хидрат"
                         },
                         new
                         {
                             Id = 54,
+                            IsActive = true,
                             QuestionId = 14,
                             Value = "Натриев хемоглобин"
                         },
                         new
                         {
                             Id = 55,
+                            IsActive = true,
                             QuestionId = 15,
                             Value = "Приготвяне на физиологичен разтвор"
                         },
                         new
                         {
                             Id = 56,
+                            IsActive = true,
                             QuestionId = 15,
                             Value = "Производство на сапуни"
                         },
                         new
                         {
                             Id = 57,
+                            IsActive = true,
                             QuestionId = 15,
                             Value = "Промивка след изгаряне"
                         },
                         new
                         {
                             Id = 58,
+                            IsActive = true,
                             QuestionId = 15,
                             Value = "Хранително-вкусова промишленост"
                         },
                         new
                         {
                             Id = 59,
+                            IsActive = true,
                             QuestionId = 16,
                             Value = "Червено-кафяв"
                         },
                         new
                         {
                             Id = 60,
+                            IsActive = true,
                             QuestionId = 16,
                             Value = "Виолетов"
                         },
                         new
                         {
                             Id = 61,
+                            IsActive = true,
                             QuestionId = 16,
                             Value = "Бледосин"
                         },
                         new
                         {
                             Id = 62,
+                            IsActive = true,
                             QuestionId = 16,
                             Value = "Жълто-зелен"
                         },
                         new
                         {
                             Id = 63,
+                            IsActive = true,
                             QuestionId = 17,
                             Value = "H2Cl"
                         },
                         new
                         {
                             Id = 64,
+                            IsActive = true,
                             QuestionId = 17,
                             Value = "HCl2"
                         },
                         new
                         {
                             Id = 65,
+                            IsActive = true,
                             QuestionId = 17,
                             Value = "H2Cl2"
                         },
                         new
                         {
                             Id = 66,
+                            IsActive = true,
                             QuestionId = 17,
                             Value = "HCl"
                         },
                         new
                         {
                             Id = 67,
+                            IsActive = true,
                             QuestionId = 18,
                             Value = "HCl и HCl3"
                         },
                         new
                         {
                             Id = 68,
+                            IsActive = true,
                             QuestionId = 18,
                             Value = "HCl и HClO"
                         },
                         new
                         {
                             Id = 69,
+                            IsActive = true,
                             QuestionId = 18,
                             Value = "HCl3 и H3Cl2"
                         },
                         new
                         {
                             Id = 70,
+                            IsActive = true,
                             QuestionId = 18,
                             Value = "HCl2 и HClO"
                         },
                         new
                         {
                             Id = 71,
+                            IsActive = true,
                             QuestionId = 19,
                             Value = "NaCl"
                         },
                         new
                         {
                             Id = 72,
+                            IsActive = true,
                             QuestionId = 19,
                             Value = "NaOH"
                         },
                         new
                         {
                             Id = 73,
+                            IsActive = true,
                             QuestionId = 19,
                             Value = "H2O"
                         },
                         new
                         {
                             Id = 74,
+                            IsActive = true,
                             QuestionId = 19,
                             Value = "H2"
                         },
                         new
                         {
                             Id = 75,
+                            IsActive = true,
                             QuestionId = 20,
                             Value = "Натриев хлорид"
                         },
                         new
                         {
                             Id = 76,
+                            IsActive = true,
                             QuestionId = 20,
                             Value = "Натриев хлорат"
                         },
                         new
                         {
                             Id = 77,
+                            IsActive = true,
                             QuestionId = 20,
                             Value = "Натриев хипохлорид"
                         },
                         new
                         {
                             Id = 78,
+                            IsActive = true,
                             QuestionId = 20,
                             Value = "Натриев хипохлорит"
                         },
                         new
                         {
                             Id = 79,
+                            IsActive = true,
                             QuestionId = 21,
                             Value = "Осма А"
                         },
                         new
                         {
                             Id = 80,
+                            IsActive = true,
                             QuestionId = 21,
                             Value = "Шеста А"
                         },
                         new
                         {
                             Id = 81,
+                            IsActive = true,
                             QuestionId = 21,
                             Value = "Седма А"
                         },
                         new
                         {
                             Id = 82,
+                            IsActive = true,
                             QuestionId = 21,
                             Value = "Пета А"
                         },
                         new
                         {
                             Id = 83,
+                            IsActive = true,
                             QuestionId = 22,
                             Value = "Не се променя"
                         },
                         new
                         {
                             Id = 84,
+                            IsActive = true,
                             QuestionId = 22,
                             Value = "Малиновочервен"
                         },
                         new
                         {
                             Id = 85,
+                            IsActive = true,
                             QuestionId = 22,
                             Value = "Виолетов"
                         },
                         new
                         {
                             Id = 86,
+                            IsActive = true,
                             QuestionId = 22,
                             Value = "Син"
                         },
                         new
                         {
                             Id = 87,
+                            IsActive = true,
                             QuestionId = 23,
                             Value = "Сода каустик"
                         },
                         new
                         {
                             Id = 88,
+                            IsActive = true,
                             QuestionId = 23,
                             Value = "Бертолетова сол"
                         },
                         new
                         {
                             Id = 89,
+                            IsActive = true,
                             QuestionId = 23,
                             Value = "Готварска сол"
                         },
                         new
                         {
                             Id = 90,
+                            IsActive = true,
                             QuestionId = 23,
                             Value = "Белина"
                         },
                         new
                         {
                             Id = 91,
+                            IsActive = true,
                             QuestionId = 24,
                             Value = "1"
                         },
                         new
                         {
                             Id = 92,
+                            IsActive = true,
                             QuestionId = 24,
                             Value = "2"
                         },
                         new
                         {
                             Id = 93,
+                            IsActive = true,
                             QuestionId = 24,
                             Value = "3"
                         },
                         new
                         {
                             Id = 94,
+                            IsActive = true,
                             QuestionId = 24,
                             Value = "4"
                         },
                         new
                         {
                             Id = 95,
+                            IsActive = true,
                             QuestionId = 25,
                             Value = "Отрицателен със заряд 1-"
                         },
                         new
                         {
                             Id = 96,
+                            IsActive = true,
                             QuestionId = 25,
                             Value = "Отрицателен със заряд 2-"
                         },
                         new
                         {
                             Id = 97,
+                            IsActive = true,
                             QuestionId = 25,
                             Value = "Положителен със заряд 1+"
                         },
                         new
                         {
                             Id = 98,
+                            IsActive = true,
                             QuestionId = 25,
                             Value = "Положителен със заряд 2+"
                         },
                         new
                         {
                             Id = 99,
+                            IsActive = true,
                             QuestionId = 26,
                             Value = "Перхлорати"
                         },
                         new
                         {
                             Id = 100,
+                            IsActive = true,
                             QuestionId = 26,
                             Value = "Хлорати"
                         },
                         new
                         {
                             Id = 101,
+                            IsActive = true,
                             QuestionId = 26,
                             Value = "Хлорити"
                         },
                         new
                         {
                             Id = 102,
+                            IsActive = true,
                             QuestionId = 26,
                             Value = "Хлориди"
                         },
                         new
                         {
                             Id = 103,
+                            IsActive = true,
                             QuestionId = 27,
                             Value = "1"
                         },
                         new
                         {
                             Id = 104,
+                            IsActive = true,
                             QuestionId = 27,
                             Value = "2"
                         },
                         new
                         {
                             Id = 105,
+                            IsActive = true,
                             QuestionId = 27,
                             Value = "3"
                         },
                         new
                         {
                             Id = 106,
+                            IsActive = true,
                             QuestionId = 27,
                             Value = "4"
                         },
                         new
                         {
                             Id = 107,
+                            IsActive = true,
                             QuestionId = 28,
                             Value = "H + Cl"
                         },
                         new
                         {
                             Id = 108,
+                            IsActive = true,
                             QuestionId = 28,
                             Value = "H2O + Cl2"
                         },
                         new
                         {
                             Id = 109,
+                            IsActive = true,
                             QuestionId = 28,
                             Value = "Cl + OH"
                         },
                         new
                         {
                             Id = 110,
+                            IsActive = true,
                             QuestionId = 28,
                             Value = "HCl + O"
                         },
                         new
                         {
                             Id = 111,
+                            IsActive = true,
                             QuestionId = 29,
                             Value = "Вярно"
                         },
                         new
                         {
                             Id = 112,
+                            IsActive = true,
                             QuestionId = 29,
                             Value = "Грешно"
                         },
                         new
                         {
                             Id = 113,
+                            IsActive = true,
                             QuestionId = 30,
                             Value = "Производство на фойерверки"
                         },
                         new
                         {
                             Id = 114,
+                            IsActive = true,
                             QuestionId = 30,
                             Value = "Дезинфекция на водите"
                         },
                         new
                         {
                             Id = 115,
+                            IsActive = true,
                             QuestionId = 30,
                             Value = "Хранително-вкусовата промишленост"
                         },
                         new
                         {
                             Id = 116,
+                            IsActive = true,
                             QuestionId = 30,
                             Value = "Производство на мебели"
                         },
                         new
                         {
                             Id = 117,
+                            IsActive = true,
                             QuestionId = 31,
                             Value = "Алкален метал"
                         },
                         new
                         {
                             Id = 118,
+                            IsActive = true,
                             QuestionId = 31,
                             Value = "Алкалоземен метал"
                         },
                         new
                         {
                             Id = 119,
+                            IsActive = true,
                             QuestionId = 31,
                             Value = "Халоген"
                         },
                         new
                         {
                             Id = 120,
+                            IsActive = true,
                             QuestionId = 31,
                             Value = "Преходен метал"
                         },
                         new
                         {
                             Id = 121,
+                            IsActive = true,
                             QuestionId = 32,
                             Value = "Молекулен"
                         },
                         new
                         {
                             Id = 122,
+                            IsActive = true,
                             QuestionId = 32,
                             Value = "Йонен"
                         },
                         new
                         {
                             Id = 123,
+                            IsActive = true,
                             QuestionId = 32,
                             Value = "Кристален"
                         },
                         new
                         {
                             Id = 124,
+                            IsActive = true,
                             QuestionId = 32,
                             Value = "Атомен"
                         },
                         new
                         {
                             Id = 125,
+                            IsActive = true,
                             QuestionId = 33,
                             Value = "1"
                         },
                         new
                         {
                             Id = 126,
+                            IsActive = true,
                             QuestionId = 33,
                             Value = "2"
                         },
                         new
                         {
                             Id = 127,
+                            IsActive = true,
                             QuestionId = 33,
                             Value = "3"
                         },
                         new
                         {
                             Id = 128,
+                            IsActive = true,
                             QuestionId = 33,
                             Value = "4"
                         },
                         new
                         {
                             Id = 129,
+                            IsActive = true,
                             QuestionId = 34,
                             Value = "Гасена вар"
                         },
                         new
                         {
                             Id = 130,
+                            IsActive = true,
                             QuestionId = 34,
                             Value = "Негасена вар"
                         },
                         new
                         {
                             Id = 131,
+                            IsActive = true,
                             QuestionId = 34,
                             Value = "Бистра варна вода(БВВ)"
                         },
                         new
                         {
                             Id = 132,
+                            IsActive = true,
                             QuestionId = 34,
                             Value = "Син камък"
                         },
                         new
                         {
                             Id = 133,
+                            IsActive = true,
                             QuestionId = 35,
                             Value = "Втора А"
                         },
                         new
                         {
                             Id = 134,
+                            IsActive = true,
                             QuestionId = 35,
                             Value = "Първа Б"
                         },
                         new
                         {
                             Id = 135,
+                            IsActive = true,
                             QuestionId = 35,
                             Value = "Седма А"
                         },
                         new
                         {
                             Id = 136,
+                            IsActive = true,
                             QuestionId = 35,
                             Value = "Втора Б"
                         },
                         new
                         {
                             Id = 137,
+                            IsActive = true,
                             QuestionId = 36,
                             Value = "CaH2"
                         },
                         new
                         {
                             Id = 138,
+                            IsActive = true,
                             QuestionId = 36,
                             Value = "CaO2"
                         },
                         new
                         {
                             Id = 139,
+                            IsActive = true,
                             QuestionId = 36,
                             Value = "Ca(OH)2"
                         },
                         new
                         {
                             Id = 140,
+                            IsActive = true,
                             QuestionId = 36,
                             Value = "CaO"
                         },
                         new
                         {
                             Id = 141,
+                            IsActive = true,
                             QuestionId = 37,
                             Value = "Ca(OH)2"
                         },
                         new
                         {
                             Id = 142,
+                            IsActive = true,
                             QuestionId = 37,
                             Value = "Ca(OH)2 и H2"
                         },
                         new
                         {
                             Id = 143,
+                            IsActive = true,
                             QuestionId = 37,
                             Value = "CaOH и H2"
                         },
                         new
                         {
                             Id = 144,
+                            IsActive = true,
                             QuestionId = 37,
                             Value = "CaOH"
                         },
                         new
                         {
                             Id = 145,
+                            IsActive = true,
                             QuestionId = 38,
                             Value = "Основа"
                         },
                         new
                         {
                             Id = 146,
+                            IsActive = true,
                             QuestionId = 38,
                             Value = "Калция не взаимодейства с киселини"
                         },
                         new
                         {
                             Id = 147,
+                            IsActive = true,
                             QuestionId = 38,
                             Value = "Киселина"
                         },
                         new
                         {
                             Id = 148,
+                            IsActive = true,
                             QuestionId = 38,
                             Value = "Сол"
                         },
                         new
                         {
                             Id = 149,
+                            IsActive = true,
                             QuestionId = 39,
                             Value = "Вярно"
                         },
                         new
                         {
                             Id = 150,
+                            IsActive = true,
                             QuestionId = 39,
                             Value = "Грешно"
                         },
                         new
                         {
                             Id = 151,
+                            IsActive = true,
                             QuestionId = 40,
                             Value = "Киселинен"
                         },
                         new
                         {
                             Id = 152,
+                            IsActive = true,
                             QuestionId = 40,
                             Value = "Основен"
                         },
                         new
                         {
                             Id = 153,
+                            IsActive = true,
                             QuestionId = 40,
                             Value = "Неутрален"
                         },
                         new
                         {
                             Id = 154,
+                            IsActive = true,
                             QuestionId = 40,
                             Value = "Смесен"
                         },
                         new
                         {
                             Id = 155,
+                            IsActive = true,
                             QuestionId = 41,
                             Value = "CaO + H2O => CaOH + H2"
                         },
                         new
                         {
                             Id = 156,
+                            IsActive = true,
                             QuestionId = 41,
                             Value = "Ca + 2HCl => CaCl + 2H"
                         },
                         new
                         {
                             Id = 157,
+                            IsActive = true,
                             QuestionId = 41,
                             Value = "Ca + H2 => 2CaH"
                         },
                         new
                         {
                             Id = 158,
+                            IsActive = true,
                             QuestionId = 41,
                             Value = "Ca + 2H2O => Ca(OH)2+H2"
                         },
                         new
                         {
                             Id = 159,
+                            IsActive = true,
                             QuestionId = 42,
                             Value = "Вярно"
                         },
                         new
                         {
                             Id = 160,
+                            IsActive = true,
                             QuestionId = 42,
                             Value = "Грешно"
                         },
                         new
                         {
                             Id = 161,
+                            IsActive = true,
                             QuestionId = 43,
                             Value = "Бял"
                         },
                         new
                         {
                             Id = 162,
+                            IsActive = true,
                             QuestionId = 43,
                             Value = "Керемиденочервен"
                         },
                         new
                         {
                             Id = 163,
+                            IsActive = true,
                             QuestionId = 43,
                             Value = "Син"
                         },
                         new
                         {
                             Id = 164,
+                            IsActive = true,
                             QuestionId = 43,
                             Value = "Зелен"
                         },
                         new
                         {
                             Id = 165,
+                            IsActive = true,
                             QuestionId = 44,
                             Value = "Ca(OH)2 с вода"
                         },
                         new
                         {
                             Id = 166,
+                            IsActive = true,
                             QuestionId = 44,
                             Value = "Ca с киселина"
                         },
                         new
                         {
                             Id = 167,
+                            IsActive = true,
                             QuestionId = 44,
                             Value = "CaCO3 с киселина"
                         },
                         new
                         {
                             Id = 168,
+                            IsActive = true,
                             QuestionId = 44,
                             Value = "Ca с киселинен оксид"
                         },
                         new
                         {
                             Id = 169,
+                            IsActive = true,
                             QuestionId = 45,
                             Value = "4"
                         },
                         new
                         {
                             Id = 170,
+                            IsActive = true,
                             QuestionId = 45,
                             Value = "7"
                         },
                         new
                         {
                             Id = 171,
+                            IsActive = true,
                             QuestionId = 45,
                             Value = "2"
                         },
                         new
                         {
                             Id = 172,
+                            IsActive = true,
                             QuestionId = 45,
                             Value = "11"
                         },
                         new
                         {
                             Id = 173,
+                            IsActive = true,
                             QuestionId = 46,
                             Value = "C6H6, C6H5OH, CO3"
                         },
                         new
                         {
                             Id = 174,
+                            IsActive = true,
                             QuestionId = 46,
                             Value = "CO2, C6H12O6, C3H5(OH)3"
                         },
                         new
                         {
                             Id = 175,
+                            IsActive = true,
                             QuestionId = 46,
                             Value = "CO, CO2, H2CO3, Na2CO3"
                         },
                         new
                         {
                             Id = 176,
+                            IsActive = true,
                             QuestionId = 46,
                             Value = "CO, H2CO3, C2H4(ONa)2"
                         },
                         new
                         {
                             Id = 177,
+                            IsActive = true,
                             QuestionId = 47,
                             Value = "1"
                         },
                         new
                         {
                             Id = 178,
+                            IsActive = true,
                             QuestionId = 47,
                             Value = "2"
                         },
                         new
                         {
                             Id = 179,
+                            IsActive = true,
                             QuestionId = 47,
                             Value = "3"
                         },
                         new
                         {
                             Id = 180,
+                            IsActive = true,
                             QuestionId = 47,
                             Value = "4"
                         },
                         new
                         {
                             Id = 181,
+                            IsActive = true,
                             QuestionId = 48,
                             Value = "ВВ, които съдържат само прости връзки"
                         },
                         new
                         {
                             Id = 182,
+                            IsActive = true,
                             QuestionId = 48,
                             Value = "ВВ, които съдържат поне една сложна връзка"
                         },
                         new
                         {
                             Id = 183,
+                            IsActive = true,
                             QuestionId = 48,
                             Value = "ВВ с по-сложен строеж, които са циклични"
                         },
                         new
                         {
                             Id = 184,
+                            IsActive = true,
                             QuestionId = 48,
                             Value = "ВВ, които съдържат само сложни връзки"
                         },
                         new
                         {
                             Id = 185,
+                            IsActive = true,
                             QuestionId = 49,
                             Value = "CH4"
                         },
                         new
                         {
                             Id = 186,
+                            IsActive = true,
                             QuestionId = 49,
                             Value = "CO2"
                         },
                         new
                         {
                             Id = 187,
+                            IsActive = true,
                             QuestionId = 49,
                             Value = "CO"
                         },
                         new
                         {
                             Id = 188,
+                            IsActive = true,
                             QuestionId = 49,
                             Value = "C2H2"
                         },
                         new
                         {
                             Id = 189,
+                            IsActive = true,
                             QuestionId = 50,
                             Value = "Вярно"
                         },
                         new
                         {
                             Id = 190,
+                            IsActive = true,
                             QuestionId = 50,
                             Value = "Грешно"
                         },
                         new
                         {
                             Id = 191,
+                            IsActive = true,
                             QuestionId = 51,
                             Value = "Вярно"
                         },
                         new
                         {
                             Id = 192,
+                            IsActive = true,
                             QuestionId = 51,
                             Value = "Грешно"
                         },
                         new
                         {
                             Id = 193,
+                            IsActive = true,
                             QuestionId = 52,
                             Value = "C10H22"
                         },
                         new
                         {
                             Id = 194,
+                            IsActive = true,
                             QuestionId = 52,
                             Value = "C9H18"
                         },
                         new
                         {
                             Id = 195,
+                            IsActive = true,
                             QuestionId = 52,
                             Value = "C9H16"
                         },
                         new
                         {
                             Id = 196,
+                            IsActive = true,
                             QuestionId = 52,
                             Value = "C9H20"
                         },
                         new
                         {
                             Id = 197,
+                            IsActive = true,
                             QuestionId = 53,
                             Value = "CnH2n"
                         },
                         new
                         {
                             Id = 198,
+                            IsActive = true,
                             QuestionId = 53,
                             Value = "CnH2n+2"
                         },
                         new
                         {
                             Id = 199,
+                            IsActive = true,
                             QuestionId = 53,
                             Value = "CnH2n-2"
                         },
                         new
                         {
                             Id = 200,
+                            IsActive = true,
                             QuestionId = 53,
                             Value = "CnHn"
                         },
                         new
                         {
                             Id = 201,
+                            IsActive = true,
                             QuestionId = 54,
                             Value = "Вярно"
                         },
                         new
                         {
                             Id = 202,
+                            IsActive = true,
                             QuestionId = 54,
                             Value = "Грешно"
                         },
                         new
                         {
                             Id = 203,
+                            IsActive = true,
                             QuestionId = 55,
                             Value = "Температура"
                         },
                         new
                         {
                             Id = 204,
+                            IsActive = true,
                             QuestionId = 55,
                             Value = "Налягане"
                         },
                         new
                         {
                             Id = 205,
+                            IsActive = true,
                             QuestionId = 55,
                             Value = "Катализатор(Ni)"
                         },
                         new
                         {
                             Id = 206,
+                            IsActive = true,
                             QuestionId = 55,
                             Value = "И трите изброени"
                         },
                         new
                         {
                             Id = 207,
+                            IsActive = true,
                             QuestionId = 56,
                             Value = "Прости връзки"
                         },
                         new
                         {
                             Id = 208,
+                            IsActive = true,
                             QuestionId = 56,
                             Value = "Въглеродни атоми"
                         },
                         new
                         {
                             Id = 209,
+                            IsActive = true,
                             QuestionId = 56,
                             Value = "Водородни атоми"
                         },
                         new
                         {
                             Id = 210,
+                            IsActive = true,
                             QuestionId = 56,
                             Value = "Сложни връзки"
                         },
                         new
                         {
                             Id = 211,
+                            IsActive = true,
                             QuestionId = 57,
                             Value = "Бойл Мариот"
                         },
                         new
                         {
                             Id = 212,
+                            IsActive = true,
                             QuestionId = 57,
                             Value = "Марковников"
                         },
                         new
                         {
                             Id = 213,
+                            IsActive = true,
                             QuestionId = 57,
                             Value = "Аристотел"
                         },
                         new
                         {
                             Id = 214,
+                            IsActive = true,
                             QuestionId = 57,
                             Value = "Менделеев"
                         },
                         new
                         {
                             Id = 215,
+                            IsActive = true,
                             QuestionId = 58,
                             Value = "Ni"
                         },
                         new
                         {
                             Id = 216,
+                            IsActive = true,
                             QuestionId = 58,
                             Value = "Hg2+"
                         },
                         new
                         {
                             Id = 217,
+                            IsActive = true,
                             QuestionId = 58,
                             Value = "CCl4"
                         },
                         new
                         {
                             Id = 218,
+                            IsActive = true,
                             QuestionId = 58,
                             Value = "Pb(CH3COO)2"
                         },
                         new
                         {
                             Id = 219,
+                            IsActive = true,
                             QuestionId = 59,
                             Value = "Толуен и HNO3 в излишък"
                         },
                         new
                         {
                             Id = 220,
+                            IsActive = true,
                             QuestionId = 59,
                             Value = "Фенол и HNO3"
                         },
                         new
                         {
                             Id = 221,
+                            IsActive = true,
                             QuestionId = 59,
                             Value = "Бензен и HNO3"
                         },
                         new
                         {
                             Id = 222,
+                            IsActive = true,
                             QuestionId = 59,
                             Value = "Бензен и нитратни соли"
                         },
                         new
                         {
                             Id = 223,
+                            IsActive = true,
                             QuestionId = 60,
                             Value = "Ацеталдехид"
                         },
                         new
                         {
                             Id = 224,
+                            IsActive = true,
                             QuestionId = 60,
                             Value = "Бензен и 2Na"
                         },
                         new
                         {
                             Id = 225,
+                            IsActive = true,
                             QuestionId = 60,
                             Value = "Феноксиден анион и водороден катион"
                         },
                         new
                         {
                             Id = 226,
+                            IsActive = true,
                             QuestionId = 60,
                             Value = "Натриев феноксид и 1/2 H2"
                         },
                         new
                         {
                             Id = 227,
+                            IsActive = true,
                             QuestionId = 71,
                             Value = "Вода и разтварящо се вещество"
                         },
                         new
                         {
                             Id = 228,
+                            IsActive = true,
                             QuestionId = 71,
                             Value = "Течен разтворител и захар"
                         },
                         new
                         {
                             Id = 229,
+                            IsActive = true,
                             QuestionId = 71,
                             Value = "Разтворител и разтварящо се вещество"
                         },
                         new
                         {
                             Id = 230,
+                            IsActive = true,
                             QuestionId = 71,
                             Value = "Нито едно от изброените"
                         },
                         new
                         {
                             Id = 231,
+                            IsActive = true,
                             QuestionId = 72,
                             Value = "\"Йони се разтварят в йони\""
                         },
                         new
                         {
                             Id = 232,
+                            IsActive = true,
                             QuestionId = 72,
                             Value = "\"В разтвор с ниска концентрация се разтваря вещество с висока концентрация\""
                         },
                         new
                         {
                             Id = 233,
+                            IsActive = true,
                             QuestionId = 72,
                             Value = "\"Подобни се разтварят в подобни\""
                         },
                         new
                         {
                             Id = 234,
+                            IsActive = true,
                             QuestionId = 72,
                             Value = "\"Всеки разтвор е смес от вода и друго вещество с по-висока концентрация\""
                         },
                         new
                         {
                             Id = 235,
+                            IsActive = true,
                             QuestionId = 73,
                             Value = "Молекулни и йонни"
                         },
                         new
                         {
                             Id = 236,
+                            IsActive = true,
                             QuestionId = 73,
                             Value = "Течни и твърди"
                         },
                         new
                         {
                             Id = 237,
+                            IsActive = true,
                             QuestionId = 73,
                             Value = "Соли, основи и киселини"
                         },
                         new
                         {
                             Id = 238,
+                            IsActive = true,
                             QuestionId = 73,
                             Value = "Според частиците на разтвореното вещество не се разглеждат различни по видове разтвори"
                         },
                         new
                         {
                             Id = 239,
+                            IsActive = true,
                             QuestionId = 74,
                             Value = "Солватация, дифузия, разграждане на кристалната решетка (ако има такава)"
                         },
                         new
                         {
                             Id = 240,
+                            IsActive = true,
                             QuestionId = 74,
                             Value = "Разграждане на кристалната решетка (ако има такава), солватация, дифузия"
                         },
                         new
                         {
                             Id = 241,
+                            IsActive = true,
                             QuestionId = 74,
                             Value = "Дифузия, разграждане на кристалната решетка (ако има такава), солватация"
                         },
                         new
                         {
                             Id = 242,
+                            IsActive = true,
                             QuestionId = 74,
                             Value = "Разграждане на кристалната решетка (ако има такава), дифузия, солватация"
                         },
                         new
                         {
                             Id = 243,
+                            IsActive = true,
                             QuestionId = 75,
                             Value = "Йонизация"
                         },
                         new
                         {
                             Id = 244,
+                            IsActive = true,
                             QuestionId = 75,
                             Value = "Солватация"
                         },
                         new
                         {
                             Id = 245,
+                            IsActive = true,
                             QuestionId = 75,
                             Value = "Дифузия"
                         },
                         new
                         {
                             Id = 246,
+                            IsActive = true,
                             QuestionId = 75,
                             Value = "Кристализация"
                         },
                         new
                         {
                             Id = 247,
+                            IsActive = true,
                             QuestionId = 76,
                             Value = "Вярно"
                         },
                         new
                         {
                             Id = 248,
+                            IsActive = true,
                             QuestionId = 76,
                             Value = "Грешно"
                         },
                         new
                         {
                             Id = 249,
+                            IsActive = true,
                             QuestionId = 77,
                             Value = "m(р-р) = M(А) * n(р-р)"
                         },
                         new
                         {
                             Id = 250,
+                            IsActive = true,
                             QuestionId = 77,
                             Value = "S(А) = m(А) / 100g(р-р)"
                         },
                         new
                         {
                             Id = 251,
+                            IsActive = true,
                             QuestionId = 77,
                             Value = "W(А) = m(А) / m(р-р)"
                         },
                         new
                         {
                             Id = 252,
+                            IsActive = true,
                             QuestionId = 77,
                             Value = "C(А) = n(А) / V"
                         },
                         new
                         {
                             Id = 253,
+                            IsActive = true,
                             QuestionId = 78,
                             Value = "1 милиметър"
                         },
                         new
                         {
                             Id = 254,
+                            IsActive = true,
                             QuestionId = 78,
                             Value = "1 нанометър"
                         },
                         new
                         {
                             Id = 255,
+                            IsActive = true,
                             QuestionId = 78,
                             Value = "1 микрон"
                         },
                         new
                         {
                             Id = 256,
+                            IsActive = true,
                             QuestionId = 78,
                             Value = "1 метър"
                         },
                         new
                         {
                             Id = 257,
+                            IsActive = true,
                             QuestionId = 79,
                             Value = "Вярно"
                         },
                         new
                         {
                             Id = 258,
+                            IsActive = true,
                             QuestionId = 79,
                             Value = "Грешно"
                         },
                         new
                         {
                             Id = 259,
+                            IsActive = true,
                             QuestionId = 80,
                             Value = "Дифузия, понижаване на парното налягане, осмоза"
                         },
                         new
                         {
                             Id = 260,
+                            IsActive = true,
                             QuestionId = 80,
                             Value = "Повишаването на температурата на замръзване, понижаването на температурата на кипене, дифузия, понижаване на парното налягане, осмоза"
                         },
                         new
                         {
                             Id = 261,
+                            IsActive = true,
                             QuestionId = 80,
                             Value = "Понижаването на температурата на замръзване, повишаването на температурата на кипене, дифузия, понижаване на парното налягане, осмоза"
                         },
                         new
                         {
                             Id = 262,
+                            IsActive = true,
                             QuestionId = 80,
                             Value = "Дифузия, повишаване на парното налягане, осмоза"
                         },
                         new
                         {
                             Id = 263,
+                            IsActive = true,
                             QuestionId = 81,
                             Value = "π = 3*i*c*R"
                         },
                         new
                         {
                             Id = 264,
+                            IsActive = true,
                             QuestionId = 81,
                             Value = "π = i*c*R*T"
                         },
                         new
                         {
                             Id = 265,
+                            IsActive = true,
                             QuestionId = 81,
                             Value = "2*π = i*c*R*T"
                         },
                         new
                         {
                             Id = 266,
+                            IsActive = true,
                             QuestionId = 81,
                             Value = "π^2 = i*c*R*T"
                         },
                         new
                         {
                             Id = 267,
+                            IsActive = true,
                             QuestionId = 82,
                             Value = "Хипертоничен"
                         },
                         new
                         {
                             Id = 268,
+                            IsActive = true,
                             QuestionId = 82,
                             Value = "Хипотоничен"
                         },
                         new
                         {
                             Id = 269,
+                            IsActive = true,
                             QuestionId = 82,
                             Value = "Изотоничен"
                         },
                         new
                         {
                             Id = 270,
+                            IsActive = true,
                             QuestionId = 82,
                             Value = "Разтвор на електролит"
                         },
                         new
                         {
                             Id = 271,
+                            IsActive = true,
                             QuestionId = 83,
                             Value = "C6H12O6, Cl2, Al(OH)3, Na2CO3"
                         },
                         new
                         {
                             Id = 272,
+                            IsActive = true,
                             QuestionId = 83,
                             Value = "AlCl3, захар, Sr(OH)2, NaCl"
                         },
                         new
                         {
                             Id = 273,
+                            IsActive = true,
                             QuestionId = 83,
                             Value = "C6H6, S, KOH, CaCO3"
                         },
                         new
                         {
                             Id = 274,
+                            IsActive = true,
                             QuestionId = 83,
                             Value = "CuSO4, NaOH, H2O, Ca(OH)2"
                         },
                         new
                         {
                             Id = 275,
+                            IsActive = true,
                             QuestionId = 84,
                             Value = "Наситени, преситени, ненаситени"
                         },
                         new
                         {
                             Id = 276,
+                            IsActive = true,
                             QuestionId = 84,
                             Value = "Силни и слаби"
                         },
                         new
                         {
                             Id = 277,
+                            IsActive = true,
                             QuestionId = 84,
                             Value = "Средни, слаби, силни"
                         },
                         new
                         {
                             Id = 278,
+                            IsActive = true,
                             QuestionId = 84,
                             Value = "Електролитни и неелектролитни"
                         },
                         new
                         {
                             Id = 279,
+                            IsActive = true,
                             QuestionId = 85,
                             Value = "Вярно"
                         },
                         new
                         {
                             Id = 280,
+                            IsActive = true,
                             QuestionId = 85,
                             Value = "Грешно"
                         },
                         new
                         {
                             Id = 281,
+                            IsActive = true,
                             QuestionId = 86,
                             Value = "Na+"
                         },
                         new
                         {
                             Id = 282,
+                            IsActive = true,
                             QuestionId = 86,
                             Value = "Ne"
                         },
                         new
                         {
                             Id = 283,
+                            IsActive = true,
                             QuestionId = 86,
                             Value = "Al3+"
                         },
                         new
                         {
                             Id = 284,
+                            IsActive = true,
                             QuestionId = 86,
                             Value = "F-"
                         },
                         new
                         {
                             Id = 285,
+                            IsActive = true,
                             QuestionId = 87,
                             Value = "Състояние, което се определя от стойностите на квантовите числа n, l и m"
                         },
                         new
                         {
                             Id = 286,
+                            IsActive = true,
                             QuestionId = 87,
                             Value = "Функция, която описва електроните в една атомна система"
                         },
                         new
                         {
                             Id = 287,
+                            IsActive = true,
                             QuestionId = 87,
                             Value = "Вероятността за намиране на електрона в пространството около ядрото"
                         },
                         new
                         {
                             Id = 288,
+                            IsActive = true,
                             QuestionId = 87,
                             Value = "Част от пространството, което е около самото ядро, в която шансът за намиране на електрона е приблизително 90%"
                         },
                         new
                         {
                             Id = 289,
+                            IsActive = true,
                             QuestionId = 88,
                             Value = "Вярно"
                         },
                         new
                         {
                             Id = 290,
+                            IsActive = true,
                             QuestionId = 88,
                             Value = "Грешно"
                         },
                         new
                         {
                             Id = 291,
+                            IsActive = true,
                             QuestionId = 89,
                             Value = "CO2, BeH2, N2"
                         },
                         new
                         {
                             Id = 292,
+                            IsActive = true,
                             QuestionId = 89,
                             Value = "HBr, CO2, N2"
                         },
                         new
                         {
                             Id = 293,
+                            IsActive = true,
                             QuestionId = 89,
                             Value = "NH3, H2О, N2"
                         },
                         new
                         {
                             Id = 294,
+                            IsActive = true,
                             QuestionId = 89,
                             Value = "H2О, CH4, O2"
                         },
                         new
                         {
                             Id = 295,
+                            IsActive = true,
                             QuestionId = 90,
                             Value = "То е сумата от броя на елементарните частици"
                         },
                         new
                         {
                             Id = 296,
+                            IsActive = true,
                             QuestionId = 90,
                             Value = "То е равно на сумата от броя на електроните и неутроните"
                         },
                         new
                         {
                             Id = 297,
+                            IsActive = true,
                             QuestionId = 90,
                             Value = "То е равно на сумата от броя на протоните и неутроните"
                         },
                         new
                         {
                             Id = 298,
+                            IsActive = true,
                             QuestionId = 90,
                             Value = "Според него химичният елемент е смес от изотопи"
                         },
                         new
                         {
                             Id = 299,
+                            IsActive = true,
                             QuestionId = 91,
                             Value = "Вярно"
                         },
                         new
                         {
                             Id = 300,
+                            IsActive = true,
                             QuestionId = 91,
                             Value = "Грешно"
                         },
                         new
                         {
                             Id = 301,
+                            IsActive = true,
                             QuestionId = 92,
                             Value = "CO2, N2, H2O"
                         },
                         new
                         {
                             Id = 302,
+                            IsActive = true,
                             QuestionId = 92,
                             Value = "H2O, CO2, N2"
                         },
                         new
                         {
                             Id = 303,
+                            IsActive = true,
                             QuestionId = 92,
                             Value = "PCl3, H2O, C2H6"
                         },
                         new
                         {
                             Id = 304,
+                            IsActive = true,
                             QuestionId = 92,
                             Value = "C2H2, N2, CO2"
                         },
                         new
                         {
                             Id = 305,
+                            IsActive = true,
                             QuestionId = 93,
                             Value = "CaH2, PCl5, H2S"
                         },
                         new
                         {
                             Id = 306,
+                            IsActive = true,
                             QuestionId = 93,
                             Value = "NH3, AgCl, CH4"
                         },
                         new
                         {
                             Id = 307,
+                            IsActive = true,
                             QuestionId = 93,
                             Value = "NaH, K2O, BaCl2"
                         },
                         new
                         {
                             Id = 308,
+                            IsActive = true,
                             QuestionId = 93,
                             Value = "H2O, H2SO4, HCl"
                         },
                         new
                         {
                             Id = 309,
+                            IsActive = true,
                             QuestionId = 94,
                             Value = "Вярно"
                         },
                         new
                         {
                             Id = 310,
+                            IsActive = true,
                             QuestionId = 94,
                             Value = "Грешно"
                         },
                         new
                         {
                             Id = 311,
+                            IsActive = true,
                             QuestionId = 95,
                             Value = "sp"
                         },
                         new
                         {
                             Id = 312,
+                            IsActive = true,
                             QuestionId = 95,
                             Value = "sp^3d"
                         },
                         new
                         {
                             Id = 313,
+                            IsActive = true,
                             QuestionId = 95,
                             Value = "sp3"
                         },
                         new
                         {
                             Id = 314,
+                            IsActive = true,
                             QuestionId = 95,
                             Value = "sp^3d^2"
                         },
                         new
                         {
                             Id = 315,
+                            IsActive = true,
                             QuestionId = 96,
                             Value = "F и Li"
                         },
                         new
                         {
                             Id = 316,
+                            IsActive = true,
                             QuestionId = 96,
                             Value = "Na и F"
                         },
                         new
                         {
                             Id = 317,
+                            IsActive = true,
                             QuestionId = 96,
                             Value = "H и Ca"
                         },
                         new
                         {
                             Id = 318,
+                            IsActive = true,
                             QuestionId = 96,
                             Value = "F и O"
                         },
                         new
                         {
                             Id = 319,
+                            IsActive = true,
                             QuestionId = 97,
                             Value = "Вярно"
                         },
                         new
                         {
                             Id = 320,
+                            IsActive = true,
                             QuestionId = 97,
                             Value = "Грешно"
                         },
                         new
                         {
                             Id = 321,
+                            IsActive = true,
                             QuestionId = 98,
                             Value = "Метална"
                         },
                         new
                         {
                             Id = 322,
+                            IsActive = true,
                             QuestionId = 98,
                             Value = "Атомна"
                         },
                         new
                         {
                             Id = 323,
+                            IsActive = true,
                             QuestionId = 98,
                             Value = "Молекулна"
                         },
                         new
                         {
                             Id = 324,
+                            IsActive = true,
                             QuestionId = 98,
                             Value = "Йонна"
                         },
                         new
                         {
                             Id = 325,
+                            IsActive = true,
                             QuestionId = 99,
                             Value = "PCl5"
                         },
                         new
                         {
                             Id = 326,
+                            IsActive = true,
                             QuestionId = 99,
                             Value = "CO2"
                         },
                         new
                         {
                             Id = 327,
+                            IsActive = true,
                             QuestionId = 99,
                             Value = "SF6"
                         },
                         new
                         {
                             Id = 328,
+                            IsActive = true,
                             QuestionId = 99,
                             Value = "H2O"
                         },
                         new
                         {
                             Id = 329,
+                            IsActive = true,
                             QuestionId = 100,
                             Value = "Вярно"
                         },
                         new
                         {
                             Id = 330,
+                            IsActive = true,
                             QuestionId = 100,
                             Value = "Грешно"
                         },
                         new
                         {
                             Id = 331,
+                            IsActive = true,
                             QuestionId = 101,
                             Value = "0.8 mol"
                         },
                         new
                         {
                             Id = 332,
+                            IsActive = true,
                             QuestionId = 101,
                             Value = "0.2 mol"
                         },
                         new
                         {
                             Id = 333,
+                            IsActive = true,
                             QuestionId = 101,
                             Value = "6.0 mol"
                         },
                         new
                         {
                             Id = 334,
+                            IsActive = true,
                             QuestionId = 101,
                             Value = "2.0 mol"
                         },
                         new
                         {
                             Id = 335,
+                            IsActive = true,
                             QuestionId = 102,
                             Value = "се поглъща топлина, ΔH < 0 и продуктите са по-стабилни"
                         },
                         new
                         {
                             Id = 336,
+                            IsActive = true,
                             QuestionId = 102,
                             Value = "се отделя топлина, ΔH < 0 и продуктите са по-стабилни"
                         },
                         new
                         {
                             Id = 337,
+                            IsActive = true,
                             QuestionId = 102,
                             Value = "се отделя топлина, ΔH > 0 и реагентите са по-стабилни"
                         },
                         new
                         {
                             Id = 338,
+                            IsActive = true,
                             QuestionId = 102,
                             Value = "се поглъща топлина, ΔH > 0 и реагентите са по-стабилни"
                         },
                         new
                         {
                             Id = 339,
+                            IsActive = true,
                             QuestionId = 103,
                             Value = "-1374 kJ/mol"
                         },
                         new
                         {
                             Id = 340,
+                            IsActive = true,
                             QuestionId = 103,
                             Value = "837 kJ/mol"
                         },
                         new
                         {
                             Id = 341,
+                            IsActive = true,
                             QuestionId = 103,
                             Value = "-837 kJ/mol"
                         },
                         new
                         {
                             Id = 342,
+                            IsActive = true,
                             QuestionId = 103,
                             Value = "1374 kJ/mol"
                         },
                         new
                         {
                             Id = 343,
+                            IsActive = true,
                             QuestionId = 104,
                             Value = "F = U - T*S"
                         },
                         new
                         {
                             Id = 344,
+                            IsActive = true,
                             QuestionId = 104,
                             Value = "H = U + p*V"
                         },
                         new
                         {
                             Id = 345,
+                            IsActive = true,
                             QuestionId = 104,
                             Value = "S = R * lnW"
                         },
                         new
                         {
                             Id = 346,
+                            IsActive = true,
                             QuestionId = 104,
                             Value = "G = H - T*S"
                         },
                         new
                         {
                             Id = 347,
+                            IsActive = true,
                             QuestionId = 105,
                             Value = "Вярно"
                         },
                         new
                         {
                             Id = 348,
+                            IsActive = true,
                             QuestionId = 105,
                             Value = "Грешно"
                         },
                         new
                         {
                             Id = 349,
+                            IsActive = true,
                             QuestionId = 106,
                             Value = "v = k * c(S) * c(O2)"
                         },
                         new
                         {
                             Id = 350,
+                            IsActive = true,
                             QuestionId = 106,
                             Value = "v = k * c^2(O2)"
                         },
                         new
                         {
                             Id = 351,
+                            IsActive = true,
                             QuestionId = 106,
                             Value = "v = k * c(O2)"
                         },
                         new
                         {
                             Id = 352,
+                            IsActive = true,
                             QuestionId = 106,
                             Value = "v = k * c(S)"
                         },
                         new
                         {
                             Id = 353,
+                            IsActive = true,
                             QuestionId = 107,
                             Value = "Ще се понижи два пъти"
                         },
                         new
                         {
                             Id = 354,
+                            IsActive = true,
                             QuestionId = 107,
                             Value = "Ще се понижи шест пъти"
                         },
                         new
                         {
                             Id = 355,
+                            IsActive = true,
                             QuestionId = 107,
                             Value = "Ще се понижи четири пъти"
                         },
                         new
                         {
                             Id = 356,
+                            IsActive = true,
                             QuestionId = 107,
                             Value = "Ще се понижи осем пъти"
                         },
                         new
                         {
                             Id = 357,
+                            IsActive = true,
                             QuestionId = 108,
                             Value = "Вярно"
                         },
                         new
                         {
                             Id = 358,
+                            IsActive = true,
                             QuestionId = 108,
                             Value = "Грешно"
                         },
                         new
                         {
                             Id = 359,
+                            IsActive = true,
                             QuestionId = 109,
                             Value = "Ензимите се отличават от химичните катализатори по своята чувствителност и специфичност"
                         },
                         new
                         {
                             Id = 360,
+                            IsActive = true,
                             QuestionId = 109,
                             Value = "Скоростта на ензимно-каталитичните процеси не зависи от концентрацията на ензима"
                         },
                         new
                         {
                             Id = 361,
+                            IsActive = true,
                             QuestionId = 109,
                             Value = "Ензимите притежават общите свойства на катализаторите"
                         },
                         new
                         {
                             Id = 362,
+                            IsActive = true,
                             QuestionId = 109,
                             Value = "Върху ензимната активност оказва влияние температурата"
                         },
                         new
                         {
                             Id = 363,
+                            IsActive = true,
                             QuestionId = 110,
                             Value = "За отделянето на един еквивалент от дадено вещество е необходимо през разтвора да преминат 96 500C електричен заряд. Електрохимичният еквивалент се пресмята по формулата: k = M/z*F"
                         },
                         new
                         {
                             Id = 364,
+                            IsActive = true,
                             QuestionId = 110,
                             Value = "Масата на веществото m, което се отделя на електродите, е правопропорционална на големината на тока, протекъл през електролита, и времето, за което протича: m = k*I*t"
                         },
                         new
                         {
                             Id = 365,
+                            IsActive = true,
                             QuestionId = 110,
                             Value = "За отделянето на един еквивалент от дадено вещество е необходимо през разтвора да преминат 96 500C електричен заряд. Електрохимичният еквивалент се пресмята по формулата: k = M/F"
                         },
                         new
                         {
                             Id = 366,
+                            IsActive = true,
                             QuestionId = 110,
                             Value = "Нито едно от изброените"
                         },
                         new
                         {
                             Id = 367,
+                            IsActive = true,
                             QuestionId = 111,
                             Value = "Готварска сол"
                         },
                         new
                         {
                             Id = 368,
+                            IsActive = true,
                             QuestionId = 111,
                             Value = "Етанол"
                         },
                         new
                         {
                             Id = 369,
+                            IsActive = true,
                             QuestionId = 111,
                             Value = "Калиева основа"
                         },
                         new
                         {
                             Id = 370,
+                            IsActive = true,
                             QuestionId = 111,
                             Value = "Сярна киселина"
                         },
                         new
                         {
                             Id = 371,
+                            IsActive = true,
                             QuestionId = 112,
                             Value = "Вярно"
                         },
                         new
                         {
                             Id = 372,
+                            IsActive = true,
                             QuestionId = 112,
                             Value = "Грешно"
                         },
                         new
                         {
                             Id = 373,
+                            IsActive = true,
                             QuestionId = 113,
                             Value = "Ca2+"
                         },
                         new
                         {
                             Id = 374,
+                            IsActive = true,
                             QuestionId = 113,
                             Value = "S2-"
                         },
                         new
                         {
                             Id = 375,
+                            IsActive = true,
                             QuestionId = 113,
                             Value = "Na+"
                         },
                         new
                         {
                             Id = 376,
+                            IsActive = true,
                             QuestionId = 113,
                             Value = "Al3+"
                         },
                         new
                         {
                             Id = 377,
+                            IsActive = true,
                             QuestionId = 114,
                             Value = "CH3COOK, Na2S, C2H5OH"
                         },
                         new
                         {
                             Id = 378,
+                            IsActive = true,
                             QuestionId = 114,
                             Value = "AlCl3, C6H5OH, H2SO4"
                         },
                         new
                         {
                             Id = 379,
+                            IsActive = true,
                             QuestionId = 114,
                             Value = "KOH, K2CO3, K2SO4"
                         },
                         new
                         {
                             Id = 380,
+                            IsActive = true,
                             QuestionId = 114,
                             Value = "Ca(OH)2, NH4OH, NaHCO3"
                         },
                         new
                         {
                             Id = 381,
+                            IsActive = true,
                             QuestionId = 115,
                             Value = "Вярно"
                         },
                         new
                         {
                             Id = 382,
+                            IsActive = true,
                             QuestionId = 115,
                             Value = "Грешно"
                         });
@@ -2405,6 +2790,9 @@ namespace ElementFactory.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsRadioactive")
                         .HasColumnType("bit")
                         .HasComment("Is chemical element radioactive - flag");
@@ -2461,6 +2849,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Actinium",
                             Group = 0,
                             Id = 97,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = false,
                             MeltingPoint = 1500.00m,
@@ -2484,6 +2873,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Silver",
                             Group = 11,
                             Id = 20,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1234.93m,
@@ -2507,6 +2897,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Aluminium",
                             Group = 13,
                             Id = 58,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 933.47m,
@@ -2530,6 +2921,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Americium",
                             Group = 0,
                             Id = 98,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 1449.00m,
@@ -2553,6 +2945,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Argon",
                             Group = 18,
                             Id = 75,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 83.81m,
@@ -2576,6 +2969,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Arsenic",
                             Group = 15,
                             Id = 112,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1090.00m,
@@ -2599,6 +2993,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Astatine",
                             Group = 17,
                             Id = 69,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = false,
                             MeltingPoint = 575.00m,
@@ -2622,6 +3017,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Gold",
                             Group = 11,
                             Id = 21,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1337.33m,
@@ -2645,6 +3041,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Boron",
                             Group = 13,
                             Id = 113,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 2349.00m,
@@ -2668,6 +3065,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Barium",
                             Group = 2,
                             Id = 14,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1000.00m,
@@ -2691,6 +3089,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Beryllium",
                             Group = 2,
                             Id = 15,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1560.00m,
@@ -2714,6 +3113,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Bohrium",
                             Group = 7,
                             Id = 22,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 0.00m,
@@ -2737,6 +3137,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Bismuth",
                             Group = 15,
                             Id = 59,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 544.70m,
@@ -2760,6 +3161,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Berkelium",
                             Group = 0,
                             Id = 99,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 1259.00m,
@@ -2783,6 +3185,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Bromine",
                             Group = 17,
                             Id = 70,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 265.80m,
@@ -2806,6 +3209,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Carbon",
                             Group = 14,
                             Id = 1,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 3823.00m,
@@ -2829,6 +3233,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Calcium",
                             Group = 2,
                             Id = 16,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1115.00m,
@@ -2852,6 +3257,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Cadmium",
                             Group = 12,
                             Id = 23,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 594.22m,
@@ -2875,6 +3281,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Cerium",
                             Group = 0,
                             Id = 82,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1068.00m,
@@ -2898,6 +3305,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Californium",
                             Group = 0,
                             Id = 100,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 1173.00m,
@@ -2921,6 +3329,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Chlorine",
                             Group = 17,
                             Id = 71,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 171.60m,
@@ -2944,6 +3353,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Curium",
                             Group = 0,
                             Id = 101,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 1613.00m,
@@ -2967,6 +3377,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Copernicium",
                             Group = 12,
                             Id = 24,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 0.00m,
@@ -2990,6 +3401,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Cobalt",
                             Group = 9,
                             Id = 25,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1768.00m,
@@ -3013,6 +3425,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Chromium",
                             Group = 6,
                             Id = 26,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 2180.00m,
@@ -3036,6 +3449,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Caesium",
                             Group = 1,
                             Id = 8,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 301.70m,
@@ -3059,6 +3473,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Copper",
                             Group = 11,
                             Id = 27,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1357.77m,
@@ -3082,6 +3497,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Dubnium",
                             Group = 5,
                             Id = 28,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 0.00m,
@@ -3105,6 +3521,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Darmstadtium",
                             Group = 10,
                             Id = 29,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 0.00m,
@@ -3128,6 +3545,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Dysprosium",
                             Group = 0,
                             Id = 83,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1680.00m,
@@ -3151,6 +3569,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Erbium",
                             Group = 0,
                             Id = 84,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1802.00m,
@@ -3174,6 +3593,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Einsteinium",
                             Group = 0,
                             Id = 102,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 1133.00m,
@@ -3197,6 +3617,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Europium",
                             Group = 0,
                             Id = 85,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1099.00m,
@@ -3220,6 +3641,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Fluorine",
                             Group = 17,
                             Id = 72,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 53.48m,
@@ -3243,6 +3665,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Iron",
                             Group = 8,
                             Id = 30,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1811.00m,
@@ -3266,6 +3689,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Flerovium",
                             Group = 14,
                             Id = 60,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 0.00m,
@@ -3289,6 +3713,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Fermium",
                             Group = 0,
                             Id = 103,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 1800.00m,
@@ -3312,6 +3737,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Francium",
                             Group = 1,
                             Id = 9,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = false,
                             MeltingPoint = 300.00m,
@@ -3335,6 +3761,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Gallium",
                             Group = 13,
                             Id = 61,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 302.91m,
@@ -3358,6 +3785,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Gadolinium",
                             Group = 0,
                             Id = 86,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1585.00m,
@@ -3381,6 +3809,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Germanium",
                             Group = 14,
                             Id = 114,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1211.40m,
@@ -3404,6 +3833,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Hydrogen",
                             Group = 1,
                             Id = 2,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 13.99m,
@@ -3427,6 +3857,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Helium",
                             Group = 18,
                             Id = 76,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 0.95m,
@@ -3450,6 +3881,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Hafnium",
                             Group = 4,
                             Id = 31,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 2506.00m,
@@ -3473,6 +3905,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Mercury",
                             Group = 12,
                             Id = 32,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 234.32m,
@@ -3496,6 +3929,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Holmium",
                             Group = 0,
                             Id = 87,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1734.00m,
@@ -3519,6 +3953,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Hassium",
                             Group = 8,
                             Id = 33,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 0.00m,
@@ -3542,6 +3977,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Iodine",
                             Group = 17,
                             Id = 73,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 386.85m,
@@ -3565,6 +4001,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Indium",
                             Group = 13,
                             Id = 62,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 429.75m,
@@ -3588,6 +4025,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Iridium",
                             Group = 9,
                             Id = 34,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 2719.00m,
@@ -3611,6 +4049,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Potassium",
                             Group = 1,
                             Id = 10,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 336.70m,
@@ -3634,6 +4073,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Krypton",
                             Group = 18,
                             Id = 77,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 115.78m,
@@ -3657,6 +4097,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Lanthanum",
                             Group = 0,
                             Id = 88,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1193.00m,
@@ -3680,6 +4121,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Lithium",
                             Group = 1,
                             Id = 11,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 453.65m,
@@ -3703,6 +4145,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Lawrencium",
                             Group = 0,
                             Id = 104,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 1900.00m,
@@ -3726,6 +4169,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Lutetium",
                             Group = 0,
                             Id = 89,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1925.00m,
@@ -3749,6 +4193,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Livermorium",
                             Group = 16,
                             Id = 63,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 0.00m,
@@ -3772,6 +4217,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Moscovium",
                             Group = 15,
                             Id = 64,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 0.00m,
@@ -3795,6 +4241,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Mendelevium",
                             Group = 0,
                             Id = 105,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 1100.00m,
@@ -3818,6 +4265,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Magnesium",
                             Group = 2,
                             Id = 17,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 923.00m,
@@ -3841,6 +4289,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Manganese",
                             Group = 7,
                             Id = 35,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1519.00m,
@@ -3864,6 +4313,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Molybdenum",
                             Group = 6,
                             Id = 36,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 2896.00m,
@@ -3887,6 +4337,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Meitnerium",
                             Group = 9,
                             Id = 37,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 0.00m,
@@ -3910,6 +4361,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Nitrogen",
                             Group = 15,
                             Id = 3,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 63.23m,
@@ -3933,6 +4385,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Sodium",
                             Group = 1,
                             Id = 12,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 370.94m,
@@ -3956,6 +4409,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Niobium",
                             Group = 5,
                             Id = 38,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 2750.00m,
@@ -3979,6 +4433,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Neodymium",
                             Group = 0,
                             Id = 90,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1297.00m,
@@ -4002,6 +4457,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Neon",
                             Group = 18,
                             Id = 78,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 24.56m,
@@ -4025,6 +4481,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Nihonium",
                             Group = 13,
                             Id = 65,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 0.00m,
@@ -4048,6 +4505,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Nickel",
                             Group = 10,
                             Id = 39,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1728.00m,
@@ -4071,6 +4529,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Nobelium",
                             Group = 0,
                             Id = 106,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 1100.00m,
@@ -4094,6 +4553,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Neptunium",
                             Group = 0,
                             Id = 107,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = false,
                             MeltingPoint = 912.00m,
@@ -4117,6 +4577,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Oxygen",
                             Group = 16,
                             Id = 4,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 54.36m,
@@ -4140,6 +4601,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Oganesson",
                             Group = 18,
                             Id = 79,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 0.00m,
@@ -4163,6 +4625,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Osmium",
                             Group = 8,
                             Id = 40,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 3306.00m,
@@ -4186,6 +4649,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Phosphorus",
                             Group = 15,
                             Id = 5,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 317.30m,
@@ -4209,6 +4673,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Protactinium",
                             Group = 0,
                             Id = 108,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = false,
                             MeltingPoint = 1841.00m,
@@ -4232,6 +4697,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Lead",
                             Group = 14,
                             Id = 66,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 600.61m,
@@ -4255,6 +4721,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Palladium",
                             Group = 10,
                             Id = 41,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1828.05m,
@@ -4278,6 +4745,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Promethium",
                             Group = 0,
                             Id = 91,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = false,
                             MeltingPoint = 1315.00m,
@@ -4301,6 +4769,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Polonium",
                             Group = 16,
                             Id = 115,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = false,
                             MeltingPoint = 527.00m,
@@ -4324,6 +4793,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Praseodymium",
                             Group = 0,
                             Id = 92,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1208.00m,
@@ -4347,6 +4817,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Platinum",
                             Group = 10,
                             Id = 42,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 2041.40m,
@@ -4370,6 +4841,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Plutonium",
                             Group = 0,
                             Id = 109,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = false,
                             MeltingPoint = 912.50m,
@@ -4393,6 +4865,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Radium",
                             Group = 2,
                             Id = 18,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = false,
                             MeltingPoint = 973.00m,
@@ -4416,6 +4889,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Rubidium",
                             Group = 1,
                             Id = 13,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 312.45m,
@@ -4439,6 +4913,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Rhenium",
                             Group = 7,
                             Id = 43,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 3459.00m,
@@ -4462,6 +4937,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Rutherfordium",
                             Group = 4,
                             Id = 44,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 2400.00m,
@@ -4485,6 +4961,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Roentgenium",
                             Group = 11,
                             Id = 45,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 0.00m,
@@ -4508,6 +4985,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Rhodium",
                             Group = 9,
                             Id = 46,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 2237.00m,
@@ -4531,6 +5009,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Radon",
                             Group = 18,
                             Id = 80,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = false,
                             MeltingPoint = 202.00m,
@@ -4554,6 +5033,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Ruthenium",
                             Group = 8,
                             Id = 47,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 2607.00m,
@@ -4577,6 +5057,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Sulfur",
                             Group = 16,
                             Id = 6,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 388.36m,
@@ -4600,6 +5081,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Antimony",
                             Group = 15,
                             Id = 116,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 903.78m,
@@ -4623,6 +5105,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Scandium",
                             Group = 3,
                             Id = 48,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1814.00m,
@@ -4646,6 +5129,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Selenium",
                             Group = 16,
                             Id = 7,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 494.00m,
@@ -4669,6 +5153,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Seaborgium",
                             Group = 6,
                             Id = 49,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 0.00m,
@@ -4692,6 +5177,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Silicon",
                             Group = 14,
                             Id = 117,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1687.00m,
@@ -4715,6 +5201,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Samarium",
                             Group = 0,
                             Id = 93,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1345.00m,
@@ -4738,6 +5225,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Tin",
                             Group = 14,
                             Id = 67,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 505.08m,
@@ -4761,6 +5249,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Strontium",
                             Group = 2,
                             Id = 19,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1050.00m,
@@ -4784,6 +5273,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Tantalum",
                             Group = 5,
                             Id = 50,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 3290.00m,
@@ -4807,6 +5297,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Terbium",
                             Group = 0,
                             Id = 94,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1629.00m,
@@ -4830,6 +5321,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Technetium",
                             Group = 7,
                             Id = 51,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = false,
                             MeltingPoint = 2430.00m,
@@ -4853,6 +5345,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Tellurium",
                             Group = 16,
                             Id = 118,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 722.66m,
@@ -4876,6 +5369,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Thorium",
                             Group = 0,
                             Id = 110,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = false,
                             MeltingPoint = 2023.00m,
@@ -4899,6 +5393,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Titanium",
                             Group = 4,
                             Id = 52,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1941.00m,
@@ -4922,6 +5417,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Thallium",
                             Group = 13,
                             Id = 68,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 577.00m,
@@ -4945,6 +5441,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Thulium",
                             Group = 0,
                             Id = 95,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1818.00m,
@@ -4968,6 +5465,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Tennessine",
                             Group = 17,
                             Id = 74,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = true,
                             MeltingPoint = 0.00m,
@@ -4991,6 +5489,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Uranium",
                             Group = 0,
                             Id = 111,
+                            IsActive = true,
                             IsRadioactive = true,
                             IsSynthetic = false,
                             MeltingPoint = 1405.30m,
@@ -5014,6 +5513,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Vanadium",
                             Group = 5,
                             Id = 53,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 2183.00m,
@@ -5037,6 +5537,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Tungsten",
                             Group = 6,
                             Id = 54,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 3695.00m,
@@ -5060,6 +5561,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Xenon",
                             Group = 18,
                             Id = 81,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 161.40m,
@@ -5083,6 +5585,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Yttrium",
                             Group = 3,
                             Id = 55,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1799.00m,
@@ -5106,6 +5609,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Ytterbium",
                             Group = 0,
                             Id = 96,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 1097.00m,
@@ -5129,6 +5633,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Zinc",
                             Group = 12,
                             Id = 56,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 692.68m,
@@ -5152,6 +5657,7 @@ namespace ElementFactory.Data.Migrations
                             EnglishName = "Zirconium",
                             Group = 4,
                             Id = 57,
+                            IsActive = true,
                             IsRadioactive = false,
                             IsSynthetic = false,
                             MeltingPoint = 2125.00m,
@@ -5177,6 +5683,9 @@ namespace ElementFactory.Data.Migrations
                         .HasColumnType("nvarchar(25)")
                         .HasComment("Chemical type name bulgarian");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(25)
@@ -5194,60 +5703,70 @@ namespace ElementFactory.Data.Migrations
                         {
                             Id = 1,
                             BulgarianName = "Неметал",
+                            IsActive = true,
                             Name = "Non-Metal"
                         },
                         new
                         {
                             Id = 2,
                             BulgarianName = "Алкален метал",
+                            IsActive = true,
                             Name = "Alkali Metal"
                         },
                         new
                         {
                             Id = 3,
                             BulgarianName = "Алкалоземен метал",
+                            IsActive = true,
                             Name = "Alkaline Earth Metal"
                         },
                         new
                         {
                             Id = 4,
                             BulgarianName = "Преходен метал",
+                            IsActive = true,
                             Name = "Transition Metal"
                         },
                         new
                         {
                             Id = 5,
                             BulgarianName = "Други метали",
+                            IsActive = true,
                             Name = "PostTransition Metal"
                         },
                         new
                         {
                             Id = 6,
                             BulgarianName = "Халоген",
+                            IsActive = true,
                             Name = "Halogen"
                         },
                         new
                         {
                             Id = 7,
                             BulgarianName = "Благороден газ",
+                            IsActive = true,
                             Name = "Noble gas"
                         },
                         new
                         {
                             Id = 8,
                             BulgarianName = "Лантанид",
+                            IsActive = true,
                             Name = "Lanthanide"
                         },
                         new
                         {
                             Id = 9,
                             BulgarianName = "Актинид",
+                            IsActive = true,
                             Name = "Actinide"
                         },
                         new
                         {
                             Id = 10,
                             BulgarianName = "Металоид",
+                            IsActive = true,
                             Name = "Metaloid"
                         });
                 });
@@ -5266,6 +5785,9 @@ namespace ElementFactory.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
                         .HasComment("Founder first name");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -5289,6 +5811,9 @@ namespace ElementFactory.Data.Migrations
                     b.Property<string>("ChemicalElementSymbol")
                         .HasColumnType("nvarchar(2)")
                         .HasComment("Chemical element symbol => PK");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.HasKey("FounderId", "ChemicalElementSymbol");
 
@@ -5314,6 +5839,9 @@ namespace ElementFactory.Data.Migrations
                         .HasColumnType("nvarchar(300)")
                         .HasComment("Question description");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<string>("RightAnswer")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
@@ -5330,690 +5858,805 @@ namespace ElementFactory.Data.Migrations
                         {
                             Id = 1,
                             Description = "В коя група е химичният елемент Na?",
+                            IsActive = true,
                             RightAnswer = "Първа А"
                         },
                         new
                         {
                             Id = 2,
                             Description = "Какво по характер е простото вещество на Na?",
+                            IsActive = true,
                             RightAnswer = "Метал"
                         },
                         new
                         {
                             Id = 3,
                             Description = "Натрият взаимодейства със: ",
+                            IsActive = true,
                             RightAnswer = "Неметали, киселини и вода"
                         },
                         new
                         {
                             Id = 4,
                             Description = "При взаимодействие на Na с вода се получава:",
+                            IsActive = true,
                             RightAnswer = "NaOH + H2"
                         },
                         new
                         {
                             Id = 5,
                             Description = "Защо простото вещество Na се държи под петрол",
+                            IsActive = true,
                             RightAnswer = "За да не взаимодейства с кислорода от въздуха"
                         },
                         new
                         {
                             Id = 6,
                             Description = "Кое от химичните съединения на натрия е по-познато в практиката като сода каустик?",
+                            IsActive = true,
                             RightAnswer = "NaOH"
                         },
                         new
                         {
                             Id = 7,
                             Description = "С какъв пламък изгаря Na?",
+                            IsActive = true,
                             RightAnswer = "Жълт"
                         },
                         new
                         {
                             Id = 8,
                             Description = "Кое от химичните съединения на Na се получава от реакция с реактива AgNO3?",
+                            IsActive = true,
                             RightAnswer = "NaNO3"
                         },
                         new
                         {
                             Id = 9,
                             Description = "При електролитна дисоциация на NaOH се получават: ",
+                            IsActive = true,
                             RightAnswer = "Na+ и OH-"
                         },
                         new
                         {
                             Id = 10,
                             Description = "От коя валентност е Na?",
+                            IsActive = true,
                             RightAnswer = "1"
                         },
                         new
                         {
                             Id = 11,
                             Description = "Ако в разтвор от NaOH внесем лакмус, то той се оцветява: ",
+                            IsActive = true,
                             RightAnswer = "В синьо"
                         },
                         new
                         {
                             Id = 12,
                             Description = "Кое от следните прости вещества има по-ниска реактивоспособност от натрия?",
+                            IsActive = true,
                             RightAnswer = "Li"
                         },
                         new
                         {
                             Id = 13,
                             Description = "Водният разтвор на NaOH провежда електричен ток.",
+                            IsActive = true,
                             RightAnswer = "Вярно"
                         },
                         new
                         {
                             Id = 14,
                             Description = "Според UPAC химичното съединение \"NaH\" се нарича:",
+                            IsActive = true,
                             RightAnswer = "Натриев хидрид"
                         },
                         new
                         {
                             Id = 15,
                             Description = "Кое е ГРЕШНОТО твърдение? Натрият / неговите съединения се използват за:",
+                            IsActive = true,
                             RightAnswer = "Промивка след изгаряне"
                         },
                         new
                         {
                             Id = 16,
                             Description = "Какъв цвят е простото вещество на Cl?",
+                            IsActive = true,
                             RightAnswer = "Жълто-зелен"
                         },
                         new
                         {
                             Id = 17,
                             Description = "Какво се получава при взаимодействието на хлор с водород?",
+                            IsActive = true,
                             RightAnswer = "HCl"
                         },
                         new
                         {
                             Id = 18,
                             Description = "Кои киселини се получават при директно взаимодействие на хлор с вода",
+                            IsActive = true,
                             RightAnswer = "HCl и HClO"
                         },
                         new
                         {
                             Id = 19,
                             Description = "С кое от веществата хлорът НЕ взаимодейства?",
+                            IsActive = true,
                             RightAnswer = "NaCl"
                         },
                         new
                         {
                             Id = 20,
                             Description = "Съединението NaClO се нарича:",
+                            IsActive = true,
                             RightAnswer = "Натриев хипохлорит"
                         },
                         new
                         {
                             Id = 21,
                             Description = "От коя група е елементът хлор?",
+                            IsActive = true,
                             RightAnswer = "Седма А"
                         },
                         new
                         {
                             Id = 22,
                             Description = "В какъв цвят се оцветява фенолфталеина при контакт с водния разтвор на HCl?",
+                            IsActive = true,
                             RightAnswer = "Не се променя"
                         },
                         new
                         {
                             Id = 23,
                             Description = "С какво име в практиката е известен NaClO?",
+                            IsActive = true,
                             RightAnswer = "Белина"
                         },
                         new
                         {
                             Id = 24,
                             Description = "От колко атома се състои молекулата на хлора?",
+                            IsActive = true,
                             RightAnswer = "2"
                         },
                         new
                         {
                             Id = 25,
                             Description = "В какъв йон се превръща атомът на хлора при реакция?",
+                            IsActive = true,
                             RightAnswer = "Отрицателен със заряд 1-"
                         },
                         new
                         {
                             Id = 26,
                             Description = "Как се наричат солите на хлора?",
+                            IsActive = true,
                             RightAnswer = "Хлориди"
                         },
                         new
                         {
                             Id = 27,
                             Description = "От коя валентност е хлорът в съединението си с водорода?",
+                            IsActive = true,
                             RightAnswer = "1"
                         },
                         new
                         {
                             Id = 28,
                             Description = "Хипохлористата киселина се разлага до:",
+                            IsActive = true,
                             RightAnswer = "HCl + O"
                         },
                         new
                         {
                             Id = 29,
                             Description = "Газът хлор има силен, приятен мирис",
+                            IsActive = true,
                             RightAnswer = "Грешно"
                         },
                         new
                         {
                             Id = 30,
                             Description = "За какво се използва хлорът в практиката?",
+                            IsActive = true,
                             RightAnswer = "Дезинфекция на водите"
                         },
                         new
                         {
                             Id = 31,
                             Description = "Простото вещество Ca е:",
+                            IsActive = true,
                             RightAnswer = "Алкалоземен метал"
                         },
                         new
                         {
                             Id = 32,
                             Description = "С какъв строеж е простото вещество Ca?",
+                            IsActive = true,
                             RightAnswer = "Кристален"
                         },
                         new
                         {
                             Id = 33,
                             Description = "С каква валентност участва в съединенията си Ca?",
+                            IsActive = true,
                             RightAnswer = "2"
                         },
                         new
                         {
                             Id = 34,
                             Description = "Под какво име е известно съединението CaO?",
+                            IsActive = true,
                             RightAnswer = "Негасена вар"
                         },
                         new
                         {
                             Id = 35,
                             Description = "В коя група е Ca?",
+                            IsActive = true,
                             RightAnswer = "Втора А"
                         },
                         new
                         {
                             Id = 36,
                             Description = "При взаимодействието на Ca с кислород се получава:",
+                            IsActive = true,
                             RightAnswer = "CaO"
                         },
                         new
                         {
                             Id = 37,
                             Description = "Реакцията \"Гасене на вар\" е ракция на CaO с вода, при коята се получава/т:",
+                            IsActive = true,
                             RightAnswer = "Ca(OH)2"
                         },
                         new
                         {
                             Id = 38,
                             Description = "При взаимодействие на Ca с халогеноводородна киселина се получава:",
+                            IsActive = true,
                             RightAnswer = "Сол"
                         },
                         new
                         {
                             Id = 39,
                             Description = "Простото вещество Ca е газ с метален блясък и висока електропроводимост.",
+                            IsActive = true,
                             RightAnswer = "Грешно"
                         },
                         new
                         {
                             Id = 40,
                             Description = "Какъв характер проявява водният разтвор на калциевия дихидроксид?",
+                            IsActive = true,
                             RightAnswer = "Основен"
                         },
                         new
                         {
                             Id = 41,
                             Description = "Кое от следните уравнения за Ca и неговите съединения е изравнено вярно?",
+                            IsActive = true,
                             RightAnswer = "Ca + 2H2O => Ca(OH)2+H2"
                         },
                         new
                         {
                             Id = 42,
                             Description = "Ca се съхранява по петрол или инертен газ",
+                            IsActive = true,
                             RightAnswer = "Вярно"
                         },
                         new
                         {
                             Id = 43,
                             Description = "Какъв е цвета на пламъка при гореното на Ca?",
+                            IsActive = true,
                             RightAnswer = "Керемиденочервен"
                         },
                         new
                         {
                             Id = 44,
                             Description = "Реакцията \"Шумяща проба\" се наблюдава при взаимодействието на:",
+                            IsActive = true,
                             RightAnswer = "CaCO3 с киселина"
                         },
                         new
                         {
                             Id = 45,
                             Description = "Разтоворът на Ca(OH)2 е с pH:",
+                            IsActive = true,
                             RightAnswer = "11"
                         },
                         new
                         {
                             Id = 46,
                             Description = "В кой от редовете са посочени само неорганични съединения:",
+                            IsActive = true,
                             RightAnswer = "CO, CO2, H2CO3, Na2CO3"
                         },
                         new
                         {
                             Id = 47,
                             Description = "Каква валентност проявява C в неговите ОС?",
+                            IsActive = true,
                             RightAnswer = "4"
                         },
                         new
                         {
                             Id = 48,
                             Description = "Кое е най-точното определение за ароматните ВВ?",
+                            IsActive = true,
                             RightAnswer = "ВВ с по-сложен строеж, които са циклични"
                         },
                         new
                         {
                             Id = 49,
                             Description = "Кое от посочените съединения е известно под името \"Газ гризу\":",
+                            IsActive = true,
                             RightAnswer = "CH4"
                         },
                         new
                         {
                             Id = 50,
                             Description = "\"Халогенирането\" на метан е заместителна реакция.",
+                            IsActive = true,
                             RightAnswer = "Вярно"
                         },
                         new
                         {
                             Id = 51,
                             Description = "Всяко ОС при взаимодействие с кислород(горене) се разлага до въглероден диоксид и вода",
+                            IsActive = true,
                             RightAnswer = "Вярно"
                         },
                         new
                         {
                             Id = 52,
                             Description = "Кое от от следните съединения е нонан",
+                            IsActive = true,
                             RightAnswer = "C9H20"
                         },
                         new
                         {
                             Id = 53,
                             Description = "Каква е общата молекулна формула на алкените",
+                            IsActive = true,
                             RightAnswer = "CnH2n"
                         },
                         new
                         {
                             Id = 54,
                             Description = "Характерни за алкените са заместителните реакции, поради наличието на сложната двойна връзка",
+                            IsActive = true,
                             RightAnswer = "Грешно"
                         },
                         new
                         {
                             Id = 55,
                             Description = "\"Хидрирането\" на алкени протична при наличието на:",
+                            IsActive = true,
                             RightAnswer = "И трите изброени"
                         },
                         new
                         {
                             Id = 56,
                             Description = "Наличието на какво се доказва с разтвор на KMnO4?",
+                            IsActive = true,
                             RightAnswer = "Сложни връзки"
                         },
                         new
                         {
                             Id = 57,
                             Description = "При присъединяването на полярни H-съдържащи молекули към молекули на несиметрияни алкени се спазва правилото на:",
+                            IsActive = true,
                             RightAnswer = "Марковников"
                         },
                         new
                         {
                             Id = 58,
                             Description = "За да се спре реакцията на \"Хидриране\" на алкините, така че от алкин да се получи алкен, се използва катализатор:",
+                            IsActive = true,
                             RightAnswer = "Pb(CH3COO)2"
                         },
                         new
                         {
                             Id = 59,
                             Description = "2,4,6-тринитро толуен(TNT) се получава при взаимодействието на:",
+                            IsActive = true,
                             RightAnswer = "Толуен и HNO3 в излишък"
                         },
                         new
                         {
                             Id = 60,
                             Description = "При взаимодействието на фенол и натрий се получава:",
+                            IsActive = true,
                             RightAnswer = "Натриев феноксид и 1/2 H2"
                         },
                         new
                         {
                             Id = 61,
                             Description = "Топлината на образуване на 1 мол хлороводор е 92.5kJ.Какъв е топлинният ефект на реакцията: H + Cl => HCl (Уравнението не е изравнено!) в kJ?",
+                            IsActive = true,
                             RightAnswer = "185"
                         },
                         new
                         {
                             Id = 62,
                             Description = "Колко е температурата на образуване на ромбичната сяра в kJ?",
+                            IsActive = true,
                             RightAnswer = "0"
                         },
                         new
                         {
                             Id = 63,
                             Description = "Изчислете топлината на образуване на NH3 според уравнението в kJ закръглено до първия знак след запетаята.N2 + 3H2 => 2NH3 + 92,4 kJ",
+                            IsActive = true,
                             RightAnswer = "46.2"
                         },
                         new
                         {
                             Id = 64,
                             Description = "Ако температурата на образуване на водните пари е 242.5kJ, то тогава колко е температурата им на изгаряне сметната в kJ и закръглена до първия знак след запетаята?",
+                            IsActive = true,
                             RightAnswer = "-242.5"
                         },
                         new
                         {
                             Id = 65,
                             Description = "Ако температурата на образуване на графита е 394.8kJ/mol, а на диаманта е 396.6kJ/mol, то тогава колко ще бъде топлинният ефект при реакция от вида \"графит=>диамант\" измерена в kJ и закръглена до първия знак след запетаята?.",
+                            IsActive = true,
                             RightAnswer = "-1.8"
                         },
                         new
                         {
                             Id = 66,
                             Description = "Дадено:\r\nC6H6 + 15/2 O2 => 6CO2 + 3H20 + Q\r\nQ=3271kJ\r\nQобразуване(CO2)=394kJ/mol\r\nQобразуване(H20)=285.8kJ/mol\r\nТърсим:\r\nQобразуване(C6H6)=?kJ закръглено до първия знак след запетаята",
+                            IsActive = true,
                             RightAnswer = "-49.6"
                         },
                         new
                         {
                             Id = 67,
                             Description = "Ако в хомогенният едностадиен процес 2CO + O2 => 2CO2, концентрацията на CO се увеличи 3 пъти при t=const то с колко пъти новата скорост ще е по-голяма от старата",
+                            IsActive = true,
                             RightAnswer = "9"
                         },
                         new
                         {
                             Id = 68,
                             Description = "2SO2(г) + O2(г) => 2SO3(г) + Q. Ако увеличим налягането на системата три пъти, то с колко новата средна скорост на уравнението ще бъде по-голямата от тази на началното уравнение",
+                            IsActive = true,
                             RightAnswer = "27"
                         },
                         new
                         {
                             Id = 69,
                             Description = "S(тв) + H2(г) => H2S(г) + 4.8kJ. Изчислете количеството обменена топлина в kJ, закръглено до първия знак след запетаята, ако 8грама сяра реагират по даденото химияно уравнение(счита се,че M(S)=32.0)",
+                            IsActive = true,
                             RightAnswer = "1.2"
                         },
                         new
                         {
                             Id = 70,
                             Description = "Колко е температурата на изгаряне на SO3 в kJ/mol?",
+                            IsActive = true,
                             RightAnswer = "0"
                         },
                         new
                         {
                             Id = 71,
                             Description = "Кои са задължителните компоненти на истинските разтвори?",
+                            IsActive = true,
                             RightAnswer = "Разтворител и разтварящо се вещество"
                         },
                         new
                         {
                             Id = 72,
                             Description = "По кое правило/закон се образуват разтворите?",
+                            IsActive = true,
                             RightAnswer = "\"Подобни се разтварят в подобни\""
                         },
                         new
                         {
                             Id = 73,
                             Description = "Според частиците на разтвореното вещество, разтворите биват:",
+                            IsActive = true,
                             RightAnswer = "Молекулни и йонни"
                         },
                         new
                         {
                             Id = 74,
                             Description = "Коя е правилната последователност на процесите, през които минава механизмът на разтварянето?",
+                            IsActive = true,
                             RightAnswer = "Разграждане на кристалната решетка (ако има такава), солватация, дифузия"
                         },
                         new
                         {
                             Id = 75,
                             Description = "Как се нарича обратната реакция на разтварянето, ако е погледнато като обратим проес?",
+                            IsActive = true,
                             RightAnswer = "Кристализация"
                         },
                         new
                         {
                             Id = 76,
                             Description = "Видовете разтвори според състоянието им от състоянието на равновесие са само наситен и ненаситен.",
+                            IsActive = true,
                             RightAnswer = "Грешно"
                         },
                         new
                         {
                             Id = 77,
                             Description = "По коя от формулите НЕ можем да определим концентрацията на даден разтвор?",
+                            IsActive = true,
                             RightAnswer = "m(р-р) = M(А) * n(р-р)"
                         },
                         new
                         {
                             Id = 78,
                             Description = "Разтворите са устойчиви системи, чиито размери на частиците НЕ надвишават:",
+                            IsActive = true,
                             RightAnswer = "1 нанометър"
                         },
                         new
                         {
                             Id = 79,
                             Description = "Процесът на кристализация е съпроводен с положителен топлинен ефект (+Q1).",
+                            IsActive = true,
                             RightAnswer = "Грешно"
                         },
                         new
                         {
                             Id = 80,
                             Description = "На кой ред са изброени всички общи свойства на разтворите?",
+                            IsActive = true,
                             RightAnswer = "Понижаването на температурата на замръзване, повишаването на температурата на кипене, дифузия, понижаване на парното налягане, осмоза"
                         },
                         new
                         {
                             Id = 81,
                             Description = "Коя е най-точната формула за определяне на осмотичното налягане?",
+                            IsActive = true,
                             RightAnswer = "π = i*c*R*T"
                         },
                         new
                         {
                             Id = 82,
                             Description = "Ако имаме една кръвна клетка, на която цитозолът е с концентрация 0.9%, а кръвта около нея е с концентрация, по-висока от 1.2%, то спрямо клетката разтворът в околната среда (кръвта) ще бъде:",
+                            IsActive = true,
                             RightAnswer = "Хипертоничен"
                         },
                         new
                         {
                             Id = 83,
                             Description = "На кой ред всички изброени вещества са електролити?",
+                            IsActive = true,
                             RightAnswer = "CuSO4, NaOH, H2O, Ca(OH)2"
                         },
                         new
                         {
                             Id = 84,
                             Description = "Какви видове разтвори има според степента на електролитна дисоциация?",
+                            IsActive = true,
                             RightAnswer = "Средни, слаби, силни"
                         },
                         new
                         {
                             Id = 85,
                             Description = "Водата е електролит.",
+                            IsActive = true,
                             RightAnswer = "Вярно"
                         },
                         new
                         {
                             Id = 86,
                             Description = "Коя от частиците е с най-малък атомен радиус?",
+                            IsActive = true,
                             RightAnswer = "Al3+"
                         },
                         new
                         {
                             Id = 87,
                             Description = "Кое е най-точното определение на \"Електронен облак\"?",
+                            IsActive = true,
                             RightAnswer = "Част от пространството, което е около самото ядро, в която шанса за намиране на електрона е приблизително 90%"
                         },
                         new
                         {
                             Id = 88,
                             Description = "Атомните орбитали с едно и също главно и орбитално квантово число образуват електронен слой.",
+                            IsActive = true,
                             RightAnswer = "Грешно"
                         },
                         new
                         {
                             Id = 89,
                             Description = "В коя група всички означени вещества са с неполярни молекули?",
+                            IsActive = true,
                             RightAnswer = "CO2, BeH2, N2"
                         },
                         new
                         {
                             Id = 90,
                             Description = "Кое от следните твърдения е вярно за масовото число?",
+                            IsActive = true,
                             RightAnswer = "То е равно на сумата от броя на протоните и неутроните"
                         },
                         new
                         {
                             Id = 91,
                             Description = "Здравината на ковалентната връзка нараства с увеличаване на нейната кратност.",
+                            IsActive = true,
                             RightAnswer = "Вярно"
                         },
                         new
                         {
                             Id = 92,
                             Description = "В кой от редовете са изброени само вещества, в които има кратна ковалентна връзка?",
+                            IsActive = true,
                             RightAnswer = "C2H2, N2, CO2"
                         },
                         new
                         {
                             Id = 93,
                             Description = "В кой от редовете са изброени само вещества с йонна химична връзка?",
+                            IsActive = true,
                             RightAnswer = "NaH, K2O, BaCl2"
                         },
                         new
                         {
                             Id = 94,
                             Description = "π-връзка може да се образува между еднакви по вид атоми.",
+                            IsActive = true,
                             RightAnswer = "Вярно"
                         },
                         new
                         {
                             Id = 95,
                             Description = "В молекулата на CS2 каква е хибридизацията на централния атом?",
+                            IsActive = true,
                             RightAnswer = "sp"
                         },
                         new
                         {
                             Id = 96,
                             Description = "Коя от двойките елементи не се свързва с йонна връзка?",
+                            IsActive = true,
                             RightAnswer = "F и O"
                         },
                         new
                         {
                             Id = 97,
                             Description = "Еквивалентните атомни орбитали се заемат първоначално от двойни електрони с паралелни спинове.",
+                            IsActive = true,
                             RightAnswer = "Грешно"
                         },
                         new
                         {
                             Id = 98,
                             Description = "За веществото X е известно, че има висока температура на топене, ковко е и не се разтваря във вода. Какъв е видът на кристалната решетка на това вещество?",
+                            IsActive = true,
                             RightAnswer = "Метална"
                         },
                         new
                         {
                             Id = 99,
                             Description = "На кое от изброените вещества хибридизацията на централния атом е sp^3d^2?",
+                            IsActive = true,
                             RightAnswer = "SF6"
                         },
                         new
                         {
                             Id = 100,
                             Description = "Йонизационната енергия характеризира редукционната активност на атомите.",
+                            IsActive = true,
                             RightAnswer = "Вярно"
                         },
                         new
                         {
                             Id = 101,
                             Description = "Количеството вещество, което съответства на 5.6г азот, е:",
+                            IsActive = true,
                             RightAnswer = "0.2 mol"
                         },
                         new
                         {
                             Id = 102,
                             Description = "Кое от твърденията за ендотермични реакции е вярно? При ендотермични реакции:",
+                            IsActive = true,
                             RightAnswer = "се поглъща топлина, ΔH > 0 и реагентите са по-стабилни"
                         },
                         new
                         {
                             Id = 103,
                             Description = "При изгарянето на 9 грама алуминий, като знаете че M(Al) = 27g/mol, в кислородна среда се отделят 229kJ топлина. Това означава, че стандартната енталпия на образуване на диалуминиевия триоксид е равна на:",
+                            IsActive = true,
                             RightAnswer = "-1374 kJ/mol"
                         },
                         new
                         {
                             Id = 104,
                             Description = "Термохимичната функция \"Енергия на Гибс\" се дефинира чрез:",
+                            IsActive = true,
                             RightAnswer = "G = H - T*S"
                         },
                         new
                         {
                             Id = 105,
                             Description = "Ентропията расте, когато се преминава от едно по-неподредено към по-подредено състояние.",
+                            IsActive = true,
                             RightAnswer = "Грешно"
                         },
                         new
                         {
                             Id = 106,
                             Description = "Ако приемем, че реакцията протича по уравнението: S(тв.) + O2(г.) => SO2(г.), то кинетичното уравнение за процеса е:",
+                            IsActive = true,
                             RightAnswer = "v = k * c(O2)"
                         },
                         new
                         {
                             Id = 107,
                             Description = "Кинетичното уравнение на химичен процес е v = k * c(A) * c^2(B). Как ще се промени скоростта на процеса при понижаване на налягането два пъти?",
+                            IsActive = true,
                             RightAnswer = "Ще се понижи осем пъти"
                         },
                         new
                         {
                             Id = 108,
                             Description = "Ендотермичните процеси не могат да протичат спонтанно.",
+                            IsActive = true,
                             RightAnswer = "Грешно"
                         },
                         new
                         {
                             Id = 109,
                             Description = "Кое от твърденията НЕ е вярно?",
+                            IsActive = true,
                             RightAnswer = "Ензимите притежават общите свойства на катализаторите"
                         },
                         new
                         {
                             Id = 110,
                             Description = "Кое от следните определения описва \"Вторият закон на Фарадей\"",
+                            IsActive = true,
                             RightAnswer = "За отделянето на един еквивалент от дадено вещество е необходимо през разтвора да преминат 96 500C електричен заряд. Електрохимичният еквивалент се пресмята по формулата: k = M/z*F"
                         },
                         new
                         {
                             Id = 111,
                             Description = "При еднаква молна концентрация и температура = const, най-високото осмотично налягане от посочените по-долу има разтворът на:",
+                            IsActive = true,
                             RightAnswer = "Сярна киселина"
                         },
                         new
                         {
                             Id = 112,
                             Description = "При ΔG < 0 реакцията протича спонтанно, а при ΔG = 0 системата се намира в динамично равновесие",
+                            IsActive = true,
                             RightAnswer = "Вярно"
                         },
                         new
                         {
                             Id = 113,
                             Description = "При взаимодействие на 1cm^3 1M разтвор на калиев хлорид и 1cm^3 0.1M разтвор на сребърен нитрат е получен зол. Най-бързата коагулация на колоидния разтвор могат да предизвикат:",
+                            IsActive = true,
                             RightAnswer = "Al3+"
                         },
                         new
                         {
                             Id = 114,
                             Description = "В коя от групите всички означени вещества оцветяват лакмуса в синьо?",
+                            IsActive = true,
                             RightAnswer = "Ca(OH)2, NH4OH, NaHCO3"
                         },
                         new
                         {
                             Id = 115,
                             Description = "Адсорбтив е вещество, което задържа на повърхността си други вещества.",
+                            IsActive = true,
                             RightAnswer = "Грешно"
                         });
                 });
@@ -6028,6 +6671,9 @@ namespace ElementFactory.Data.Migrations
                         .HasColumnType("int")
                         .HasComment("Test identificator");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.HasKey("QuestionId", "TestId");
 
                     b.HasIndex("TestId");
@@ -6038,577 +6684,692 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             QuestionId = 1,
-                            TestId = 1
+                            TestId = 1,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 2,
-                            TestId = 1
+                            TestId = 1,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 3,
-                            TestId = 1
+                            TestId = 1,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 4,
-                            TestId = 1
+                            TestId = 1,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 5,
-                            TestId = 1
+                            TestId = 1,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 6,
-                            TestId = 1
+                            TestId = 1,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 7,
-                            TestId = 1
+                            TestId = 1,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 8,
-                            TestId = 1
+                            TestId = 1,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 9,
-                            TestId = 1
+                            TestId = 1,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 10,
-                            TestId = 1
+                            TestId = 1,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 11,
-                            TestId = 1
+                            TestId = 1,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 12,
-                            TestId = 1
+                            TestId = 1,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 13,
-                            TestId = 1
+                            TestId = 1,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 14,
-                            TestId = 1
+                            TestId = 1,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 15,
-                            TestId = 1
+                            TestId = 1,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 16,
-                            TestId = 2
+                            TestId = 2,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 17,
-                            TestId = 2
+                            TestId = 2,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 18,
-                            TestId = 2
+                            TestId = 2,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 19,
-                            TestId = 2
+                            TestId = 2,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 20,
-                            TestId = 2
+                            TestId = 2,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 21,
-                            TestId = 2
+                            TestId = 2,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 22,
-                            TestId = 2
+                            TestId = 2,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 23,
-                            TestId = 2
+                            TestId = 2,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 24,
-                            TestId = 2
+                            TestId = 2,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 25,
-                            TestId = 2
+                            TestId = 2,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 26,
-                            TestId = 2
+                            TestId = 2,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 27,
-                            TestId = 2
+                            TestId = 2,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 28,
-                            TestId = 2
+                            TestId = 2,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 29,
-                            TestId = 2
+                            TestId = 2,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 30,
-                            TestId = 2
+                            TestId = 2,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 31,
-                            TestId = 3
+                            TestId = 3,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 32,
-                            TestId = 3
+                            TestId = 3,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 33,
-                            TestId = 3
+                            TestId = 3,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 34,
-                            TestId = 3
+                            TestId = 3,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 35,
-                            TestId = 3
+                            TestId = 3,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 36,
-                            TestId = 3
+                            TestId = 3,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 37,
-                            TestId = 3
+                            TestId = 3,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 38,
-                            TestId = 3
+                            TestId = 3,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 39,
-                            TestId = 3
+                            TestId = 3,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 40,
-                            TestId = 3
+                            TestId = 3,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 41,
-                            TestId = 3
+                            TestId = 3,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 42,
-                            TestId = 3
+                            TestId = 3,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 43,
-                            TestId = 3
+                            TestId = 3,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 44,
-                            TestId = 3
+                            TestId = 3,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 45,
-                            TestId = 3
+                            TestId = 3,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 46,
-                            TestId = 4
+                            TestId = 4,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 47,
-                            TestId = 4
+                            TestId = 4,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 48,
-                            TestId = 4
+                            TestId = 4,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 49,
-                            TestId = 4
+                            TestId = 4,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 50,
-                            TestId = 4
+                            TestId = 4,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 51,
-                            TestId = 4
+                            TestId = 4,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 52,
-                            TestId = 4
+                            TestId = 4,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 53,
-                            TestId = 4
+                            TestId = 4,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 54,
-                            TestId = 4
+                            TestId = 4,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 55,
-                            TestId = 4
+                            TestId = 4,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 56,
-                            TestId = 4
+                            TestId = 4,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 57,
-                            TestId = 4
+                            TestId = 4,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 58,
-                            TestId = 4
+                            TestId = 4,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 59,
-                            TestId = 4
+                            TestId = 4,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 60,
-                            TestId = 4
+                            TestId = 4,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 61,
-                            TestId = 5
+                            TestId = 5,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 62,
-                            TestId = 5
+                            TestId = 5,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 63,
-                            TestId = 5
+                            TestId = 5,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 64,
-                            TestId = 5
+                            TestId = 5,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 65,
-                            TestId = 5
+                            TestId = 5,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 66,
-                            TestId = 5
+                            TestId = 5,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 67,
-                            TestId = 5
+                            TestId = 5,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 68,
-                            TestId = 5
+                            TestId = 5,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 69,
-                            TestId = 5
+                            TestId = 5,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 70,
-                            TestId = 5
+                            TestId = 5,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 71,
-                            TestId = 6
+                            TestId = 6,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 72,
-                            TestId = 6
+                            TestId = 6,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 73,
-                            TestId = 6
+                            TestId = 6,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 74,
-                            TestId = 6
+                            TestId = 6,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 75,
-                            TestId = 6
+                            TestId = 6,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 76,
-                            TestId = 6
+                            TestId = 6,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 77,
-                            TestId = 6
+                            TestId = 6,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 78,
-                            TestId = 6
+                            TestId = 6,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 79,
-                            TestId = 6
+                            TestId = 6,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 80,
-                            TestId = 6
+                            TestId = 6,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 81,
-                            TestId = 6
+                            TestId = 6,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 82,
-                            TestId = 6
+                            TestId = 6,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 83,
-                            TestId = 6
+                            TestId = 6,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 84,
-                            TestId = 6
+                            TestId = 6,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 85,
-                            TestId = 6
+                            TestId = 6,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 86,
-                            TestId = 7
+                            TestId = 7,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 87,
-                            TestId = 7
+                            TestId = 7,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 88,
-                            TestId = 7
+                            TestId = 7,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 89,
-                            TestId = 7
+                            TestId = 7,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 90,
-                            TestId = 7
+                            TestId = 7,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 91,
-                            TestId = 7
+                            TestId = 7,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 92,
-                            TestId = 7
+                            TestId = 7,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 93,
-                            TestId = 7
+                            TestId = 7,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 94,
-                            TestId = 7
+                            TestId = 7,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 95,
-                            TestId = 7
+                            TestId = 7,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 96,
-                            TestId = 7
+                            TestId = 7,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 97,
-                            TestId = 7
+                            TestId = 7,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 98,
-                            TestId = 7
+                            TestId = 7,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 99,
-                            TestId = 7
+                            TestId = 7,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 100,
-                            TestId = 7
+                            TestId = 7,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 101,
-                            TestId = 8
+                            TestId = 8,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 102,
-                            TestId = 8
+                            TestId = 8,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 103,
-                            TestId = 8
+                            TestId = 8,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 104,
-                            TestId = 8
+                            TestId = 8,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 105,
-                            TestId = 8
+                            TestId = 8,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 106,
-                            TestId = 8
+                            TestId = 8,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 107,
-                            TestId = 8
+                            TestId = 8,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 108,
-                            TestId = 8
+                            TestId = 8,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 109,
-                            TestId = 8
+                            TestId = 8,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 110,
-                            TestId = 8
+                            TestId = 8,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 111,
-                            TestId = 8
+                            TestId = 8,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 112,
-                            TestId = 8
+                            TestId = 8,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 113,
-                            TestId = 8
+                            TestId = 8,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 114,
-                            TestId = 8
+                            TestId = 8,
+                            IsActive = true
                         },
                         new
                         {
                             QuestionId = 115,
-                            TestId = 8
+                            TestId = 8,
+                            IsActive = true
                         });
                 });
 
@@ -6627,6 +7388,9 @@ namespace ElementFactory.Data.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasComment("Test category");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(150)
@@ -6644,48 +7408,56 @@ namespace ElementFactory.Data.Migrations
                         {
                             Id = 1,
                             Category = "7 клас",
+                            IsActive = true,
                             Title = "Метали. Натрий и неговите съединения"
                         },
                         new
                         {
                             Id = 2,
                             Category = "7 клас",
+                            IsActive = true,
                             Title = "Неметали. Хлор и неговите съединения"
                         },
                         new
                         {
                             Id = 3,
                             Category = "8-9 клас",
+                            IsActive = true,
                             Title = "Алкалоземни метали. Калций и неговите съединения"
                         },
                         new
                         {
                             Id = 4,
                             Category = "8-9 клас",
+                            IsActive = true,
                             Title = "Органична химия. Въглерод и неговите органични съединения"
                         },
                         new
                         {
                             Id = 5,
                             Category = "10 клас",
+                            IsActive = true,
                             Title = "Характеристики на химичните процеси"
                         },
                         new
                         {
                             Id = 6,
                             Category = "10 клас",
+                            IsActive = true,
                             Title = "Разтвори и химични процеси във водни разтвори"
                         },
                         new
                         {
                             Id = 7,
                             Category = "11-12 клас",
+                            IsActive = true,
                             Title = "Строеж и свойства на веществата"
                         },
                         new
                         {
                             Id = 8,
                             Category = "11-12 клас",
+                            IsActive = true,
                             Title = "11-12 клас. Обобщителен тест"
                         });
                 });

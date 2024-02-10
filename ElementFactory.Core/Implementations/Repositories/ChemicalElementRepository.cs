@@ -49,7 +49,7 @@
                .FirstOrDefaultAsync(q => q.Id == id)
                ?? throw new ArgumentException("Invalid id!");
 
-            context.ChemicalElements.Remove(entity);
+            entity.IsActive = false;
             await context.SaveChangesAsync();
         }
 
@@ -63,27 +63,45 @@
                 context
                 .ChemicalElements
                 .Include(ce => ce.ChemicalType)
+                .Where(ce => ce.IsActive)
                 .ToListAsync();
         }
 
+        /// <summary>
+        /// Asynchronous method for getting an entity by id
+        /// </summary>
+        /// <param name="id">Id of the entity</param>
+        /// <returns>The collected entity</returns>
         public async Task<ChemicalElement> GetByIdAsync(int id)
         {
             var entity = await context.ChemicalElements
-                .FirstOrDefaultAsync(q => q.Id == id);
+                .Where(ce => ce.IsActive)
+                .FirstOrDefaultAsync(ce => ce.Id == id);
 
             return entity ?? throw new ArgumentException("Invalid id!");
         }
 
+        /// <summary>
+        /// Asynchronous method for saving changes in repository
+        /// </summary>
+        /// <returns>(void)</returns>
         public async Task SaveChangesAsync()
         {
             await context.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// Asynchronous method used to update an entity with a given one
+        /// </summary>
+        /// <param name="id">Id of the entity to update</param>
+        /// <param name="entity">Entity which is used for update</param>
+        /// <returns>(void)</returns>
         public async Task UpdateAsync(int id, ChemicalElement entity)
         {
             var entityToUpdate = await context
                 .ChemicalElements
-                .FirstOrDefaultAsync(q => q.Id == id)
+                .Where(ce => ce.IsActive)
+                .FirstOrDefaultAsync(ce => ce.Id == id)
                 ?? throw new ArgumentException("Invalid id!");
 
             entityToUpdate.State = entity.State;

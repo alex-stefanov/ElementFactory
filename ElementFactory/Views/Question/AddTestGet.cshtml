@@ -18,24 +18,11 @@
         <option>11-12 клас</option>
     </select>
 
+    <label asp-for="QuestionsCounter">Брой въпроси</label>
+    <input asp-for="QuestionsCounter" placeholder="Запиши брой въпроси тук..."/>
+    <span asp-validation-for="QuestionsCounter" class="aspValidationTitle"></span>
+
     <input type="submit" value="Създай" />
 </form>
-
-<script>
-    // var form = document.getElementById('addTestForm');
-    // form.addEventListener('submit', function (event) {    
-    //     event.preventDefault();
-    //     if (typeof Page_ClientValidate == "function") {
-    //         Page_ClientValidate();
-    //         console.log('babushka');
-    //     }
-    //     var element = document.getElementById('validationTitle');
-    //     element.display = 'block';
-    //     setTimeout(function () {
-    //         element.style.display = 'none';
-    //         console.log(1);
-    //     }, 2000);
-    // })
-</script>
 
 <link href="~/css/site.css" />

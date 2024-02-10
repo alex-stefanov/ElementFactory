@@ -16,5 +16,11 @@
 
         public const int ChemicalElementPeriodMinValue = 1;
         public const int ChemicalElementPeriodMaxValue = 18;
+        
+        public const int ChemicalElementElLayersMinValue = 1;
+        public const int ChemicalElementElLayersMaxValue = 7;
+
+        public const int ChemicalElementStateMinLength = 1;
+        public const int ChemicalElementStateMaxLength = 20;
     }
 }
