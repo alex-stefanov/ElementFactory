@@ -38,5 +38,10 @@
         [ForeignKey(nameof(Question))]
         [Comment("Answer question Id")]
         public int QuestionId { get; set; }
+
+        /// <summary>
+        /// Flag for activity => used in DB
+        /// </summary>
+        public bool IsActive { get; set; } = true;
     }
 }

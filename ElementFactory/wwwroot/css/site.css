@@ -8,13 +8,14 @@
 /* ------------------------------ */
 /* Main page / table css */
 
-body 
-{
+body {
     height: 100vh;
-    background-color: #090947;
-    background-image: linear-gradient(315deg, #090947 0%, #5a585a 74%);
+    background: rgb(108,168,255);
+    background: linear-gradient(to bottom right, rgba(108,168,255,1) 0%, rgba(148,152,255,1) 9%, rgba(147,136,255,1) 28%, rgba(94,167,255,1) 50%, rgba(135,137,255,1) 68%, rgba(155,154,255,1) 90%, rgba(117,164,255,1) 100%);
     overflow: hidden;
+    position: relative;
 }
+
 
 form {
     display: flex;
@@ -408,16 +409,18 @@ form td p
 /* ------------------------------ */
 
 /* ------------------------------ */
-/* Choose a class page css */
+/* Choose a class / Choose an add type page css */
 
-.classesViewContainer .classesContainer {
+.classesViewContainer .classesContainer,
+.addTypeContainer .addTypeButtons {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
 }
 
-.classesViewContainer .classesContainer a {
+.classesViewContainer .classesContainer a,
+.addTypeContainer .addTypeButtons input{
     padding: 17px 40px;
     border-radius: 50px;
     cursor: pointer;
@@ -433,7 +436,8 @@ form td p
     color: black;
 }
 
-.classesViewContainer .classesContainer a:hover {
+.classesViewContainer .classesContainer a:hover,
+.addTypeContainer .addTypeButtons input:hover{
     letter-spacing: 3px;
     background-color: hsl(261deg 80% 48%);
     color: hsl(0, 0%, 100%);
@@ -441,11 +445,16 @@ form td p
     transform: translateY(4px);
 }
 
-.classesViewContainer .classesTitle {
+.classesViewContainer .classesTitle,
+.addTypeContainer .addTypeTitle {
     color: white;
     text-align: center;
     margin: 0;
     font-size: 62px;
+}
+
+.addTypeContainer .addTypeTitle{
+    font-size: 46px;
 }
 
 /* ------------------------------ */
@@ -504,6 +513,7 @@ form td p
 .welcomePageContainer footer{
     font-size: 28px;
     margin-top: 30px;
+
 }
 
 /* ------------------------------ */
@@ -627,7 +637,7 @@ form td p
     padding: 12px;
 }
 
-.questionAnswersContainer div{
+.questionAnswersContainer div {
     font-size: 22px;
     margin: 2px;
 }
@@ -637,7 +647,8 @@ form td p
     padding: 14px;
     border-radius: 14px;
     border: none;
-    width: 15%;
+    margin-left: auto;
+    margin-right: 12px;
 }
 
 .handInTestContainer {
@@ -657,6 +668,10 @@ form td p
     margin-top: 36px;
 }
 
+#handInTestForm{
+    width: 100%;
+}
+
 /* ------------------------------ */
 
 /* ------------------------------ */
@@ -674,6 +689,9 @@ form td p
     display: flex;
     justify-content: center;
     width: 100%;
+    position: relative;
+    bottom: 0;
+    color: white;
 }
 
 /* ------------------------------ */
@@ -741,3 +759,222 @@ form td p
 }
 
 /* ------------------------------ */
+
+/* ------------------------------ */
+/* Write questions page css */
+
+.addQuestionsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:white;
+    padding: 20px; 
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+}
+
+/* ------------------------------ */
+
+/* ------------------------------ */
+/* Select questions for test page css */
+
+.selectQuestionsContainer{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    border: 2px solid black;
+    margin: 12px;
+    padding: 32px;
+    padding-bottom: 12px;
+    border-radius: 14px;
+}
+
+.selectQuestionsContainerDiv {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: white;
+    padding: 20px;
+}
+
+.selectQuestionsContainer .selectQuestionsDescription{
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.selectQuestionsContainer .selectQuestionsAnswer{
+    font-size: 20px;
+    margin: 6px 0;
+}
+
+.selectQuestionsContainer input{
+    transform: scale(2);
+}
+
+.selectQuestionsContainerDiv .selectQuestionsAnchor {
+    background-color: hsl(261deg 40% 18%);
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 16px;
+    font-size: 24px;
+    margin-top: 16px;
+    position: fixed;
+    bottom: 12px;
+    right: 0px;
+}
+
+.selectQuestionsContainerDiv .selectQuestionsAnchor:hover {
+    background-color: hsl(261deg 40% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+    transform: translateY(-4px);
+    transition: 300ms;
+    letter-spacing: 1px;
+}
+
+/* ------------------------------ */
+
+/* ------------------------------ */
+/* Select questions for test page error divs css */
+
+.errorDivBig,
+.errorDivSmall {
+    background-color: red;
+    font-size: 32px;
+    color: white;
+    border-radius: 12px;
+    padding: 32px;
+    position: fixed;
+    top: 8px;
+}
+
+/* ------------------------------ */
+
+/* ------------------------------ */
+/* Display added questions page css */
+
+.addedQuestionsContainer{
+    background-color: white;
+}
+
+/* ------------------------------ */
+
+/* ------------------------------ */
+/* Display test result page css */
+
+.testResultContainer {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+    width: 50%;
+    border-radius: 20px;
+    font-size: 48px;
+}
+
+.testResultContainer h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.testResultBtn {
+    text-decoration: none;
+    background-color: hsl(261deg 80% 48%);
+    padding: 8px;
+    border-radius: 16px;
+    color: white;
+    margin-left: 8px;
+    font-size: 24px;
+}
+
+.testResultBtn:hover{
+    color: white;
+    transform: translateY(-30px);
+    transition: 300ms;
+}
+
+/* ------------------------------ */
+
+
+/* ------------------------------ */
+/* See all users page css */
+
+.allUsersContainer{
+    margin:3%;
+    display:flex;
+    flex-wrap:wrap;
+    
+}
+
+.currentUserContainer{
+    box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    flex-wrap:nowrap;
+    border:3px solid black;
+    padding:2vh 2vw;
+    background-color:white;
+    width:25vw;
+    height:50vh;
+    box-shadow:darkgray 7px 7px; 
+    margin:0vh 5vw 3vh 0vw;
+    justify-content:space-evenly;      
+}
+.currentUserContainer:hover {
+    background-color: lightgray;
+    box-shadow: gray 7px 7px;
+    transition: 0.2s;
+}
+
+.currentUserContainer .infoUserContainer{
+    display: flex;
+}
+
+.currentUserContainer .infoUserContainer *{
+   width:50%;
+   margin:2vh 0vw 2vh 0vw;
+}
+
+.currentUserContainer .infoUserContainer *:nth-child(1) {
+   text-align: center;
+}
+
+.currentUserContainer .infoUserContainer *:nth-child(1) {
+    margin-right: 2vw;
+}
+.currentUserContainer .infoUserContainer .userButton {
+    border: 2px solid darkgreen;
+    text-decoration: none;
+    background-color: lightgreen;
+    border-radius: 60px;
+    text-align: center;
+    color: black;
+    font-size:14px;
+    cursor: pointer;
+}
+.currentUserContainer .infoUserContainer #removeButtonUser {
+    padding-top:3.1%;
+}
+
+#noUsers{
+    background-color:antiquewhite;
+    text-align:center;
+    height:10vh;
+    padding-top:2.6vh;
+    font-weight:700;
+    font-size:25px;
+    width:50%;
+    border-radius:16px;
+    margin:0 auto;
+}
+
+/* ------------------------------ */
+

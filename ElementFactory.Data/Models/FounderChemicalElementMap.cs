@@ -31,6 +31,11 @@
         public string ChemicalElementSymbol { get; set; } = null!;
 
         /// <summary>
+        /// Flag for activity => used in DB
+        /// </summary>
+        public bool IsActive { get; set; } = true;
+
+        /// <summary>
         /// Property for the Chemical Element
         /// </summary>
         public virtual ChemicalElement ChemicalElement { get; set; }

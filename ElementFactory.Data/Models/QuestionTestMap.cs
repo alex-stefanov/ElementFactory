@@ -29,5 +29,10 @@
         /// </summary>
         public virtual Test Test { get; set; }
         = null!;
+
+        /// <summary>
+        /// Flag for activity => used in DB
+        /// </summary>
+        public bool IsActive { get; set; } = true;
     }
 }

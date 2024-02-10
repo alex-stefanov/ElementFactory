@@ -47,7 +47,7 @@
                 .FirstOrDefaultAsync(q => q.Id == id)
                 ?? throw new ArgumentException("Invalid id!");
 
-            context.Questions.Remove(entity);
+            entity.IsActive = false;
             await context.SaveChangesAsync();
         }
 
@@ -59,22 +59,42 @@
         {
             return await context
                 .Questions
+                .Where(q => q.IsActive)
+                .Include(q => q.Answers)
+                .Include(q => q.QuestionsTests)
+                .ThenInclude(q => q.Test)
                 .ToListAsync();
         }
 
+        /// <summary>
+        /// Asynchronous method for getting an entity by id
+        /// </summary>
+        /// <param name="id">Id of the entity</param>
+        /// <returns>The collected entity</returns>
         public async Task<Question> GetByIdAsync(int id)
         {
             var entity = await context.Questions
+                .Where(q => q.IsActive)
                 .FirstOrDefaultAsync(q => q.Id == id);
 
             return entity ?? throw new ArgumentException("Invalid id!");
         }
 
+        /// <summary>
+        /// Asynchronous method for saving changes in repository
+        /// </summary>
+        /// <returns>(void)</returns>
         public async Task SaveChangesAsync()
         {
             await context.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// Asynchronous method used to update an entity with a given one
+        /// </summary>
+        /// <param name="id">Id of the entity to update</param>
+        /// <param name="entity">Entity which is used for update</param>
+        /// <returns>(void)</returns>
         public async Task UpdateAsync(int id, Question entity)
         {
             var entityToUpdate = await context
@@ -89,6 +109,26 @@
             entityToUpdate.Id = entity.Id;
 
             await context.SaveChangesAsync();
+        }
+
+        /// <summary>
+        /// Asynchronous method for getting questions by a given grade
+        /// </summary>
+        /// <param name="grade">The grade of the questions</param>
+        /// <returns>Collection with entities</returns>
+        public async Task<IEnumerable<Question>> GetByGradeAsync
+            (string grade)
+        {
+            return await this.context
+                .Questions
+                .Include(q => q.Answers)
+                .Include(q => q.QuestionsTests)
+                .ThenInclude(q => q.Test)
+                .Where(q => q.QuestionsTests
+                .All(qt => qt.Test.Category.Contains(grade)
+                ))
+                .ToListAsync();
+
         }
     }
 }

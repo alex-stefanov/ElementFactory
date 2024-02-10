@@ -3,6 +3,7 @@
     using Microsoft.EntityFrameworkCore;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using static ElementFactory.Data.Constants.ChemicalElementConstants;
 
     /// <summary>
     /// Chemical Element Class
@@ -15,7 +16,8 @@
         /// </summary>
         [Key]
         [Required]
-        [MinLength(1), MaxLength(2)]
+        [MinLength(ChemicalElementSymbolMinLength), 
+            MaxLength(ChemicalElementSymbolMaxLength)]
         [Comment("Chemical element symbol => PK")]
         public string Symbol { get; set; } = null!;
 
@@ -28,7 +30,8 @@
         /// <summary>
         /// Element Name
         /// </summary>
-        [MinLength(3), MaxLength(30)]
+        [MinLength(ChemicalElementNameMinLength), 
+            MaxLength(ChemicalElementNameMaxLength)]
         [Comment("Chemical element name *bulgarian*")]
         public string Name { get; set; } = null!;
 
@@ -36,7 +39,8 @@
         /// Element English Name
         /// </summary>
         [Required]
-        [MinLength(3), MaxLength(30)]
+        [MinLength(ChemicalElementNameMinLength), 
+            MaxLength(ChemicalElementNameMaxLength)]
         [Comment("Chemical element name *english*")]
         public string EnglishName { get; set; } = null!;
 
@@ -44,7 +48,8 @@
         /// Element Atomic Number
         /// </summary>
         [Required]
-        [Range(1, 300)]
+        [Range(ChemicalElementAtomicNumberMinValue,
+            ChemicalElementAtomicNumberMaxValue)]
         [Comment("Chemical element atomic number")]
         public int AtomicNumber { get; set; }
 
@@ -59,7 +64,7 @@
         /// Group from the Periodic Table for the Element
         /// </summary>
         [Required]
-        [Range(1,18)]
+        [Range(ChemicalElementGroupMinValue, ChemicalElementGroupMaxValue)]
         [Comment("Chemical element group")]
         public int Group { get; set; }
 
@@ -67,7 +72,7 @@
         /// Period from the Periodic Table for the Element
         /// </summary>
         [Required]
-        [Range(1,7)]
+        [Range(ChemicalElementPeriodMinValue, ChemicalElementPeriodMaxValue)]
         [Comment("Chemical element period")]
         public int Period { get; set; }
 
@@ -75,7 +80,7 @@
         /// Number of Element Electronic Layers
         /// </summary>
         [Required]
-        [Range(1,7)]
+        [Range(ChemicalElementElLayersMinValue, ChemicalElementElLayersMaxValue)]
         [Comment("Chemical element electronic layers")]
         public int ElectronicLayers { get; set; }
 
@@ -126,7 +131,8 @@
         /// Physical state for the Element
         /// </summary>
         [Required]
-        [MinLength(1), MaxLength(20)]
+        [MinLength(ChemicalElementStateMinLength), 
+            MaxLength(ChemicalElementStateMaxLength)]
         [Comment("Chemical element state *english*")]
         public string State { get; set; } = null!;
 
@@ -134,7 +140,8 @@
         /// Physical state for the Element in Bulgarian
         /// </summary>
         [Required]
-        [MinLength(1), MaxLength(20)]
+        [MinLength(ChemicalElementStateMinLength), 
+            MaxLength(ChemicalElementStateMaxLength)]
         [Comment("Chemical element state *bulgarian*")]
         public string BulgarianState { get; set; } = null!;
 
@@ -158,6 +165,11 @@
         [Required]
         [Comment("Chemical element density")]
         public decimal Density { get; set; }
+
+        /// <summary>
+        /// Flag for activity => used in DB
+        /// </summary>
+        public bool IsActive { get; set; } = true;
 
         /// <summary>
         /// Property for the Chemical Type

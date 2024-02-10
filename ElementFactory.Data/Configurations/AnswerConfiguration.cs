@@ -4,8 +4,15 @@
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
+    /// <summary>
+    /// Class for configuration of Answer Entity
+    /// </summary>
     public class AnswerConfiguration : IEntityTypeConfiguration<Answer>
     {
+        /// <summary>
+        /// Method for configuring the entities
+        /// </summary>
+        /// <param name="builder">The builder used for configuring</param>
         public void Configure(EntityTypeBuilder<Answer> builder)
         {
             builder
@@ -23,6 +30,10 @@
 
             builder.HasData(answers);
         }
+
+        /// <summary>
+        /// Methods for the separate answers
+        /// </summary>
 
         private List<Answer> Answers1()
         {

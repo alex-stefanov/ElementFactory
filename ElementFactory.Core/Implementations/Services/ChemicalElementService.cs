@@ -52,16 +52,31 @@
             return await repository.GetAllAsync();
         }
 
+        /// <summary>
+        /// Asynchronous method for getting an entity by id
+        /// </summary>
+        /// <param name="id">Id of the entity</param>
+        /// <returns>The collected entity</returns>
         public async Task<ChemicalElement> GetByIdAsync(int id)
         {
             return await repository.GetByIdAsync(id);
         }
 
+        /// <summary>
+        /// Asynchronous method for saving changes in repository
+        /// </summary>
+        /// <returns>(void)</returns>
         public async Task SaveChangesAsync()
         {
             await repository.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// Asynchronous method used to update an entity with a given one
+        /// </summary>
+        /// <param name="id">Id of the entity to update</param>
+        /// <param name="entity">Entity which is used for update</param>
+        /// <returns>(void)</returns>
         public async Task UpdateAsync(int id, ChemicalElement entity)
         {
             await repository.UpdateAsync(id, entity);
