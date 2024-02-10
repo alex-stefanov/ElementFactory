@@ -16,8 +16,8 @@ namespace ElementFactory.Controllers
         {
             this.roleManager = _roleManager;
             this.userManager = _userManager;
-
         }
+
         private async Task<List<User>> GetAllUsers()
         {
             var students = await userManager.GetUsersInRoleAsync("Student");
@@ -25,6 +25,7 @@ namespace ElementFactory.Controllers
             var teachers = await userManager.GetUsersInRoleAsync("Teacher");
 
             var users = new List<User>();
+
             users.AddRange(students.Where(x => x.IsActive));
             users.AddRange(teachers.Where(x => x.IsActive));
 
@@ -47,13 +48,15 @@ namespace ElementFactory.Controllers
 
         public async Task<IActionResult> SeedAdmins()
         {
-            if (await roleManager.RoleExistsAsync("Admin") && userManager.GetUsersInRoleAsync("Admin").Result.Count == 0)
+            if (await roleManager.RoleExistsAsync("Admin") &&
+                userManager.GetUsersInRoleAsync("Admin").Result.Count == 0)
             {
                 var admin1 = new User()
                 {
                     Email = "rlgalexbgto@gamil.com",
                     UserName = "Alex"
                 };
+
                 var result1 = await userManager.CreateAsync(admin1, "Alex_Admin2007");
 
                 var admin2 = new User()
@@ -61,6 +64,7 @@ namespace ElementFactory.Controllers
                     Email = "stilancanev@gamil.com",
                     UserName = "Stelko"
                 };
+
                 var result2 = await userManager.CreateAsync(admin2, "Stelko_Admin2007");
 
                 if (result1.Succeeded && result2.Succeeded)
@@ -90,7 +94,7 @@ namespace ElementFactory.Controllers
 
         public async Task<IActionResult> RemoveTeacherRole(string id)
         {
-            var user=await userManager.FindByIdAsync(id);
+            var user = await userManager.FindByIdAsync(id);
             await userManager.RemoveFromRoleAsync(user,"Teacher");
             await userManager.UpdateAsync(user);
             await userManager.AddToRoleAsync(user, "Student");
