@@ -683,14 +683,11 @@ form td p
 }
 
 .appFooter {
-    bottom: 0;
     padding: 12px;
     font-size: 20px;
     display: flex;
     justify-content: center;
     width: 100%;
-    position: relative;
-    bottom: 0;
     color: white;
 }
 

@@ -6,6 +6,8 @@
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using ElementFactory.Data.Models;
+    using ElementFactory.Models.User;
+
 
     [Authorize]
     public class UserController : Controller
@@ -111,6 +113,16 @@
             await signInManager.SignOutAsync();
 
             return RedirectToAction("Login", "User");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateProfile(UserViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            return RedirectToAction("LoadProfile", model);
         }
 
         public async Task<IActionResult> LoadProfile(string id)

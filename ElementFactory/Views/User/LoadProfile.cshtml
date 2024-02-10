@@ -7,6 +7,62 @@
 @{
     ViewBag.Title = "Моят профил";
 }
-<div class="checkoutProfile">
+<form asp-action="" asp-controller="">
+    <div class="checkoutProfileContainer">
+        <div>
+            Здравей @Model.UserName!
+        </div>
+        <div class="leftProfileContainer">
+            <div>
+                Имейл
+            </div>
+            <div>
+                Роли
+            </div>
+            @if (Model.PhoneNumber == null)
+            {
+                <div>
+                    Добави телефон
+                </div>
+            }
+            else
+            {
+                <div>
+                    Телефон
+                </div>
+            }
+            <div>
+                Смени паролата
+            </div>
+        </div>
 
-</div>
+        <div class="rightProfileContainer">
+            <div>
+                @Model.Email
+            </div>
+            <div>
+                @string.Join(", ",userManager.GetRolesAsync(Model))
+            </div>
+            @if (Model.PhoneNumber == null)
+            {
+                <div>
+                </div>
+            }
+            else
+            {
+                <div>
+                </div>
+            }
+            <div>
+            </div>
+            @if (userManager.IsInRoleAsync(Model, "Student").Result)
+            {
+                <a>
+                    Заявка за учител
+                </a>
+            }
+        </div>
+
+    </div>
+
+</form>
