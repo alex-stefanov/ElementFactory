@@ -1,12 +1,12 @@
-﻿using ElementFactory.Models.Login;
-using ElementFactory.Models.Register;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata;
-using ElementFactory.Data.Models;
-namespace ElementFactory.Controllers
+﻿namespace ElementFactory.Controllers
 {
+    using ElementFactory.Models.Login;
+    using ElementFactory.Models.Register;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
+    using ElementFactory.Data.Models;
+
     [Authorize]
     public class UserController : Controller
     {
@@ -44,6 +44,7 @@ namespace ElementFactory.Controllers
             {
                 return View(model);
             }
+
             var user = new User()
             {
                 Email = model.Email,
@@ -51,6 +52,7 @@ namespace ElementFactory.Controllers
                 IsActive = true,
                 IsRequested=false
             };
+
             var result = await userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
@@ -58,10 +60,12 @@ namespace ElementFactory.Controllers
                 await userManager.AddToRoleAsync(user, "Student");
                 return RedirectToAction("Login", "User");
             }
+
             foreach (var item in result.Errors)
             {
                 ModelState.AddModelError("", item.Description);
             }
+
             return View(model);
         }
 

@@ -1,14 +1,11 @@
-using ElementFactory.Core.Contracts;
-using ElementFactory.Core.Extensions;
-using ElementFactory.Core.Implementations.Repositories;
-using ElementFactory.Core.Implementations.Services;
-using ElementFactory.Data;
-using ElementFactory.Data.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-
 namespace ElementFactory
 {
+    using ElementFactory.Core.Extensions;
+    using ElementFactory.Data;
+    using ElementFactory.Data.Models;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.EntityFrameworkCore;
+
     /// <summary>
     /// Start Point Of The App
     /// </summary>
