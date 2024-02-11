@@ -114,8 +114,9 @@
                 return RedirectToAction("Error");
             }
 
-            TestViewModel model = new TestViewModel()
+            EditTestViewModel model = new EditTestViewModel()
             {
+                Id = entity.Id,
                 Category = entity.Category,
                 Title = entity.Title,
             };
@@ -124,11 +125,11 @@
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditTestPost(TestViewModel model)
+        public async Task<IActionResult> EditTestPost(EditTestViewModel model)
         {
             if (!ModelState.IsValid)
             {
-                return View();
+                return View("EditTestGet", model);
             }
 
             var entity = new Test()
@@ -140,9 +141,9 @@
 
             await this.testService.UpdateAsync(model.Id, entity);
 
-            return RedirectToAction("TestByGrade", new
+            return RedirectToAction("TestsByGrade", new
             {
-                grade = model.Category
+                grade = model.Category.Split(" ")[0]
             });
         }
 
@@ -287,12 +288,24 @@
 
             else
             {
+                List<Question> questions = new List<Question>();
+                foreach (string json in model.QuestionsJSON)
+                {
+                    questions.Add(JsonSerializer.Deserialize<Question>(json,
+                    new JsonSerializerOptions()
+                    {
+                        ReferenceHandler = ReferenceHandler.IgnoreCycles
+                    }));
+                }
+
+                model.Questions = questions;
+
                 return View(model);
             }
 
         }
 
-        public async Task<IActionResult> AddQuestionsOnOwnWithViewModelLast(
+        public async Task<IActionResult> AddQuestionsOnOwnLast(
            AddQuestionsCurrentQuestionModel model)
         {
             if (ModelState.IsValid)
@@ -380,26 +393,31 @@
 
             else
             {
-                return View(model);
+                List<Question> questions = new List<Question>();
+                foreach (string json in model.QuestionsJSON)
+                {
+                    questions.Add(JsonSerializer.Deserialize<Question>(json,
+                    new JsonSerializerOptions()
+                    {
+                        ReferenceHandler = ReferenceHandler.IgnoreCycles
+                    }));
+                }
+
+                model.Questions = questions;
+
+                return View("AddQuestionsOnOwn", model);
             }
         }
 
         public async Task<IActionResult> AddQuestionsChoose(
-            string title,
-            string category,
-            int questions)
+            AddQuestionsChooseModel model)
         {
-            var dataModel = new AddQuestionsChooseModel()
-            {
-                TestCategory = category,
-                TestTitle = title,
-                QuestionsCount = questions
-            };
+            var questionsEntities = await this.questionService
+                .GetByGradeAsync(model.TestCategory);
 
-            var questionsEntities = await this.questionService.GetByGradeAsync(category);
-            dataModel.Questions = questionsEntities.ToList();
+            model.Questions = questionsEntities.ToList();
 
-            return View(dataModel);
+            return View(model);
         }
 
         [ResponseCache(

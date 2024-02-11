@@ -7,7 +7,7 @@
 @{
     ViewBag.Title = "Въведи въпроси";
     ViewBag.FormAction = Model.Questions.Count < Model.NumberOfQ - 1 ?
-    "AddQuestionsOnOwn" : "AddQuestionsOnOwnWithViewModelLast";
+    "AddQuestionsOnOwn" : "AddQuestionsOnOwnLast";
 }
 
 <div class="addQuestionsOnOwnContainer">
@@ -77,8 +77,6 @@
 
                     answerCounter++;
                 }
-                <button class="addQuestionsOnOwnEditBtn">Редактирай въпрос</button>
-                <button class="addQuestionsOnOwnDeleteBtn">Премахни въпрос</button>
             </div>
             questionCounter++;
         }

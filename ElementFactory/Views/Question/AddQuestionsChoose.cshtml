@@ -18,18 +18,24 @@
                    onclick='{
                                 if(document.getElementById("@id").checked)
                                 {
-                       console.log(1);
                                     @{Model.Questions.Add(question);}
+                                    console.log(@question);
+                                }
+                                else
+                                {
+                                    @{Model.Questions.Remove(question);}
                                 }
                             }' />
+
             <span class="selectQuestionsDescription">@question.Description</span>
+            
             @foreach (Answer answer in question.Answers)
             {
                 <span class="selectQuestionsAnswer">@answer.Value</span>
             }
         </div>
     }
-    <button class="selectQuestionsAnchor" onclick="CheckQuestions(@Model.QuestionsCount)">Добави въпроси</button>
+    <button class="selectQuestionsAnchor" onclick="CheckQuestions(@Model.NumberOfQ)">Добави въпроси</button>
   
     <div class="validationErrorDivSmall">
         Невалиден брой въпроси! 

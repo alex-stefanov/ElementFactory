@@ -4,13 +4,15 @@
 
     public class AddQuestionsChooseModel
     {
-        public string TestTitle { get; set; } = null!;
+        public string Description { get; set; } = string.Empty;
 
-        public string TestCategory { get; set; } = null!;
+        public int NumberOfQ { get; set; }
 
-        public int QuestionsCount { get; set; }
+        public string TestTitle { get; set; } = string.Empty;
 
-        public List<Question> Questions { get; set; } =
+        public string TestCategory { get; set; } = string.Empty;
+
+        public IList<Question> Questions { get; set; } =
             new List<Question>();
     }
 }

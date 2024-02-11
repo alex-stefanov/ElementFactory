@@ -124,9 +124,8 @@
                 .Include(q => q.Answers)
                 .Include(q => q.QuestionsTests)
                 .ThenInclude(q => q.Test)
-                .Where(q => q.QuestionsTests
-                .All(qt => qt.Test.Category.Contains(grade)
-                ))
+                .Where(q => q.IsActive && q.QuestionsTests
+                .All(qt => qt.Test.Category.Contains(grade)))
                 .ToListAsync();
 
         }
