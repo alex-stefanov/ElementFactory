@@ -2,9 +2,11 @@
 {
     using ElementFactory.Models.Answer;
     using ElementFactory.Data.Models;
+    using System.ComponentModel.DataAnnotations;
 
     public class AddQuestionsCurrentQuestionModel
     {
+        [Required(ErrorMessage = "Полето за описание е задължително!")]
         public string Description { get; set; } = string.Empty;
 
         public AnswerViewModel Answer1 { get; set; } = null!;
