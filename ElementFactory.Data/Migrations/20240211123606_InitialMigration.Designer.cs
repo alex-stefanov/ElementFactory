@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ElementFactory.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240210204419_InitialPopulateMigration")]
-    partial class InitialPopulateMigration
+    [Migration("20240211123606_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -970,7 +970,7 @@ namespace ElementFactory.Data.Migrations
                             Id = 131,
                             IsActive = true,
                             QuestionId = 34,
-                            Value = "Бистра варна вода(БВВ)"
+                            Value = "Бистра варна вода (БВВ)"
                         },
                         new
                         {
@@ -1474,21 +1474,21 @@ namespace ElementFactory.Data.Migrations
                             Id = 203,
                             IsActive = true,
                             QuestionId = 55,
-                            Value = "Температура"
+                            Value = "Висока температура"
                         },
                         new
                         {
                             Id = 204,
                             IsActive = true,
                             QuestionId = 55,
-                            Value = "Налягане"
+                            Value = "Високо налягане"
                         },
                         new
                         {
                             Id = 205,
                             IsActive = true,
                             QuestionId = 55,
-                            Value = "Катализатор(Ni)"
+                            Value = "Катализатор (Ni)"
                         },
                         new
                         {
@@ -5875,7 +5875,7 @@ namespace ElementFactory.Data.Migrations
                             Id = 3,
                             Description = "Натрият взаимодейства със: ",
                             IsActive = true,
-                            RightAnswer = "Неметали, киселини и вода"
+                            RightAnswer = "Неметали, киселини, вода"
                         },
                         new
                         {
@@ -5887,7 +5887,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 5,
-                            Description = "Защо простото вещество Na се държи под петрол",
+                            Description = "Защо простото вещество Na се държи под петрол?",
                             IsActive = true,
                             RightAnswer = "За да не взаимодейства с кислорода от въздуха"
                         },
@@ -6146,14 +6146,14 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 42,
-                            Description = "Ca се съхранява по петрол или инертен газ",
+                            Description = "Ca се съхранява по петрол или инертен газ.",
                             IsActive = true,
                             RightAnswer = "Вярно"
                         },
                         new
                         {
                             Id = 43,
-                            Description = "Какъв е цвета на пламъка при гореното на Ca?",
+                            Description = "Какъв е цветът на пламъка при горенето на Ca?",
                             IsActive = true,
                             RightAnswer = "Керемиденочервен"
                         },
@@ -6167,7 +6167,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 45,
-                            Description = "Разтоворът на Ca(OH)2 е с pH:",
+                            Description = "Разтворът на Ca(OH)2 е с pH:",
                             IsActive = true,
                             RightAnswer = "11"
                         },
@@ -6209,7 +6209,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 51,
-                            Description = "Всяко ОС при взаимодействие с кислород(горене) се разлага до въглероден диоксид и вода",
+                            Description = "Всяко ОС при взаимодействие с кислород (горене) се разлага до въглероден диоксид и вода",
                             IsActive = true,
                             RightAnswer = "Вярно"
                         },
@@ -6237,7 +6237,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 55,
-                            Description = "\"Хидрирането\" на алкени протична при наличието на:",
+                            Description = "\"Хидрирането\" на алкени протича при наличието на:",
                             IsActive = true,
                             RightAnswer = "И трите изброени"
                         },
@@ -6251,7 +6251,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 57,
-                            Description = "При присъединяването на полярни H-съдържащи молекули към молекули на несиметрияни алкени се спазва правилото на:",
+                            Description = "При присъединяването на полярни H-съдържащи молекули към молекули на несиметрични алкени се спазва правилото на:",
                             IsActive = true,
                             RightAnswer = "Марковников"
                         },
@@ -6265,7 +6265,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 59,
-                            Description = "2,4,6-тринитро толуен(TNT) се получава при взаимодействието на:",
+                            Description = "2,4,6-тринитротолуен (TNT) се получава при взаимодействието на:",
                             IsActive = true,
                             RightAnswer = "Толуен и HNO3 в излишък"
                         },
@@ -6279,7 +6279,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 61,
-                            Description = "Топлината на образуване на 1 мол хлороводор е 92.5kJ.Какъв е топлинният ефект на реакцията: H + Cl => HCl (Уравнението не е изравнено!) в kJ?",
+                            Description = "Топлината на образуване на 1 мол хлороводород е 92.5kJ. Какъв е топлинният ефект на реакцията: H + Cl => HCl (Уравнението не е изравнено!) в kJ?",
                             IsActive = true,
                             RightAnswer = "185"
                         },
@@ -6293,49 +6293,49 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 63,
-                            Description = "Изчислете топлината на образуване на NH3 според уравнението в kJ закръглено до първия знак след запетаята.N2 + 3H2 => 2NH3 + 92,4 kJ",
+                            Description = "Изчислете топлината на образуване на NH3 според уравнението в kJ закръглено до първия знак след запетаята: N2 + 3H2 => 2NH3 + 92,4 kJ",
                             IsActive = true,
                             RightAnswer = "46.2"
                         },
                         new
                         {
                             Id = 64,
-                            Description = "Ако температурата на образуване на водните пари е 242.5kJ, то тогава колко е температурата им на изгаряне сметната в kJ и закръглена до първия знак след запетаята?",
+                            Description = "Ако температурата на образуване на водните пари е 242.5kJ, то тогава колко е температурата им на изгаряне, изчислена в kJ и закръглена до първия знак след запетаята?",
                             IsActive = true,
                             RightAnswer = "-242.5"
                         },
                         new
                         {
                             Id = 65,
-                            Description = "Ако температурата на образуване на графита е 394.8kJ/mol, а на диаманта е 396.6kJ/mol, то тогава колко ще бъде топлинният ефект при реакция от вида \"графит=>диамант\" измерена в kJ и закръглена до първия знак след запетаята?.",
+                            Description = "Ако температурата на образуване на графита е 394.8kJ/mol, а на диаманта е 396.6kJ/mol, то тогава колко ще бъде топлинният ефект при реакция от вида \"графит => диамант\", измерена в kJ и закръглена до първия знак след запетаята?",
                             IsActive = true,
                             RightAnswer = "-1.8"
                         },
                         new
                         {
                             Id = 66,
-                            Description = "Дадено:\r\nC6H6 + 15/2 O2 => 6CO2 + 3H20 + Q\r\nQ=3271kJ\r\nQобразуване(CO2)=394kJ/mol\r\nQобразуване(H20)=285.8kJ/mol\r\nТърсим:\r\nQобразуване(C6H6)=?kJ закръглено до първия знак след запетаята",
+                            Description = "Дадено:\r\n                C6H6 + 15/2 O2 => 6CO2 + 3H20 + Q\r\n                Q=3271kJ\r\n                Qобразуване(CO2) = 394kJ/mol\r\n                Qобразуване(H20) = 285.8kJ/mol\r\n                Търсим:\r\n                Qобразуване(C6H6) = ?kJ, закръглено до първия знак след запетаята",
                             IsActive = true,
                             RightAnswer = "-49.6"
                         },
                         new
                         {
                             Id = 67,
-                            Description = "Ако в хомогенният едностадиен процес 2CO + O2 => 2CO2, концентрацията на CO се увеличи 3 пъти при t=const то с колко пъти новата скорост ще е по-голяма от старата",
+                            Description = "Ако в хомогенния едностадиен процес 2CO + O2 => 2CO2, концентрацията на CO се увеличи 3 пъти при t = const то с колко пъти новата скорост ще е по-голяма от старата?",
                             IsActive = true,
                             RightAnswer = "9"
                         },
                         new
                         {
                             Id = 68,
-                            Description = "2SO2(г) + O2(г) => 2SO3(г) + Q. Ако увеличим налягането на системата три пъти, то с колко новата средна скорост на уравнението ще бъде по-голямата от тази на началното уравнение",
+                            Description = "2SO2(г) + O2(г) => 2SO3(г) + Q. Ако увеличим налягането на системата три пъти, то с колко новата средна скорост на уравнението ще бъде по-голяма от тази на началното уравнение?",
                             IsActive = true,
                             RightAnswer = "27"
                         },
                         new
                         {
                             Id = 69,
-                            Description = "S(тв) + H2(г) => H2S(г) + 4.8kJ. Изчислете количеството обменена топлина в kJ, закръглено до първия знак след запетаята, ако 8грама сяра реагират по даденото химияно уравнение(счита се,че M(S)=32.0)",
+                            Description = "S(тв) + H2(г) => H2S(г) + 4.8kJ. Изчислете количеството обменена топлина в kJ, закръглено до първия знак след запетаята, ако 8 грама сяра реагират по даденото химично уравнение (счита се,че M(S)=32.0)",
                             IsActive = true,
                             RightAnswer = "1.2"
                         },
