@@ -1242,7 +1242,7 @@
             {
                 Id = 131,
                 QuestionId = 34,
-                Value = "Бистра варна вода(БВВ)"
+                Value = "Бистра варна вода (БВВ)"
             };
 
             var answer4_4 = new Answer()
@@ -1901,21 +1901,21 @@
             {
                 Id = 203,
                 QuestionId = 55,
-                Value = "Температура"
+                Value = "Висока температура"
             };
 
             var answer10_2 = new Answer()
             {
                 Id = 204,
                 QuestionId = 55,
-                Value = "Налягане"
+                Value = "Високо налягане"
             };
 
             var answer10_3 = new Answer()
             {
                 Id = 205,
                 QuestionId = 55,
-                Value = "Катализатор(Ni)"
+                Value = "Катализатор (Ni)"
             };
 
             var answer10_4 = new Answer()
