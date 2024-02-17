@@ -1,15 +1,15 @@
 ﻿namespace ElementFactory.Controllers
 {
-    using ElementFactory.Models.Question;
-    using Microsoft.AspNetCore.Mvc;
-    using ElementFactory.Models.Test;
-    using ElementFactory.Models.Answer;
+    using ElementFactory.Core.Contracts.Service;
     using ElementFactory.Data.Models;
     using ElementFactory.Models;
+    using ElementFactory.Models.Answer;
+    using ElementFactory.Models.Others;
+    using ElementFactory.Models.Question;
+    using ElementFactory.Models.Test;
+    using Microsoft.AspNetCore.Mvc;
     using System.Diagnostics;
     using System.Text.Json;
-    using ElementFactory.Models.Others;
-    using ElementFactory.Core.Contracts.Service;
     using System.Text.Json.Serialization;
 
     public class QuestionController : Controller
@@ -355,12 +355,12 @@
                 };
 
                 var answers = new List<Answer>()
-            {
-                answer1,
-                answer2,
-                answer3,
-                answer4
-            };
+                {
+                    answer1,
+                    answer2,
+                    answer3,
+                    answer4
+                };
 
                 question.Answers = answers;
 
@@ -418,6 +418,55 @@
             model.Questions = questionsEntities.ToList();
 
             return View(model);
+        }
+
+        public async Task<IActionResult> AddQuestionsChooseToDb(
+            AddQuestionsChooseModel model)
+        {
+            var questions = new List<Question>();
+            var JSON = model.QuestionsForDBJSON.Where(json => json != null);
+            var test = new Test()
+            {
+                Title = model.TestTitle,
+                Category = model.TestCategory
+            };
+
+            foreach (string question in JSON)
+            {
+                var entity = JsonSerializer.Deserialize<Question>(question,
+                    new JsonSerializerOptions()
+                    {
+                        ReferenceHandler = ReferenceHandler.IgnoreCycles
+                    });
+
+                var map = new QuestionTestMap()
+                {
+                    TestId = test.Id,
+                    Test = test,
+                    Question = entity,
+                    QuestionId = entity.Id
+                };
+
+                entity.QuestionsTests.Add(map);
+
+                questions.Add(entity);
+            }
+
+            await this.testService.AddAsync(test);
+
+            foreach (Question questionEntity in questions)
+            {
+                await this.questionTestMapService.AddAsync(new QuestionTestMap()
+                {
+                    QuestionId = questionEntity.Id,
+                    TestId = test.Id
+                });
+            }
+
+            return RedirectToAction("TestsByGrade", new
+            {
+                grade = model.TestCategory.Split(" ")[0]
+            });
         }
 
         [ResponseCache(

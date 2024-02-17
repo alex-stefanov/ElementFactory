@@ -1,44 +1,62 @@
 ﻿@using ElementFactory.Models.Others;
 @using ElementFactory.Data.Models;
+@using System.Text.Json;
+@using System.Text.Json.Serialization;
 
 @model AddQuestionsChooseModel;
 
 @{
     ViewBag.Title = "Селектирайте въпроси";
 }
-<div class="selectQuestionsContainerDiv">
-    @foreach (Question question in Model.Questions)
-    {
-        <div class="selectQuestionsContainer">
-            @{
-                string id = $"checkbox{question.Id}";
- }
-            <input type="checkbox" 
-                   id="@id"
-                   onclick='{
-                                if(document.getElementById("@id").checked)
-                                {
-                                    @{Model.Questions.Add(question);}
-                                    console.log(@question);
-                                }
-                                else
-                                {
-                                    @{Model.Questions.Remove(question);}
-                                }
-                            }' />
 
-            <span class="selectQuestionsDescription">@question.Description</span>
-            
-            @foreach (Answer answer in question.Answers)
-            {
-                <span class="selectQuestionsAnswer">@answer.Value</span>
-            }
-        </div>
-    }
+<div class="selectQuestionsContainerDiv">
+    <form class="selectQuestionsForm" method="post" asp-action="AddQuestionsChooseToDb" asp-controller="Question">
+
+        @foreach (Question question in Model.Questions)
+        {
+            <div class="selectQuestionsContainer">
+                @{
+                    string checkboxId = $"checkbox{question.Id}";
+                    string inputId = $"hidden{question.Id}";
+                    string inputValue = JsonSerializer.Serialize(question,
+                    new JsonSerializerOptions()
+                    {
+                        ReferenceHandler = ReferenceHandler.IgnoreCycles
+                    });
+                }
+
+                <input type="hidden" id="@inputId" value="" asp-for="QuestionsForDBJSON" class="hiddenInput" />
+
+                <input type="checkbox"
+                       id="@checkboxId"
+                       onclick='{
+                             if (document.getElementById("@checkboxId").checked)
+                             {  
+                                 document.getElementById("@inputId").value = JSON.stringify(@Html.Raw(inputValue));
+                             }
+                             else
+                             {  
+                                 document.getElementById("@inputId").value = "";
+                             }
+                       }'/>
+
+                <span class="selectQuestionsDescription">@question.Description</span>
+
+                @foreach (Answer answer in question.Answers)
+                {
+                    <span class="selectQuestionsAnswer">@answer.Value</span>
+                }
+            </div>
+        }
+
+        <input type="hidden" asp-for="TestTitle" value="@Model.TestTitle" />
+        <input type="hidden" asp-for="TestCategory" value="@Model.TestCategory" />
+    </form>
+
     <button class="selectQuestionsAnchor" onclick="CheckQuestions(@Model.NumberOfQ)">Добави въпроси</button>
-  
+
     <div class="validationErrorDivSmall">
-        Невалиден брой въпроси! 
+        Невалиден брой въпроси!
         Изберете по-малък брой!
     </div>
 
@@ -50,14 +68,21 @@
 
 <script>
     document.getElementsByTagName('body')[0].classList.add('scrollClass');
+
     var errorDivSmall = document
         .getElementsByClassName('validationErrorDivSmall')[0];
+
     errorDivSmall.style.display = 'none';
 
-    var errorDivBig = document.getElementsByClassName('validationErrorDivBig')[0];
+    var errorDivBig = document
+        .getElementsByClassName('validationErrorDivBig')[0];
+
     errorDivBig.style.display = 'none';
 
-    function CheckQuestions(neededLength, title, ) {
+    var form = document
+        .getElementsByClassName('selectQuestionsForm')[0];
+
+    function CheckQuestions(neededLength) {
         var selected = Array.from(document.querySelectorAll('input[type=checkbox]:checked'));
 
         if (selected.length > neededLength) {
@@ -78,7 +103,7 @@
             }, 2000);
         }
         else {
-
+            form.submit();
         }
     }
 </script>
