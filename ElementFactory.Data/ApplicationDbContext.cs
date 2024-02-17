@@ -18,7 +18,7 @@
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-
+            
         }
 
         /// <summary>
@@ -65,6 +65,11 @@
         /// Database Application Context Answer DbSet
         /// </summary>
         public DbSet<Answer> Answers { get; set; } = null!;
+
+        /// <summary>
+        /// Database Application Context Flashcard DbSet
+        /// </summary>
+        public DbSet<Flashcard> Flashcards { get; set; } = null!;
 
         /// <summary>
         /// Database Application Context OnModelCreating method
