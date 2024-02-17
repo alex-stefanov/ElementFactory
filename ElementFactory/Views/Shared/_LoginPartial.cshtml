@@ -1,13 +1,15 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using ElementFactory.Data.Models;
-@inject SignInManager<User> SignInManager
-@inject UserManager<User> UserManager
-
+@inject SignInManager<User> signInManager
+@inject UserManager<User> userManager
+@{
+    var user = await userManager.GetUserAsync(this.User);
+}
 <ul class="navbar-nav">
-@if (SignInManager.IsSignedIn(User))
+@if (signInManager.IsSignedIn(User) && user!=null)
 {
     <li class="nav-item">
-       <a class="nav-link text-dark" asp-controller="User" asp-action="LoadProfile">Моят профил</a>
+       <a class="nav-link text-dark" asp-controller="User" asp-action="LoadProfile" asp-route-id="@user.Id">Моят профил</a>
     </li>
     <li class="nav-item">
             <form class="form-inline" asp-controller="User" asp-action="Logout" asp-area="Identity" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">

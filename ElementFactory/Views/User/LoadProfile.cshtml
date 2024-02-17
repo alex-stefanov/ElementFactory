@@ -7,62 +7,63 @@
 @{
     ViewBag.Title = "Моят профил";
 }
-<form asp-action="" asp-controller="">
+<form asp-action="UpdateProfile" asp-controller="User">
     <div class="checkoutProfileContainer">
         <div>
             Здравей @Model.UserName!
         </div>
-        <div class="leftProfileContainer">
-            <div>
+
+        <div>
+            <label>
                 Имейл
-            </div>
-            <div>
+            </label>
+            @Model.Email
+        </div>
+
+        <div>
+            <label>
                 Роли
-            </div>
-            @if (Model.PhoneNumber == null)
-            {
-                <div>
-                    Добави телефон
-                </div>
-            }
-            else
-            {
-                <div>
-                    Телефон
-                </div>
-            }
-            <div>
-                Смени паролата
-            </div>
+            </label>
+            @string.Join(", ",userManager.GetRolesAsync(Model));
         </div>
 
-        <div class="rightProfileContainer">
+        @if (Model.PhoneNumber == null)
+        {
             <div>
-                @Model.Email
+                <label asp-for="PhoneNumber">
+                    Телефонен номер
+                </label>
+                <input asp-for="PhoneNumber" />
+                <span asp-validation-for="PhoneNumber"></span>
             </div>
+        }
+        else
+        {
             <div>
-                @string.Join(", ",userManager.GetRolesAsync(Model))
+                <label>
+                    Телефонен номер
+                </label>
+                @Model.PhoneNumber
             </div>
-            @if (Model.PhoneNumber == null)
-            {
-                <div>
-                </div>
-            }
-            else
-            {
-                <div>
-                </div>
-            }
-            <div>
-            </div>
-            @if (userManager.IsInRoleAsync(Model, "Student").Result)
-            {
-                <a>
-                    Заявка за учител
-                </a>
-            }
-        </div>
-
+        }
+        @if (userManager.IsInRoleAsync(Model, "Student").Result && Model.IsRequested == false)
+        {
+            <button onclick="@{
+                    Model.IsRequested=true;
+                                }">
+                Заявка за учител
+            </button>
+        }
+        else if (userManager.IsInRoleAsync(Model, "Student").Result && Model.IsRequested != false)
+        {
+            <button onclick="@{
+                    Model.IsRequested=false;
+                                }">
+                Отмени заявка за учител
+            </button>
+        }
+        <input type="submit"/>
+        
     </div>
 
 </form>
