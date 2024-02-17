@@ -5771,6 +5771,42 @@ namespace ElementFactory.Data.Migrations
                         });
                 });
 
+            modelBuilder.Entity("ElementFactory.Data.Models.Flashcard", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasComment("Flashcard identificator");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)")
+                        .HasComment("Flashcard Content");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasComment("Flashcard Title");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Flashcards");
+
+                    b.HasComment("Flashcard Class");
+                });
+
             modelBuilder.Entity("ElementFactory.Data.Models.Founder", b =>
                 {
                     b.Property<int>("Id")
@@ -7692,6 +7728,13 @@ namespace ElementFactory.Data.Migrations
                     b.Navigation("ChemicalType");
                 });
 
+            modelBuilder.Entity("ElementFactory.Data.Models.Flashcard", b =>
+                {
+                    b.HasOne("ElementFactory.Data.Models.User", null)
+                        .WithMany("Flashcards")
+                        .HasForeignKey("UserId");
+                });
+
             modelBuilder.Entity("ElementFactory.Data.Models.FounderChemicalElementMap", b =>
                 {
                     b.HasOne("ElementFactory.Data.Models.ChemicalElement", "ChemicalElement")
@@ -7806,6 +7849,11 @@ namespace ElementFactory.Data.Migrations
             modelBuilder.Entity("ElementFactory.Data.Models.Test", b =>
                 {
                     b.Navigation("QuestionsTests");
+                });
+
+            modelBuilder.Entity("ElementFactory.Data.Models.User", b =>
+                {
+                    b.Navigation("Flashcards");
                 });
 #pragma warning restore 612, 618
         }

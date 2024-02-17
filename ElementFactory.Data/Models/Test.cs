@@ -41,6 +41,6 @@
         /// Collection from QuestionsTests
         /// </summary>
         public ICollection<QuestionTestMap> QuestionsTests { get; set; }
-        = null!;
+        = new List<QuestionTestMap>();
     }
 }

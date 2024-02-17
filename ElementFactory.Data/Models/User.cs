@@ -16,5 +16,7 @@ namespace ElementFactory.Data.Models
         public bool IsRequested { get; set; }
 
         public bool IsActive {  get; set; }
+
+        public List<Flashcard> Flashcards { get; set; } =new List<Flashcard>();
     }
 }
