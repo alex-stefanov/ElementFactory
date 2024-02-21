@@ -57,7 +57,7 @@
     var errorDivBig = document.getElementsByClassName('validationErrorDivBig')[0];
     errorDivBig.style.display = 'none';
 
-    function CheckQuestions(neededLength, title, ) {
+    function CheckQuestions(neededLength) {
         var selected = Array.from(document.querySelectorAll('input[type=checkbox]:checked'));
 
         if (selected.length > neededLength) {

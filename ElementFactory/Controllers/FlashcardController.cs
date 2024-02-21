@@ -26,15 +26,17 @@ namespace ElementFactory.Controllers
             var user = await userManager.FindByNameAsync(User.Identity.Name);
             if (user != null)
             {
-                var flashcards = user.
-                 Flashcards
-                 .Where(x=>x.IsActive)
+                var flashcards = await data
+                 .Flashcards
+                 .Where(x=>x.IsActive && x.UserId==user.Id)
                  .Select(fc => new FlashcardViewModel()
                     {
+                      Id= fc.Id,
                       Title = fc.Title,
                       Content = fc.Content,
+                      IsActive = fc.IsActive
                     })
-                 .ToList();
+                 .ToListAsync();
 
                 return View(flashcards);
             }
@@ -47,14 +49,17 @@ namespace ElementFactory.Controllers
         [HttpPost]
         public async Task<IActionResult> AddFlashcard(FlashcardViewModel model)
         {
-            var flashcard = new Flashcard()
-            {
-                Title = model.Title,
-                Content = model.Content
-            };
             var user = await userManager.FindByNameAsync(User.Identity.Name);
             if(user != null)
-            {      
+            {
+                var flashcard = new Flashcard()
+                {
+                    Title = model.Title,
+                    Content = model.Content,
+                    UserId=user.Id
+
+                };
+
                 await data.Flashcards.AddAsync(flashcard);
                 user.Flashcards.Add(flashcard);
                 await data.SaveChangesAsync();
@@ -72,8 +77,10 @@ namespace ElementFactory.Controllers
             {
                 return View(new FlashcardViewModel()
                 {
+                    Id = id,
                     Title = flashcard.Title,
                     Content = flashcard.Content,
+                    IsActive = flashcard.IsActive
                 });
             }
             return View("Error"); 
@@ -103,6 +110,7 @@ namespace ElementFactory.Controllers
             if (flashcard != null)
             {
                 flashcard.IsActive = false;
+                await data.SaveChangesAsync();
                 return RedirectToAction("ViewAllFlashcards");
             }
             return View("Error");
