@@ -113,6 +113,7 @@ namespace ElementFactory.Controllers
                     await userManager.AddToRoleAsync(teacher2, "Teacher");
                 }
             }
+
             return RedirectToAction("Welcome", "Home");
 
         }

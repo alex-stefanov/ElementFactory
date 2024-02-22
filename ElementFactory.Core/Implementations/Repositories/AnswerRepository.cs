@@ -104,7 +104,6 @@
                 .FirstOrDefaultAsync(q => q.Id == id)
                 ?? throw new ArgumentException("Invalid id!");
 
-            entityToUpdate.QuestionId = entity.QuestionId;
             entityToUpdate.Value = entity.Value;
 
             await context.SaveChangesAsync();
