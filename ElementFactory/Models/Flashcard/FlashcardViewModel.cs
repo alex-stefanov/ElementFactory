@@ -6,16 +6,16 @@ namespace ElementFactory.Models.Flashcard
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Полето за въпрос е задължително")]
         [StringLength(TitleMaxLength,MinimumLength = TitleMinLength,
-             ErrorMessage = "Невалиден въпрос! Дължината на въпроса трябва да е между {1} и {2} символа.")]
-
+             ErrorMessage = "Невалиден въпрос! Дължината на въпроса трябва да е между {2} и {1} символа.")]
         public string Title { get; set; } = null!;
 
-        [Required]
+        [Required(ErrorMessage ="Полето за отговор е задължително")]
         [StringLength(ContentMaxLength, MinimumLength = ContentMinLength,
-             ErrorMessage = "Невалиден отговор! Дължината на въпроса трябва да е между {1} и {2} символа.")]
-
+             ErrorMessage = "Невалиден отговор! Дължината на отговора трябва да е между {2} и {1} символа.")]
         public string Content { get; set; } = null!;
+
+        public bool IsActive { get; set; }
     }
 }
