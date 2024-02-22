@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ElementFactory.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240220171431_AddedNewColumnUserIdFlashcard")]
-    partial class AddedNewColumnUserIdFlashcard
+    [Migration("20240222152907_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

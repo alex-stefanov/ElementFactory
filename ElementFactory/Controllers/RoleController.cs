@@ -141,6 +141,7 @@ namespace ElementFactory.Controllers
                     await userManager.AddToRoleAsync(proPlayer2, "Student");
                 }
             }
+
             return RedirectToAction("Welcome", "Home");
 
         }

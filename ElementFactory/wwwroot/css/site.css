@@ -89,6 +89,7 @@ form td p
     font-size: 0.42em;
     width: 100%;
 }
+
 .block-form {
     display: block;
     justify-content: center;
@@ -956,10 +957,10 @@ form td p
 .currentUserContainer .infoUserContainer .userButton {
     border: 2px solid darkgreen;
     text-decoration: none;
-    background-color: lightgreen;
+    background-color: #6A1B9A;
     border-radius: 60px;
     text-align: center;
-    color: black;
+    color: white;
     font-size:14px;
     cursor: pointer;
 }
@@ -1059,45 +1060,43 @@ form td p
 }
 
 .viewAllFlashcardsContainer {
-    margin-top: 70px;
+    margin-top: 40px;
     font-family: 'Raleway', sans-serif;
     font-size: 62.5%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
-    .viewAllFlashcardsContainer h1,
-    .viewAllFlashcardsContainer p,
-    .viewAllFlashcardsContainer a,
-    .viewAllFlashcardsContainer span {
-        color: #fff;
-        letter-spacing: 0.02em;
-        font-weight: 600;
-    }
+.viewAllFlashcardsContainer h1,
+.viewAllFlashcardsContainer p,
+.viewAllFlashcardsContainer a,
+.viewAllFlashcardsContainer span {
+    color: #fff;
+    letter-spacing: 0.02em;
+    font-weight: 600;
+}
 
-    .viewAllFlashcardsContainer h1,
-    .viewAllFlashcardsContainer p,
-    .viewAllFlashcardsContainer a {
-    }
+.viewAllFlashcardsContainer h1,
+.viewAllFlashcardsContainer p,
+.viewAllFlashcardsContainer a {
+}
 
-    .viewAllFlashcardsContainer h1 {
-        font-size: 2.5em;
-    }
+.viewAllFlashcardsContainer h1 {
+    font-size: 2.5em;
+}
 
-    .viewAllFlashcardsContainer p {
-        font-size: 1.5em;
-        line-height: 25px;
-    }
+.viewAllFlashcardsContainer p {
+    font-size: 1.5em;
+    line-height: 25px;
+}
 
-    .viewAllFlashcardsContainer button {
-        border: 0;
-        border-radius: 26px;
-        padding-bottom: 2px;
-    }
+.viewAllFlashcardsContainer button {
+    border: 0;
+    border-radius: 26px;
+    padding-bottom: 2px;
+}
 
-    .viewAllFlashcardsContainer span {
-        font-size: 1.6em;
-    }
+.viewAllFlashcardsContainer span {
+    font-size: 1.6em;
+}
 
 
 .viewAllFlashcardsContainer,
@@ -1116,23 +1115,17 @@ form td p
 .front,
 .back {
     position: absolute;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 18px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .viewAllFlashcardsContainer {
-    -moz-transform: perspective(1200px);
-    -webkit-perspective: 1200px;
     perspective: 1200px;
 }
 
 .flip_box {
     transition: all 0.5s ease-out;
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
 }
 
@@ -1165,9 +1158,6 @@ form td p
 
 .back {
     background-color: #D21849;
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    -ms-transform: rotateY(180deg);
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
@@ -1201,9 +1191,9 @@ form td p
     transition: all 0.3s;
 }
 
-    .b_button:hover {
-        background-color: #E30143;
-    }
+.b_button:hover {
+    background-color: #E30143;
+}
 
 .flipped {
     transform: rotateY(-180deg);
@@ -1343,7 +1333,6 @@ form td p
 
 /* ------------------------------ */
 /* ViewAllFlashcards page css */
-
 
 #addFlashcardForm,
 #editFlashcardForm {

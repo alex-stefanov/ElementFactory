@@ -7,11 +7,13 @@
     using ElementFactory.Models.Others;
     using ElementFactory.Models.Question;
     using ElementFactory.Models.Test;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System.Diagnostics;
     using System.Text.Json;
     using System.Text.Json.Serialization;
 
+    [Authorize]
     public class QuestionController : Controller
     {
         private readonly ILogger<HomeController> logger;
@@ -81,12 +83,14 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = "Teacher, Admin")]
         public IActionResult AddTestGet()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Teacher, Admin")]
         public IActionResult AddTestPost(TestViewModel model)
         {
             if (ModelState.IsValid)
@@ -105,6 +109,7 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = "Teacher, Admin")]
         public async Task<IActionResult> EditTestGet(int id)
         {
             var entity = await this.testService.GetByIdAsync(id);
@@ -114,17 +119,35 @@
                 return RedirectToAction("Error");
             }
 
+            var questions = entity.QuestionsTests
+                .Select(qt => new QuestionViewModel()
+                {
+                    Id = qt.QuestionId,
+                    Answers = qt.Question.Answers.Select(a => new AnswerViewModel()
+                    {
+                        Id = a.Id,
+                        Value = a.Value
+                    }).ToList(),
+                    CorrectAnswer = new AnswerViewModel()
+                    {
+                        Value = qt.Question.RightAnswer
+                    },
+                    Description = qt.Question.Description
+                }).ToList();
+
             EditTestViewModel model = new EditTestViewModel()
             {
                 Id = entity.Id,
                 Category = entity.Category,
                 Title = entity.Title,
+                Questions = questions
             };
 
             return View(model);
         }
 
         [HttpPost]
+        [Authorize(Roles = "Teacher, Admin")]
         public async Task<IActionResult> EditTestPost(EditTestViewModel model)
         {
             if (!ModelState.IsValid)
@@ -139,6 +162,32 @@
                 Title = model.Title
             };
 
+            foreach (QuestionViewModel questionViewModel in model.Questions)
+            {
+                var question = new Question()
+                {
+                    Id = questionViewModel.Id,
+                    RightAnswer = questionViewModel.CorrectAnswer.Value,
+                    Description = questionViewModel.Description,
+                    Answers = new List<Answer>()
+                };
+
+                foreach (AnswerViewModel answerViewModel in questionViewModel.Answers)
+                {
+                    var answer = new Answer()
+                    {
+                        Id = answerViewModel.Id,
+                        Value = answerViewModel.Value
+                    };
+
+                    question.Answers.Add(answer);
+
+                    await this.answerService.UpdateAsync(answerViewModel.Id, answer);
+                }
+
+                await this.questionService.UpdateAsync(questionViewModel.Id, question);
+            }
+
             await this.testService.UpdateAsync(model.Id, entity);
 
             return RedirectToAction("TestsByGrade", new
@@ -148,6 +197,7 @@
         }
 
         [HttpPost]
+        [Authorize(Roles = "Teacher, Admin")]
         public async Task<IActionResult> DeleteTest(int id)
         {
             var test = await this.testService.GetByIdAsync(id);
@@ -230,6 +280,7 @@
             return View("ShowTestResult", model);
         }
 
+        [Authorize(Roles = "Teacher, Admin")]
         public IActionResult ChooseAddType(
             AddQuestionsCurrentQuestionModel entity)
         {
@@ -237,6 +288,7 @@
         }
 
         [HttpPost]
+        [Authorize(Roles = "Teacher, Admin")]
         public IActionResult AddQuestionsOnOwn(
             AddQuestionsCurrentQuestionModel model)
         {
@@ -316,6 +368,7 @@
 
         }
 
+        [Authorize(Roles = "Teacher, Admin")]
         public async Task<IActionResult> AddQuestionsOnOwnLast(
            AddQuestionsCurrentQuestionModel model)
         {
@@ -420,6 +473,7 @@
             }
         }
 
+        [Authorize(Roles = "Teacher, Admin")]
         public async Task<IActionResult> AddQuestionsChoose(
             AddQuestionsChooseModel model)
         {
@@ -431,6 +485,7 @@
             return View(model);
         }
 
+        [Authorize(Roles = "Teacher, Admin")]
         public async Task<IActionResult> AddQuestionsChooseToDb(
             AddQuestionsChooseModel model)
         {

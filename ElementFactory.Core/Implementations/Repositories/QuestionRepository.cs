@@ -106,7 +106,6 @@
             entityToUpdate.RightAnswer = entity.RightAnswer;
             entityToUpdate.Answers = entity.Answers;
             entityToUpdate.Description = entity.Description;
-            entityToUpdate.Id = entity.Id;
 
             await context.SaveChangesAsync();
         }
