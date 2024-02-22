@@ -102,7 +102,6 @@
                 .FirstOrDefaultAsync(q => q.Id == id)
                 ?? throw new ArgumentException("Invalid id!");
 
-            entityToUpdate.Id = entity.Id;
             entityToUpdate.QuestionsTests = entity.QuestionsTests;
             entityToUpdate.Title = entity.Title;
             entityToUpdate.Category = entity.Category;

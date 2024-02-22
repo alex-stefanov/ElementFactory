@@ -1,5 +1,7 @@
 ﻿namespace ElementFactory.Models.Test
 {
+    using ElementFactory.Models.Answer;
+    using ElementFactory.Models.Question;
     using System.ComponentModel.DataAnnotations;
 
     public class EditTestViewModel
@@ -14,6 +16,7 @@
 
         public string Category { get; set; } = null!;
 
-
+        public List<QuestionViewModel> Questions { get; set; } =
+            new List<QuestionViewModel>();
     }
 }
