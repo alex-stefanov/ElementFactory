@@ -17,6 +17,8 @@ namespace ElementFactory.Data.Models
 
         public bool IsActive {  get; set; }
 
+        public int Points { get; set; }
+
         public List<Flashcard> Flashcards { get; set; } =new List<Flashcard>();
     }
 }

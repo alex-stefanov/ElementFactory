@@ -21,6 +21,7 @@
                 </button>              
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between ">
                     <ul class="navbar-nav flex-grow-1 text-white">
+                      
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
@@ -31,6 +32,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" asp-area="" asp-controller="Flashcard" asp-action="ViewAllFlashcards">Флашкарти</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Leaderboard" asp-action="LoadLeaderboard">Класация</a>
                             </li>
                             @if (User.IsInRole("Admin"))
                             {
