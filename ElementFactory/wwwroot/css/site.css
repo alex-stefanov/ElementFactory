@@ -18,11 +18,12 @@ body {
 
 
 form {
-    display: flex;
+    display:flex;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
 }
+
 
 form,
 table,
@@ -87,6 +88,11 @@ form td p
     text-align: center;
     font-size: 0.42em;
     width: 100%;
+}
+.block-form {
+    display: block;
+    justify-content: center;
+    align-content: center;
 }
 
 /* ------------------------------ */
@@ -1051,6 +1057,7 @@ form td p
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+
 .viewAllFlashcardsContainer {
     margin-top: 70px;
     font-family: 'Raleway', sans-serif;
@@ -1059,38 +1066,38 @@ form td p
     -moz-osx-font-smoothing: grayscale;
 }
 
-.viewAllFlashcardsContainer h1,
-.viewAllFlashcardsContainer p,
-.viewAllFlashcardsContainer a,
-.viewAllFlashcardsContainer span {
-    color: #fff;
-    letter-spacing: 0.02em;
-    font-weight: 600;
-}
+    .viewAllFlashcardsContainer h1,
+    .viewAllFlashcardsContainer p,
+    .viewAllFlashcardsContainer a,
+    .viewAllFlashcardsContainer span {
+        color: #fff;
+        letter-spacing: 0.02em;
+        font-weight: 600;
+    }
 
-.viewAllFlashcardsContainer h1,
-.viewAllFlashcardsContainer p,
-.viewAllFlashcardsContainer a {
-}
+    .viewAllFlashcardsContainer h1,
+    .viewAllFlashcardsContainer p,
+    .viewAllFlashcardsContainer a {
+    }
 
-.viewAllFlashcardsContainer h1 {
-    font-size: 2.5em;
-}
+    .viewAllFlashcardsContainer h1 {
+        font-size: 2.5em;
+    }
 
-.viewAllFlashcardsContainer p {
-    font-size: 1.5em;
-    line-height: 25px;
-}
+    .viewAllFlashcardsContainer p {
+        font-size: 1.5em;
+        line-height: 25px;
+    }
 
-.viewAllFlashcardsContainer button {
-    border: 0;
-    border-radius: 26px;
-    padding-bottom: 2px;
-}
+    .viewAllFlashcardsContainer button {
+        border: 0;
+        border-radius: 26px;
+        padding-bottom: 2px;
+    }
 
-.viewAllFlashcardsContainer span {
-    font-size: 1.6em;
-}
+    .viewAllFlashcardsContainer span {
+        font-size: 1.6em;
+    }
 
 
 .viewAllFlashcardsContainer,
@@ -1152,8 +1159,8 @@ form td p
     width: 100%;
     word-wrap: break-word;
     text-align: center;
-    margin:auto 0;
-    padding-top:0;
+    margin: auto 0;
+    padding-top: 0;
 }
 
 .back {
@@ -1166,10 +1173,12 @@ form td p
     flex-direction: column;
     align-items: center;
 }
-.front:hover{
+
+.front:hover {
     cursor: pointer;
     background-color: hsl(213, 94%, 21%);
 }
+
 .back:hover {
     cursor: pointer;
     background-color: #ed2e61;
@@ -1192,9 +1201,9 @@ form td p
     transition: all 0.3s;
 }
 
-.b_button:hover {
-    background-color: #E30143;
-}
+    .b_button:hover {
+        background-color: #E30143;
+    }
 
 .flipped {
     transform: rotateY(-180deg);
@@ -1218,10 +1227,10 @@ form td p
     transition: all 0.2s linear;
 }
 
-.s_round{
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.s_round {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .b_round {
@@ -1255,30 +1264,37 @@ form td p
     background-size: cover;
     background-position: 30% 0;
 }
+
 .r_wrap:hover {
     cursor: grab;
 }
+
 .s_arrow_rotate {
     transform: rotate(-180deg);
 }
-.f_headline{
-    margin:auto 0;
+
+.f_headline {
+    margin: auto 0;
 }
-.delete-button-flashcards{
-    margin-bottom:2.1vh;
+
+.delete-button-flashcards {
+    margin-bottom: 2.1vh;
 }
+
 .whiteFlashcardTitle {
-    display: flex;  
-    justify-content:center;
-    margin-bottom:5vh;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5vh;
 }
-.flex-white-child-title-flashcard{
+
+.flex-white-child-title-flashcard {
     display: inline-block;
     background-color: white;
-    padding:2vh 2vw;
-    border-radius:12.1px;
-    width:50vw;
+    padding: 2vh 2vw;
+    border-radius: 12.1px;
+    width: 50vw;
 }
+
 .flex-white-child-title-flashcard,
 .container-add-flashcard-viewAll {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
@@ -1289,6 +1305,7 @@ form td p
     justify-content: center;
     align-items: center;
 }
+
 .btn-allFlashcards-add {
     font-size: 1.5rem;
     padding: 1rem 3rem;
@@ -1301,28 +1318,26 @@ form td p
     text-transform: uppercase;
     background-color: #1d1160;
 }
-.btn-allFlashcards-add:hover{
-    box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
-    background-color: #1d1160;
-}
-.btn-allFlashcards-add:before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(146, 148, 248, 0.4),
-    transparent
-    );
-     transition: all 650ms;
-}
-.btn-allFlashcards-add:hover:before {
-    left: 100%;
-}
+
+    .btn-allFlashcards-add:hover {
+        box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
+        background-color: #1d1160;
+    }
+
+    .btn-allFlashcards-add:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient( 120deg, transparent, rgba(146, 148, 248, 0.4), transparent );
+        transition: all 650ms;
+    }
+
+    .btn-allFlashcards-add:hover:before {
+        left: 100%;
+    }
 
 /* ------------------------------ */
 
@@ -1343,60 +1358,62 @@ form td p
     margin-left: auto;
     margin-right: auto;
     font-size: 24px;
-    align-items:center;
+    align-items: center;
 }
 
-#addFlashcardForm label
-#editFlashcardForm label{
-    margin: 10px 0;
-    text-align: center;
-    font-size: 28px;
-}
+    #addFlashcardForm label
+    #editFlashcardForm label {
+        margin: 10px 0;
+        text-align: center;
+        font-size: 28px;
+    }
 
-#addFlashcardForm input,
-#editFlashcardForm input{
-    border: 0.5px solid black;
-    border-radius: 4px;
-    display: block;
-    text-align: center;
-    margin-bottom: 6px;
-    width: 80%;
-}
+    #addFlashcardForm input,
+    #editFlashcardForm input {
+        border: 0.5px solid black;
+        border-radius: 4px;
+        display: block;
+        text-align: center;
+        margin-bottom: 6px;
+        width: 80%;
+    }
 
-#addFlashcardForm input[type="submit"],
-#editFlashcardForm input[type="submit"] {
-    margin-top: 8px;
-}
+        #addFlashcardForm input[type="submit"],
+        #editFlashcardForm input[type="submit"] {
+            margin-top: 8px;
+        }
 
-#addFlashcardForm input[type="submit"]:hover
-#editFlashcardForm input[type="submit"]:hover {
-    background-color: hsl(261deg 80% 48%);
-    color: hsl(0, 0%, 100%);
-    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
-    transition: 300ms;
-    border: none;
-}
+            #addFlashcardForm input[type="submit"]:hover
+            #editFlashcardForm input[type="submit"]:hover {
+                background-color: hsl(261deg 80% 48%);
+                color: hsl(0, 0%, 100%);
+                box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+                transition: 300ms;
+                border: none;
+            }
 
-#addFlashcardForm .aspValidationTitle,
-#editFlashcardForm .aspValidationTitle {
-    background-color: #9b111e;
-    border-radius: 6px;
-    color: white;
-}
+    #addFlashcardForm .aspValidationTitle,
+    #editFlashcardForm .aspValidationTitle {
+        background-color: #9b111e;
+        border-radius: 6px;
+        color: white;
+    }
 
-#addFlashcardForm span,
-#editFlashcardForm span{
-    width: 80%;
-    text-align: center;
-}
+    #addFlashcardForm span,
+    #editFlashcardForm span {
+        width: 80%;
+        text-align: center;
+    }
+
 .flex-add-flashcard-div,
-.flex-edit-flashcard-div{
+.flex-edit-flashcard-div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 45vw;
 }
+
 .main-flex-add-flashcard,
 .main-flex-edit-flashcard {
     display: flex;
@@ -1404,12 +1421,14 @@ form td p
     align-items: center;
     justify-content: center;
 }
+
 .flex-add-flashcard-div .field-validation-error #Title-error,
 .flex-add-flashcard-div .field-validation-error #Content-error,
 .flex-edit-flashcard-div .field-validation-error #Title-error,
 .flex-edit-flashcard-div .field-validation-error #Content-error {
     color: red;
 }
-.white-color-title{
-    color:white;
+
+.white-color-title {
+    color: white;
 }
