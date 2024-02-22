@@ -28,11 +28,6 @@
         [AllowAnonymous]
         public IActionResult Register()
         {
-            if (User?.Identity?.IsAuthenticated ?? false)
-            {
-                return RedirectToAction("Welcome", "Home");
-            }
-
             var model = new RegisterViewModel();
 
             return View(model);
@@ -52,7 +47,8 @@
                 Email = model.Email,
                 UserName = model.UserName,
                 IsActive = true,
-                IsRequested=false
+                IsRequested = false,
+                Points = 0
             };
 
             var result = await userManager.CreateAsync(user, model.Password);
@@ -75,11 +71,6 @@
         [AllowAnonymous]
         public IActionResult Login()
         {
-            if (User?.Identity?.IsAuthenticated ?? false)
-            {
-                return RedirectToAction("Welcome", "Home");
-            }
-
             var model = new LoginViewModel();
 
             return View(model);
@@ -130,8 +121,6 @@
             var user = await userManager.FindByIdAsync(id);
             return View(user);
         }
-
-
 
     }
 }

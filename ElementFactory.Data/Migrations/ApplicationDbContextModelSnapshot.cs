@@ -5796,6 +5796,7 @@ namespace ElementFactory.Data.Migrations
                         .HasComment("Flashcard Title");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -7546,6 +7547,9 @@ namespace ElementFactory.Data.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<int>("Points")
+                        .HasColumnType("int");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -7732,7 +7736,9 @@ namespace ElementFactory.Data.Migrations
                 {
                     b.HasOne("ElementFactory.Data.Models.User", null)
                         .WithMany("Flashcards")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ElementFactory.Data.Models.FounderChemicalElementMap", b =>
