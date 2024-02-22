@@ -37,5 +37,13 @@ namespace ElementFactory.Core.Contracts.Service
         /// <param name="entity">Entity which is used for update</param>
         /// <returns>(void)</returns>
         public Task UpdateAsync(int id, QuestionTestMap entity);
+
+        /// <summary>
+        /// Asynchronous method used to delete an entity with given ids
+        /// </summary>
+        /// <param name="testId">Test Id</param>
+        /// <param name="questionId">Question Id</param>
+        /// <returns>(void)</returns>
+        public Task DeleteAsync(int testId, int questionId);
     }
 }

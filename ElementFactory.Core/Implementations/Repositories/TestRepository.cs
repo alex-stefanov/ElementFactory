@@ -72,6 +72,9 @@
         {
             var entity = await context.Tests
                 .Where(t => t.IsActive)
+                .Include(t => t.QuestionsTests)
+                .ThenInclude(qt => qt.Question)
+                .ThenInclude(q => q.Answers)
                 .FirstOrDefaultAsync(q => q.Id == id);
 
             return entity ?? throw new ArgumentException("Invalid id!");

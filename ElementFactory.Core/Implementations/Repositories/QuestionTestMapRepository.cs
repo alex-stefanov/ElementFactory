@@ -32,20 +32,20 @@
             await context.SaveChangesAsync();
         }
 
-        /// <summary>
-        /// Asynchronous method for deleting an entity by id from context
-        /// </summary>
-        /// <param name="id">Entity Id</param>
-        /// <returns>(void)</returns>
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(int testId, int questionId)
         {
-            var entity = await context
-               .QuestionsTests
-               .FirstOrDefaultAsync(qt => qt.TestId + "" + qt.QuestionId == id.ToString())
-               ?? throw new ArgumentException("Invalid id!");
+            var entity = await this.context
+                .QuestionsTests
+                .FirstOrDefaultAsync(qt => qt.TestId == testId &&  qt.QuestionId == questionId)
+                ?? throw new ArgumentException("Invalid id!");
 
             entity.IsActive = false;
             await context.SaveChangesAsync();
+        }
+
+        public Task DeleteAsync(int id)
+        {
+            throw new NotSupportedException("Invalid method for such case!");
         }
 
         /// <summary>

@@ -17,7 +17,7 @@
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Comment("Flashcard identificator")]
-        public int Id { get; set; }
+        public int Id { get; init; }
 
         /// <summary>
         /// Flashcard Title
@@ -39,10 +39,5 @@
         /// Flag for activity => used in DB
         /// </summary>
         public bool IsActive { get; set; } = true;
-
-        /// <summary>
-        /// User Id
-        /// </summary>
-        public string UserId { get; set; } = null!;
     }
 }

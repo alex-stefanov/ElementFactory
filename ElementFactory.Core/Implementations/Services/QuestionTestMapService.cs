@@ -33,6 +33,17 @@
         }
 
         /// <summary>
+        /// Asynchronous method used to delete an entity with given ids
+        /// </summary>
+        /// <param name="testId">Test Id</param>
+        /// <param name="questionId">Question Id</param>
+        /// <returns>(void)</returns>
+        public async Task DeleteAsync(int testId, int questionId)
+        {
+            await repository.DeleteAsync(testId, questionId);
+        }
+
+        /// <summary>
         /// Asynchronous method for loading all entities
         /// </summary>
         /// <returns>Collection with entities</returns>

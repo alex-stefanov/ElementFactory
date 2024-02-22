@@ -154,6 +154,17 @@
 
             var category = test.Category;
 
+            foreach (QuestionTestMap questionTestMap in test.QuestionsTests)
+            {
+                var question = questionTestMap.Question;
+                foreach (Answer answer in question.Answers)
+                {
+                    await this.answerService.DeleteAsync(answer.Id);
+                }
+                await this.questionService.DeleteAsync(question.Id);
+                await this.questionTestMapService.DeleteAsync(id, question.Id);
+            }
+
             await this.testService.DeleteAsync(id);
 
             return RedirectToAction("TestsByGrade", new
