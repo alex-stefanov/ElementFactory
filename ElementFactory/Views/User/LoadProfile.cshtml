@@ -7,11 +7,13 @@
 @{
     ViewBag.Title = "Моят профил";
 }
-<form asp-action="UpdateProfile" asp-controller="User">
-    <div class="checkoutProfileContainer">
-        <div>
-            Здравей @Model.UserName!
-        </div>
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+    <form asp-action="UpdateProfile" asp-controller="User">
+        <div class="checkoutProfileContainer">
+             <div>
+                Здравей, @Model.UserName!
+            </div>
 
         <div>
             <label>
@@ -24,16 +26,26 @@
             <label>
                 Роли
             </label>
-            @string.Join(", ",userManager.GetRolesAsync(Model));
+            @if (User.IsInRole("Admin") || User.IsInRole("Teacher") || User.IsInRole("Student"))
+            {
+                        
+                    var user = await userManager.FindByNameAsync(User?.Identity?.Name);
+                    var roles = await userManager.GetRolesAsync(user);
+                        
+                    
+                    @string.Join(", ",roles);
+                
+            }
+           
         </div>
 
         @if (Model.PhoneNumber == null)
         {
-            <div>
-                <label asp-for="PhoneNumber">
+            <div class="mb-4">
+                <label asp-for="PhoneNumber" class="form-label">
                     Телефонен номер
                 </label>
-                <input asp-for="PhoneNumber" />
+                <input asp-for="PhoneNumber" class="form-control" />
                 <span asp-validation-for="PhoneNumber"></span>
             </div>
         }
@@ -49,8 +61,8 @@
         @if (userManager.IsInRoleAsync(Model, "Student").Result && Model.IsRequested == false)
         {
             <button onclick="@{
-                    Model.IsRequested=true;
-                                }">
+                                Model.IsRequested=true;
+                                }" class="btn btn-primary">
                 Заявка за учител
             </button>
         }
@@ -58,12 +70,14 @@
         {
             <button onclick="@{
                     Model.IsRequested=false;
-                                }">
+                                }" class="btn btn-primary">
                 Отмени заявка за учител
             </button>
         }
-        <input type="submit"/>
+                <input type="submit" class="btn btn-primary" />
         
     </div>
 
 </form>
+</div>
+</div>
