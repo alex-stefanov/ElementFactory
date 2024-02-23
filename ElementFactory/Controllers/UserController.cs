@@ -109,10 +109,6 @@
         [HttpPost]
         public async Task<IActionResult> UpdateProfile(UserViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
             return RedirectToAction("LoadProfile", model);
         }
 

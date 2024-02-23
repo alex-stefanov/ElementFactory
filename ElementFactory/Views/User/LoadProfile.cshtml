@@ -10,7 +10,7 @@
 <div class="main-container-myProfile">
     <form asp-action="UpdateProfile" asp-controller="User" class="form-myProfile">
         <div class="checkoutProfileContainer">
-            <div class="row-myProfile">
+            <div class="row-myProfile title-my-profile">
                 Здравей, @Model.UserName!
             </div>
 
@@ -47,12 +47,11 @@
 
             @if (Model.PhoneNumber == null)
             {
-                <div class="row-myProfile">
+                <div class="row-myProfile phone-my-profile">
                     <label asp-for="PhoneNumber" class="form-label">
                         Добави телефонен номер
                     </label>
-                    <input asp-for="PhoneNumber" class="form-control" />
-                    <span asp-validation-for="PhoneNumber"></span>
+                    <input asp-for="PhoneNumber" class="form-control" />              
                 </div>
             }
             else
@@ -66,11 +65,14 @@
                     </div>
                 </div>
             }
+
+        </div>
+        <div class="buttons-my-profile">
             @if (userManager.IsInRoleAsync(Model, "Student").Result && Model.IsRequested == false)
             {
                 <button onclick="@{
                                 Model.IsRequested=true;
-                                }" class="btn btn-primary">
+                                }" class=" btn btn-primary inline-block-button-my-profile">
                     Заявка за учител
                 </button>
             }
@@ -78,13 +80,11 @@
             {
                 <button onclick="@{
                     Model.IsRequested=false;
-                                }" class="btn btn-primary">
+                                }" class="btn btn-primary inline-block-button-my-profile">
                     Отмени заявка за учител
                 </button>
             }
-            <input type="submit" class="btn btn-primary" />
-
+            <input type="submit" class="btn btn-primary inline-block-button-my-profile" value="Предай" />
         </div>
-
     </form>
 </div>
