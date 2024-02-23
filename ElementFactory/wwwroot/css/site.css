@@ -1421,3 +1421,8 @@ form td p
 .white-color-title {
     color: white;
 }
+
+#submitTestBtn {
+    background-color: red;
+    border: 10px solid blue;
+}

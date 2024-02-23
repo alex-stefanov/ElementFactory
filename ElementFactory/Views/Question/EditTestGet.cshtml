@@ -27,7 +27,7 @@
     @for (int i = 0; i < Model.Questions.Count; i++)
     {
         var question = Model.Questions[i];
-        <div>
+        <div action="editQuestionContainer">
             @if (counter < 10)
             {
                 <h3>Въпрос 0@(counter)</h3>
@@ -37,7 +37,7 @@
                 <h3>Въпрос @(counter)</h3>
             }
             <label asp-for="Questions[i].Description">Описание</label>
-            <input asp-for="Questions[i].Description" value="@question.Description" />
+            <textarea asp-for="Questions[i].Description" value="@question.Description" rows="3" cols="50" style="resize: none; display: block;"></textarea>
 
             <label asp-for="Questions[i].CorrectAnswer">Верен отговор</label>
             <input asp-for="Questions[i].CorrectAnswer.Value" value="@question.CorrectAnswer.Value" />
@@ -57,7 +57,7 @@
         counter++;
     }
 
-    <input type="submit" value="Запази промените!" />
+    <input type="submit" value="Запази промените!" id="submitTestBtn"/>
 </form>
 
 
