@@ -273,7 +273,7 @@
             return RedirectToAction("Error");
         }
 
-        public IActionResult ShowTestResult(string answers, 
+        public async Task<IActionResult> ShowTestResult(string answers, 
             string classCategory, int questions)
         {
             var model = new ShowTestResultViewModel()
@@ -283,7 +283,8 @@
                 Questions = questions
             };
             var user = userManager.FindByIdAsync(User.FindFirst(ClaimTypes.NameIdentifier).Value).Result;
-            user.Points += int.Parse(model.CorrectAnswers) * 5;
+            userManager.FindByIdAsync(User.FindFirst(ClaimTypes.NameIdentifier).Value).Result.Points += int.Parse(model.CorrectAnswers) * 5;
+            await userManager.UpdateAsync(user);
             return View("ShowTestResult", model);
         }
 

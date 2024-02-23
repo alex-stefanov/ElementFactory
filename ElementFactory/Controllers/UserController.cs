@@ -106,12 +106,6 @@
             return RedirectToAction("Login", "User");
         }
 
-        [HttpPost]
-        public async Task<IActionResult> UpdateProfile(UserViewModel model)
-        {
-            return RedirectToAction("LoadProfile", model);
-        }
-
         public async Task<IActionResult> LoadProfile(string id)
         {
             var user = await userManager.FindByIdAsync(id);

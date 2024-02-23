@@ -8,7 +8,7 @@
     ViewBag.Title = "Моят профил";
 }
 <div class="main-container-myProfile">
-    <form asp-action="UpdateProfile" asp-controller="User" class="form-myProfile">
+    <form asp-action="Index" asp-controller="Home" class="form-myProfile">
         <div class="checkoutProfileContainer">
             <div class="row-myProfile title-my-profile">
                 Здравей, @Model.UserName!
@@ -44,28 +44,6 @@
                 </div>
 
             </div>
-
-            @if (Model.PhoneNumber == null)
-            {
-                <div class="row-myProfile phone-my-profile">
-                    <label asp-for="PhoneNumber" class="form-label">
-                        Добави телефонен номер
-                    </label>
-                    <input asp-for="PhoneNumber" class="form-control" />              
-                </div>
-            }
-            else
-            {
-                <div class="row-myProfile">
-                    <label>
-                        Телефонен номер
-                    </label>
-                    <div>
-                        @Model.PhoneNumber
-                    </div>
-                </div>
-            }
-
         </div>
         <div class="buttons-my-profile">
             @if (userManager.IsInRoleAsync(Model, "Student").Result && Model.IsRequested == false)
@@ -84,7 +62,6 @@
                     Отмени заявка за учител
                 </button>
             }
-            <input type="submit" class="btn btn-primary inline-block-button-my-profile" value="Предай" />
         </div>
     </form>
 </div>
