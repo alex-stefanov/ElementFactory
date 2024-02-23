@@ -29,6 +29,7 @@ namespace ElementFactory.Controllers
             var models = usersNotInAdminRole
                 .Select(um => new LeaderUser()
                 {
+                    Id= um.Id,
                     Name = um.UserName,
                     Points = um.Points
                 })

@@ -8,8 +8,10 @@
     using ElementFactory.Models.Question;
     using ElementFactory.Models.Test;
     using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using System.Diagnostics;
+    using System.Security.Claims;
     using System.Text.Json;
     using System.Text.Json.Serialization;
 
@@ -21,18 +23,21 @@
         private readonly ITestService testService;
         private readonly IAnswerService answerService;
         private readonly IQuestionTestMapService questionTestMapService;
+        private readonly UserManager<User> userManager;
 
         public QuestionController(ILogger<HomeController> logger,
             IQuestionService questionService,
             ITestService testService,
             IAnswerService answerService,
-            IQuestionTestMapService questionTestMapService)
+            IQuestionTestMapService questionTestMapService,
+            UserManager<User> userManager)
         {
             this.logger = logger;
             this.questionService = questionService;
             this.testService = testService;
             this.answerService = answerService;
             this.questionTestMapService = questionTestMapService;
+            this.userManager = userManager;
         }
 
         public IActionResult Index()
@@ -258,6 +263,7 @@
                     .ToList()
                 };
 
+
                 ViewBag.JsonData = JsonSerializer.Serialize(viewModel
                     .Questions.Select(x => x.CorrectAnswer));
 
@@ -276,7 +282,8 @@
                 ClassCategory = classCategory,
                 Questions = questions
             };
-
+            var user = userManager.FindByIdAsync(User.FindFirst(ClaimTypes.NameIdentifier).Value).Result;
+            user.Points += int.Parse(model.CorrectAnswers) * 5;
             return View("ShowTestResult", model);
         }
 

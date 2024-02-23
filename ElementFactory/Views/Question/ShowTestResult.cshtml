@@ -1,6 +1,9 @@
-﻿@using ElementFactory.Models.Others;
+﻿@using ElementFactory.Data.Models;
+@using ElementFactory.Models.Others;
+@using Microsoft.AspNetCore.Identity;
+@using System.Security.Claims;
 @model ShowTestResultViewModel
-
+@inject UserManager<User> userManager;
 @{
     ViewBag.Title = "Резултат от тест";
     var points = int.Parse(Model.CorrectAnswers) * 5;

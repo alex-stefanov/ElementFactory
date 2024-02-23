@@ -1430,15 +1430,45 @@ form td p
 .checkoutProfileContainer {
     display: flex;
     flex-direction: column;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .row-myProfile {
     display: flex;
+    justify-content:center;
 }
 
+.title-my-profile{
+    font-size:30px;
+    font-weight:700;
+}
+.row-myProfile:not(.title-my-profile) {
+    justify-content: space-between;
+    padding: 1% 15%;
+
+}
+#PhoneNumber{
+    width:35%;
+}
+
+.form-myProfile{
+    display:block;
+}
+.inline-block-button-my-profile {
+    display: inline-block;
+}
 .main-container-myProfile {
     width: 58vw;
     margin: 0 auto;
+    background-color: white;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.buttons-my-profile{
+    display:flex;
+    justify-content:space-between;
+    padding:1% 15%;
 }
 
 .checkoutProfileContainer {
@@ -1466,11 +1496,12 @@ form td p
 }
 .pseudo-body-leaderboard .container-main{
     background-color:white;
-    height:100vh;
+    border-radius:14px;
+    
 }
 .pseudo-body-leaderboard main {
     width: 40rem;
-    height: 53rem;
+    height: 42rem;
     background-color: #ffffff;
     box-shadow: 0px 3px 10px 4px #e4e7fb;
     display: flex;
@@ -1483,8 +1514,9 @@ form td p
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 2.5rem 2rem;
+
 }
 
 .share {
@@ -1554,29 +1586,32 @@ form td p
     font-size: 1.4rem;
     padding: 1rem 2rem;
     position: relative;
+    display:flex;
+    align-items:center;
 }
 
-.number {
+.number-leaderboard {
   width: 1rem;
   font-size: 2.2rem;
   font-weight: bold;
   text-align: left;
 }
 
-.name {
+.name-leaderboard {
   text-align: left;
   font-size: 1.2rem;
 }
 
-.points {
+.points-leaderboard {
   font-weight: bold;
   font-size: 1.3rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-left:auto;
 }
 
-.points:first-child {
+.points-leaderboard:first-child {
   width: 10rem;
 }
 
@@ -1619,4 +1654,16 @@ form td p
   position: absolute;
   z-index: -1;
 }
+
+#your-score-leaderboard {
+    background-color: #DDA0DD;
+}
+
+.one-leaderboard{
+    font-size:1.8rem;
+    padding-right:18px;
+}
+
+/* ------------------------------ /
+
 
