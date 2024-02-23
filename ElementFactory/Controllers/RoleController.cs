@@ -54,7 +54,8 @@ namespace ElementFactory.Controllers
                 {
                     Email = "rlgalexbgto@gamil.com",
                     UserName = "Alex",
-                    IsActive=true
+                    IsActive = true,
+                    Points = 100000
                 };
 
                 var result1 = await userManager.CreateAsync(admin1, "Alex_Admin2007");
@@ -63,7 +64,8 @@ namespace ElementFactory.Controllers
                 {
                     Email = "stilancanev@gamil.com",
                     UserName = "Stelko",
-                    IsActive= true
+                    IsActive= true,
+                    Points = 100000
                 };
 
                 var result2 = await userManager.CreateAsync(admin2, "Stelko_Admin2007");
@@ -73,7 +75,8 @@ namespace ElementFactory.Controllers
                 {
                     Email = "studentTest1@gamil.com",
                     UserName = "Student1",
-                    IsActive = true
+                    IsActive = true,
+                    Points = 0
                 };
                 var result3 = await userManager.CreateAsync(student1, "Test_Student2007");
 
@@ -81,7 +84,8 @@ namespace ElementFactory.Controllers
                 {
                     Email = "studentTest2@gamil.com",
                     UserName = "Student2",
-                    IsActive = true
+                    IsActive = true,
+                    Points = 0
                 };
                 var result4 = await userManager.CreateAsync(student2, "Test_Student2007");
 
@@ -89,7 +93,8 @@ namespace ElementFactory.Controllers
                 {
                     Email = "teacherTest1@gamil.com",
                     UserName = "Teacher1",
-                    IsActive = true
+                    IsActive = true,
+                    Points = 0
                 };
                 var result5 = await userManager.CreateAsync(teacher1, "Test_Teacher2007");
 
@@ -97,11 +102,31 @@ namespace ElementFactory.Controllers
                 {
                     Email = "teacherTest2@gamil.com",
                     UserName = "Teacher2",
-                    IsActive = true
+                    IsActive = true,
+                    Points = 0
                 };
                 var result6 = await userManager.CreateAsync(teacher2, "Test_Teacher2007");
 
-                if (result1.Succeeded && result2.Succeeded && result3.Succeeded && result4.Succeeded && result5.Succeeded && result6.Succeeded)
+
+                var proPlayer1 = new User()
+                {
+                    Email = "proPlayer1@gamil.com",
+                    UserName = "ProPlayer1",
+                    IsActive = true,
+                    Points = 200
+                };
+                var result7 = await userManager.CreateAsync(proPlayer1, "Pro1_Player2007");
+
+                var proPlayer2 = new User()
+                {
+                    Email = "proPlayer2@gamil.com",
+                    UserName = "ProPlayer2",
+                    IsActive = true,
+                    Points = 100
+                };
+                var result8 = await userManager.CreateAsync(proPlayer2, "Pro2_Player2007");
+
+                if (result1.Succeeded && result2.Succeeded && result3.Succeeded && result4.Succeeded && result5.Succeeded && result6.Succeeded && result7.Succeeded && result8.Succeeded)
                 {
                     await userManager.AddToRoleAsync(admin1, "Admin");
                     await userManager.AddToRoleAsync(admin2, "Admin");
@@ -111,6 +136,9 @@ namespace ElementFactory.Controllers
 
                     await userManager.AddToRoleAsync(teacher1, "Teacher");
                     await userManager.AddToRoleAsync(teacher2, "Teacher");
+
+                    await userManager.AddToRoleAsync(proPlayer1, "Student");
+                    await userManager.AddToRoleAsync(proPlayer2, "Student");
                 }
             }
         

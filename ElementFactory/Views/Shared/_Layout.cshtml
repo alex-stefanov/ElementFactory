@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ElementFactory.styles.css" asp-append-version="true" />
+    <link rel="icon" href="/images/logo.png" type="image/x-icon">
 </head>
 <body>
     <header class="appHeader">
@@ -21,6 +22,7 @@
                 </button>              
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between ">
                     <ul class="navbar-nav flex-grow-1 text-white">
+                      
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
@@ -31,6 +33,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" asp-area="" asp-controller="Flashcard" asp-action="ViewAllFlashcards">Флашкарти</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Leaderboard" asp-action="LoadLeaderboard">Класация</a>
                             </li>
                             @if (User.IsInRole("Admin"))
                             {
