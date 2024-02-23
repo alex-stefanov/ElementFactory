@@ -30,6 +30,7 @@
             <table class="table-leaderboard">
                 @for (int i = 0; i < 6; i++)
                 {
+                    var currentUser = userManager.FindByIdAsync(Model[i].Id).Result;
                     if (i >= Model.Count)
                     {
                         break;
@@ -41,7 +42,14 @@
                                 @{
                                     int place = i + 1;
                                 }
-                                @place
+                                    @if (Model[i].Points == 0 || userManager.IsInRoleAsync(currentUser, "Admin").Result)
+                                    {
+                                        @:-
+                                    }
+                                    else
+                                    {
+                                        @place
+                                    }
                             </td>
                             <td class="name-leaderboard td-leaderboard">@Model[i].Name</td>
                             <td class="points-leaderboard td-leaderboard">
@@ -56,7 +64,14 @@
                                 @{
                                     int place = i + 1;
                                 }
-                                @place
+                                    @if (Model[i].Points == 0 || userManager.IsInRoleAsync(currentUser, "Admin").Result)
+                                    {
+                                        @:-
+                                    }
+                                    else
+                                    {
+                                        @place
+                                    }
                             </td>
                             <td class="name-leaderboard td-leaderboard">@Model[i].Name</td>
                             <td class="points-leaderboard td-leaderboard">@Model[i].Points</td>
@@ -66,7 +81,14 @@
                 }
                 <tr class="tr-leaderboard" id="your-score-leaderboard">
                     <td class="number td-leaderboard one-leaderboard">
-                        @number
+                            @if (userManager.IsInRoleAsync(user, "Admin").Result || user.Points == 0)
+                            {
+                                @:-
+                            }
+                            else
+                            {
+                                @number
+                            }
                     </td>
                         <td class="name-leaderboard td-leaderboard">@userModel.Name (Вие)</td>
                     <td class="points-leaderboard td-leaderboard">
