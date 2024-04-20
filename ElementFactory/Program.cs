@@ -18,7 +18,7 @@ namespace ElementFactory
             // Getting connection string from configuration
             var connectionString = builder
                 .Configuration
-                .GetConnectionString("DefaultConnection")
+                .GetConnectionString("ServerConnection")
                 ?? throw new InvalidOperationException
                 ("Connection string 'DefaultConnection' " +
                 "not found.");

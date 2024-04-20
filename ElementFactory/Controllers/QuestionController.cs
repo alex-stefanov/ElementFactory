@@ -107,7 +107,7 @@
                     NumberOfQ = model.QuestionsCounter
                 };
 
-                return RedirectToAction("ChooseAddType", testModel);
+                return View("ChooseAddType", testModel);
             }
 
             return View("AddTestGet", model);
@@ -274,14 +274,16 @@
         }
 
         public async Task<IActionResult> ShowTestResult(string answers, 
-            string classCategory, int questions)
+            string classCategory, int questions, string timeDone)
         {
             var model = new ShowTestResultViewModel()
             {
                 CorrectAnswers = answers,
                 ClassCategory = classCategory,
-                Questions = questions
+                Questions = questions,
+                Time = timeDone
             };
+
             var user = userManager.FindByIdAsync(User.FindFirst(ClaimTypes.NameIdentifier).Value).Result;
             userManager.FindByIdAsync(User.FindFirst(ClaimTypes.NameIdentifier).Value).Result.Points += int.Parse(model.CorrectAnswers) * 5;
             await userManager.UpdateAsync(user);
@@ -541,6 +543,12 @@
             {
                 grade = model.TestCategory.Split(" ")[0]
             });
+        }
+
+        [Authorize(Roles = "Teacher, Admin")]
+        public async Task<IActionResult> ClosedForTeacher()
+        {
+            return View();
         }
 
         [ResponseCache(

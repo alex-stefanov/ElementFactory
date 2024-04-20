@@ -21,5 +21,7 @@
 
         public List<QuestionViewModel> Questions { get; set; } = 
             new List<QuestionViewModel>();
+
+        public string Time { get; set; } = string.Empty;
     }
 }

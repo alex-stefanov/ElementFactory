@@ -12,7 +12,7 @@
 <div class="allUsersContainer">
     @if (Model.Count!=0)
     {
-        foreach (User currentUser in Model.OrderBy(x => !userManager.GetRolesAsync(x).Result.Contains("Teacher")).ThenBy(x => x.IsRequested))
+        foreach (User currentUser in Model.OrderBy(x => !userManager.GetRolesAsync(x).Result.Contains("Teacher")).ThenByDescending(x => x.IsRequested))
         {
             var roles = await userManager.GetRolesAsync(currentUser);
             var list = roles.ToList();

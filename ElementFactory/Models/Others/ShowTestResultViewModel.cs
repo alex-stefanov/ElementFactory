@@ -7,5 +7,7 @@
         public string ClassCategory { get; set; } = null!;
 
         public int Questions { get; set; }
+
+        public string Time { get; set; } = string.Empty;
     }
 }

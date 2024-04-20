@@ -49,18 +49,21 @@
             @if (userManager.IsInRoleAsync(Model, "Student").Result && Model.IsRequested == false)
             {
                 <button onclick="@{
-                                Model.IsRequested=true;
-                                }" class=" btn btn-primary inline-block-button-my-profile">
+                Model.IsRequested=true;
+                await userManager.UpdateAsync(Model);
+                }" class=" btn btn-primary inline-block-button-my-profile">
                     Заявка за учител
                 </button>
             }
             else if (userManager.IsInRoleAsync(Model, "Student").Result && Model.IsRequested != false)
             {
                 <button onclick="@{
-                    Model.IsRequested=false;
-                                }" class="btn btn-primary inline-block-button-my-profile">
+                Model.IsRequested=false;
+                await userManager.UpdateAsync(Model);
+                }" class="btn btn-primary inline-block-button-my-profile">
                     Отмени заявка за учител
                 </button>
+
             }
         </div>
     </form>
