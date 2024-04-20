@@ -5,41 +5,6 @@
 @model TestViewModel;
 
 <div class="loadTestQuestionsContainer">
-    <h1 class="loadTestTitle">@Model.Title</h1>
-    @{
-        var answerCounter = 1;
-    }
-    @foreach (QuestionViewModel question in Model.Questions)
-    {
-        <div class="questionContainer">
-            @if (answerCounter < 10)
-            {
-                <h2 class="questionTitle">0@{@answerCounter}. @question.Description</h2>
-            }
-            else
-            {
-                <h2 class="questionTitle">@answerCounter. @question.Description</h2>
-            }
-
-            <div class="questionAnswersContainer">
-                @foreach (AnswerViewModel answer in question.Answers)
-                {
-                   <div class="answerContainer">
-                       <label>
-                           <input
-                               type="radio" 
-                               class="answerContainer"
-                               name="answers_@answerCounter" 
-                               value="@answer.Value" /> @answer.Value
-                       </label>
-                   </div>
-                }
-            </div>
-        </div>
-
-        answerCounter++;
-    }
-
     <div class="handInTestContainer">
         <form method="post" 
             id="handInTestForm"
@@ -47,6 +12,46 @@
             asp-action="ShowTestResult"
             asp-route-classCategory="@Model.Category"
             asp-route-questions="@Model.Questions.Count">
+
+            <h1 class="loadTestTitle">@Model.Title</h1>
+
+            @{
+                var answerCounter = 1;
+            }
+
+            <input readonly id="timeDone" value="00:00:00" name="timeDone" />
+
+            @foreach (QuestionViewModel question in Model.Questions)
+            {
+                <div class="questionContainer">
+                    @if (answerCounter < 10)
+                    {
+                        <h2 class="questionTitle">0@{
+                                @answerCounter
+                            }. @question.Description</h2>
+                    }
+                    else
+                    {
+                        <h2 class="questionTitle">@answerCounter. @question.Description</h2>
+                    }
+
+                    <div class="questionAnswersContainer">
+                        @foreach (AnswerViewModel answer in question.Answers)
+                        {
+                            <div class="answerContainer">
+                                <label>
+                                    <input type="radio"
+                                           class="answerContainer"
+                                           name="answers_@answerCounter"
+                                           value="@answer.Value" /> @answer.Value
+                                </label>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                answerCounter++;
+            }
                 <input type="submit" id="handInTest" value="Предай тест" />
         </form>
     </div>
@@ -56,6 +61,34 @@
 </div>
 
 <script>
+
+    var startTime;
+    var timerInterval;
+
+        startTime = new Date().getTime();
+        timerInterval = setInterval(updateTimer, 1000);
+    
+
+    function stopTimer() {
+        clearInterval(timerInterval);
+    }
+
+    function updateTimer() {
+        var currentTime = new Date().getTime();
+        var elapsedTime = currentTime - startTime;
+
+        var hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+        var minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+
+        document.getElementById("timeDone").value =
+            ("0" + hours).slice(-2) + ":" +
+            ("0" + minutes).slice(-2) + ":" +
+            ("0" + seconds).slice(-2);
+    }
+
+    document.getElementById("handInTest").addEventListener("click", stopTimer);
+
     document.getElementsByTagName('body')[0].classList.add('scrollClass');
 
     var hyperlink = document.getElementById('handInTest');
@@ -76,7 +109,8 @@
                     .style
                     .display = 'none';
             }, 2000);
-        } else {
+        } 
+        else {
             var correctAnswers = 0;
             var json = @Html.Raw(@ViewBag.JsonData);
             for (var i = 0; i < answers.length; i++){
@@ -91,6 +125,21 @@
             var form =
                 document
                 .getElementById('handInTestForm');
+
+            var currentTime = new Date().getTime();
+            var elapsedTime = currentTime - startTime;
+
+            var hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+            var minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+
+            var hoursStr = ("0" + hours).slice(-2);
+            var minutesStr = ("0" + minutes).slice(-2);
+            var secondsStr = ("0" + seconds).slice(-2);
+
+            var str = hoursStr + ":" + minutesStr + ":" + secondsStr;
+                
+            form.setAttribute('asp-route-timeDone', str);
 
             form.setAttribute('action',
             form.getAttribute('action') + '&answers='+correctAnswers);

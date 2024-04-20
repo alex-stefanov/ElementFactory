@@ -1,12 +1,11 @@
 ﻿namespace ElementFactory.Controllers
 {
+    using ElementFactory.Data.Models;
     using ElementFactory.Models.Login;
     using ElementFactory.Models.Register;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
-    using ElementFactory.Data.Models;
-    using ElementFactory.Models.User;
 
 
     [Authorize]
@@ -111,6 +110,5 @@
             var user = await userManager.FindByIdAsync(id);
             return View(user);
         }
-
     }
 }

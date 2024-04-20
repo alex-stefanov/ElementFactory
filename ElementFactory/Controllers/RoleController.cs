@@ -33,16 +33,21 @@ namespace ElementFactory.Controllers
 
         public async Task<IActionResult> CreateRoles()
         {
-            if(!await roleManager.RoleExistsAsync("Admin")
-                && !await roleManager.RoleExistsAsync("Teacher")
-                && !await roleManager.RoleExistsAsync("Student"))
+            bool isAdminExists = await roleManager.RoleExistsAsync("Admin");
+            bool isTeacherExists = await roleManager.RoleExistsAsync("Teacher");
+            bool isStudentExists = await roleManager.RoleExistsAsync("Student");
+
+
+            if (!isAdminExists
+                && !isTeacherExists
+                && !isStudentExists)
             {
                 await roleManager.CreateAsync(new IdentityRole("Admin"));
                 await roleManager.CreateAsync(new IdentityRole("Teacher"));
                 await roleManager.CreateAsync(new IdentityRole("Student"));
             }
             return RedirectToAction("SeedUsers");
-            
+
         }
 
         public async Task<IActionResult> SeedUsers()
@@ -64,7 +69,7 @@ namespace ElementFactory.Controllers
                 {
                     Email = "stilancanev@gamil.com",
                     UserName = "Stelko",
-                    IsActive= true,
+                    IsActive = true,
                     Points = 100000
                 };
 
@@ -141,43 +146,42 @@ namespace ElementFactory.Controllers
                     await userManager.AddToRoleAsync(proPlayer2, "Student");
                 }
             }
-        
+
             return RedirectToAction("Welcome", "Home");
 
         }
 
         public async Task<IActionResult> SeeAllUsers()
         {
-            var users= await GetAllUsers();
+            var users = await GetAllUsers();
             return View(users);
         }
 
         public async Task<IActionResult> DeleteUser(string id)
         {
-            var user= await userManager.FindByIdAsync(id);
+            var user = await userManager.FindByIdAsync(id);
             user.IsActive = false;
             await userManager.UpdateAsync(user);
-            var users=await GetAllUsers();
+            var users = await GetAllUsers();
             return View("SeeAllUsers", users);
         }
 
         public async Task<IActionResult> RemoveTeacherRole(string id)
         {
             var user = await userManager.FindByIdAsync(id);
-            await userManager.RemoveFromRoleAsync(user,"Teacher");
-            await userManager.UpdateAsync(user);
+            await userManager.RemoveFromRoleAsync(user, "Teacher");
             await userManager.AddToRoleAsync(user, "Student");
             await userManager.UpdateAsync(user);
-            var users=await GetAllUsers();
-            return View("SeeAllUsers",users);
+            var users = await GetAllUsers();
+            return View("SeeAllUsers", users);
         }
 
         public async Task<IActionResult> MakingATeacher(string id)
         {
             var user = await userManager.FindByIdAsync(id);
             await userManager.AddToRoleAsync(user, "Teacher");
-            await userManager.UpdateAsync(user);
             await userManager.RemoveFromRoleAsync(user, "Student");
+            user.IsRequested = false;
             await userManager.UpdateAsync(user);
             var users = await GetAllUsers();
             return View("SeeAllUsers", users);

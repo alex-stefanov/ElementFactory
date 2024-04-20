@@ -1,0 +1,49 @@
+﻿@* @model ClosedSystemViewModel;
+
+@{
+    ViewBag.Title = "";
+}
+
+<div>
+    <form class="selectTestsForm" method="post"
+        asp-action="ClosedForTeacher"
+        asp-controller="Question">
+        <select asp-for="TestId">
+            @foreach (var test in Model.Tests)
+            {
+                <option>@test.Title</option>
+            }
+        </select>
+
+        @foreach (var user in Model.Users)
+        {
+            <div class="selectQuestionsContainer">
+                @{
+                    string checkboxId = $"checkbox{question.Id}";
+                    string inputId = $"hidden{question.Id}";
+                    string inputValue = JsonSerializer.Serialize(question,
+                    new JsonSerializerOptions()
+                {
+                    ReferenceHandler = ReferenceHandler.IgnoreCycles
+                });
+                }
+
+                <input type="hidden" id="@inputId" value="" asp-for="QuestionsForDBJSON" class="hiddenInput" />
+
+                <input type="checkbox"
+                       id="@checkboxId"
+                       onclick='{
+                             if (document.getElementById("@checkboxId").checked)
+                             {
+                                 document.getElementById("@inputId").value = JSON.stringify(@Html.Raw(inputValue));
+                             }
+                             else
+                             {
+                                 document.getElementById("@inputId").value = "";
+                             }
+                       }' />
+            </div>
+        }
+    </form>
+</div>
+ *@

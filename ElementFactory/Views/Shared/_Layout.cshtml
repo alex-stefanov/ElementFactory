@@ -35,13 +35,30 @@
                                 <a class="nav-link text-white" asp-area="" asp-controller="Flashcard" asp-action="ViewAllFlashcards">Флашкарти</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" asp-area="" asp-controller="Leaderboard" asp-action="LoadLeaderboard">Класация</a>
+                                <a class="nav-link text-white" 
+                                    asp-area="" 
+                                    asp-controller="Leaderboard" 
+                                    asp-action="LoadLeaderboard">
+                                    Класация
+                                </a>
                             </li>
                             @if (User.IsInRole("Admin"))
                             {
 
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" asp-area="" asp-controller="Role" asp-action="SeeAllUsers">Всички потребители</a>
+                                    <a class="nav-link text-white" 
+                                        asp-area="" asp-controller="Role" 
+                                        asp-action="SeeAllUsers">
+                                        Всички потребители
+                                    </a>
+                                </li>
+                            }
+                            if (!User.IsInRole("Student"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-white">
+
+                                    </a>
                                 </li>
                             }
                         }

@@ -108,7 +108,6 @@
             entityToUpdate.Period = entity.Period;
             entityToUpdate.Density = entity.Density;
             entityToUpdate.IsSynthetic = entity.IsSynthetic;
-            entityToUpdate.Id = entity.Id;
             entityToUpdate.EnglishName = entity.EnglishName;
             entityToUpdate.AtomicMass = entity.AtomicMass;
             entityToUpdate.AtomicRadius = entity.AtomicRadius;
