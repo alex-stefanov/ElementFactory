@@ -1,6 +1,8 @@
 ﻿namespace ElementFactory.Controllers
 {
     using ElementFactory.Core.Contracts.Service;
+    using ElementFactory.Core.Extensions;
+    using ElementFactory.Data;
     using ElementFactory.Data.Models;
     using ElementFactory.Models;
     using ElementFactory.Models.Answer;
@@ -10,6 +12,7 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
     using System.Diagnostics;
     using System.Security.Claims;
     using System.Text.Json;
@@ -24,13 +27,15 @@
         private readonly IAnswerService answerService;
         private readonly IQuestionTestMapService questionTestMapService;
         private readonly UserManager<User> userManager;
+        private readonly ApplicationDbContext context;
 
         public QuestionController(ILogger<HomeController> logger,
             IQuestionService questionService,
             ITestService testService,
             IAnswerService answerService,
             IQuestionTestMapService questionTestMapService,
-            UserManager<User> userManager)
+            UserManager<User> userManager,
+            ApplicationDbContext dbContext)
         {
             this.logger = logger;
             this.questionService = questionService;
@@ -38,6 +43,7 @@
             this.answerService = answerService;
             this.questionTestMapService = questionTestMapService;
             this.userManager = userManager;
+            this.context = dbContext;
         }
 
         public IActionResult Index()
@@ -56,7 +62,28 @@
             var testsEntities = 
                 await this.testService.GetByGradeAsync(grade);
 
-            var models = testsEntities
+            var tests = new List<Test>();
+            var user = await this.userManager.FindByIdAsync(User.Id());
+
+            if (await this.userManager.IsInRoleAsync(user, "Student"))
+            {
+                tests = testsEntities
+                    .Where(t => t.Users.Count == 0 || t.Users.Any(u => u.Id == User.Id()))
+                    .ToList();
+            }
+            else if (await this.userManager.IsInRoleAsync(user, "Teacher"))
+            {
+                tests = testsEntities
+                    .Where(t => t.Users.Count == 0 || t.Maker == null || t.Maker.Id == 
+                    User.Id())
+                    .ToList();
+            }
+            else
+            {
+                tests = testsEntities.ToList();
+            }
+
+            var models = tests
                 .Select(t => new TestViewModel()
             {
                 Id = t.Id,
@@ -107,10 +134,15 @@
                     NumberOfQ = model.QuestionsCounter
                 };
 
-                return View("ChooseAddType", testModel);
+                return View("ChooseStudents", testModel);
             }
 
             return View("AddTestGet", model);
+        }
+
+        public IActionResult ChooseStudents(AddQuestionsCurrentQuestionModel testModel)
+        {
+            return View("ChooseAddType", testModel);
         }
 
         [HttpGet]
@@ -441,11 +473,22 @@
                 model.Questions = questions;
                 model.Questions.Add(question);
 
+                var user = await this.userManager.FindByIdAsync(User.Id());
+
                 var test = new Test()
                 {
                     Title = model.TestTitle,
-                    Category = model.TestCategory
+                    Category = model.TestCategory,
+                    Maker = user
                 };
+
+                if (model.Vision == "Mine")
+                {
+                    var students = await this.context.Users.Where(u => u.Teachers.Any(t => t.Id == User.Id()))
+                        .ToListAsync();
+
+                    test.Users = students;
+                }
 
                 await this.testService.AddAsync(test);
 
@@ -501,11 +544,23 @@
         {
             var questions = new List<Question>();
             var JSON = model.QuestionsForDBJSON.Where(json => json != null);
+
+            var user = await this.userManager.FindByIdAsync(User.Id());
+
             var test = new Test()
             {
                 Title = model.TestTitle,
-                Category = model.TestCategory
+                Category = model.TestCategory,
+                Maker = user
             };
+
+            if (model.Vision == "Mine")
+            {
+                var students = await this.context.Users.Where(u => u.Teachers.Any(t => t.Id == User.Id()))
+                    .ToListAsync();
+
+                test.Users = students;
+            }
 
             foreach (string question in JSON)
             {
@@ -543,12 +598,6 @@
             {
                 grade = model.TestCategory.Split(" ")[0]
             });
-        }
-
-        [Authorize(Roles = "Teacher, Admin")]
-        public async Task<IActionResult> ClosedForTeacher()
-        {
-            return View();
         }
 
         [ResponseCache(

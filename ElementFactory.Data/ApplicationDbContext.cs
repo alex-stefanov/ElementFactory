@@ -72,6 +72,11 @@
         public DbSet<Flashcard> Flashcards { get; set; } = null!;
 
         /// <summary>
+        /// Database Application Context School DbSet
+        /// </summary>
+        public DbSet<School> Schools { get; set; } = null!;
+
+        /// <summary>
         /// Database Application Context OnModelCreating method
         /// </summary>
         /// <param name="builder">ModelBuilder</param>
@@ -102,6 +107,8 @@
                     QuestionTestConfiguration());
 
             builder.ApplyConfiguration<Answer>(new AnswerConfiguration());
+
+            builder.ApplyConfiguration<School>(new SchoolConfiguration());
         }
     }
 }

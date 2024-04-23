@@ -133,6 +133,8 @@
         {
             var tests = await context
                 .Tests
+                .Include(t => t.Users)
+                .Include(t => t.Maker)
                 .Include(t => t.QuestionsTests)
                 .ThenInclude(t => t.Question)
                 .ThenInclude(t => t.Answers)

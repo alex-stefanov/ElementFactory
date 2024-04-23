@@ -916,7 +916,6 @@ form td p
     margin:3%;
     display:flex;
     flex-wrap:wrap;
-    
 }
 
 .currentUserContainer{
@@ -933,6 +932,7 @@ form td p
     margin:0vh 5vw 3vh 0vw;
     justify-content:space-evenly;      
 }
+
 .currentUserContainer:hover {
     background-color: lightgray;
     box-shadow: gray 7px 7px;
@@ -984,8 +984,76 @@ form td p
 /* ------------------------------ */
 
 /* ------------------------------ */
-/* Add questions page css */
+/* See all teachers page css */
 
+.allTeachersContainer{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+    margin: 2em;
+    border-radius: 12px;
+}
+
+.allTeachersContainer .infoUserContainer{
+    display: flex;
+    margin: 1em;
+    gap: 1em;
+    font-size: 1.5em;
+}
+
+/* ------------------------------ */
+
+/* ------------------------------ */
+/* See all students page css */
+
+.allStudentsContainer {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+    margin: 2em;
+    border-radius: 12px;
+}
+
+.allStudentsContainer .infoUserContainer {
+    display: flex;
+    margin: 1em;
+    gap: 1em;
+    font-size: 1.5em;
+}
+
+.allStudentsContainer .infoUserContainer .addStudentBtn{
+    text-decoration: none;
+    color: green;
+    border: 2px solid black;
+    padding: 0.5em;
+    border-radius: 12px;
+}
+
+.allStudentsContainer .infoUserContainer .addStudentBtn:hover{
+
+}
+
+.allStudentsContainer .infoUserContainer .removeStudentBtn {
+    text-decoration: none;
+    color: red;
+    border: 2px solid black;
+    padding: 0.5em;
+    border-radius: 12px;
+}
+
+.allStudentsContainer .infoUserContainer .removeStudentBtn:hover {
+}
+
+/* ------------------------------ */
+
+/* ------------------------------ */
+/* Add questions page css */
 .addQuestionsOnOwnFormContainer {
     display: flex;
     flex-direction: column;
@@ -1442,6 +1510,7 @@ form td p
 .row-myProfile {
     display: flex;
     justify-content:center;
+    gap: 2em;
 }
 
 .title-my-profile{

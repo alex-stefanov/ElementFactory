@@ -1,0 +1,33 @@
+﻿@model TeacherViewModel
+
+@{
+    ViewBag.Title = "Teachers";
+}
+<div class="allTeachersContainer">
+    <h1 class="myTeachers">Моите учители</h1>
+
+    @if (Model.Teachers.Any())
+    {
+        @foreach (UserViewModel userViewModel in Model.Teachers)
+        {
+            <div class="infoUserContainer">
+                <p>
+                    Име
+                </p>
+                <p>
+                    @userViewModel.UserName
+                </p>
+            </div>
+        }
+    }
+    else
+    {
+        <div id="noUsers">
+            Няма учители
+        </div>
+    }
+</div>
+
+<script>
+    document.getElementsByTagName('body')[0].classList.add('scrollClass');
+</script>

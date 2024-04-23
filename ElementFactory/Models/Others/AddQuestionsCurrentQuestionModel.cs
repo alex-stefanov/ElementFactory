@@ -29,5 +29,7 @@
             new List<Question>();
 
         public List<string> QuestionsJSON { get; set; } = new List<string>();
+
+        public string Vision { get; set; } = string.Empty;
     }
 }

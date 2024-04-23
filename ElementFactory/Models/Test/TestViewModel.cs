@@ -23,5 +23,7 @@
             new List<QuestionViewModel>();
 
         public string Time { get; set; } = string.Empty;
+
+        public string Vision { get; set; } = string.Empty;
     }
 }

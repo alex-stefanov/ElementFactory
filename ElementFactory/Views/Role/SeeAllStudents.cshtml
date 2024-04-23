@@ -1,0 +1,65 @@
+﻿@model StudentsViewModel
+
+@{
+    ViewBag.Title = "Students";
+}
+<div class="allStudentsContainer">
+    <h1 class="myStudents">Моите ученици</h1>
+
+    @if (Model.MyStudents.Any())
+    {
+        @foreach (UserViewModel userViewModel in Model.MyStudents)
+        {
+            <div class="infoUserContainer">
+                <p>
+                    Име
+                </p>
+                <p>
+                    @userViewModel.UserName
+                </p>
+                <p>
+                    <a class="removeStudentBtn" asp-controller="Role" asp-action="RemoveStudentFromMyStudents" asp-route-teacherId="@User.Id()"
+                       asp-route-studentId="@userViewModel.Id">Премахни ученик от моите ученици</a>
+                </p>
+            </div>
+        }
+    }
+    else
+    {
+        <div id="noUsers">
+            Няма ученици
+        </div>
+    }
+
+    <h1 class="otherStudents">Други ученици</h1>
+
+    @if (Model.OtherStudents.Any())
+    {
+        @foreach (UserViewModel userViewModel in Model.OtherStudents)
+        {
+            <div class="infoUserContainer">
+                <p>
+                    Име
+                </p>
+                <p>
+                    @userViewModel.UserName
+                </p>
+                <p>
+                    <a class="addStudentBtn"
+                        asp-controller="Role" asp-action="AddStudentToMyStudents" asp-route-teacherId="@User.Id()"
+                       asp-route-studentId="@userViewModel.Id">Добави ученик към моите ученици</a>
+                </p>
+            </div>
+        }
+    }
+    else
+    {
+        <div id="noUsers">
+            Няма ученици
+        </div>
+    }
+</div>
+
+<script>
+    document.getElementsByTagName('body')[0].classList.add('scrollClass');
+</script>
