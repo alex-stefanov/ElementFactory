@@ -17,6 +17,7 @@
         <input type="hidden" asp-for="TestTitle" value="@Model.TestTitle"/>
         <input type="hidden" asp-for="TestCategory" value="@Model.TestCategory"/>
         <input type="hidden" asp-for="NumberOfQ" value="@Model.NumberOfQ" />
+        <input type="hidden" asp-for="Vision" value="@Model.Vision" />
     </form>
 
     <form method="post" asp-controller="Question" asp-action="AddQuestionsOnOwn">
@@ -26,6 +27,7 @@
             <input type="hidden" asp-for="TestTitle" value="@Model.TestTitle" />
             <input type="hidden" asp-for="TestCategory" value="@Model.TestCategory" />
             <input type="hidden" asp-for="NumberOfQ" value="@Model.NumberOfQ" />
+            <input type="hidden" asp-for="Vision" value="@Model.Vision" />
         </div>
     </form>
 </div>

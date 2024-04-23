@@ -1,12 +1,13 @@
 ﻿namespace ElementFactory.Controllers
 {
+    using ElementFactory.Data;
     using ElementFactory.Data.Models;
     using ElementFactory.Models.Login;
     using ElementFactory.Models.Register;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
-
+    using Microsoft.EntityFrameworkCore;
 
     [Authorize]
     public class UserController : Controller
@@ -15,12 +16,16 @@
 
         private readonly SignInManager<User> signInManager;
 
+        private readonly ApplicationDbContext context;
+
         public UserController(
             UserManager<User> _userManager,
-            SignInManager<User> _signInManager)
+            SignInManager<User> _signInManager,
+            ApplicationDbContext context)
         {
             userManager = _userManager;
             signInManager = _signInManager;
+            this.context = context;
         }
 
         [HttpGet]
@@ -41,13 +46,16 @@
                 return View(model);
             }
 
+            var school = await this.context.Schools.FindAsync(model.SchoolId);
+
             var user = new User()
             {
                 Email = model.Email,
                 UserName = model.UserName,
                 IsActive = true,
                 IsRequested = false,
-                Points = 0
+                Points = 0,
+                School = school
             };
 
             var result = await userManager.CreateAsync(user, model.Password);
@@ -66,6 +74,8 @@
             return View(model);
         }
 
+       
+        
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Login()
@@ -107,7 +117,17 @@
 
         public async Task<IActionResult> LoadProfile(string id)
         {
-            var user = await userManager.FindByIdAsync(id);
+            var user = await this.context.Users
+                .Include(u => u.School)
+                .Include(u => u.Teachers)
+                .Include(u => u.Students)
+                .FirstOrDefaultAsync(t => t.Id == id);
+
+            if (user == null)
+            {
+                return BadRequest();
+            }
+
             return View(user);
         }
     }

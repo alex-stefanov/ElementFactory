@@ -1,5 +1,6 @@
 ﻿namespace ElementFactory.Models.Login
 {
+    using ElementFactory.Data.Models;
     using System.ComponentModel.DataAnnotations;
 
     public class LoginViewModel

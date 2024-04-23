@@ -2,17 +2,20 @@
 @using Microsoft.AspNetCore.Identity;
 @using Microsoft.AspNetCore.Mvc;
 @using ElementFactory.Data.Models;
+
 @inject UserManager<User> userManager;
 @model List<User>;
+
 @{
     ViewBag.Title = "Всички потребители";
 }
 
 
 <div class="allUsersContainer">
-    @if (Model.Count!=0)
+    @if (Model.Count != 0)
     {
-        foreach (User currentUser in Model.OrderBy(x => !userManager.GetRolesAsync(x).Result.Contains("Teacher")).ThenByDescending(x => x.IsRequested))
+        foreach (User currentUser in Model.OrderBy(x => 
+        !userManager.GetRolesAsync(x).Result.Contains("Teacher")).ThenByDescending(x => x.IsRequested))
         {
             var roles = await userManager.GetRolesAsync(currentUser);
             var list = roles.ToList();
@@ -52,17 +55,19 @@
                     </p>
                 </div>
                 <div class="infoUserContainer">
-                    @if (!userManager.GetRolesAsync(currentUser).Result.Contains("Teacher"))
+                    @if (!list.Contains("Teacher"))
                     {
                         if (currentUser.IsRequested)
                         {
-                            <a class="userButton" asp-route-id="@currentUser.Id" asp-controller="Role" asp-action="MakingATeacher">
+                            <a class="userButton" asp-route-id="@currentUser.Id" asp-controller="Role"
+                            asp-action="MakingATeacher">
                                 Одобряване на заявка
                             </a>
                         }
                         else
                         {
-                            <a class="userButton" asp-route-id="@currentUser.Id" asp-controller="Role" asp-action="MakingATeacher">
+                            <a class="userButton" asp-route-id="@currentUser.Id" asp-controller="Role" 
+                            asp-action="MakingATeacher">
                                 Добавяне на роля "Учител"
                             </a>
                         }
@@ -75,13 +80,15 @@
                     }
                     @if (list.Contains("Teacher"))
                     {
-                        <a class="userButton" asp-route-id="@currentUser.Id" asp-controller="Role" asp-action="RemoveTeacherRole">
+                        <a class="userButton" asp-route-id="@currentUser.Id" 
+                        asp-controller="Role" asp-action="RemoveTeacherRole">
                             Премахване на ролята
                         </a>
                     }
                     else
                     {
-                        <a class="userButton" id="removeButtonUser" asp-route-id="@currentUser.Id" asp-controller="Role" asp-action="DeleteUser">
+                        <a class="userButton" id="removeButtonUser" asp-route-id="@currentUser.Id" 
+                        asp-controller="Role" asp-action="DeleteUser">
                             Изтриване
                         </a>
                     }
@@ -95,8 +102,6 @@
             Няма потребители!
         </div>
     }
-
-
 </div>
 
 <script>

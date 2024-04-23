@@ -1,0 +1,26 @@
+﻿@using ElementFactory.Models.Others;
+
+@model AddQuestionsCurrentQuestionModel
+
+@{
+    ViewBag.Title = "Избери ученици";
+}
+
+<div class="addTypeContainer">
+    <h1 class="addTypeTitle">Моля изберете видимост на теста!</h1>
+
+    <form method="post" asp-controller="Question" asp-action="ChooseStudents">
+        <select asp-for="Vision">
+            <option value="All">Всички потребители</option>
+            <option value="Mine">Моите ученици</option>
+        </select>
+
+        <input type="hidden" asp-for="TestTitle" value="@Model.TestTitle" />
+        <input type="hidden" asp-for="TestCategory" value="@Model.TestCategory" />
+        <input type="hidden" asp-for="NumberOfQ" value="@Model.NumberOfQ" />
+
+        <div class="addTypeButtons">
+            <input type="submit" value="Следваща стъпка" />
+        </div>
+    </form>
+</div>

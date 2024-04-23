@@ -42,5 +42,16 @@
         /// </summary>
         public ICollection<QuestionTestMap> QuestionsTests { get; set; }
         = new List<QuestionTestMap>();
+
+        /// <summary>
+        /// Collection from Users
+        /// </summary>
+        public ICollection<User> Users { get; set; }
+        = new List<User>();
+
+        /// <summary>
+        /// Test Maker
+        /// </summary>
+        public User? Maker { get; set; }
     }
 }

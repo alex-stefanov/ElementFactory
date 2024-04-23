@@ -23,6 +23,16 @@
                 </div>
             </div>
 
+
+            <div class="row-myProfile">
+                <label>
+                    Училище
+                </label>
+                <div>
+                    @Model.School.Name
+                </div>
+            </div>
+
             <div class="row-myProfile">
 
                 <label>
@@ -30,23 +40,21 @@
                 </label>
 
                 <div>
-                    @if (User.IsInRole("Admin") || User.IsInRole("Teacher") || User.IsInRole("Student"))
+                    @if (await userManager.IsInRoleAsync(Model, "Admin") ||
+                    await userManager.IsInRoleAsync(Model, "Teacher") ||
+                    await userManager.IsInRoleAsync(Model, "Student"))
                     {
-
                         var user = await userManager.FindByNameAsync(User?.Identity?.Name);
                         var roles = await userManager.GetRolesAsync(user);
 
-
-                        @string.Join(", ",roles)
-                        ;
-
+                        @string.Join(", ",roles);
                     }
                 </div>
 
             </div>
         </div>
         <div class="buttons-my-profile">
-            @if (userManager.IsInRoleAsync(Model, "Student").Result && Model.IsRequested == false)
+            @if (await userManager.IsInRoleAsync(Model, "Student") && Model.IsRequested == false)
             {
                 <button onclick="@{
                 Model.IsRequested=true;
@@ -55,7 +63,7 @@
                     Заявка за учител
                 </button>
             }
-            else if (userManager.IsInRoleAsync(Model, "Student").Result && Model.IsRequested != false)
+            else if (await userManager.IsInRoleAsync(Model, "Student") && Model.IsRequested)
             {
                 <button onclick="@{
                 Model.IsRequested=false;
@@ -63,7 +71,6 @@
                 }" class="btn btn-primary inline-block-button-my-profile">
                     Отмени заявка за учител
                 </button>
-
             }
         </div>
     </form>
