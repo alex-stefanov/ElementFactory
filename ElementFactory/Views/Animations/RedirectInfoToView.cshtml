@@ -1,0 +1,29 @@
+﻿@model ElementFactory.Models.Api.AtomicReactionModel
+@{
+    ViewBag.Title = "Попълване на уравнение";
+}
+<div style="display:flex; flex-direction:column; align-content:center;flex-wrap:wrap; align-items:center;margin-bottom:6.5em;">
+    <div class="text-center flex-white-child-title-flashcard" style="display:flex; flex-direction:column; align-content:center;flex-wrap:wrap; align-items:center;padding:1.5em">
+        <h2>Попълнете изходните вещества</h2>
+    </div>
+</div>
+
+<form method="post" asp-action="FillAtomicReactionModel" asp-controller="OpenAI" class="custom-form">
+    <div style="display:flex;justify-content:center;flex-direction:column;gap:5em;align-content:center">
+        <div class="form-group" style="font-size:30px;">
+            <label for="reactions-atomic-reaction-display-firstElement">Първи Елемент:</label>
+            <input type="text" id="reactions-atomic-reaction-display-firstElement" name="FirstElement" asp-for="FirstElement" required>
+        </div>
+
+        <div class="form-group" style="font-size:30px;">
+            <label for="reactions-atomic-reaction-display-secondElement">Втори Елемент:</label>
+            <input type="text" id="reactions-atomic-reaction-display-secondElement" name="SecondElement" asp-for="SecondElement" required>
+        </div>
+
+        <div class="form-group" style="align-self:flex-end;padding:20px">
+            <input type="submit" value="Подай" id="reactions-atomic-reaction-display-submitButton" style="font-size:25px">
+        </div>
+    </div>
+
+</form>
+

@@ -1,0 +1,336 @@
+﻿@model ElementFactory.Models.Api.AtomicReactionModel
+@{
+    ViewBag.Title = "Изравнена реакция";
+}
+<div style="display:flex; flex-direction:column; align-content:center;flex-wrap:wrap; align-items:center">
+    <div class="text-center flex-white-child-title-flashcard" style="display:flex; flex-direction:column; align-content:center;flex-wrap:wrap; align-items:center;padding-bottom:0">
+        <h2>Изравнена Реакция:</h2>
+        <p style="font-weight:700; font-size:1.5em">@Model.FinalReaction</p>
+    </div>
+</div>
+<div>
+    <input id="hidden-atomic-reaction-firstElement-info" type="hidden" value="@Model.FirstElementConfig" />
+    <input id="hidden-atomic-reaction-secondElement-info" type="hidden" value="@Model.SecondElementConfig" />
+    <canvas id="chemical-animation-canvas"></canvas>
+</div>
+<script type="module">
+
+    //Getting the hiddenElements
+    let firstElementConfigInputElement = document.getElementById("hidden-atomic-reaction-firstElement-info");
+    let secondElementConfigInputElement = document.getElementById("hidden-atomic-reaction-secondElement-info");
+
+    let canvas = document.getElementById("chemical-animation-canvas");
+    canvas.style.display = "block";
+
+    //Initial data
+    let context = canvas.getContext("2d");
+
+    let window_height = window.innerHeight;
+    let window_width = window.innerWidth;
+
+    const electronRadius = 12;
+    const protonRadius = 25;
+    const baseElctronRadiusDifference = 50;
+
+    canvas.width = window_width;
+    canvas.height = window_height;
+
+    //Classes
+    class Electron {
+        constructor(type, radius, color, speed, initialAngle, text) {
+            this.type = type;
+            this.radius = radius;
+            this.color = color;
+            this.speed = speed;
+            this.angle = initialAngle;
+            this.text = text;
+        }
+
+        getX() {
+            if (this.type == "first") {
+                return proton1X + this.radius * Math.cos(this.angle);
+            } else {
+                return proton2X + this.radius * Math.cos(this.angle);
+            }
+        }
+
+        getY() {
+            if (this.type == "first") {
+                return proton1Y + this.radius * Math.sin(this.angle);
+            } else {
+                return proton2Y + this.radius * Math.sin(this.angle);
+            }
+        }
+
+        draw(context) {
+            context.beginPath();
+
+            context.strokeStyle = this.color;
+            context.lineWidth = 3;
+
+            let x;
+            let y;
+
+            if (this.type == "first") {
+                x = proton1X + this.radius * Math.cos(this.angle);
+                y = proton1Y + this.radius * Math.sin(this.angle);
+            } else {
+                x = proton2X + this.radius * Math.cos(this.angle);
+                y = proton2Y + this.radius * Math.sin(this.angle);
+            }
+            context.arc(x, y, electronRadius, 0, Math.PI * 2, false);
+
+            context.textAlign = "center";
+            context.textBaseline = "middle";
+            context.font = "18px Arial";
+            context.fillText(this.text, x, y);
+
+            context.stroke();
+            context.closePath();
+
+
+            context.beginPath();
+            if (this.type == "first") {
+                context.arc(proton1X, proton1Y, this.radius, 0, Math.PI * 2, false);
+            } else {
+                context.arc(proton2X, proton2Y, this.radius, 0, Math.PI * 2, false);
+            }
+            context.stroke();
+            context.closePath();
+        }
+
+        update() {
+            this.angle += this.speed;
+        }
+    }
+
+    class Proton {
+        constructor(type, radius, color, text, initialAngle, speed) {
+            this.type = type;
+            this.radius = radius;
+            this.color = color;
+            this.text = text;
+            this.speed = speed;
+            this.angle = initialAngle;
+
+            this.dx = 1 * this.speed;
+            this.dy = 1 * this.speed;
+        }
+
+        draw(context) {
+            context.beginPath();
+
+            context.strokeStyle = this.color;
+            context.textAlign = "center";
+            context.textBaseline = "middle";
+            context.font = "18px Arial";
+
+            if (this.type == "first") {
+                context.fillText(this.text, proton1X, proton1Y);
+            } else {
+                context.fillText(this.text, proton2X, proton2Y);
+            }
+            context.lineWidth = 3;
+
+            if (this.type == "first") {
+                context.arc(proton1X, proton1Y, this.radius, 0, Math.PI * 2, false);
+            } else {
+                context.arc(proton2X, proton2Y, this.radius, 0, Math.PI * 2, false);
+            }
+            context.stroke();
+
+            context.closePath();
+        }
+
+        update() {
+            if (this.type == "first") {
+                proton1X += this.dx
+            } else {
+                proton2X += this.dx
+            }
+        }
+
+        circlingUpdate(firstElement, secondElement) {
+            this.angle += this.speed / 60;
+            proton1X = proton2X + (firstElement[firstElement.length - 1].radius + secondElement[secondElement.length - 1].radius) * Math.cos(this.angle);
+            proton1Y = proton2Y + (firstElement[firstElement.length - 1].radius + secondElement[secondElement.length - 1].radius) * Math.sin(this.angle);
+        }
+    }
+
+    class Molecule {
+        constructor(radius1, radius2, atom1, atom2) {
+            this.radius1 = radius1;
+            this.radius2 = radius2;
+            this.atom1 = atom1;
+            this.atom2 = atom2;
+        }
+
+        draw(context) {
+            this.atom2.forEach(x => {
+                x.draw(context);
+            });
+
+            this.atom1.forEach(x => {
+                x.draw(context);
+            });
+        }
+
+        update() {
+            this.atom1[0].circlingUpdate(this.atom1, this.atom2);
+
+            let tempFirstElement = this.atom1.slice();
+            tempFirstElement.shift();
+
+            let tempSecondElement = this.atom2.slice();
+            tempSecondElement.shift();
+
+            tempFirstElement.forEach(x => {
+                x.update();
+            });
+
+            tempSecondElement.forEach(x => {
+                x.update();
+            });
+        }
+    }
+
+    //Business Logic
+    let proton1X = canvas.width*0.2;
+    let proton1Y = canvas.height/3;
+
+    let proton2X = canvas.width*0.8;
+    let proton2Y = canvas.height / 3;
+
+    let nameFirstElement = `@Model.FirstElement`;
+    let nameSecondElement = `@Model.SecondElement`;
+    let firstElement = createElement("first", 1, firstElementConfigInputElement.value, nameFirstElement);
+    let secondElement = createElement("second", -1, secondElementConfigInputElement.value, nameSecondElement);
+
+    drawInitial();
+
+    animate();
+
+    //Functions
+    function createElement(type, direction,config,name) {
+        let particles = [];
+        let layer = 0;
+        let actualLayer = 0;
+
+        let proton = new Proton(type, protonRadius, "blue", name, 0, direction * 1);
+
+        particles.push(proton);
+
+        for (let j = 0; j < config.split(" ").length; j++) {
+            for (let i = 0; i < config.split(" ")[j]; i++) {
+                let electron = new Electron(type, baseElctronRadiusDifference + layer * 30, "purple", direction * (0.012 + j * 0.003), 0 + (i * 1.5), "e-");
+                particles.push(electron);
+            }
+            layer++;
+        }
+        return particles;
+    }
+
+    function drawInitial() {
+
+        firstElement.forEach(x => {
+            x.draw(context);
+        });
+
+        secondElement.forEach(x => {
+            x.draw(context);
+        });
+    }
+
+    function animate() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        let collisionDetected = false;
+
+        let tempFirstElement = firstElement.slice();
+        tempFirstElement.shift();
+        let tempSecondElement = secondElement.slice();
+        tempSecondElement.shift();
+
+        firstElement.forEach(x => {
+            x.update();
+        });
+
+        secondElement.forEach(x => {
+            x.update();
+        });
+
+        for (const firstParticle of tempFirstElement) {
+            for (const secondParticle of tempSecondElement) {
+                if (getDistance(firstParticle, secondParticle) === true) {
+                    collisionDetected = true;
+                    break;
+                }
+            }
+            if (collisionDetected) {
+                break;
+            }
+        }
+
+        drawInitial();
+
+        if (collisionDetected === false) {
+            requestAnimationFrame(animate);
+        } else {
+            proton2X = canvas.width / 2;
+            proton2Y = canvas.height / 2.3;
+            proton1X = proton2X + secondElement[secondElement.length - 1].radius + firstElement[firstElement.length - 1].radius;
+            proton1Y = proton2Y;
+            let temp = 0;
+            tempFirstElement.forEach(x => {
+                x.angle = 180 / 60 + temp;
+                x.speed = -1 * x.speed
+                temp += 1.5;
+            });
+            tempFirstElement[tempFirstElement.length - 1].angle = 180 / 60;
+            temp = 0;
+            tempSecondElement.forEach(x => {
+                x.angle = 0+temp;
+                x.speed = -1 * x.speed;
+                temp += 1.5;
+            });
+            tempSecondElement[tempSecondElement.length - 1].angle = 0;
+
+            firstElement[firstElement.length - 1].speed = -tempSecondElement[tempSecondElement.length - 1].speed;
+            firstElement[0].speed = -secondElement[secondElement.length - 1].speed * 60;
+            secondElement[secondElement.length - 1].speed = -secondElement[secondElement.length - 1].speed;
+            requestAnimationFrame(finalAnimation);
+        }
+    }
+
+    function finalAnimation() {
+
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        let molecule = new Molecule(firstElement[firstElement.length - 1].radius
+            , secondElement[secondElement.length - 1].radius
+            , firstElement,
+            secondElement);
+
+        molecule.update();
+        molecule.draw(context);
+
+        requestAnimationFrame(finalAnimation);
+        
+    }
+
+    function getDistance(electron1, electron2) {
+
+        let x1 = electron1.getX();
+        let y1 = electron1.getY();
+        let x2 = electron2.getX();
+        let y2 = electron2.getY();
+
+        let result = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+
+        if (result < (2 * electronRadius)) {
+            return true;
+        }
+        return false;
+    }
+
+</script>

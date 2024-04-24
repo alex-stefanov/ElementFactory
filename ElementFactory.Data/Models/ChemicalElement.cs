@@ -146,6 +146,13 @@
         public string BulgarianState { get; set; } = null!;
 
         /// <summary>
+        /// Electron Configuration for element
+        /// </summary>
+        [Required]
+        [Comment("Electron Configuration for element")]
+        public string ElectronConfiuration { get; set; } = string.Empty;
+
+        /// <summary>
         /// Electronegativity for the Element
         /// </summary>
         [Required]

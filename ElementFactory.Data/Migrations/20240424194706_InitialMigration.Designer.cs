@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ElementFactory.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240423062338_InitialMigration")]
+    [Migration("20240424194706_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -2768,6 +2768,11 @@ namespace ElementFactory.Data.Migrations
                         .HasColumnType("decimal(18,2)")
                         .HasComment("Chemical element density");
 
+                    b.Property<string>("ElectronConfiuration")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasComment("Electron Configuration for element");
+
                     b.Property<decimal>("Electronegativity")
                         .HasColumnType("decimal(18,2)")
                         .HasComment("Chemical element electronegativity");
@@ -2846,6 +2851,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 9,
                             Density = 10.00m,
+                            ElectronConfiuration = "2 8 18 32 18 9 2",
                             Electronegativity = 1.10m,
                             ElectronicLayers = 7,
                             EnglishName = "Actinium",
@@ -2870,6 +2876,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 10.49m,
+                            ElectronConfiuration = "2 8 18 18 1",
                             Electronegativity = 1.93m,
                             ElectronicLayers = 5,
                             EnglishName = "Silver",
@@ -2894,6 +2901,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 5,
                             Density = 2.70m,
+                            ElectronConfiuration = "2 8 3",
                             Electronegativity = 1.61m,
                             ElectronicLayers = 3,
                             EnglishName = "Aluminium",
@@ -2918,6 +2926,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 9,
                             Density = 12.00m,
+                            ElectronConfiuration = "2 8 18 32 25 8 2",
                             Electronegativity = 1.30m,
                             ElectronicLayers = 7,
                             EnglishName = "Americium",
@@ -2942,6 +2951,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Газ",
                             ChemicalTypeId = 7,
                             Density = 1.78m,
+                            ElectronConfiuration = "2 8 8",
                             Electronegativity = 0.00m,
                             ElectronicLayers = 3,
                             EnglishName = "Argon",
@@ -2966,6 +2976,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 10,
                             Density = 5.73m,
+                            ElectronConfiuration = "2 8 18 5",
                             Electronegativity = 2.18m,
                             ElectronicLayers = 4,
                             EnglishName = "Arsenic",
@@ -2990,6 +3001,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 6,
                             Density = 8.91m,
+                            ElectronConfiuration = "2 8 18 32 18 7",
                             Electronegativity = 0.00m,
                             ElectronicLayers = 6,
                             EnglishName = "Astatine",
@@ -3014,6 +3026,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 19.30m,
+                            ElectronConfiuration = "2 8 18 32 18 1",
                             Electronegativity = 2.54m,
                             ElectronicLayers = 6,
                             EnglishName = "Gold",
@@ -3038,6 +3051,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 10,
                             Density = 2.08m,
+                            ElectronConfiuration = "2 3",
                             Electronegativity = 2.04m,
                             ElectronicLayers = 2,
                             EnglishName = "Boron",
@@ -3062,6 +3076,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 3,
                             Density = 3.51m,
+                            ElectronConfiuration = "2 8 18 18 8 2",
                             Electronegativity = 0.89m,
                             ElectronicLayers = 6,
                             EnglishName = "Barium",
@@ -3086,6 +3101,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 3,
                             Density = 1.85m,
+                            ElectronConfiuration = "2 2",
                             Electronegativity = 1.57m,
                             ElectronicLayers = 2,
                             EnglishName = "Beryllium",
@@ -3110,6 +3126,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 26.00m,
+                            ElectronConfiuration = "2 8 18 32 32 13 2",
                             Electronegativity = 0.00m,
                             ElectronicLayers = 7,
                             EnglishName = "Bohrium",
@@ -3134,6 +3151,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 5,
                             Density = 9.78m,
+                            ElectronConfiuration = "2 8 18 32 18 5",
                             Electronegativity = 2.02m,
                             ElectronicLayers = 6,
                             EnglishName = "Bismuth",
@@ -3158,6 +3176,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 9,
                             Density = 14.78m,
+                            ElectronConfiuration = "2 8 18 32 27 8 2",
                             Electronegativity = 1.30m,
                             ElectronicLayers = 7,
                             EnglishName = "Berkelium",
@@ -3182,6 +3201,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Течност",
                             ChemicalTypeId = 6,
                             Density = 3.10m,
+                            ElectronConfiuration = "2 8 18 7",
                             Electronegativity = 2.96m,
                             ElectronicLayers = 4,
                             EnglishName = "Bromine",
@@ -3206,6 +3226,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 1,
                             Density = 2.27m,
+                            ElectronConfiuration = "2 4",
                             Electronegativity = 2.55m,
                             ElectronicLayers = 2,
                             EnglishName = "Carbon",
@@ -3230,6 +3251,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 3,
                             Density = 1.55m,
+                            ElectronConfiuration = "2 8 8 2",
                             Electronegativity = 1.00m,
                             ElectronicLayers = 4,
                             EnglishName = "Calcium",
@@ -3254,6 +3276,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 8.65m,
+                            ElectronConfiuration = "2 8 18 18 2",
                             Electronegativity = 1.69m,
                             ElectronicLayers = 5,
                             EnglishName = "Cadmium",
@@ -3278,6 +3301,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 8,
                             Density = 6.77m,
+                            ElectronConfiuration = "2 8 18 19 9 2",
                             Electronegativity = 1.12m,
                             ElectronicLayers = 6,
                             EnglishName = "Cerium",
@@ -3302,6 +3326,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 9,
                             Density = 15.10m,
+                            ElectronConfiuration = "2 8 18 32 28 8 2",
                             Electronegativity = 1.30m,
                             ElectronicLayers = 7,
                             EnglishName = "Californium",
@@ -3326,6 +3351,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Газ",
                             ChemicalTypeId = 6,
                             Density = 3.20m,
+                            ElectronConfiuration = "2 8 7",
                             Electronegativity = 3.16m,
                             ElectronicLayers = 3,
                             EnglishName = "Chlorine",
@@ -3350,6 +3376,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 9,
                             Density = 13.51m,
+                            ElectronConfiuration = "2 8 18 32 25 9 2",
                             Electronegativity = 1.30m,
                             ElectronicLayers = 7,
                             EnglishName = "Curium",
@@ -3374,6 +3401,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Неопределено",
                             ChemicalTypeId = 4,
                             Density = 14.00m,
+                            ElectronConfiuration = "2 8 18 32 32 18 2",
                             Electronegativity = 0.00m,
                             ElectronicLayers = 7,
                             EnglishName = "Copernicium",
@@ -3398,6 +3426,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 8.90m,
+                            ElectronConfiuration = "2 8 15 2",
                             Electronegativity = 1.88m,
                             ElectronicLayers = 4,
                             EnglishName = "Cobalt",
@@ -3422,6 +3451,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 7.15m,
+                            ElectronConfiuration = "2 8 13 1",
                             Electronegativity = 1.66m,
                             ElectronicLayers = 4,
                             EnglishName = "Chromium",
@@ -3446,6 +3476,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 2,
                             Density = 1.93m,
+                            ElectronConfiuration = "2 8 18 18 8 1",
                             Electronegativity = 0.79m,
                             ElectronicLayers = 6,
                             EnglishName = "Caesium",
@@ -3470,6 +3501,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 8.96m,
+                            ElectronConfiuration = "2 8 18 1",
                             Electronegativity = 1.90m,
                             ElectronicLayers = 4,
                             EnglishName = "Copper",
@@ -3494,6 +3526,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 21.60m,
+                            ElectronConfiuration = "2 8 18 32 32 11 2",
                             Electronegativity = 0.00m,
                             ElectronicLayers = 7,
                             EnglishName = "Dubnium",
@@ -3518,6 +3551,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Неопределено",
                             ChemicalTypeId = 4,
                             Density = 26.00m,
+                            ElectronConfiuration = "2 8 18 32 32 16 2",
                             Electronegativity = 0.00m,
                             ElectronicLayers = 7,
                             EnglishName = "Darmstadtium",
@@ -3542,6 +3576,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 8,
                             Density = 8.54m,
+                            ElectronConfiuration = "2 8 18 28 8 2",
                             Electronegativity = 1.22m,
                             ElectronicLayers = 6,
                             EnglishName = "Dysprosium",
@@ -3566,6 +3601,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 8,
                             Density = 9.07m,
+                            ElectronConfiuration = "2 8 18 30 8 2",
                             Electronegativity = 1.24m,
                             ElectronicLayers = 6,
                             EnglishName = "Erbium",
@@ -3590,6 +3626,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 9,
                             Density = 8.84m,
+                            ElectronConfiuration = "2 8 18 32 29 8 2",
                             Electronegativity = 1.30m,
                             ElectronicLayers = 7,
                             EnglishName = "Einsteinium",
@@ -3614,6 +3651,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 8,
                             Density = 5.24m,
+                            ElectronConfiuration = "2 8 18 25 8 2",
                             Electronegativity = 1.20m,
                             ElectronicLayers = 6,
                             EnglishName = "Europium",
@@ -3638,6 +3676,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Газ",
                             ChemicalTypeId = 6,
                             Density = 1.70m,
+                            ElectronConfiuration = "2 7",
                             Electronegativity = 3.98m,
                             ElectronicLayers = 2,
                             EnglishName = "Fluorine",
@@ -3662,6 +3701,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 7.87m,
+                            ElectronConfiuration = "2 8 14 2",
                             Electronegativity = 1.83m,
                             ElectronicLayers = 4,
                             EnglishName = "Iron",
@@ -3686,6 +3726,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Неопределено",
                             ChemicalTypeId = 5,
                             Density = 11.40m,
+                            ElectronConfiuration = "2 8 18 32 32 18 4",
                             Electronegativity = 0.00m,
                             ElectronicLayers = 7,
                             EnglishName = "Flerovium",
@@ -3710,6 +3751,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 9,
                             Density = 9.70m,
+                            ElectronConfiuration = "2 8 18 32 30 8 2",
                             Electronegativity = 1.30m,
                             ElectronicLayers = 7,
                             EnglishName = "Fermium",
@@ -3734,6 +3776,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 2,
                             Density = 2.48m,
+                            ElectronConfiuration = "2 8 18 32 18 8 1",
                             Electronegativity = 0.79m,
                             ElectronicLayers = 7,
                             EnglishName = "Francium",
@@ -3758,6 +3801,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 5,
                             Density = 5.91m,
+                            ElectronConfiuration = "2 8 18 3",
                             Electronegativity = 1.81m,
                             ElectronicLayers = 4,
                             EnglishName = "Gallium",
@@ -3782,6 +3826,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 8,
                             Density = 7.90m,
+                            ElectronConfiuration = "2 8 18 25 9 2",
                             Electronegativity = 1.20m,
                             ElectronicLayers = 6,
                             EnglishName = "Gadolinium",
@@ -3806,6 +3851,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 10,
                             Density = 5.32m,
+                            ElectronConfiuration = "2 8 18 4",
                             Electronegativity = 2.01m,
                             ElectronicLayers = 4,
                             EnglishName = "Germanium",
@@ -3830,6 +3876,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Газ",
                             ChemicalTypeId = 1,
                             Density = 0.09m,
+                            ElectronConfiuration = "1",
                             Electronegativity = 2.20m,
                             ElectronicLayers = 1,
                             EnglishName = "Hydrogen",
@@ -3854,6 +3901,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Газ",
                             ChemicalTypeId = 7,
                             Density = 0.18m,
+                            ElectronConfiuration = "2",
                             Electronegativity = 0.00m,
                             ElectronicLayers = 1,
                             EnglishName = "Helium",
@@ -3878,6 +3926,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 13.31m,
+                            ElectronConfiuration = "2 8 18 32 10 2",
                             Electronegativity = 1.30m,
                             ElectronicLayers = 6,
                             EnglishName = "Hafnium",
@@ -3902,6 +3951,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Течност",
                             ChemicalTypeId = 4,
                             Density = 13.55m,
+                            ElectronConfiuration = "2 8 18 32 18 2",
                             Electronegativity = 2.00m,
                             ElectronicLayers = 6,
                             EnglishName = "Mercury",
@@ -3926,6 +3976,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 8,
                             Density = 8.79m,
+                            ElectronConfiuration = "2 8 18 29 8 2",
                             Electronegativity = 1.23m,
                             ElectronicLayers = 6,
                             EnglishName = "Holmium",
@@ -3950,6 +4001,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 27.00m,
+                            ElectronConfiuration = "2 8 18 32 32 14 2",
                             Electronegativity = 0.00m,
                             ElectronicLayers = 7,
                             EnglishName = "Hassium",
@@ -3974,6 +4026,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 6,
                             Density = 4.93m,
+                            ElectronConfiuration = "2 8 18 18 7",
                             Electronegativity = 2.66m,
                             ElectronicLayers = 5,
                             EnglishName = "Iodine",
@@ -3998,6 +4051,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 5,
                             Density = 7.31m,
+                            ElectronConfiuration = "2 8 18 18 3",
                             Electronegativity = 1.78m,
                             ElectronicLayers = 5,
                             EnglishName = "Indium",
@@ -4022,6 +4076,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 22.56m,
+                            ElectronConfiuration = "2 8 18 32 15 2",
                             Electronegativity = 2.20m,
                             ElectronicLayers = 6,
                             EnglishName = "Iridium",
@@ -4046,6 +4101,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 2,
                             Density = 0.89m,
+                            ElectronConfiuration = "2 8 8 1",
                             Electronegativity = 0.82m,
                             ElectronicLayers = 4,
                             EnglishName = "Potassium",
@@ -4070,6 +4126,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Газ",
                             ChemicalTypeId = 7,
                             Density = 3.75m,
+                            ElectronConfiuration = "2 8 18 8",
                             Electronegativity = 3.00m,
                             ElectronicLayers = 4,
                             EnglishName = "Krypton",
@@ -4094,6 +4151,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 8,
                             Density = 6.16m,
+                            ElectronConfiuration = "2 8 18 18 9 2",
                             Electronegativity = 1.10m,
                             ElectronicLayers = 6,
                             EnglishName = "Lanthanum",
@@ -4118,6 +4176,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 2,
                             Density = 0.53m,
+                            ElectronConfiuration = "2 1",
                             Electronegativity = 0.98m,
                             ElectronicLayers = 2,
                             EnglishName = "Lithium",
@@ -4142,6 +4201,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 9,
                             Density = 14.40m,
+                            ElectronConfiuration = "2 8 18 32 32 8 3",
                             Electronegativity = 1.30m,
                             ElectronicLayers = 7,
                             EnglishName = "Lawrencium",
@@ -4166,6 +4226,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 8,
                             Density = 9.84m,
+                            ElectronConfiuration = "2 8 18 32 9 2",
                             Electronegativity = 1.27m,
                             ElectronicLayers = 6,
                             EnglishName = "Lutetium",
@@ -4190,6 +4251,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Неопределено",
                             ChemicalTypeId = 5,
                             Density = 12.90m,
+                            ElectronConfiuration = "2 8 18 32 32 18 6",
                             Electronegativity = 0.00m,
                             ElectronicLayers = 7,
                             EnglishName = "Livermorium",
@@ -4214,6 +4276,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Неопределено",
                             ChemicalTypeId = 5,
                             Density = 13.50m,
+                            ElectronConfiuration = "2 8 18 32 32 18 5",
                             Electronegativity = 0.00m,
                             ElectronicLayers = 7,
                             EnglishName = "Moscovium",
@@ -4238,6 +4301,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 9,
                             Density = 10.30m,
+                            ElectronConfiuration = "2 8 18 32 31 8 2",
                             Electronegativity = 1.30m,
                             ElectronicLayers = 7,
                             EnglishName = "Mendelevium",
@@ -4262,6 +4326,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 3,
                             Density = 1.74m,
+                            ElectronConfiuration = "2 8 2",
                             Electronegativity = 1.31m,
                             ElectronicLayers = 3,
                             EnglishName = "Magnesium",
@@ -4286,6 +4351,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 7.21m,
+                            ElectronConfiuration = "2 8 13 2",
                             Electronegativity = 1.55m,
                             ElectronicLayers = 4,
                             EnglishName = "Manganese",
@@ -4310,6 +4376,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 10.28m,
+                            ElectronConfiuration = "2 8 18 13 1",
                             Electronegativity = 2.16m,
                             ElectronicLayers = 5,
                             EnglishName = "Molybdenum",
@@ -4334,6 +4401,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 27.00m,
+                            ElectronConfiuration = "2 8 18 32 32 15 2",
                             Electronegativity = 0.00m,
                             ElectronicLayers = 7,
                             EnglishName = "Meitnerium",
@@ -4358,6 +4426,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Газ",
                             ChemicalTypeId = 1,
                             Density = 1.25m,
+                            ElectronConfiuration = "2 5",
                             Electronegativity = 3.04m,
                             ElectronicLayers = 2,
                             EnglishName = "Nitrogen",
@@ -4382,6 +4451,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 2,
                             Density = 0.97m,
+                            ElectronConfiuration = "2 8 1",
                             Electronegativity = 0.93m,
                             ElectronicLayers = 3,
                             EnglishName = "Sodium",
@@ -4406,6 +4476,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 8.57m,
+                            ElectronConfiuration = "2 8 18 12 1",
                             Electronegativity = 1.60m,
                             ElectronicLayers = 5,
                             EnglishName = "Niobium",
@@ -4430,6 +4501,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 8,
                             Density = 7.01m,
+                            ElectronConfiuration = "2 8 18 22 8 2",
                             Electronegativity = 1.14m,
                             ElectronicLayers = 6,
                             EnglishName = "Neodymium",
@@ -4454,6 +4526,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Газ",
                             ChemicalTypeId = 7,
                             Density = 0.90m,
+                            ElectronConfiuration = "2 8",
                             Electronegativity = 0.00m,
                             ElectronicLayers = 2,
                             EnglishName = "Neon",
@@ -4478,6 +4551,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Неопределено",
                             ChemicalTypeId = 5,
                             Density = 16.00m,
+                            ElectronConfiuration = "2 8 18 32 32 18 3",
                             Electronegativity = 0.00m,
                             ElectronicLayers = 7,
                             EnglishName = "Nihonium",
@@ -4502,6 +4576,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 8.91m,
+                            ElectronConfiuration = "2 8 16 2",
                             Electronegativity = 1.91m,
                             ElectronicLayers = 4,
                             EnglishName = "Nickel",
@@ -4526,6 +4601,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 9,
                             Density = 9.90m,
+                            ElectronConfiuration = "2 8 18 32 32 8 2",
                             Electronegativity = 1.30m,
                             ElectronicLayers = 7,
                             EnglishName = "Nobelium",
@@ -4550,6 +4626,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 9,
                             Density = 19.38m,
+                            ElectronConfiuration = "2 8 18 32 22 9 2",
                             Electronegativity = 1.36m,
                             ElectronicLayers = 7,
                             EnglishName = "Neptunium",
@@ -4574,6 +4651,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Газ",
                             ChemicalTypeId = 1,
                             Density = 1.43m,
+                            ElectronConfiuration = "2 6",
                             Electronegativity = 3.44m,
                             ElectronicLayers = 2,
                             EnglishName = "Oxygen",
@@ -4598,6 +4676,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Неопределено",
                             ChemicalTypeId = 7,
                             Density = 7.20m,
+                            ElectronConfiuration = "2 8 18 32 32 18 8",
                             Electronegativity = 0.00m,
                             ElectronicLayers = 7,
                             EnglishName = "Oganesson",
@@ -4622,6 +4701,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 22.59m,
+                            ElectronConfiuration = "2 8 18 32 14 2",
                             Electronegativity = 2.20m,
                             ElectronicLayers = 6,
                             EnglishName = "Osmium",
@@ -4646,6 +4726,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 1,
                             Density = 1.82m,
+                            ElectronConfiuration = "2 8 5",
                             Electronegativity = 2.19m,
                             ElectronicLayers = 3,
                             EnglishName = "Phosphorus",
@@ -4670,6 +4751,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 9,
                             Density = 15.37m,
+                            ElectronConfiuration = "2 8 18 32 20 9 2",
                             Electronegativity = 1.50m,
                             ElectronicLayers = 7,
                             EnglishName = "Protactinium",
@@ -4694,6 +4776,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 5,
                             Density = 11.34m,
+                            ElectronConfiuration = "2 8 18 32 18 4",
                             Electronegativity = 2.33m,
                             ElectronicLayers = 6,
                             EnglishName = "Lead",
@@ -4718,6 +4801,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 12.02m,
+                            ElectronConfiuration = "2 8 18 18",
                             Electronegativity = 2.20m,
                             ElectronicLayers = 5,
                             EnglishName = "Palladium",
@@ -4742,6 +4826,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 8,
                             Density = 7.26m,
+                            ElectronConfiuration = "2 8 18 23 8 2",
                             Electronegativity = 1.13m,
                             ElectronicLayers = 6,
                             EnglishName = "Promethium",
@@ -4766,6 +4851,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 10,
                             Density = 9.20m,
+                            ElectronConfiuration = "2 8 18 32 18 6",
                             Electronegativity = 2.00m,
                             ElectronicLayers = 6,
                             EnglishName = "Polonium",
@@ -4790,6 +4876,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 8,
                             Density = 6.77m,
+                            ElectronConfiuration = "2 8 18 21 8 2",
                             Electronegativity = 1.13m,
                             ElectronicLayers = 6,
                             EnglishName = "Praseodymium",
@@ -4814,6 +4901,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 21.45m,
+                            ElectronConfiuration = "2 8 18 32 17 1",
                             Electronegativity = 2.28m,
                             ElectronicLayers = 6,
                             EnglishName = "Platinum",
@@ -4838,6 +4926,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 9,
                             Density = 19.85m,
+                            ElectronConfiuration = "2 8 18 32 24 8 2",
                             Electronegativity = 1.28m,
                             ElectronicLayers = 7,
                             EnglishName = "Plutonium",
@@ -4862,6 +4951,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 3,
                             Density = 5.50m,
+                            ElectronConfiuration = "2 8 18 32 18 8 2",
                             Electronegativity = 0.90m,
                             ElectronicLayers = 7,
                             EnglishName = "Radium",
@@ -4886,6 +4976,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 2,
                             Density = 1.53m,
+                            ElectronConfiuration = "2 8 18 8 1",
                             Electronegativity = 0.82m,
                             ElectronicLayers = 5,
                             EnglishName = "Rubidium",
@@ -4910,6 +5001,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 21.02m,
+                            ElectronConfiuration = "2 8 18 32 13 2",
                             Electronegativity = 1.90m,
                             ElectronicLayers = 6,
                             EnglishName = "Rhenium",
@@ -4934,6 +5026,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 17.00m,
+                            ElectronConfiuration = "2 8 18 32 32 10 2",
                             Electronegativity = 0.00m,
                             ElectronicLayers = 7,
                             EnglishName = "Rutherfordium",
@@ -4958,6 +5051,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Неопределено",
                             ChemicalTypeId = 4,
                             Density = 22.00m,
+                            ElectronConfiuration = "2 8 18 32 32 17 2",
                             Electronegativity = 0.00m,
                             ElectronicLayers = 7,
                             EnglishName = "Roentgenium",
@@ -4982,6 +5076,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 12.41m,
+                            ElectronConfiuration = "2 8 18 16 1",
                             Electronegativity = 2.28m,
                             ElectronicLayers = 5,
                             EnglishName = "Rhodium",
@@ -5006,6 +5101,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Газ",
                             ChemicalTypeId = 7,
                             Density = 9.73m,
+                            ElectronConfiuration = "2 8 18 32 18 8",
                             Electronegativity = 2.20m,
                             ElectronicLayers = 6,
                             EnglishName = "Radon",
@@ -5030,6 +5126,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 12.45m,
+                            ElectronConfiuration = "2 8 18 15 1",
                             Electronegativity = 2.20m,
                             ElectronicLayers = 5,
                             EnglishName = "Ruthenium",
@@ -5054,6 +5151,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 1,
                             Density = 2.07m,
+                            ElectronConfiuration = "2 8 6",
                             Electronegativity = 2.58m,
                             ElectronicLayers = 3,
                             EnglishName = "Sulfur",
@@ -5078,6 +5176,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 10,
                             Density = 6.70m,
+                            ElectronConfiuration = "2 8 18 18 5",
                             Electronegativity = 2.05m,
                             ElectronicLayers = 5,
                             EnglishName = "Antimony",
@@ -5102,6 +5201,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 2.99m,
+                            ElectronConfiuration = "2 8 9 2",
                             Electronegativity = 1.36m,
                             ElectronicLayers = 4,
                             EnglishName = "Scandium",
@@ -5126,6 +5226,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 1,
                             Density = 4.81m,
+                            ElectronConfiuration = "2 8 18 6",
                             Electronegativity = 2.55m,
                             ElectronicLayers = 4,
                             EnglishName = "Selenium",
@@ -5150,6 +5251,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 23.00m,
+                            ElectronConfiuration = "2 8 18 32 32 12 2",
                             Electronegativity = 0.00m,
                             ElectronicLayers = 7,
                             EnglishName = "Seaborgium",
@@ -5174,6 +5276,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 10,
                             Density = 2.33m,
+                            ElectronConfiuration = "2 8 4",
                             Electronegativity = 1.90m,
                             ElectronicLayers = 3,
                             EnglishName = "Silicon",
@@ -5198,6 +5301,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 8,
                             Density = 7.52m,
+                            ElectronConfiuration = "2 8 18 24 8 2",
                             Electronegativity = 1.17m,
                             ElectronicLayers = 6,
                             EnglishName = "Samarium",
@@ -5222,6 +5326,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 5,
                             Density = 7.27m,
+                            ElectronConfiuration = "2 8 18 18 4",
                             Electronegativity = 1.96m,
                             ElectronicLayers = 5,
                             EnglishName = "Tin",
@@ -5246,6 +5351,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 3,
                             Density = 2.64m,
+                            ElectronConfiuration = "2 8 18 8 2",
                             Electronegativity = 0.95m,
                             ElectronicLayers = 5,
                             EnglishName = "Strontium",
@@ -5270,6 +5376,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 16.69m,
+                            ElectronConfiuration = "2 8 18 32 11 2",
                             Electronegativity = 1.50m,
                             ElectronicLayers = 6,
                             EnglishName = "Tantalum",
@@ -5294,6 +5401,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 8,
                             Density = 8.23m,
+                            ElectronConfiuration = "2 8 18 27 8 2",
                             Electronegativity = 1.20m,
                             ElectronicLayers = 6,
                             EnglishName = "Terbium",
@@ -5318,6 +5426,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 11.00m,
+                            ElectronConfiuration = "2 8 18 13 2",
                             Electronegativity = 1.90m,
                             ElectronicLayers = 5,
                             EnglishName = "Technetium",
@@ -5342,6 +5451,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 10,
                             Density = 6.24m,
+                            ElectronConfiuration = "2 8 18 18 6",
                             Electronegativity = 2.10m,
                             ElectronicLayers = 5,
                             EnglishName = "Tellurium",
@@ -5366,6 +5476,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 9,
                             Density = 11.70m,
+                            ElectronConfiuration = "2 8 18 32 18 10 2",
                             Electronegativity = 1.30m,
                             ElectronicLayers = 7,
                             EnglishName = "Thorium",
@@ -5390,6 +5501,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 4.51m,
+                            ElectronConfiuration = "2 8 10 2",
                             Electronegativity = 1.54m,
                             ElectronicLayers = 4,
                             EnglishName = "Titanium",
@@ -5414,6 +5526,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 5,
                             Density = 11.85m,
+                            ElectronConfiuration = "2 8 18 32 18 3",
                             Electronegativity = 1.62m,
                             ElectronicLayers = 6,
                             EnglishName = "Thallium",
@@ -5438,6 +5551,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 8,
                             Density = 9.32m,
+                            ElectronConfiuration = "2 8 18 31 8 2",
                             Electronegativity = 1.25m,
                             ElectronicLayers = 6,
                             EnglishName = "Thulium",
@@ -5462,6 +5576,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Неопределено",
                             ChemicalTypeId = 6,
                             Density = 7.10m,
+                            ElectronConfiuration = "2 8 18 32 32 18 7",
                             Electronegativity = 0.00m,
                             ElectronicLayers = 7,
                             EnglishName = "Tennessine",
@@ -5486,6 +5601,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 9,
                             Density = 19.10m,
+                            ElectronConfiuration = "2 8 18 32 21 9 2",
                             Electronegativity = 1.38m,
                             ElectronicLayers = 7,
                             EnglishName = "Uranium",
@@ -5510,6 +5626,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 6.11m,
+                            ElectronConfiuration = "2 8 11 2",
                             Electronegativity = 1.63m,
                             ElectronicLayers = 4,
                             EnglishName = "Vanadium",
@@ -5534,6 +5651,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 19.20m,
+                            ElectronConfiuration = "2 8 18 32 12 2",
                             Electronegativity = 2.36m,
                             ElectronicLayers = 6,
                             EnglishName = "Tungsten",
@@ -5558,6 +5676,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Газ",
                             ChemicalTypeId = 7,
                             Density = 5.89m,
+                            ElectronConfiuration = "2 8 18 18 8",
                             Electronegativity = 2.60m,
                             ElectronicLayers = 5,
                             EnglishName = "Xenon",
@@ -5582,6 +5701,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 4.47m,
+                            ElectronConfiuration = "2 8 18 9 2",
                             Electronegativity = 1.22m,
                             ElectronicLayers = 5,
                             EnglishName = "Yttrium",
@@ -5606,6 +5726,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 8,
                             Density = 6.90m,
+                            ElectronConfiuration = "2 8 18 32 8 2",
                             Electronegativity = 1.10m,
                             ElectronicLayers = 6,
                             EnglishName = "Ytterbium",
@@ -5630,6 +5751,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 7.14m,
+                            ElectronConfiuration = "2 8 18 2",
                             Electronegativity = 1.65m,
                             ElectronicLayers = 4,
                             EnglishName = "Zinc",
@@ -5654,6 +5776,7 @@ namespace ElementFactory.Data.Migrations
                             BulgarianState = "Твърдо вещество",
                             ChemicalTypeId = 4,
                             Density = 6.52m,
+                            ElectronConfiuration = "2 8 18 10 2",
                             Electronegativity = 1.33m,
                             ElectronicLayers = 5,
                             EnglishName = "Zirconium",
@@ -6351,7 +6474,7 @@ namespace ElementFactory.Data.Migrations
                         new
                         {
                             Id = 66,
-                            Description = "Дадено:\n                C6H6 + 15/2 O2 => 6CO2 + 3H20 + Q\n                Q=3271kJ,\n                Qобразуване(CO2) = 394kJ/mol,\n                Qобразуване(H20) = 285.8kJ/mol\n                Търсим:\n                Qобразуване(C6H6) = ?kJ, закръглено до първия знак след запетаята.",
+                            Description = "Дадено:\r\n                C6H6 + 15/2 O2 => 6CO2 + 3H20 + Q\r\n                Q=3271kJ,\r\n                Qобразуване(CO2) = 394kJ/mol,\r\n                Qобразуване(H20) = 285.8kJ/mol\r\n                Търсим:\r\n                Qобразуване(C6H6) = ?kJ, закръглено до първия знак след запетаята.",
                             IsActive = true,
                             RightAnswer = "-49.6"
                         },
@@ -9484,6 +9607,9 @@ namespace ElementFactory.Data.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
+                    b.Property<string>("MakerId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(150)
@@ -9491,6 +9617,8 @@ namespace ElementFactory.Data.Migrations
                         .HasComment("Test title");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("MakerId");
 
                     b.ToTable("Tests");
 
@@ -9609,9 +9737,8 @@ namespace ElementFactory.Data.Migrations
                     b.Property<int>("Points")
                         .HasColumnType("int");
 
-                    b.Property<string>("School")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("SchoolId")
+                        .HasColumnType("int");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
@@ -9632,6 +9759,8 @@ namespace ElementFactory.Data.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex("SchoolId");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -9773,6 +9902,36 @@ namespace ElementFactory.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("TestUser", b =>
+                {
+                    b.Property<int>("TestsId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UsersId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("TestsId", "UsersId");
+
+                    b.HasIndex("UsersId");
+
+                    b.ToTable("TestUser");
+                });
+
+            modelBuilder.Entity("UserUser", b =>
+                {
+                    b.Property<string>("StudentsId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("TeachersId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("StudentsId", "TeachersId");
+
+                    b.HasIndex("TeachersId");
+
+                    b.ToTable("UserUser");
+                });
+
             modelBuilder.Entity("ElementFactory.Data.Models.Answer", b =>
                 {
                     b.HasOne("ElementFactory.Data.Models.Question", "Question")
@@ -9842,6 +10001,26 @@ namespace ElementFactory.Data.Migrations
                     b.Navigation("Test");
                 });
 
+            modelBuilder.Entity("ElementFactory.Data.Models.Test", b =>
+                {
+                    b.HasOne("ElementFactory.Data.Models.User", "Maker")
+                        .WithMany("TestsMade")
+                        .HasForeignKey("MakerId");
+
+                    b.Navigation("Maker");
+                });
+
+            modelBuilder.Entity("ElementFactory.Data.Models.User", b =>
+                {
+                    b.HasOne("ElementFactory.Data.Models.School", "School")
+                        .WithMany()
+                        .HasForeignKey("SchoolId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("School");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -9893,6 +10072,36 @@ namespace ElementFactory.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("TestUser", b =>
+                {
+                    b.HasOne("ElementFactory.Data.Models.Test", null)
+                        .WithMany()
+                        .HasForeignKey("TestsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ElementFactory.Data.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UsersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("UserUser", b =>
+                {
+                    b.HasOne("ElementFactory.Data.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("StudentsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ElementFactory.Data.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("TeachersId")
+                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("ElementFactory.Data.Models.ChemicalElement", b =>
                 {
                     b.Navigation("FoundersChemicalElements");
@@ -9923,6 +10132,8 @@ namespace ElementFactory.Data.Migrations
             modelBuilder.Entity("ElementFactory.Data.Models.User", b =>
                 {
                     b.Navigation("Flashcards");
+
+                    b.Navigation("TestsMade");
                 });
 #pragma warning restore 612, 618
         }
