@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300&family=Roboto+Condensed:wght@100&display=swap');
-
+@import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
 :root {
     --borderPixels: 3px;
     --borderType: solid;
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
 }
 
 /* ------------------------------ */
@@ -1496,10 +1500,10 @@ form td p
     border: 10px solid blue;
 }
 
-/* ------------------------------ /
+/* ------------------------------ */
 
-/ ------------------------------ /
-/ MyProfile page css */
+/* ------------------------------ */
+/* MyProfile page css */
 
 .checkoutProfileContainer {
     display: flex;
@@ -1550,10 +1554,10 @@ form td p
     flex-grow: 1;
 }
 
-/* ------------------------------ /
+/* ------------------------------ */
 
-/ ------------------------------ /
-/ Leaderboard page css */
+/* ------------------------------ */
+/* Leaderboard page css */
 
 .pseudo-body-leaderboard * {
     font-size: 62px, 5%;
@@ -1739,10 +1743,10 @@ form td p
     padding-right:18px;
 }
 
-/* ------------------------------ /
+/* ------------------------------ */
 
-/ ------------------------------ /
-/ Timer page css */
+/* ------------------------------ */
+/* Timer page css */
 
 #timeDone {
     color: #33006F;
@@ -1756,3 +1760,94 @@ form td p
 #handInTestForm {
     flex-direction: column;
 }
+
+/* ------------------------------ */
+
+/* ------------------------------ */
+/* Animations page css */
+
+#chemical-animation-canvas {
+    display: none;
+}
+
+#chemical-animation-allButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.chemical-animation-cool-button {
+    padding: 20px 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#chemical-animation-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#chemical-animation-danger {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.chemical-animation-cool-button:hover {
+    background-color: rgba(0, 123, 255, 0.9);
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+.chemical-animation-cool-button:active {
+    transform: scale(0.95);
+}
+
+#reactions-atomic-reaction-display-custom-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#reactions-atomic-reaction-display-form-group {
+    margin-bottom: 20px;
+}
+
+#reactions-atomic-reaction-display label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#reactions-atomic-reaction-display input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#reactions-atomic-reaction-display-submitButton {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+    #reactions-atomic-reaction-display-submitButton:hover {
+        background-color: #0056b3;
+    }

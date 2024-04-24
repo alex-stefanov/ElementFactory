@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Реакции";
+}
+<link rel="stylesheet" href="~/css/site.css">
+<form asp-controller="OpenAI" asp-action="PassAtomicReactionModel" id="atomic-reaction-form" method="get">
+       
+</form>
+<div id="chemical-animation-allButtons">
+    <button id="chemical-animation-primary" class="chemical-animation-cool-button">Атомни реакции</button>
+    <button id="chemical-animation-danger" class="chemical-animation-cool-button">Пламъци</button>
+</div>
+<canvas id="chemical-animation-canvas"> </canvas>
+<script type="module" src="./js/site.js"></script>

@@ -5,6 +5,7 @@ namespace ElementFactory
     using ElementFactory.Data.Models;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.DependencyInjection;
 
     /// <summary>
     /// Start Point Of The App
@@ -69,6 +70,11 @@ namespace ElementFactory
 
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+            });
+
             var app = builder.Build();
             
             if (app.Environment.IsDevelopment())
@@ -88,6 +94,8 @@ namespace ElementFactory
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.MapControllerRoute(
                 name: "default",
