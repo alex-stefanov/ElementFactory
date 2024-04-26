@@ -17,7 +17,7 @@ namespace ElementFactory.Controllers
         public OpenAIController(ApplicationDbContext applicationDbContext, IConfiguration configuration)
         {
             this.configuration = configuration;
-            var openAiApiKey = this.configuration["API"];
+            var openAiApiKey = this.configuration["ConnectionStrings:API"];
             APIAuthentication aPIAuthentication = new APIAuthentication(openAiApiKey);
             openAiApi = new OpenAIAPI(aPIAuthentication);
             this.applicationDbContext = applicationDbContext;
